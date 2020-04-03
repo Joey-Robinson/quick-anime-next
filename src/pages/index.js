@@ -47,10 +47,8 @@ const Index = (props) => {
       <ul>
         {props.anime.map(({ title, mal_id }) => (
           <li key={mal_id}>
-            <Link href={`/p/[id]`} as={`/p/${title}`}>
-              <a>
-                {title} -- {mal_id}
-              </a>
+            <Link href="/p/[id]" as={`/p/${mal_id}`}>
+              <a>{title}</a>
             </Link>
           </li>
         ))}

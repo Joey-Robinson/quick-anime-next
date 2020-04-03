@@ -2,10 +2,10 @@ import Layout from "../../components/layout"
 import fetch from "isomorphic-unfetch"
 
 const Post = (props) => {
-  console.log(props.anime)
+  const title = props.anime.title
   return (
     <Layout>
-      <h1>{props.anime.map((t) => t.title)}</h1>
+      <h1>{title}</h1>
     </Layout>
   )
 }
