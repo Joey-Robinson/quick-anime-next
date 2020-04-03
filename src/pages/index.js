@@ -40,29 +40,31 @@ import Layout from "../components/layout"
 import Link from "next/link"
 import fetch from "isomorphic-unfetch"
 
-const Index = props => (
-  <Layout>
-    <h1>Batman TV Shows</h1>
-    <ul>
-      {props.anime.map(({ title, mal_id }) => (
-        <li key={mal_id}>
-          <Link href="/p/[id]" as={`/anime/${mal_id}`}>
-            <a>{title}</a>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </Layout>
-)
-
-Index.getInitialProps = async function() {
-  const result = await fetch(
-    "https://api.jikan.moe/v3/search/anime?q=Fate/Zero&page=1"
+const Index = (props) => {
+  return (
+    <Layout>
+      <h1>Batman TV Shows</h1>
+      <ul>
+        {props.anime.map(({ title, mal_id }) => (
+          <li key={mal_id}>
+            <Link href={`/p/[id]`} as={`/p/${title}`}>
+              <a>
+                {title} -- {mal_id}
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Layout>
   )
+}
+
+Index.getInitialProps = async function () {
+  const result = await fetch("https://api.jikan.moe/v3/search/anime?q=bleach")
   const data = await result.json()
-  console.log(data)
+  const results = data.results
   return {
-    anime: data.results.map(title => title),
+    anime: results.map((title) => title),
   }
 }
 
