@@ -1,6 +1,7 @@
 import Layout from "../../components/layout"
 import fetch from "isomorphic-unfetch"
 import Head from "next/head"
+import SEO from "../../components/seo"
 
 const Post = (props) => {
   console.log(props.anime)
@@ -17,10 +18,7 @@ const Post = (props) => {
   // console.log(title)
   return (
     <Layout>
-      <Head>
-        <title>{title}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      <SEO title={title} />
       <div className="results">
         <hgroup>
           <h1>{title}</h1>

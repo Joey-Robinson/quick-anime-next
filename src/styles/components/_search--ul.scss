@@ -1,0 +1,6 @@
+.search--list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(30rem, 60rem), 1fr));
+  justify-items: center;
+}

@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
-import Link from "next/link"
-import fetch from "isomorphic-unfetch"
+import AnimeList from "../components/anime/anime.list"
+import AnimeSearch from "../components/anime/anime.search"
+import SEO from "../components/seo"
 
-const Index = (props) => {
+const Index = () => {
   const [animeData, setAnimeData] = useState({ results: [] })
   const [searchedAnime, setSearchedAnime] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
@@ -41,56 +42,26 @@ const Index = (props) => {
 
   return (
     <Layout>
-      <div className="search--input">
-        <form
-          className="field"
-          onSubmit={onSubmitHandler}
-          autoComplete="off"
-          noValidate
-        >
-          <input
-            id="anime-search"
-            label="Search Anmie"
-            aria-label="Search For Anime"
-            type="text"
-            value={searchedAnime}
-            className="field--input"
-            onChange={onChangeHandler}
+      <SEO title="Search" />
+      <AnimeSearch
+        onSubmit={onSubmitHandler}
+        value={searchedAnime}
+        onChange={onChangeHandler}
+      />
+      <ul className="search--list list">
+        {animeData.results.map(({ mal_id, title, image_url, url }) => (
+          <AnimeList
+            key={mal_id}
+            title={title}
+            image_url={image_url}
+            url={url}
+            href={`/p/[id]/`}
+            as={`/p/${mal_id}/`}
           />
-        </form>
-      </div>
-      <ul className="search--list">
-        {animeData.results.map(
-          ({ synopsis, mal_id, title, image_url, url }) => (
-            <li key={mal_id} className="card">
-              <>
-                {" "}
-                <h2 style={{ textAlign: "center" }}>{title}</h2>
-                <img src={image_url} alt={title} />
-                <Link href="/p/[id]/" as={`/p/${mal_id}/`}>
-                  <a>{title}</a>
-                </Link>
-              </>
-            </li>
-          )
-        )}
+        ))}
       </ul>
     </Layout>
   )
 }
-
-// Index.getInitialProps = async function () {
-//   const [animeData, setAnimeData] = useState({ results: [] })
-//   const [searchedAnime, setSearchedAnime] = useState("")
-
-//   const result = await fetch(
-//     `https://api.jikan.moe/v3/search/anime?q=${searchedAnime}`
-//   )
-//   const data = await result.json()
-//   const results = data.results
-//   return {
-//     anime: results.map((title) => title),
-//   }
-// }
 
 export default Index
