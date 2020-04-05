@@ -1,69 +1,96 @@
-import React from "react"
-// import fetch from "node-fetch"
-// import AnimeSearch from "../components/anime/anime.search"
-
-// const IndexPage = ({ data }) => {
-//   console.log(data)
-//   return (
-//     <Layout>
-//       <div className="home">
-//         <AnimeSearch />
-//         <h1>From 123</h1>
-//       </div>
-//     </Layout>
-//   )
-// }
-
-// // export async function getStaticPaths() {
-// //   // Fetch data from external API
-// //   const res = await fetch(`https://jsonplaceholder.typicode.com/users`)
-// //   const data = await res.json()
-// //   // (post => `/posts/${post.id}`)
-// //   const paths = data.map(person => `/person/${person.name}`)
-// //   // Pass data to the page via props
-// //   return { paths, fallback: false }
-// // }
-
-// // export async function getStaticProps() {
-// //   // params contains the post `id`.
-// //   // If the route is like /posts/1, then params.id is 1
-// //   const res = await fetch(`https://jsonplaceholder.typicode.com/users`)
-// //   const data = await res.json()
-
-// //   // Pass post data to the page via props
-// //   return { props: { data } }
-// // }
-
-// export default IndexPage
-
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import Link from "next/link"
 import fetch from "isomorphic-unfetch"
 
 const Index = (props) => {
+  const [animeData, setAnimeData] = useState({ results: [] })
+  const [searchedAnime, setSearchedAnime] = useState("")
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const searchCall = async () => {
+    const response = await fetch(
+      `https://api.jikan.moe/v3/search/anime?q=${searchedAnime}&page=${currentPage}`
+    )
+    const data = await response.json()
+    setAnimeData(data)
+  }
+
+  const onChangeHandler = (event) => {
+    setSearchedAnime(event.target.value)
+    setCurrentPage(1)
+  }
+
+  // const nextPage = () => {
+  //   setCurrentPage(currentPage + 1)
+  // }
+
+  // const previousPage = () => {
+  //   setCurrentPage(currentPage - 1)
+  // }
+
+  const onSubmitHandler = (event) => {
+    if (event.key === 13) {
+      event.preventDefault()
+      searchCall()
+    } else {
+      event.preventDefault()
+      searchCall()
+    }
+  }
+
   return (
     <Layout>
-      <h1>Batman TV Shows</h1>
-      <ul>
-        {props.anime.map(({ title, mal_id }) => (
-          <li key={mal_id}>
-            <Link href="/p/[id]/" as={`/p/${mal_id}/`}>
-              <a>{title}</a>
-            </Link>
-          </li>
-        ))}
+      <div className="search--input">
+        <form
+          className="field"
+          onSubmit={onSubmitHandler}
+          autoComplete="off"
+          noValidate
+        >
+          <input
+            id="anime-search"
+            label="Search Anmie"
+            aria-label="Search For Anime"
+            type="text"
+            value={searchedAnime}
+            className="field--input"
+            onChange={onChangeHandler}
+          />
+        </form>
+      </div>
+      <ul className="search--list">
+        {animeData.results.map(
+          ({ synopsis, mal_id, title, image_url, url }) => (
+            <li key={mal_id} className="card">
+              <>
+                {" "}
+                <h2 style={{ textAlign: "center" }}>{title}</h2>
+                <img src={image_url} alt={title} />
+                <Link href="/p/[id]/" as={`/p/${mal_id}/`}>
+                  <a>{title}</a>
+                </Link>
+              </>
+            </li>
+          )
+        )}
       </ul>
     </Layout>
   )
 }
 
-Index.getInitialProps = async function () {
-  const result = await fetch("https://api.jikan.moe/v3/search/anime?q=bleach")
-  const data = await result.json()
-  const results = data.results
-  return {
-    anime: results.map((title) => title),
-  }
-}
+// Index.getInitialProps = async function () {
+//   const [animeData, setAnimeData] = useState({ results: [] })
+//   const [searchedAnime, setSearchedAnime] = useState("")
+
+//   const result = await fetch(
+//     `https://api.jikan.moe/v3/search/anime?q=${searchedAnime}`
+//   )
+//   const data = await result.json()
+//   const results = data.results
+//   return {
+//     anime: results.map((title) => title),
+//   }
+// }
 
 export default Index

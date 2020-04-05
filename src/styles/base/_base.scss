@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-weight: 300;
+  line-height: 1.4;
+  min-height: 100vh;
+  background: #2d2d2d;
+  color: white;
+}

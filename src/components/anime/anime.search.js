@@ -1,16 +1,5 @@
 import React, { useState } from "react"
-import Link from "next/link"
-// import fetch from "isomorphic-unfetch"
 // ! Check to see if a label is needed for <TextField />
-
-const PostLink = props => (
-  <div>
-    <Link href={`/anime?title=${props.title}`}>
-      <a>{props.title}</a>
-      <p>{props.synopsis}</p>
-    </Link>
-  </div>
-)
 
 const AnimeSearch = () => {
   const [animeData, setAnimeData] = useState({ results: [] })
@@ -25,7 +14,7 @@ const AnimeSearch = () => {
     setAnimeData(data)
   }
 
-  const onChangeHandler = event => {
+  const onChangeHandler = (event) => {
     setSearchedAnime(event.target.value)
     setCurrentPage(1)
   }
@@ -38,7 +27,7 @@ const AnimeSearch = () => {
   //   setCurrentPage(currentPage - 1)
   // }
 
-  const onSubmitHandler = event => {
+  const onSubmitHandler = (event) => {
     if (event.key === 13) {
       event.preventDefault()
       searchCall()
@@ -95,7 +84,6 @@ const AnimeSearch = () => {
           ({ synopsis, mal_id, title, image_url, url }) => (
             <li key={mal_id} className="card">
               {" "}
-              <PostLink title={title} synopsis={synopsis} />
               <h2 style={{ textAlign: "center" }}>{title}</h2>
               <img src={image_url} alt={title} />
               <a
