@@ -7,14 +7,16 @@ const AnimeList = ({ href, as, mal_id, image_url, url, title }) => (
       <div className="li--title">
         <h5>{title}</h5>
       </div>
-      <div>
+      <div className="li--image">
         <a href={url} target="_blank" rel="noopner noreferrer">
           <img src={image_url} alt={title} />
         </a>
       </div>
-      <Link href={href} as={as}>
-        <a>Read More about {title}</a>
-      </Link>
+      <div className="li--link">
+        <Link href={href} as={as}>
+          <a>Read More about {title}</a>
+        </Link>
+      </div>
     </div>
   </li>
 )

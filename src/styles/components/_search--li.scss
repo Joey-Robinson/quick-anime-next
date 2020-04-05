@@ -1,28 +1,35 @@
 .li {
-  max-width: 22.5rem;
+  max-width: 10rem;
   margin: 1.5rem 0;
-
-  img {
-    max-width: 22.5rem;
-    width: 22.5rem;
-    border: 1px solid #567085;
-
-  }
+  // background: #717C85;
+  color: white;
+  display: flex;
 
   a {
     color: white;
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
 
+  &--link {
+    text-align: center;
+    padding: 0 3rem;
+  }
+
+  &--image {
+    justify-content: center;
+  }
+
+  img {
+    max-width: 22.5rem;
+    max-height: 31.5rem;
+    width: 22.5rem;
+    border: 1px solid #567085;
   }
 
   &--title {
     border: 1px solid #567085;
-    background: #717C85;
-    color: white;
     // max-height: 6.3rem;
     // height: 6.3rem;
-    width: 22.5rem;
-    max-width: 22.5rem;
 
     h5 {
       text-align: center;
