@@ -1,4 +1,5 @@
 // Abstracts
+@import './abstracts/animations';
 // Base
 @import './base/base';
 // Components
@@ -6,5 +7,6 @@
 @import './components/search--ul';
 @import './components/spinner';
 // Layouts
+@import './layouts/container';
 @import './layouts/section';
 // Pages

@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "next/link"
+import Spinner from "../spinner"
 
 const AnimeList = ({ href, as, mal_id, image_url, url, title }) => (
   <li key={mal_id} className="search--container list--li li">
@@ -9,7 +10,11 @@ const AnimeList = ({ href, as, mal_id, image_url, url, title }) => (
       </div>
       <div className="li--image">
         <a href={url} target="_blank" rel="noopner noreferrer">
-          <img src={image_url} alt={title} />
+          {<img src="" alt="" /> ? (
+            <Spinner />
+          ) : (
+            <img src={image_url} alt={title} />
+          )}
         </a>
       </div>
       <div className="li--link">
