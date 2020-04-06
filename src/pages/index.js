@@ -3,8 +3,6 @@ import Layout from "../components/layout"
 import AnimeList from "../components/anime/anime.list"
 import AnimeSearch from "../components/anime/anime.search"
 import SEO from "../components/seo"
-import Spinner from "../components/spinner"
-import Link from "next/link"
 
 const Index = () => {
   const [animeData, setAnimeData] = useState({ results: [] })
@@ -51,81 +49,20 @@ const Index = () => {
           value={searchedAnime}
           onChange={onChangeHandler}
         />
-        <ul className="search--list list">
-          <li key="title" className="search--container list--li li">
-            <div>
-              <div className="li--title">
-                <h5>title</h5>
-              </div>
-              <div className="li--image">
-                <a href="p" target="_blank" rel="noopner noreferrer">
-                  {!(<img src="" alt="" />) ? (
-                    <Spinner />
-                  ) : (
-                    <img src="/apidown.png" alt="title" />
-                  )}
-                </a>
-              </div>
-              <div className="li--link">
-                <Link href="p" as="p">
-                  <a>Read More about title</a>
-                </Link>
-              </div>
-            </div>
-          </li>
-          <li key="title" className="search--container list--li li">
-            <div>
-              <div className="li--title">
-                <h5>title</h5>
-              </div>
-              <div className="li--image">
-                <a href="p" target="_blank" rel="noopner noreferrer">
-                  {!(<img src="" alt="" />) ? (
-                    <Spinner />
-                  ) : (
-                    <img src="/apidown.png" alt="title" />
-                  )}
-                </a>
-              </div>
-              <div className="li--link">
-                <Link href="p" as="p">
-                  <a>Read More about title</a>
-                </Link>
-              </div>
-            </div>
-          </li>
-          <li key="title" className="search--container list--li li">
-            <div>
-              <div className="li--title">
-                <h5>title</h5>
-              </div>
-              <div className="li--image">
-                <a href="p" target="_blank" rel="noopner noreferrer">
-                  {!(<img src="" alt="" />) ? (
-                    <Spinner />
-                  ) : (
-                    <img src="/apidown.png" alt="title" />
-                  )}
-                </a>
-              </div>
-              <div className="li--link">
-                <Link href="p" as="p">
-                  <a>Read More about title</a>
-                </Link>
-              </div>
-            </div>
-          </li>
-
-          {/* {animeData.results.map(({ mal_id, title, image_url, url }) => (
-            <AnimeList
-              key={mal_id}
-              title={title}
-              image_url={image_url}
-              url={url}
-              href={`/p/[id]/`}
-              as={`/p/${mal_id}/`}
-            />
-          ))} */}
+        <ul className="search--list list search">
+          {animeData.results.map(
+            ({ synopsis, mal_id, title, image_url, url }) => (
+              <AnimeList
+                key={mal_id}
+                title={title}
+                image_url={image_url}
+                url={url}
+                href={`/p/[id]/`}
+                as={`/p/${mal_id}/`}
+                synopsis={synopsis}
+              />
+            )
+          )}
         </ul>
       </div>
     </Layout>

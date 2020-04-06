@@ -8,6 +8,7 @@ const AnimeSearch = ({ onSubmit, value, onChange }) => {
           id="anime-search"
           label="Search Anmie"
           aria-label="Search For Anime"
+          placeholder="Search For Anime"
           type="text"
           value={value}
           className="field--input"

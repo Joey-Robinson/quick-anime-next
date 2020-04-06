@@ -2,9 +2,11 @@
 @import './abstracts/animations';
 // Base
 @import './base/base';
+@import './base/typography';
 // Components
 @import './components/search--li';
 @import './components/search--ul';
+@import './components/search';
 @import './components/spinner';
 // Layouts
 @import './layouts/container';
