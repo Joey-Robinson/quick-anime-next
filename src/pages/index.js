@@ -11,6 +11,7 @@ const Index = () => {
 
   const searchCall = async () => {
     const response = await fetch(
+      //&limit=10
       `https://api.jikan.moe/v3/search/anime?q=${searchedAnime}&page=${currentPage}`
     )
     const data = await response.json()
@@ -22,9 +23,9 @@ const Index = () => {
     setCurrentPage(1)
   }
 
-  // const nextPage = () => {
-  //   setCurrentPage(currentPage + 1)
-  // }
+  const nextPage = () => {
+    setCurrentPage(currentPage + 1)
+  }
 
   // const previousPage = () => {
   //   setCurrentPage(currentPage - 1)
