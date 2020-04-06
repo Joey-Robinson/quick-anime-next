@@ -6,11 +6,12 @@
   grid-template-columns: 15rem 1fr;
   width: 100%;
   margin: 3rem 0;
-  height: 19rem;
-  background: #2d2d2d;
+  height: 18.75rem;
+  background: #518071;
+  border: 1px solid #a73f63;
 
   &--title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     grid-column: 2;
     align-self: start;
     grid-row: 1;
@@ -31,13 +32,13 @@
 
     img {
       width: 13rem;
-      height: 19rem;
+      height: 18.5rem;
     }
   }
 
   p {
     font-size: 1.8rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 6rem 0.75rem 1.5rem;
     grid-column: 2;
     grid-row: 2;
     font-size: 18px;
