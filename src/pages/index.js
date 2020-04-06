@@ -8,6 +8,7 @@ const Index = () => {
   const [animeData, setAnimeData] = useState({ results: [] })
   const [searchedAnime, setSearchedAnime] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
+  // const [animeId, setAnimeId] = useState(1)
 
   const searchCall = async () => {
     const response = await fetch(
@@ -17,6 +18,14 @@ const Index = () => {
     const data = await response.json()
     setAnimeData(data)
   }
+
+  // const animeNews = async () => {
+  //   const response = await fetch(
+  //     `https://api.jikan.moe/v3/anime/${animeId}/news/`
+  //   )
+  //   const data = await response.json()
+  //   setAnimeId(data)
+  // }
 
   const onChangeHandler = (event) => {
     setSearchedAnime(event.target.value)
@@ -52,17 +61,19 @@ const Index = () => {
         />
         <ul className="search--list list search">
           {animeData.results.map(
-            ({ synopsis, mal_id, title, image_url, url }) => (
-              <AnimeList
-                key={mal_id}
-                title={title}
-                image_url={image_url}
-                url={url}
-                href={`/p/[id]/`}
-                as={`/p/${mal_id}/`}
-                synopsis={synopsis}
-              />
-            )
+            ({ synopsis, mal_id, title, image_url, url }) => {
+              return (
+                <AnimeList
+                  key={mal_id}
+                  title={title}
+                  image_url={image_url}
+                  url={url}
+                  href={`/p/[id]/`}
+                  as={`/p/${mal_id}/`}
+                  synopsis={synopsis}
+                />
+              )
+            }
           )}
         </ul>
       </div>

@@ -11,11 +11,7 @@ const AnimeList = ({ href, as, mal_id, image_url, url, title, synopsis }) => {
       </div>
       <div className="li--image">
         <a href={url} target="_blank" rel="noopner noreferrer">
-          {!image_url ? (
-            <Spinner />
-          ) : (
-            <LazyLoadImage alt={title} src={image_url} />
-          )}
+          <LazyLoadImage alt={title} src={image_url} />
         </a>
       </div>
       <p>{!synopsis ? "No synopsis is available for this title" : synopsis}</p>
