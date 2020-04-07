@@ -3,19 +3,27 @@ import Layout from "../../components/layout"
 import fetch from "isomorphic-unfetch"
 import Head from "next/head"
 import SEO from "../../components/seo"
+import AnimeTemplate from "../../template/anime.template"
 
 const Post = (props) => {
-  console.log(props)
   const results = props.anime
-  const synopsis = results.synopsis
+
+  // Anime Information
+  const synopsis = results.synopsis.replace("[Written by MAL Rewrite]", "")
+  const background = results.background
   const title = results.title
   const titlejp = results.title_japanese
   const image = results.image_url
   const episodes = results.episodes
-  const rating = results.rated
+  const rating = results.rating
+  const duration = results.duration
   const url = results.url
-  const airing = results.airing
-  const score = results.score
+  const airing = results.status
+  const source = results.source
+  const genres = results.genres // need to map
+  const genreNames = genres.map(({ name }) => ` ${name}, `)
+
+  // Anime news
   // const id = results.mal_id
   // fetch(`https://api.jikan.moe/v3/anime/${id}/news/`)
   //   .then((data) => data.json())
@@ -23,10 +31,20 @@ const Post = (props) => {
 
   // console.log(title)
   return (
-    <Layout>
-      <SEO title={title} />
-      <h1>{title}</h1>
-    </Layout>
+    <AnimeTemplate
+      genres={genreNames}
+      title={title}
+      titlejp={titlejp}
+      synopsis={synopsis}
+      duration={duration}
+      background={background}
+      image={image}
+      source={source}
+      episodes={episodes}
+      rating={rating}
+      url={url}
+      airing={airing}
+    />
   )
 }
 

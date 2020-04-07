@@ -11,38 +11,69 @@ const AnimeTemplate = ({
   rating,
   url,
   airing,
-  score,
+  duration,
+  background,
+  genres,
+  source,
 }) => (
-  <Layout>
+  <Layout className="data">
     <SEO title={title} />
     <div className="results">
-      <hgroup>
+      <div className="results--image">
         <h1>{title}</h1>
-        <h2>{titlejp}</h2>
-      </hgroup>
-      <p>
-        <strong>Synopsis:</strong> {synopsis}
-      </p>
-      <>
         <img src={image} alt={title} />
-      </>
-      <p>
-        <strong>Episodes:</strong> {episodes}
-      </p>
-      <p>
-        <strong>Rating:</strong> {rating}
-      </p>
-      <p>
+      </div>
+      <div className="results--alternative">
+        <p>
+          <span>English:</span>
+          {title}
+        </p>
+        <p>
+          <span>Japanese:</span>
+          {titlejp}
+        </p>
+      </div>
+      <div className="results--synopsis">
+        <p>
+          <span>Synopsis:</span> {synopsis}
+        </p>
+      </div>
+      <div className="results--background">
+        <p>
+          <span>Background:</span> {background}
+        </p>
+      </div>
+      <div className="results--information">
+        <p>
+          <span>Episodes:</span>
+          {episodes}
+        </p>
+        <p>
+          <span>Status:</span>
+          {airing}
+        </p>
+        <p>
+          <span>Duration:</span> {duration}
+        </p>
+        <p>
+          <span>Genres:</span>
+          {genres}
+        </p>
+        <p>
+          <span>Rating: </span>
+          {rating}
+        </p>
+        <p>
+          <span>Source:</span> {source}
+        </p>
+      </div>
+      <div className="results--external">
         <a href={url} target="_blank" rel="noopener noreferrer">
           {title} - View On MAL
         </a>
-      </p>
-      <p>
-        <strong>Airing:</strong> {airing}
-      </p>
-      <p>
-        <strong>Score:</strong> {score}
-      </p>
+      </div>
     </div>
   </Layout>
 )
+
+export default AnimeTemplate
