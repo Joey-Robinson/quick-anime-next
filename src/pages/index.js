@@ -8,7 +8,6 @@ const Index = () => {
   const [animeData, setAnimeData] = useState({ results: [] })
   const [searchedAnime, setSearchedAnime] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
-  // const [animeId, setAnimeId] = useState(1)
 
   const searchCall = async () => {
     const response = await fetch(
@@ -18,14 +17,6 @@ const Index = () => {
     const data = await response.json()
     setAnimeData(data)
   }
-
-  // const animeNews = async () => {
-  //   const response = await fetch(
-  //     `https://api.jikan.moe/v3/anime/${animeId}/news/`
-  //   )
-  //   const data = await response.json()
-  //   setAnimeId(data)
-  // }
 
   const onChangeHandler = (event) => {
     setSearchedAnime(event.target.value)

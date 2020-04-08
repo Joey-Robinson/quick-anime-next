@@ -1,13 +1,10 @@
-import React from "react"
-import Layout from "../../components/layout"
+import React, { useState } from "react"
 import fetch from "isomorphic-unfetch"
-import Head from "next/head"
-import SEO from "../../components/seo"
 import AnimeTemplate from "../../template/anime.template"
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 
 const Post = (props) => {
   const results = props.anime
-
   // Anime Information
   const synopsis = results.synopsis.replace("[Written by MAL Rewrite]", "")
   const background = results.background
@@ -24,27 +21,39 @@ const Post = (props) => {
   const genreNames = genres.map(({ name }) => ` ${name}, `)
 
   // Anime news
-  // const id = results.mal_id
-  // fetch(`https://api.jikan.moe/v3/anime/${id}/news/`)
-  //   .then((data) => data.json())
-  //   .then((response) => console.log(response))
-
-  // console.log(title)
+  const id = results.mal_id
+  const [animeNews, setAnimeNews] = useState({ articles: [] })
+  const newsCall = async () => {
+    const response = await fetch(`https://api.jikan.moe/v3/anime/${id}/news/`)
+    const data = await response.json()
+    setAnimeNews(data)
+  }
+  console.log(animeNews.articles)
   return (
-    <AnimeTemplate
-      genres={genreNames}
-      title={title}
-      titlejp={titlejp}
-      synopsis={synopsis}
-      duration={duration}
-      background={background}
-      image={image}
-      source={source}
-      episodes={episodes}
-      rating={rating}
-      url={url}
-      airing={airing}
-    />
+    <Tabs defaultIndex={0}>
+      {" "}
+      <TabList>
+        <Tab>{title} Information</Tab>
+        <Tab onClick={newsCall}>{title} News</Tab>
+      </TabList>
+      <TabPanel>
+        <AnimeTemplate
+          genres={genreNames}
+          title={title}
+          titlejp={titlejp}
+          synopsis={synopsis}
+          duration={duration}
+          background={background}
+          image={image}
+          source={source}
+          episodes={episodes}
+          rating={rating}
+          url={url}
+          airing={airing}
+        />
+      </TabPanel>
+      <TabPanel></TabPanel>
+    </Tabs>
   )
 }
 
