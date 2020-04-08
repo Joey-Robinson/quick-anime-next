@@ -55,19 +55,21 @@ const Post = (props) => {
       </TabPanel>
       <TabPanel>
         <SEO title={title} />
-        <ul className="search--list list search">
-          {animeNews.articles.map(
-            ({ forum_url, image_url, intro, title, url }) => (
-              <NewsTemplate
-                title={title}
-                forum_url={forum_url}
-                image_url={image_url}
-                url={url}
-                intro={intro}
-              />
-            )
-          )}
-        </ul>
+        <div className="container">
+          <ul className="search--list list search">
+            {animeNews.articles.map(
+              ({ forum_url, image_url, intro, title, url }) => (
+                <NewsTemplate
+                  title={title}
+                  forum_url={forum_url}
+                  image_url={image_url}
+                  url={url}
+                  intro={intro}
+                />
+              )
+            )}
+          </ul>
+        </div>
       </TabPanel>
     </Tabs>
   )

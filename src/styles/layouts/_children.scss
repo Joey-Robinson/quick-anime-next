@@ -1,4 +1,5 @@
-.data {
+.data,
+.container {
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
 }

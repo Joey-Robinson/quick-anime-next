@@ -4,7 +4,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component"
 
 const AnimeList = ({ href, as, mal_id, image_url, url, title, synopsis }) => {
   return (
-    <li key={mal_id} className="search--container search--li li">
+    <li key={mal_id} className="search--li li">
       <div className="li--title">
         <h5>{title}</h5>
       </div>

@@ -50,7 +50,7 @@ const Index = () => {
           value={searchedAnime}
           onChange={onChangeHandler}
         />
-        <ul className="search--list list search">
+        <ul className="list search">
           {animeData.results.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
               return (
