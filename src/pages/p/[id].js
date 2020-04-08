@@ -19,7 +19,7 @@ const Post = (props) => {
   const url = results.url
   const airing = results.status
   const source = results.source
-  const genres = results.genres // need to map
+  const genres = results.genres
   const genreNames = genres.map(({ name }) => ` ${name}, `)
 
   // Anime news
