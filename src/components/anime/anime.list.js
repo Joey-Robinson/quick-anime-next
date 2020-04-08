@@ -1,7 +1,6 @@
 import React from "react"
 import Link from "next/link"
 import { LazyLoadImage } from "react-lazy-load-image-component"
-import Spinner from "../spinner"
 
 const AnimeList = ({ href, as, mal_id, image_url, url, title, synopsis }) => {
   return (

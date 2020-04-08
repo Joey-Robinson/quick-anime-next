@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import fetch from "isomorphic-unfetch"
 import AnimeTemplate from "../../template/anime.template"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
+import NewsTemplate from "../../template/news.template"
+import SEO from "../../components/seo"
 
 const Post = (props) => {
   const results = props.anime
@@ -28,11 +30,10 @@ const Post = (props) => {
     const data = await response.json()
     setAnimeNews(data)
   }
-  console.log(animeNews.articles)
+
   return (
     <Tabs defaultIndex={0}>
-      {" "}
-      <TabList>
+      <TabList className="tabs">
         <Tab>{title} Information</Tab>
         <Tab onClick={newsCall}>{title} News</Tab>
       </TabList>
@@ -52,7 +53,22 @@ const Post = (props) => {
           airing={airing}
         />
       </TabPanel>
-      <TabPanel></TabPanel>
+      <TabPanel>
+        <SEO title={title} />
+        <ul className="search--list list search">
+          {animeNews.articles.map(
+            ({ forum_url, image_url, intro, title, url }) => (
+              <NewsTemplate
+                title={title}
+                forum_url={forum_url}
+                image_url={image_url}
+                url={url}
+                intro={intro}
+              />
+            )
+          )}
+        </ul>
+      </TabPanel>
     </Tabs>
   )
 }
