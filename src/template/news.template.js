@@ -3,14 +3,14 @@ import Spinner from "../components/spinner"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 const NewsTemplate = ({ forum_url, image_url, intro, title, url }) => (
-  <li key={title} className="search--container search--li li">
-    <div className="li--title">
-      <h5>{title}</h5>
+  <li key={title} className="info">
+    <div className="info--title">
+      <h5>
+        {title}
+        <hr />
+      </h5>
     </div>
-    <div>
-      <p>{intro}</p>
-    </div>
-    <div className="li--image">
+    <div className="info--image">
       <a href={forum_url} target="_blank" rel="noopner noreferrer">
         {!image_url ? (
           <Spinner />
@@ -19,11 +19,17 @@ const NewsTemplate = ({ forum_url, image_url, intro, title, url }) => (
         )}
       </a>
     </div>
-    <div className="li--link">
+    <div className="info--intro">
+      <p>{intro}</p>
+    </div>
+
+    <div className="info--external">
+      <p>Read more about:</p>
       <a href={url} target="_blank" rel="noopener noreferrer">
         {title}
       </a>
     </div>
+    <br />
   </li>
 )
 

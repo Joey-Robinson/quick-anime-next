@@ -1,12 +1,13 @@
 import React, { useState } from "react"
 import fetch from "isomorphic-unfetch"
 import AnimeTemplate from "../../template/anime.template"
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import NewsTemplate from "../../template/news.template"
 import SEO from "../../components/seo"
+import Layout from "../../components/layout"
 
 const Post = (props) => {
   const results = props.anime
+
   // Anime Information
   const synopsis = results.synopsis.replace("[Written by MAL Rewrite]", "")
   const background = results.background
@@ -25,6 +26,12 @@ const Post = (props) => {
   // Anime news
   const id = results.mal_id
   const [animeNews, setAnimeNews] = useState({ articles: [] })
+  const [isHidden, setIsHidden] = useState(false)
+
+  const toggle = () => {
+    setIsHidden(!isHidden)
+  }
+
   const newsCall = async () => {
     const response = await fetch(`https://api.jikan.moe/v3/anime/${id}/news/`)
     const data = await response.json()
@@ -32,13 +39,11 @@ const Post = (props) => {
   }
 
   return (
-    <Tabs defaultIndex={0}>
-      <TabList className="tabs">
-        <Tab>{title} Information</Tab>
-        <Tab onClick={newsCall}>{title} News</Tab>
-      </TabList>
-      <TabPanel>
+    <Layout>
+      <SEO title={title} />
+      <div className="results">
         <AnimeTemplate
+          onClick={newsCall}
           genres={genreNames}
           title={title}
           titlejp={titlejp}
@@ -52,26 +57,22 @@ const Post = (props) => {
           url={url}
           airing={airing}
         />
-      </TabPanel>
-      <TabPanel>
-        <SEO title={title} />
-        <div className="container">
-          <ul className="search--list list search">
-            {animeNews.articles.map(
-              ({ forum_url, image_url, intro, title, url }) => (
-                <NewsTemplate
-                  title={title}
-                  forum_url={forum_url}
-                  image_url={image_url}
-                  url={url}
-                  intro={intro}
-                />
-              )
-            )}
-          </ul>
-        </div>
-      </TabPanel>
-    </Tabs>
+        <ul className="results--news">
+          {animeNews.articles.map(
+            ({ forum_url, image_url, intro, title, url }) => (
+              <NewsTemplate
+                key={title}
+                title={title}
+                forum_url={forum_url}
+                image_url={image_url}
+                url={url}
+                intro={intro}
+              />
+            )
+          )}
+        </ul>
+      </div>
+    </Layout>
   )
 }
 
