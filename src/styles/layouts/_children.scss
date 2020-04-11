@@ -1,5 +1,17 @@
-.data,
-.container {
+.data {
+  grid-column: 2;
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-columns: 1fr;
+}
+
+.children {
+  grid-column: 2;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 100vh auto;
+
+  h1 {
+    font-size: 100px;
+  }
 }

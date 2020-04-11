@@ -1,9 +1,9 @@
 .results {
   display: grid;
-  grid-column: 2;
-  background: #939393;
-  grid-template-columns: 40rem 1fr;
-  color: #00202a;
+  grid-column: 1;
+  background: #b8c1ec;
+  grid-template-columns: 30rem 1fr;
+  color: #232946;
 
   span {
     font-weight: 900;
@@ -22,6 +22,12 @@
     grid-column: 1;
     grid-row: 1;
     padding: 0 3rem;
+
+    h1 {
+      padding: 0;
+      margin: 0;
+      font-size: 4rem;
+    }
   }
 
   &--alternative {

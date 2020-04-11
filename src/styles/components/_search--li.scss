@@ -1,13 +1,13 @@
 .li {
   height: 10rem;
-  color: #00202a;
+  background: #b8c1ec;
+  color: #232946;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: 15rem 1fr;
   width: 100%;
   margin: 3rem 0;
   height: 18.75rem;
-  background: #939393;
   border: 1px solid #122331;
 
   &--title {

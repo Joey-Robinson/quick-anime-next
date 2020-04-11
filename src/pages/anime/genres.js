@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import GenreChange from "../../components/genres/genre.api"
+// import GenreChange from "../../components/genres/genre.api"
 
 const Genres = () => (
   <Layout>
     <SEO title="Genres" />
-    <GenreChange />
+    <h2>From Genres</h2>
   </Layout>
 )
 

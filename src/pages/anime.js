@@ -1,18 +1,12 @@
-// import { useRouter } from "next/router"
-// import React from "react"
-// import Layout from "../components/layout"
+import React from "react"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-// const Anime = () => {
-//   const router = useRouter()
+const Anime = () => (
+  <Layout>
+    <SEO title="Anime" />
+    <h2>From ANime</h2>
+  </Layout>
+)
 
-//   return (
-//     <Layout>
-//       <div className="anime">
-//         <h1>{router.query.title}</h1>
-//         <p>{router.query.synopsis}</p>
-//       </div>
-//     </Layout>
-//   )
-// }
-
-// export default Anime
+export default Anime

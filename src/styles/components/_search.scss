@@ -1,8 +1,15 @@
 .search--input {
+  grid-row: 1;
   font-size: 2rem;
-  display: none;
+  grid-column: 1;
+  display: block;
+  width: 20rem;
+  height: 3.5rem;
+  justify-self: center;
+  margin: 3.5rem 0 0 0;
 
   input {
+    justify-self: center;
     width: 20rem;
     border-radius: 10rem;
     padding: .75rem 0;
