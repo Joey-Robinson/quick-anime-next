@@ -26,23 +26,23 @@ const AnimeTemplate = ({
         <hr />
       </h3>
       <p>
-        <span>English:</span>
+        <span>English: </span>
         {title}
       </p>
       <p>
-        <span>Japanese:</span>
+        <span>Japanese: </span>
         {titlejp}
       </p>
     </div>
     <div className="results--synopsis">
       <button onClick={onClick}>News</button>
       <p>
-        <span>Synopsis:</span> {synopsis}
+        <span>Synopsis: </span> {synopsis}
       </p>
     </div>
     <div className="results--background">
       <p>
-        <span>Background:</span> {background}
+        <span>Background: </span> {background}
       </p>
     </div>
     <div className="results--information">
@@ -51,18 +51,18 @@ const AnimeTemplate = ({
         <hr />
       </h3>
       <p>
-        <span>Episodes:</span>
+        <span>Episodes: </span>
         {episodes}
       </p>
       <p>
-        <span>Status:</span>
+        <span>Status: </span>
         {airing}
       </p>
       <p>
-        <span>Duration:</span> {duration}
+        <span>Duration: </span> {duration}
       </p>
       <p>
-        <span>Genres:</span>
+        <span>Genres: </span>
         {genres}
       </p>
       <p>
@@ -70,7 +70,7 @@ const AnimeTemplate = ({
         {rating}
       </p>
       <p>
-        <span>Source:</span> {source}
+        <span>Source: </span> {source}
       </p>
     </div>
     <div className="results--external">
