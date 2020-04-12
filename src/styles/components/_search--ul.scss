@@ -7,4 +7,10 @@
   grid-column: 1;
   grid-row: 1 / -1;
   margin: 6rem 0 0 0;
+  overflow-y: scroll;
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: y mandatory;
+  scroll-snap-points-y: repeat(150px);
+  height: 100%;
 }

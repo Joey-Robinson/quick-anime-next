@@ -6,9 +6,10 @@
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: 15rem 1fr;
   width: 100%;
-  margin: 3rem 0;
+  margin: 1.5rem 0;
   height: 18.75rem;
   border: 1px solid #122331;
+  scroll-snap-align: start;
 
   &--title {
     font-size: 2.2rem;

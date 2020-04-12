@@ -1,9 +1,10 @@
 header {
   width: 15vw;
   background: #eebbc3;
-  grid-column: 1;
-  height: 100%;
-  position: fixed;
+  grid-row: 2 / 3;
+  grid-column: 2;
+  position: sticky;
+  top: 0;
 
   a {
     font-size: 2rem;
