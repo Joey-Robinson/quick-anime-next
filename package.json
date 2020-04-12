@@ -8,7 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.0.0",
+    "marked": "^0.8.2",
     "next": "9.3.4",
     "node-sass": "^4.13.1",
     "react": "16.13.1",

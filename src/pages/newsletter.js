@@ -1,12 +1,31 @@
-import React from "react"
+import Link from "next/link"
+import fs from "fs"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
-const Newsletter = () => (
+const Home = ({ slugs }) => (
   <Layout>
-    <SEO title="Newsletter" />
-    <h2>newsletter</h2>
+    <div>
+      slugs:
+      {slugs.map((slug) => {
+        return (
+          <div key={slug}>
+            <Link href={"/newsletter/" + slug}>
+              <a>{"/newsletter/" + slug}</a>
+            </Link>
+          </div>
+        )
+      })}
+    </div>
   </Layout>
 )
 
-export default Newsletter
+export const getStaticProps = async () => {
+  const files = fs.readdirSync("content")
+  return {
+    props: {
+      slugs: files.map((filename) => filename.replace(".md", "")),
+    },
+  }
+}
+
+export default Home
