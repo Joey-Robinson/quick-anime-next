@@ -7,10 +7,11 @@ const Home = ({ slugs }) => (
     <div>
       slugs:
       {slugs.map((slug) => {
+        const title = slug.split("-").join(" ")
         return (
           <div key={slug}>
             <Link href={"/newsletter/" + slug}>
-              <a>{"/newsletter/" + slug}</a>
+              <a style={{ textTransform: "uppercase" }}>{title}</a>
             </Link>
           </div>
         )
@@ -21,6 +22,7 @@ const Home = ({ slugs }) => (
 
 export const getStaticProps = async () => {
   const files = fs.readdirSync("content")
+  console.log(files)
   return {
     props: {
       slugs: files.map((filename) => filename.replace(".md", "")),
