@@ -6,11 +6,10 @@
 }
 
 .children {
-  background: brown;
   grid-column: 3;
   grid-row: 2 / 3;
   display: grid;
-  grid-template-rows: 85vh;
+  grid-template-rows: 92.5vh;
 
   h1 {
     font-size: 100px;
