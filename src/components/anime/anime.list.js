@@ -16,16 +16,16 @@ const AnimeList = ({ href, as, mal_id, image_url, url, title, synopsis }) => {
         }}
       >
         <LazyLoadImage alt={title} src={image_url} />
-        <p>
+        <p style={{ gridColumn: "2", gridRow: "1", alignSelf: "start" }}>
           {!synopsis ? "No synopsis is available for this title" : synopsis}
         </p>
         <div
           style={{
             gridColumn: "2",
-            gridRow: "-1",
-            justifySelf: "center",
-            alignSelf: "start",
-            padding: "0 0 3rem 0",
+            gridRow: "1",
+            justifySelf: "left",
+            alignSelf: "end",
+            padding: "0 0 0 6rem",
           }}
         >
           <Link href={href} as={as}>

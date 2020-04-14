@@ -8,11 +8,24 @@
   justify-self: center;
   margin: 1.5rem 0 0 0;
 
+  span {
+    color: #232946;
+    pointer-events: none;
+  }
+
   input {
     justify-self: center;
     width: 20rem;
-    border-radius: 10rem;
     padding: .75rem 0;
     text-align: center;
+
+    label {
+      text-align: center;
+
+    }
   }
+}
+
+input[type=text]:focus {
+  border-color: red;
 }
