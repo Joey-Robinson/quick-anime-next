@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import GenreSelect from "./genre.select"
 import Spinner from "../spinner"
+import GenreList from "./genre.list"
 
 const GenreChange = () => {
   const [selectedGenre, setSelectedGenre] = useState({ anime: [] })
@@ -28,33 +29,39 @@ const GenreChange = () => {
   }, [genreValue, initialPage])
 
   return (
-    <section className="genre">
+    <>
       <GenreSelect
         className="genre--select"
         defaultValue={selectedGenre}
         handler={changeHandler}
       />
-      <ul className="genre--list">
+      <ul className="list search">
         {!isLoading ? (
           <li>
             <Spinner />{" "}
           </li>
         ) : (
           <>
-            {selectedGenre.anime.map(({ title, url, image_url, synopsis }) => (
-              <li key={title}>
-                <div style={{ maxWidth: "225px", maxHeight: "335px" }}>
-                  <h5 style={{ textAlign: "center" }}>{title}</h5>
-                  <a href={url} title="_blank" rel="noopener noreferrer">
-                    <img src={image_url} alt={title} />
-                  </a>
-                </div>
-              </li>
-            ))}
+            {selectedGenre.anime.map(
+              ({ synopsis, mal_id, title, image_url, url }) => {
+                const pp = synopsis.replace("[Written by MAL Rewrite]", "")
+                return (
+                  <GenreList
+                    key={mal_id}
+                    title={title}
+                    image_url={image_url}
+                    url={url}
+                    href={`/anime/[id]/`}
+                    as={`/anime/${mal_id}/`}
+                    synopsis={pp}
+                  />
+                )
+              }
+            )}
           </>
         )}
       </ul>
-    </section>
+    </>
   )
 }
 

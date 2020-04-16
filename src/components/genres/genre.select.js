@@ -1,7 +1,7 @@
 import React from "react"
 
 const GenreSelect = ({ handler, defaultValue }) => (
-  <div>
+  <div className="select">
     <label>
       Select a genre of anime:
       <br />
