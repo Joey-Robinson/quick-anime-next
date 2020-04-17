@@ -1,9 +1,45 @@
 .select {
   grid-row: 1;
-  font-size: 2rem;
   grid-column: 1;
   display: block;
-  height: 3.5rem;
   justify-self: center;
   margin: 1.5rem 0 0 0;
+  color: #232946;
+  z-index: 3;
+
+  select {
+    outline: none;
+    border: none;
+    background: red;
+    width: 100%;
+    background: #b8c1ec;
+    border: 3.2px solid #232946;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    padding: 0.5em 3.5em 0.5em 1em;
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%);
+    background-position:
+      calc(100% - 10px) calc(1rem + 2px),
+      calc(100% - 5px) calc(1em + 2px),
+      calc(100% - .3em) .6em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1.5em 1.5em;
+    background-repeat: no-repeat;
+
+    option {
+      font-size: 1.8rem;
+      padding: 3rem 0;
+    }
+  }
+
+  label {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 }

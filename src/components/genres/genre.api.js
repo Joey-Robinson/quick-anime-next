@@ -44,7 +44,9 @@ const GenreChange = () => {
           <>
             {selectedGenre.anime.map(
               ({ synopsis, mal_id, title, image_url, url }) => {
-                const pp = synopsis.replace("[Written by MAL Rewrite]", "")
+                const pp = synopsis
+                  .slice(0, 150)
+                  .replace("[Written by MAL Rewrite]", "")
                 return (
                   <GenreList
                     key={mal_id}
