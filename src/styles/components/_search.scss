@@ -3,22 +3,26 @@
   font-size: 2rem;
   grid-column: 1;
   display: block;
-  height: 3.5rem;
   justify-self: center;
   margin: 1.5rem 0 0 0;
+  z-index: 3;
+
+  span {
+    padding: 1.5rem;
+  }
+
+  label {
+    color: #232946;
+  }
 
   input {
-    justify-self: center;
+    border-radius: 1.5rem;
+    border: none;
     width: 20rem;
-    padding: 0.75rem 0;
-    text-align: center;
-
-    label {
-      text-align: center;
-    }
+    padding: .5rem 1rem;
   }
 }
 
 input[type="text"]:focus {
-  border-color: red;
+  border-color: #232946;
 }

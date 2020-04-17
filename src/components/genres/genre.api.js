@@ -35,7 +35,7 @@ const GenreChange = () => {
         defaultValue={selectedGenre}
         handler={changeHandler}
       />
-      <ul className="list search">
+      <ul style={{ margin: "9rem 0" }} className="list search">
         {!isLoading ? (
           <li>
             <Spinner />{" "}

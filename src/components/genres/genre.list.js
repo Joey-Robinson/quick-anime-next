@@ -2,7 +2,7 @@ import React from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import Link from "next/link"
 
-const GenreList = ({ href, as, mal_id, image_url, url, title, synopsis }) => (
+const GenreList = ({ href, as, mal_id, image_url, title, synopsis }) => (
   <li key={mal_id}>
     <div className="li--title">
       <h5>{title}</h5>

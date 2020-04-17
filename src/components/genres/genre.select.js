@@ -2,9 +2,13 @@ import React from "react"
 
 const GenreSelect = ({ handler, defaultValue }) => (
   <div className="select">
-    <label>Select a genre of anime:</label>
-    <br />
-    <select defaultValue={defaultValue} onChange={handler}>
+    <label htmlFor="genres">Select a genre of anime:</label>
+    <select
+      id="genres"
+      name="genres"
+      defaultValue={defaultValue}
+      onChange={handler}
+    >
       <option value="1">Action</option>
       <option value="2">Adventure</option>
       <option value="3">Cars</option>
