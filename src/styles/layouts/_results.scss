@@ -13,13 +13,13 @@
 
   &--news {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 2 / span 4;
     overflow-y: scroll;
     will-change: scroll-position;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: y mandatory;
     scroll-snap-points-y: repeat(200px);
-    border: 2px solid red;
+    margin: 4.5rem 0 0 0;
 
     li {
       display: grid;
@@ -78,7 +78,7 @@
   &--information {
     grid-column: 1;
     grid-row: 3;
-    margin: 0 0 4.5rem 0;
+    margin: 3rem 0 4.5rem 0;
 
     p {
       padding: 0 3rem;
@@ -88,31 +88,44 @@
   &--synopsis {
     grid-column: 2;
     grid-row: 1;
-    align-self: center;
-    margin: 0 0 3rem 0;
-
-    button {
-      background: #eebbc3;
-      color: #232946;
-      margin: 0 3rem;
-      padding: 0.75rem 3rem;
-      border: none;
-      outline: none;
-      cursor: pointer;
-    }
+    align-self: start;
+    margin: 6rem 0 0 0;
 
     p {
       padding: 1.5rem 3rem;
     }
   }
 
-  &--background {
+  &--reveal {
     grid-column: 2;
     grid-row: 2;
-    margin: 0 0 4.5rem 0;
+  }
+
+  &--background {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    margin: 0 0 1.5rem 0;
 
     p {
       padding: 1.5rem 3rem;
     }
+  }
+}
+
+.button {
+  background: #eebbc3;
+  color: #232946;
+  margin: 0 3rem;
+  padding: 0.75rem 3rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: block;
+
+  &--disabled {
+    pointer-events: none;
+    color: #eebbc3;
+    background: #232946;
   }
 }

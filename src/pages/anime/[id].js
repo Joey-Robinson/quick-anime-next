@@ -26,16 +26,13 @@ const Post = (props) => {
   // Anime news
   const id = results.mal_id
   const [animeNews, setAnimeNews] = useState({ articles: [] })
-  const [isHidden, setIsHidden] = useState(false)
-
-  const toggle = () => {
-    setIsHidden(!isHidden)
-  }
+  const [isDisabled, setIsDisabled] = useState(false)
 
   const newsCall = async () => {
-    const response = await fetch(`https://api.jikan.moe/v3/anime/${id}/news/`)
+    const response = await fetch(`https://api.jikan.moe/v3/anime/${id}/news`)
     const data = await response.json()
     setAnimeNews(data)
+    setIsDisabled(!isDisabled)
   }
 
   return (
@@ -44,6 +41,7 @@ const Post = (props) => {
       <div className="results">
         <AnimeTemplate
           onClick={newsCall}
+          className={!isDisabled ? "" : "button--disabled"}
           genres={genreNames}
           title={title}
           titlejp={titlejp}

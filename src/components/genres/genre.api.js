@@ -35,7 +35,7 @@ const GenreChange = () => {
         defaultValue={selectedGenre}
         handler={changeHandler}
       />
-      <ul style={{ margin: "9rem 0" }} className="list search">
+      <ul className="list search">
         {!isLoading ? (
           <li>
             <Spinner />{" "}
@@ -44,7 +44,7 @@ const GenreChange = () => {
           <>
             {selectedGenre.anime.map(
               ({ synopsis, mal_id, title, image_url, url }) => {
-                const pp = synopsis
+                const shortenedSynopsis = synopsis
                   .slice(0, 150)
                   .replace("[Written by MAL Rewrite]", "")
                 return (
@@ -55,7 +55,7 @@ const GenreChange = () => {
                     url={url}
                     href={`/anime/[id]/`}
                     as={`/anime/${mal_id}/`}
-                    synopsis={pp}
+                    synopsis={shortenedSynopsis}
                   />
                 )
               }
