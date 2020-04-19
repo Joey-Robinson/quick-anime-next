@@ -1,7 +1,6 @@
-import Link from "next/link"
-import fs from "fs"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+<<<<<<< HEAD
 
 const Home = ({ slugs }) => (
   <Layout>
@@ -21,15 +20,33 @@ const Home = ({ slugs }) => (
     </div>
   </Layout>
 )
+=======
+import { getAllPosts } from "../components/newsletter/newsletter.api"
+import MoreStories from "../components/newsletter/newsletter.more"
 
-export const getStaticProps = async () => {
-  const files = fs.readdirSync("content")
-  console.log(files)
+const Newsletter = ({ allPosts }) => {
+  const morePosts = allPosts
+  return (
+    <Layout>
+      <SEO title="Newsletter" description="Monthly Anime Musings" />
+      <MoreStories posts={morePosts} />
+    </Layout>
+  )
+}
+export async function getStaticProps() {
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ])
+>>>>>>> feature/blog
+
   return {
-    props: {
-      slugs: files.map((filename) => filename.replace(".md", "")),
-    },
+    props: { allPosts },
   }
 }
 
-export default Home
+export default Newsletter

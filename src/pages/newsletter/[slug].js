@@ -1,50 +1,78 @@
+<<<<<<< HEAD
 import React from "react"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import marked from "marked"
+=======
+import { useRouter } from "next/router"
+import ErrorPage from "next/error"
+import {
+  getPostBySlug,
+  getAllPosts,
+} from "../../components/newsletter/newsletter.api"
+import Head from "next/head"
+import markdownToHtml from "../../components/newsletter/newsletter.parser"
+>>>>>>> feature/blog
 import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+import PostBody from "../../components/newsletter/newsletter.body"
 
-const Post = ({ htmlString, data }) => {
+const NewsletterPosts = ({ post }) => {
+  const router = useRouter()
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />
+  }
   return (
     <Layout>
-      <SEO title={data.title} description={data.description} />
-      <div dangerouslySetInnerHTML={{ __html: htmlString }} />
+      {router.isFallback ? (
+        <div>Loading…</div>
+      ) : (
+        <article>
+          <Head>
+            <title>{post.title}</title>
+          </Head>
+          <PostBody content={post.content} />
+        </article>
+      )}
     </Layout>
   )
 }
 
-export const getStaticPaths = async () => {
-  const files = fs.readdirSync("content")
-  console.log("files: ", files)
-  const paths = files.map((filename) => ({
-    params: {
-      slug: filename.replace(".md", ""),
-    },
-  }))
+export async function getStaticProps({ params }) {
+  const post = getPostBySlug(params.slug, [
+    "title",
+    "date",
+    "slug",
+    "author",
+    "content",
+    "ogImage",
+    "coverImage",
+  ])
+  const content = await markdownToHtml(post.content || "")
 
   return {
-    paths,
+    props: {
+      post: {
+        ...post,
+        content,
+      },
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const posts = getAllPosts(["slug"])
+
+  return {
+    paths: posts.map((posts) => {
+      return {
+        params: {
+          slug: posts.slug,
+        },
+      }
+    }),
     fallback: false,
   }
 }
 
-export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMetadata = fs
-    .readFileSync(path.join("content", slug + ".md"))
-    .toString()
-
-  const parsedMarkdown = matter(markdownWithMetadata)
-
-  const htmlString = marked(parsedMarkdown.content)
-
-  return {
-    props: {
-      htmlString,
-      data: parsedMarkdown.data,
-    },
-  }
-}
-
-export default Post
+export default NewsletterPosts
