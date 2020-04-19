@@ -4,7 +4,6 @@ import {
   getPostBySlug,
   getAllPosts,
 } from "../../components/newsletter/newsletter.api"
-import Head from "next/head"
 import markdownToHtml from "../../components/newsletter/newsletter.parser"
 import Layout from "../../components/layout"
 import PostBody from "../../components/newsletter/newsletter.body"
