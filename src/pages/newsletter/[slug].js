@@ -9,7 +9,7 @@ import markdownToHtml from "../../components/newsletter/newsletter.parser"
 import Layout from "../../components/layout"
 import PostBody from "../../components/newsletter/newsletter.body"
 
-const NewsletterPosts = ({ post, morePosts, preview }) => {
+const NewsletterPosts = ({ post }) => {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />

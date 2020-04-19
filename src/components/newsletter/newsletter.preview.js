@@ -5,20 +5,53 @@ import Link from "next/link"
 
 const PostPreview = ({ title, coverImage, date, excerpt, slug }) => {
   return (
-    <div>
-      <div className="mb-5">
-        <CoverImage slug={slug} title={title} src={coverImage} />
-      </div>
-      <h3 className="text-3xl mb-3 leading-snug">
+    <li key={title} className="search--li li">
+      <div className="li--title">
         <Link as={`/newsletter/${slug}`} href="/newsletter/[slug]">
-          <a className="hover:underline">{title}</a>
+          <a>{title}</a>
         </Link>
-      </h3>
-      <div className="text-lg mb-4">
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "13rem 1fr",
+          gridTemplateRows: "auto 1fr",
+        }}
+      >
+        <CoverImage slug={slug} title={title} src={coverImage} />
+
+        <p style={{ gridColumn: "2", gridRow: "1", alignSelf: "start" }}>
+          {excerpt}
+        </p>
         <Date dateString={date} />
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-    </div>
+    </li>
+    //   <div
+    //     style={{
+    //       display: "grid",
+    //       gridTemplateColumns: "13rem 1fr",
+    //       gridTemplateRows: "auto 1fr",
+    //     }}
+    //   >
+    //     <LazyLoadImage alt={title} src={image_url} />
+    //     <p style={{ gridColumn: "2", gridRow: "1", alignSelf: "start" }}>
+    //       {!synopsis ? "No synopsis is available for this title" : synopsis}
+    //     </p>
+    //     <div
+    //       style={{
+    //         gridColumn: "2",
+    //         gridRow: "1",
+    //         justifySelf: "left",
+    //         alignSelf: "end",
+    //         padding: "0 0 0 6rem",
+    //       }}
+    //     >
+    //       <Link href={href} as={as}>
+    //         <a>Read More about it here.</a>
+    //       </Link>
+    //     </div>
+    //   </div>
+    // </li>
   )
 }
 

@@ -3,7 +3,7 @@ import PostPreview from "./newsletter.preview"
 
 const MoreStories = ({ posts }) => {
   return (
-    <div>
+    <ul className="list search">
       {posts.map((post) => (
         <PostPreview
           key={post.slug}
@@ -14,7 +14,7 @@ const MoreStories = ({ posts }) => {
           excerpt={post.excerpt}
         />
       ))}
-    </div>
+    </ul>
   )
 }
 
