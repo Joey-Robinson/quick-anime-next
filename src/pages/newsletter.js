@@ -11,7 +11,7 @@ const Home = ({ slugs }) => (
         return (
           <div key={slug}>
             <Link href={"/newsletter/" + slug}>
-              <a style={{ textTransform: "uppercase" }}>{title}</a>
+              <a>{title}</a>
             </Link>
           </div>
         )

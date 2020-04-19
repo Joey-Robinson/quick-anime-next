@@ -5,14 +5,12 @@ import matter from "gray-matter"
 import Head from "next/head"
 import marked from "marked"
 import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
 const Post = ({ htmlString, data }) => {
   return (
     <Layout>
-      <Head>
-        <title>{data.title}</title>
-        <meta title="description" content={data.description} />
-      </Head>
+      <SEO title={data.title} description={data.description} />
       <div dangerouslySetInnerHTML={{ __html: htmlString }} />
     </Layout>
   )
