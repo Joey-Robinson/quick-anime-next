@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Newsletter Readme
+  Newsletter
 </h1>
 
 ## 🎉 Folder Contents:
