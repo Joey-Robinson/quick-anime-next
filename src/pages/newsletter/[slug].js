@@ -20,7 +20,7 @@ const NewsletterPosts = ({ post }) => {
       {router.isFallback ? (
         <div>Loading…</div>
       ) : (
-        <article>
+        <article className="newsletter">
           <PostBody content={post.content} />
         </article>
       )}

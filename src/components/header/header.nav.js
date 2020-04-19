@@ -48,6 +48,16 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
+          <Link href="/anime/seasonal">
+            <a
+              className={router.pathname == "/anime/seasonal" ? "active" : ""}
+              title="Anime Seasonal Page"
+            >
+              Seasonal Anime
+            </a>
+          </Link>
+        </li>
+        <li>
           <Link href="/newsletter">
             <a
               className={router.pathname == "/newsletter" ? "active" : ""}
