@@ -7,39 +7,74 @@ const Navigation = () => {
   return (
     <nav aria-label="Primary">
       <ul>
-        <li className={router.pathname == "/" ? "active" : ""}>
+        <li>
           <Link href="/">
-            <a title="Home Page">Home</a>
+            <a
+              className={router.pathname == "/" ? "active" : ""}
+              title="Home Page"
+            >
+              Home
+            </a>
           </Link>
         </li>
-        <li className={router.pathname == "/anime" ? "active" : ""}>
+        <li>
           <Link href="/anime">
-            <a title="Anime Page">Anime</a>
+            <a
+              className={router.pathname == "/anime" ? "active" : ""}
+              title="Anime Page"
+            >
+              Anime
+            </a>
           </Link>
         </li>
-        <li className={router.pathname == "/anime/search" ? "active" : ""}>
+        <li>
           <Link href="/anime/search">
-            <a title="Anime Search Page">Anime Search</a>
+            <a
+              className={router.pathname == "/anime/search" ? "active" : ""}
+              title="Anime Search Page"
+            >
+              Anime Search
+            </a>
           </Link>
         </li>
-        <li className={router.pathname == "/anime/genres" ? "active" : ""}>
+        <li>
           <Link href="/anime/genres">
-            <a title="Anime Genres Page">Anime</a>
+            <a
+              className={router.pathname == "/anime/genres" ? "active" : ""}
+              title="Anime Genres Page"
+            >
+              Anime Genres
+            </a>
           </Link>
         </li>
-        <li className={router.pathname == "/newsletter" ? "active" : ""}>
+        <li>
           <Link href="/newsletter">
-            <a title="Newsletter Page">Newsletter</a>
+            <a
+              className={router.pathname == "/newsletter" ? "active" : ""}
+              title="Newsletter Page"
+            >
+              Newsletter
+            </a>
           </Link>
         </li>
-        <li className={router.pathname == "/contact" ? "active" : ""}>
+        <li>
           <Link href="/contact">
-            <a title="Contact Page">Contact</a>
+            <a
+              className={router.pathname == "/contact" ? "active" : ""}
+              title="Contact Page"
+            >
+              Contact
+            </a>
           </Link>
         </li>
-        <li className={router.pathname == "/about" ? "active" : ""}>
+        <li>
           <Link href="/about">
-            <a title="About Page">About</a>
+            <a
+              className={router.pathname == "/about" ? "active" : ""}
+              title="About Page"
+            >
+              About
+            </a>
           </Link>
         </li>
       </ul>

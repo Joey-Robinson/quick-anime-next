@@ -1,13 +1,30 @@
 nav {
   display: grid;
   height: 100%;
-  justify-items: center;
 
   ul {
     list-style: none;
+    width: 100%;
+    text-align: center;
+
 
     li {
       margin: 4.5rem 0;
+
+      a {
+        color: #232946;
+        font-size: 2rem;
+        padding: 1.5rem 0;
+        cursor: pointer;
+        font-weight: 700;
+      }
     }
+  }
+
+  .active {
+    display: block;
+    background: linear-gradient(to left, #b8c1ec, #232946);
+    font-weight: 700;
+    color: #fffffe;
   }
 }
