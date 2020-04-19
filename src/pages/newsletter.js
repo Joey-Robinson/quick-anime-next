@@ -1,9 +1,11 @@
 import Link from "next/link"
 import fs from "fs"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Home = ({ slugs }) => (
   <Layout>
+    <SEO title="Newsletter" description="Monthly Anime Musings" />
     <div>
       slugs:
       {slugs.map((slug) => {
