@@ -1,33 +1,46 @@
-import Link from "next/link"
-import fs from "fs"
+// import Link from "next/link"
+// import fs from "fs"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
+import HeroPost from "../components/newsletter/newsletter.heropost"
+import { getAllPosts } from "../components/newsletter/newsletter.api"
+import MoreStories from "../components/newsletter/newsletter.more"
 
-const Home = ({ slugs }) => (
-  <Layout>
-    <div>
-      slugs:
-      {slugs.map((slug) => {
-        const title = slug.split("-").join(" ")
-        return (
-          <div key={slug}>
-            <Link href={"/newsletter/" + slug}>
-              <a>{title}</a>
-            </Link>
-          </div>
-        )
-      })}
-    </div>
-  </Layout>
-)
+const Newsletter = ({ allPosts }) => {
+  const heroPost = allPosts[0]
+  const morePosts = allPosts.slice(1)
+  return (
+    <Layout>
+      <SEO title="Newsletter" description="Monthly Anime Musings" />
+      <div>
+        {heroPost && (
+          <HeroPost
+            title={heroPost.title}
+            coverImage={heroPost.coverImage}
+            date={heroPost.date}
+            author={heroPost.author}
+            slug={heroPost.slug}
+            excerpt={heroPost.excerpt}
+          />
+        )}
+        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      </div>
+    </Layout>
+  )
+}
+export async function getStaticProps() {
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ])
 
-export const getStaticProps = async () => {
-  const files = fs.readdirSync("content")
-  console.log(files)
   return {
-    props: {
-      slugs: files.map((filename) => filename.replace(".md", "")),
-    },
+    props: { allPosts },
   }
 }
 
-export default Home
+export default Newsletter
