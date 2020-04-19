@@ -8,6 +8,7 @@ import Head from "next/head"
 import markdownToHtml from "../../components/newsletter/newsletter.parser"
 import Layout from "../../components/layout"
 import PostBody from "../../components/newsletter/newsletter.body"
+import SEO from "../../components/seo"
 
 const NewsletterPosts = ({ post }) => {
   const router = useRouter()
@@ -16,13 +17,11 @@ const NewsletterPosts = ({ post }) => {
   }
   return (
     <Layout>
+      <SEO title={post.title} description={post.description} />
       {router.isFallback ? (
         <div>Loading…</div>
       ) : (
         <article>
-          <Head>
-            <title>{post.title}</title>
-          </Head>
           <PostBody content={post.content} />
         </article>
       )}
