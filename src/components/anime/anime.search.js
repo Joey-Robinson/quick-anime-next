@@ -3,20 +3,26 @@ import React from "react"
 const AnimeSearch = ({ onSubmit, value, onChange }) => {
   return (
     <div className="search--input">
-      <form className="field" onSubmit={onSubmit} autoComplete="off" noValidate>
-        <label htmlFor="anime-search">
-          <span>Search For Anime</span>
-          <input
-            id="anime-search"
-            label="Search Anmie"
-            aria-label="Search For Anime"
-            placeholder="Search For Anime"
-            type="text"
-            value={value}
-            className="field--input"
-            onChange={onChange}
-          />
-        </label>
+      <label htmlFor="anime-search">
+        <span>Search For Anime</span>
+      </label>
+      <form
+        role="search"
+        className="field"
+        onSubmit={onSubmit}
+        autoComplete="off"
+        noValidate
+      >
+        <input
+          id="anime-search"
+          label="Search Anmie"
+          aria-label="Search for anime on this page"
+          placeholder="Search For Anime"
+          type="search"
+          value={value}
+          className="field--input"
+          onChange={onChange}
+        />
       </form>
     </div>
   )

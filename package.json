@@ -17,5 +17,8 @@
     "react-dom": "16.13.1",
     "react-lazy-load-image-component": "^1.4.3",
     "sass": "^1.26.3"
+  },
+  "devDependencies": {
+    "eslint-plugin-jsx-a11y": "^6.2.3"
   }
 }

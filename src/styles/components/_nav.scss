@@ -1,5 +1,13 @@
 nav {
+  display: grid;
+  height: 100%;
+  justify-items: center;
+
   ul {
     list-style: none;
+
+    li {
+      margin: 4.5rem 0;
+    }
   }
 }

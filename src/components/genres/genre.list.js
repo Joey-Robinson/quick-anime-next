@@ -9,6 +9,7 @@ const GenreList = ({ href, as, mal_id, image_url, title, synopsis }) => (
     </div>
 
     <div
+      aria-label={`${title}'s image`}
       style={{
         display: "grid",
         gridTemplateColumns: "13rem 1fr",

@@ -48,6 +48,7 @@ const AnimeTemplate = ({
     </div>
     <div className="results--reveal">
       <AnimeButton
+        type="button"
         message="View News"
         onClick={onClick}
         className={className}

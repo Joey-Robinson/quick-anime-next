@@ -6,6 +6,7 @@ const GenreSelect = ({ handler, defaultValue }) => (
     <select
       id="genres"
       name="genres"
+      aria-label="Select A Genre"
       defaultValue={defaultValue}
       onChange={handler}
     >
