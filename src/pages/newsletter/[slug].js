@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import React from "react"
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
-import marked from "marked"
-=======
 import { useRouter } from "next/router"
 import ErrorPage from "next/error"
 import {
@@ -13,7 +6,6 @@ import {
 } from "../../components/newsletter/newsletter.api"
 import Head from "next/head"
 import markdownToHtml from "../../components/newsletter/newsletter.parser"
->>>>>>> feature/blog
 import Layout from "../../components/layout"
 import PostBody from "../../components/newsletter/newsletter.body"
 
