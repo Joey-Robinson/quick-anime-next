@@ -1,9 +1,10 @@
+import React, { useMemo } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { getAllPosts } from "../components/newsletter/newsletter.api"
 import MoreStories from "../components/newsletter/newsletter.more"
 
-const Newsletter = ({ allPosts }) => {
+const Newsletter = useMemo(({ allPosts }) => {
   const morePosts = allPosts
   return (
     <Layout>
@@ -11,7 +12,8 @@ const Newsletter = ({ allPosts }) => {
       <MoreStories posts={morePosts} />
     </Layout>
   )
-}
+})
+
 export async function getStaticProps() {
   const allPosts = getAllPosts([
     "title",
