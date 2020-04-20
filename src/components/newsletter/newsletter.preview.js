@@ -1,7 +1,7 @@
-import React from "react"
-import Date from "./newsletter.date"
-import CoverImage from "./newsletter.coverimage"
 import Link from "next/link"
+import React from "react"
+import CoverImage from "./newsletter.coverimage"
+import Date from "./newsletter.date"
 
 const PostPreview = ({ title, coverImage, date, excerpt, slug }) => {
   return (

@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { getAllPosts } from "../components/newsletter/newsletter.api"
 import MoreStories from "../components/newsletter/newsletter.more"
+import SEO from "../components/seo"
 
 const Newsletter = ({ allPosts }) => {
   const morePosts = allPosts

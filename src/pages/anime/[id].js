@@ -1,9 +1,9 @@
-import React, { useState } from "react"
 import fetch from "isomorphic-unfetch"
+import React, { useState } from "react"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import AnimeTemplate from "../../template/anime.template"
 import NewsTemplate from "../../template/news.template"
-import SEO from "../../components/seo"
-import Layout from "../../components/layout"
 
 const Post = (props) => {
   const results = props.anime
@@ -35,6 +35,10 @@ const Post = (props) => {
     setIsDisabled(!isDisabled)
   }
 
+  // No background information
+  const noBackgroundInformation =
+    "There is currently no background information given for this anime."
+
   return (
     <Layout>
       <SEO title={title} />
@@ -47,7 +51,7 @@ const Post = (props) => {
           titlejp={titlejp}
           synopsis={synopsis}
           duration={duration}
-          background={background}
+          background={!background ? noBackgroundInformation : background}
           image={image}
           source={source}
           episodes={episodes}

@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
-import SEO from "../../components/seo"
 import SeasonalList from "../../components/seasonal/seasonal.list"
-
-// https://api.jikan.moe/v3/season
+import SEO from "../../components/seo"
 
 const Seasonal = () => {
   const [seasonalData, setSeasonalData] = useState({ anime: [] })
@@ -22,17 +20,9 @@ const Seasonal = () => {
   const seasonalName = seasonalData.season_name
 
   return (
-    <Layout>
+    <Layout className="seasonal">
       <SEO title="Seasonal Anime" description="Anime for this season" />
-      <h2
-        style={{
-          gridRow: "1",
-          justifySelf: "center",
-          gridColumn: "1 / -1",
-          margin: "3rem 0 0 0",
-          fontSize: "3rem",
-        }}
-      >
+      <h2>
         Listing Anime for {seasonalName} {seasonalYear}
       </h2>
       <ul className="list search">
