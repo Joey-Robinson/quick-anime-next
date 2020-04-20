@@ -3,6 +3,14 @@ import React from "react"
 const AnimeSearch = ({ onSubmit, value, onChange }) => {
   return (
     <div className="search--input">
+      <style jsx>{`
+        .search--input {
+          margin: 250px;
+        }
+        p {
+          color: blue;
+        }
+      `}</style>
       <label htmlFor="anime-search">
         <span>Search For Anime</span>
       </label>

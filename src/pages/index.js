@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 
 const Index = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home" description="Quck Anime - Home Page" />
     <h2>From Home</h2>
   </Layout>
 )

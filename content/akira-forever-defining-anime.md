@@ -1,10 +1,11 @@
 ---
 title: "Akira, forever defining anime."
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus."
+description: "Why and how Akira has - for 30 years now - defined anime, anime culture, and how it has influenced generations of anime to come."
 coverImage: "/assets/blog/akiraim.jpg"
 date: "2020-03-16T05:35:07.322Z"
 author:
-  name: Tim Neutkens
+  name: Joey Robinson
 ogImage:
   url: "/assets/blog/akiraim.jpg"
 ---
