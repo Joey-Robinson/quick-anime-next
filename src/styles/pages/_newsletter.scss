@@ -1,5 +1,17 @@
 .newsletter {
-  color: #232946;
+  overflow-y: scroll;
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch;
+
+  h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 6rem 0;
+  }
+
+  a {
+    padding: 0 0 0 9rem;
+  }
 
   p {
     padding: 1.5rem 9rem;

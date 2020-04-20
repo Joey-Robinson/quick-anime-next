@@ -8,6 +8,7 @@ import markdownToHtml from "../../components/newsletter/newsletter.parser"
 import Layout from "../../components/layout"
 import PostBody from "../../components/newsletter/newsletter.body"
 import SEO from "../../components/seo"
+import Link from "next/link"
 
 const NewsletterPosts = ({ post }) => {
   const router = useRouter()
