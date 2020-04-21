@@ -23,6 +23,14 @@ const AnimeTemplate = ({
     </div>
     <div className="results--image">
       <img src={image} alt={title} />
+      <>
+        <AnimeButton
+          type="button"
+          message="View News"
+          onClick={onClick}
+          className={className}
+        />
+      </>
     </div>
     <div className="results--alternative">
       <h3>
@@ -47,14 +55,6 @@ const AnimeTemplate = ({
       <p>
         <span>Background: </span> {background}
       </p>
-    </div>
-    <div className="results--reveal">
-      <AnimeButton
-        type="button"
-        message="View News"
-        onClick={onClick}
-        className={className}
-      />
     </div>
     <div className="results--information">
       <h3>
