@@ -18,8 +18,10 @@ const AnimeTemplate = ({
   className = "button",
 }) => (
   <>
-    <div className="results--image">
+    <div className="results--heading">
       <h1>{title}</h1>
+    </div>
+    <div className="results--image">
       <img src={image} alt={title} />
     </div>
     <div className="results--alternative">
