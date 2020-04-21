@@ -1,5 +1,5 @@
-import React from "react"
 import Link from "next/link"
+import React from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 const CoverImage = ({ title, src, slug }) => {

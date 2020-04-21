@@ -4,26 +4,24 @@ import CoverImage from "./newsletter.coverimage"
 import Date from "./newsletter.date"
 
 const PostPreview = ({ title, coverImage, date, excerpt, slug }) => {
+  const shortenedExcerpt = excerpt.slice(0, 150)
   return (
-    <li key={title} className="search--li li">
-      <div className="li--title">
-        <Link as={`/newsletter/${slug}`} href="/newsletter/[slug]">
-          <a>{title}</a>
-        </Link>
+    <li key={title} className="blog--li news">
+      <div className="news--title">
+        <h5>
+          <Link as={`/newsletter/${slug}`} href="/newsletter/[slug]">
+            <a>{title}</a>
+          </Link>
+        </h5>
       </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "13rem 1fr",
-          gridTemplateRows: "auto 1fr",
-        }}
-      >
-        <CoverImage slug={slug} title={title} src={coverImage} />
-
-        <p style={{ gridColumn: "2", gridRow: "1", alignSelf: "start" }}>
-          {excerpt}
-        </p>
+      <div className="news--date">
         <Date dateString={date} />
+      </div>
+      <div className="news--image">
+        <CoverImage slug={slug} title={title} src={coverImage} />
+      </div>
+      <div className="news--excerpt">
+        <p>{shortenedExcerpt}</p>
       </div>
     </li>
   )

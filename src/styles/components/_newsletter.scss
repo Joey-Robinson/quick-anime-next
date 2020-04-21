@@ -1,0 +1,62 @@
+.blog {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+
+  li:nth-child(odd) {
+    grid-column: 1;
+  }
+
+  li:nth-child(even) {
+    grid-column: 2;
+  }
+}
+
+.news {
+  width: 50rem;
+  background: #232946;
+  display: grid;
+  grid-template-columns: 1fr;
+  color: #b8c1ec;
+  scroll-snap-align: start;
+  margin: 1.5rem 0 4.5rem 0;
+
+  &--image {
+    width: 25rem;
+    height: 25rem;
+    padding: 0 3rem;
+    margin: 1rem 0;
+
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  time {
+    padding: 0 3rem;
+    font-size: 1.6rem;
+  }
+
+  p {
+    margin: 1.5rem 0;
+    padding: 0 6rem 1.5rem 3rem;
+    font-size: 1.8rem;
+  }
+
+  h5 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    padding: 0 3rem;
+  }
+
+  a {
+    color: #b8c1ec;
+    font-size: 1.6rem;
+  }
+
+}
