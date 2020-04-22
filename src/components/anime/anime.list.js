@@ -1,5 +1,5 @@
-import React from "react"
 import Link from "next/link"
+import React from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 const AnimeList = ({ href, as, mal_id, image_url, title, synopsis }) => {
