@@ -3,7 +3,7 @@ import PostPreview from "./newsletter.preview"
 
 const MoreStories = ({ posts }) => {
   return (
-    <div className="post">
+    <div className="container">
       <ul className="blog">
         {posts.map((post) => (
           <PostPreview

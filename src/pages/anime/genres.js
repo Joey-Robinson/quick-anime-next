@@ -6,7 +6,7 @@ import SEO from "../../components/seo"
 const Genres = () => (
   <Layout>
     <SEO title="Genres" />
-    <div className="post">
+    <div className="container">
       <GenreChange />
     </div>
   </Layout>

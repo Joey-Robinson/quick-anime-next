@@ -44,7 +44,7 @@ const Search = () => {
   return (
     <Layout>
       <SEO title="Search" />
-      <div className="post">
+      <div className="container">
         <AnimeSearch
           onSubmit={onSubmitHandler}
           value={searchedAnime}
