@@ -14,7 +14,6 @@ nav {
       a {
         color: #232946;
         font-size: 2rem;
-        padding: 1.5rem 0;
         cursor: pointer;
         font-weight: 700;
       }
@@ -22,9 +21,10 @@ nav {
   }
 
   .active {
+    font-size: 2rem;
     display: block;
-    background: linear-gradient(to left, #b8c1ec, #232946);
+    background: #232946;
     font-weight: 700;
-    color: #fffffe;
+    color: #eebbc3;
   }
 }

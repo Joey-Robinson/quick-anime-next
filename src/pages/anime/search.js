@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import Layout from "../../components/layout"
 import AnimeList from "../../components/anime/anime.list"
 import AnimeSearch from "../../components/anime/anime.search"
+import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
 const Search = () => {
@@ -44,28 +44,30 @@ const Search = () => {
   return (
     <Layout>
       <SEO title="Search" />
-      <AnimeSearch
-        onSubmit={onSubmitHandler}
-        value={searchedAnime}
-        onChange={onChangeHandler}
-      />
-      <ul className="list search">
-        {animeData.results.map(
-          ({ synopsis, mal_id, title, image_url, url }) => {
-            return (
-              <AnimeList
-                key={mal_id}
-                title={title}
-                image_url={image_url}
-                url={url}
-                href={`/anime/[id]/`}
-                as={`/anime/${mal_id}/`}
-                synopsis={synopsis}
-              />
-            )
-          }
-        )}
-      </ul>
+      <div className="post">
+        <AnimeSearch
+          onSubmit={onSubmitHandler}
+          value={searchedAnime}
+          onChange={onChangeHandler}
+        />
+        <ul className="list search">
+          {animeData.results.map(
+            ({ synopsis, mal_id, title, image_url, url }) => {
+              return (
+                <AnimeList
+                  key={mal_id}
+                  title={title}
+                  image_url={image_url}
+                  url={url}
+                  href={`/anime/[id]/`}
+                  as={`/anime/${mal_id}/`}
+                  synopsis={synopsis}
+                />
+              )
+            }
+          )}
+        </ul>
+      </div>
     </Layout>
   )
 }
