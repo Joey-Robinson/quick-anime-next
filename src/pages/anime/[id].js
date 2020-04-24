@@ -43,45 +43,43 @@ const Post = (props) => {
   return (
     <Layout className="ani">
       <SEO title={title} />
-      <Tabs>
+      <Tabs className="tab">
         <TabList>
           <Tab>Results</Tab>
           <Tab onClick={newsCall}>News</Tab>
         </TabList>
-        <div className="results">
-          <TabPanel className="results">
-            <AnimeTemplate
-              genres={genreNames}
-              title={title}
-              titlejp={titlejp}
-              synopsis={synopsis}
-              duration={duration}
-              background={!background ? noBackgroundInformation : background}
-              image={image}
-              source={source}
-              episodes={episodes}
-              rating={rating}
-              url={url}
-              airing={airing}
-            />
-          </TabPanel>
-          <TabPanel>
-            <ul className="results--news">
-              {animeNews.articles.map(
-                ({ forum_url, image_url, intro, title, url }) => (
-                  <NewsTemplate
-                    key={title}
-                    title={title}
-                    forum_url={forum_url}
-                    image_url={image_url}
-                    url={url}
-                    intro={intro}
-                  />
-                )
-              )}
-            </ul>
-          </TabPanel>
-        </div>
+        <TabPanel className="results">
+          <AnimeTemplate
+            genres={genreNames}
+            title={title}
+            titlejp={titlejp}
+            synopsis={synopsis}
+            duration={duration}
+            background={!background ? noBackgroundInformation : background}
+            image={image}
+            source={source}
+            episodes={episodes}
+            rating={rating}
+            url={url}
+            airing={airing}
+          />
+        </TabPanel>
+        <TabPanel>
+          <ul className="results--news">
+            {animeNews.articles.map(
+              ({ forum_url, image_url, intro, title, url }) => (
+                <NewsTemplate
+                  key={title}
+                  title={title}
+                  forum_url={forum_url}
+                  image_url={image_url}
+                  url={url}
+                  intro={intro}
+                />
+              )
+            )}
+          </ul>
+        </TabPanel>
       </Tabs>
     </Layout>
   )
