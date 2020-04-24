@@ -1,5 +1,4 @@
 import React from "react"
-import AnimeButton from "../components/anime.button"
 
 const AnimeTemplate = ({
   title,
@@ -14,8 +13,6 @@ const AnimeTemplate = ({
   background,
   genres,
   source,
-  onClick,
-  className = "button",
 }) => (
   <>
     <div className="results--heading">
@@ -23,14 +20,6 @@ const AnimeTemplate = ({
     </div>
     <div className="results--image">
       <img src={image} alt={title} />
-      <>
-        <AnimeButton
-          type="button"
-          message="View News"
-          onClick={onClick}
-          className={className}
-        />
-      </>
     </div>
     <div className="results--alternative">
       <h3>

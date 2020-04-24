@@ -1,5 +1,6 @@
 import fetch from "isomorphic-unfetch"
 import React, { useState } from "react"
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import AnimeTemplate from "../../template/anime.template"
@@ -40,40 +41,48 @@ const Post = (props) => {
     "There is currently no background information given for this anime."
 
   return (
-    <Layout>
+    <Layout className="ani">
       <SEO title={title} />
-      <div className="results">
-        <AnimeTemplate
-          onClick={newsCall}
-          className={!isDisabled ? "" : "button--disabled"}
-          genres={genreNames}
-          title={title}
-          titlejp={titlejp}
-          synopsis={synopsis}
-          duration={duration}
-          background={!background ? noBackgroundInformation : background}
-          image={image}
-          source={source}
-          episodes={episodes}
-          rating={rating}
-          url={url}
-          airing={airing}
-        />
-        <ul className="results--news">
-          {animeNews.articles.map(
-            ({ forum_url, image_url, intro, title, url }) => (
-              <NewsTemplate
-                key={title}
-                title={title}
-                forum_url={forum_url}
-                image_url={image_url}
-                url={url}
-                intro={intro}
-              />
-            )
-          )}
-        </ul>
-      </div>
+      <Tabs>
+        <TabList>
+          <Tab>Results</Tab>
+          <Tab onClick={newsCall}>News</Tab>
+        </TabList>
+        <div className="results">
+          <TabPanel className="results">
+            <AnimeTemplate
+              genres={genreNames}
+              title={title}
+              titlejp={titlejp}
+              synopsis={synopsis}
+              duration={duration}
+              background={!background ? noBackgroundInformation : background}
+              image={image}
+              source={source}
+              episodes={episodes}
+              rating={rating}
+              url={url}
+              airing={airing}
+            />
+          </TabPanel>
+          <TabPanel>
+            <ul className="results--news">
+              {animeNews.articles.map(
+                ({ forum_url, image_url, intro, title, url }) => (
+                  <NewsTemplate
+                    key={title}
+                    title={title}
+                    forum_url={forum_url}
+                    image_url={image_url}
+                    url={url}
+                    intro={intro}
+                  />
+                )
+              )}
+            </ul>
+          </TabPanel>
+        </div>
+      </Tabs>
     </Layout>
   )
 }
