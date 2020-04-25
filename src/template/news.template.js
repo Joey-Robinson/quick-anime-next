@@ -1,10 +1,19 @@
+import Link from "next/link"
 import React from "react"
-import Spinner from "../components/spinner"
 import { LazyLoadImage } from "react-lazy-load-image-component"
+import Spinner from "../components/spinner"
 
-const NewsTemplate = ({ forum_url, image_url, intro, title, url }) => (
+const NewsTemplate = ({
+  mal_id,
+  href,
+  as,
+  image_url,
+  recommendation_count,
+  recommendation_url,
+  title,
+}) => (
   <>
-    <li key={title} className="info">
+    <li key={mal_id} className="info">
       <div className="info--title">
         <h5>
           {title}
@@ -12,7 +21,7 @@ const NewsTemplate = ({ forum_url, image_url, intro, title, url }) => (
         </h5>
       </div>
       <div className="info--image">
-        <a href={forum_url} target="_blank" rel="noopner noreferrer">
+        <a href={recommendation_url} target="_blank" rel="noopner noreferrer">
           {!image_url ? (
             <Spinner />
           ) : (
@@ -21,14 +30,13 @@ const NewsTemplate = ({ forum_url, image_url, intro, title, url }) => (
         </a>
       </div>
       <div className="info--intro">
-        <p>{intro}</p>
+        <p>{recommendation_count}</p>
       </div>
 
       <div className="info--external">
-        <p>Read more about:</p>
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          {title}
-        </a>
+        <Link href={href} as={as}>
+          <a>Read More about it here.</a>
+        </Link>
       </div>
     </li>
   </>

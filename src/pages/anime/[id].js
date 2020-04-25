@@ -7,6 +7,7 @@ import AnimeTemplate from "../../template/anime.template"
 import NewsTemplate from "../../template/news.template"
 
 const Post = (props) => {
+  console.log(props)
   const results = props.anime
 
   // Anime Information
@@ -26,14 +27,14 @@ const Post = (props) => {
 
   // Anime news
   const id = results.mal_id
-  const [animeNews, setAnimeNews] = useState({ articles: [] })
-  const [isDisabled, setIsDisabled] = useState(false)
+  const [animeRecs, setAnimeRecs] = useState({ recommendations: [] })
 
   const newsCall = async () => {
-    const response = await fetch(`https://api.jikan.moe/v3/anime/${id}/news`)
+    const response = await fetch(
+      `https://api.jikan.moe/v3/anime/${id}/recommendations`
+    )
     const data = await response.json()
-    setAnimeNews(data)
-    setIsDisabled(!isDisabled)
+    setAnimeRecs(data)
   }
 
   // No background information
@@ -66,15 +67,25 @@ const Post = (props) => {
         </TabPanel>
         <TabPanel>
           <ul className="results--news">
-            {animeNews.articles.map(
-              ({ forum_url, image_url, intro, title, url }) => (
+            {animeRecs.recommendations.map(
+              ({
+                mal_id,
+                href,
+                as,
+                image_url,
+                recommendation_count,
+                recommendation_url,
+                title,
+              }) => (
                 <NewsTemplate
                   key={title}
                   title={title}
-                  forum_url={forum_url}
+                  recommendation_url={recommendation_url}
                   image_url={image_url}
                   url={url}
-                  intro={intro}
+                  recommendation_count={recommendation_count}
+                  href={`/anime/[id]/`}
+                  as={`/anime/${mal_id}/`}
                 />
               )
             )}
