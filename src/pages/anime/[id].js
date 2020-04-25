@@ -1,6 +1,5 @@
 import fetch from "isomorphic-unfetch"
 import React, { useState } from "react"
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import AnimeTemplate from "../../template/anime.template"
@@ -42,56 +41,48 @@ const Post = (props) => {
     "There is currently no background information given for this anime."
 
   return (
-    <Layout className="ani">
+    <Layout>
       <SEO title={title} />
-      <Tabs className="tab">
-        <TabList>
-          <Tab>Results</Tab>
-          <Tab onClick={newsCall}>News</Tab>
-        </TabList>
-        <TabPanel className="results">
-          <AnimeTemplate
-            genres={genreNames}
-            title={title}
-            titlejp={titlejp}
-            synopsis={synopsis}
-            duration={duration}
-            background={!background ? noBackgroundInformation : background}
-            image={image}
-            source={source}
-            episodes={episodes}
-            rating={rating}
-            url={url}
-            airing={airing}
-          />
-        </TabPanel>
-        <TabPanel>
-          <ul className="results--news">
-            {animeRecs.recommendations.map(
-              ({
-                mal_id,
-                href,
-                as,
-                image_url,
-                recommendation_count,
-                recommendation_url,
-                title,
-              }) => (
-                <NewsTemplate
-                  key={title}
-                  title={title}
-                  recommendation_url={recommendation_url}
-                  image_url={image_url}
-                  url={url}
-                  recommendation_count={recommendation_count}
-                  href={`/anime/[id]/`}
-                  as={`/anime/${mal_id}/`}
-                />
-              )
-            )}
-          </ul>
-        </TabPanel>
-      </Tabs>
+      <div className="results">
+        <AnimeTemplate
+          genres={genreNames}
+          title={title}
+          titlejp={titlejp}
+          synopsis={synopsis}
+          duration={duration}
+          background={!background ? noBackgroundInformation : background}
+          image={image}
+          source={source}
+          episodes={episodes}
+          rating={rating}
+          url={url}
+          airing={airing}
+        />
+        <ul className="results--news">
+          {animeRecs.recommendations.map(
+            ({
+              mal_id,
+              href,
+              as,
+              image_url,
+              recommendation_count,
+              recommendation_url,
+              title,
+            }) => (
+              <NewsTemplate
+                key={title}
+                title={title}
+                recommendation_url={recommendation_url}
+                image_url={image_url}
+                url={url}
+                recommendation_count={recommendation_count}
+                href={`/anime/[id]/`}
+                as={`/anime/${mal_id}/`}
+              />
+            )
+          )}
+        </ul>
+      </div>
     </Layout>
   )
 }
