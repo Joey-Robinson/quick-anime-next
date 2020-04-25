@@ -1,12 +1,11 @@
 import fetch from "isomorphic-unfetch"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import AnimeTemplate from "../../template/anime.template"
 import NewsTemplate from "../../template/news.template"
 
 const Post = (props) => {
-  console.log(props)
   const results = props.anime
 
   // Anime Information
@@ -35,6 +34,10 @@ const Post = (props) => {
     const data = await response.json()
     setAnimeRecs(data)
   }
+
+  useEffect(() => {
+    newsCall()
+  }, [])
 
   // No background information
   const noBackgroundInformation =
