@@ -4,12 +4,8 @@
   background: #b8c1ec;
   grid-template-columns: 30rem 1fr;
   color: #232946;
-  overflow: hidden;
   overflow-y: scroll;
   will-change: scroll-position;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: y mandatory;
-  scroll-snap-points-y: repeat(150px);
   grid-template-rows: 1fr;
 
   &--heading {
@@ -105,6 +101,7 @@
     grid-column: 2;
     grid-row: 3;
     align-self: start;
+
     p {
       padding: 0 3rem;
     }

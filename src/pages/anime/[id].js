@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import AnimeTemplate from "../../template/anime.template"
-import NewsTemplate from "../../template/news.template"
+import RecommendationsTemplate from "../../template/recommendations.template"
 
 const Post = (props) => {
   const results = props.anime
@@ -62,26 +62,30 @@ const Post = (props) => {
           airing={airing}
         />
         <ul className="results--news">
-          {animeRecs.recommendations.map(
-            ({
-              mal_id,
-              href,
-              as,
-              image_url,
-              recommendation_count,
-              recommendation_url,
-              title,
-            }) => (
-              <NewsTemplate
-                key={title}
-                title={title}
-                recommendation_url={recommendation_url}
-                image_url={image_url}
-                url={url}
-                recommendation_count={recommendation_count}
-                href={`/anime/[id]/`}
-                as={`/anime/${mal_id}/`}
-              />
+          {animeRecs.recommendations == "" ? (
+            <li>There are currently no recommendations for title</li>
+          ) : (
+            animeRecs.recommendations.map(
+              ({
+                mal_id,
+                href,
+                as,
+                image_url,
+                recommendation_count,
+                recommendation_url,
+                title,
+              }) => (
+                <RecommendationsTemplate
+                  key={title}
+                  title={title}
+                  recommendation_url={recommendation_url}
+                  image_url={image_url}
+                  url={url}
+                  recommendation_count={recommendation_count}
+                  href={`/anime/[id]/`}
+                  as={`/anime/${mal_id}/`}
+                />
+              )
             )
           )}
         </ul>

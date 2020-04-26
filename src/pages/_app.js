@@ -1,4 +1,3 @@
-import "react-tabs/style/react-tabs.css"
 import "../../next-seo.config"
 import "../styles/main.scss"
 
