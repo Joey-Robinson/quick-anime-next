@@ -2,6 +2,7 @@ import fetch from "isomorphic-unfetch"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import Spinner from "../../components/spinner"
 import AnimeTemplate from "../../template/anime.template"
 import RecommendationsTemplate from "../../template/recommendations.template"
 
@@ -41,15 +42,13 @@ const Post = (props) => {
 
   // No background information
 
-  const noRecommendations = "There are currently no recommendations for title"
-
   const smugkaguya = (
     <img src="/static/smugkaguya.jpg" alt="Kagyua being smug." />
   )
 
   const noBackground = (
     <>
-      <p>There is currently no background information given for this anime.</p>
+      There is currently no background information given for this anime.
       {smugkaguya}
     </>
   )
@@ -73,32 +72,26 @@ const Post = (props) => {
           airing={airing}
         />
         <ul className="results--recommendations">
-          {animeRecs.recommendations == "" ? (
-            <li>
-              <p>{noRecommendations}</p>
-            </li>
-          ) : (
-            animeRecs.recommendations.map(
-              ({
-                mal_id,
-                href,
-                as,
-                image_url,
-                recommendation_count,
-                recommendation_url,
-                title,
-              }) => (
-                <RecommendationsTemplate
-                  key={`${mal_id}/${title}`}
-                  title={title}
-                  recommendation_url={recommendation_url}
-                  image_url={image_url}
-                  url={url}
-                  recommendation_count={recommendation_count}
-                  href={`/anime/[id]/`}
-                  as={`/anime/${mal_id}/`}
-                />
-              )
+          {animeRecs.recommendations.map(
+            ({
+              mal_id,
+              href,
+              as,
+              image_url,
+              recommendation_count,
+              recommendation_url,
+              title,
+            }) => (
+              <RecommendationsTemplate
+                key={`${mal_id}/${title}`}
+                title={title}
+                recommendation_url={recommendation_url}
+                image_url={!image_url ? <Spinner /> : image_url}
+                url={url}
+                recommendation_count={recommendation_count}
+                href={`/anime/[id]/`}
+                as={`/anime/${mal_id}/`}
+              />
             )
           )}
         </ul>

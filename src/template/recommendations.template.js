@@ -1,7 +1,6 @@
 import Link from "next/link"
 import React from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
-import Spinner from "../components/spinner"
 
 const RecommendationsTemplate = ({
   mal_id,
@@ -19,11 +18,7 @@ const RecommendationsTemplate = ({
       </div>
       <div className="info--image">
         <a href={recommendation_url} target="_blank" rel="noopner noreferrer">
-          {!image_url ? (
-            <Spinner />
-          ) : (
-            <LazyLoadImage alt={title} src={image_url} />
-          )}
+          <LazyLoadImage alt={title} src={image_url} />
         </a>
       </div>
       <div className="info--intro">
