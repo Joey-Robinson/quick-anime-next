@@ -15,10 +15,7 @@ const RecommendationsTemplate = ({
   <>
     <li key={mal_id} className="info">
       <div className="info--title">
-        <h5>
-          {title}
-          <hr />
-        </h5>
+        <h5>{title}</h5>
       </div>
       <div className="info--image">
         <a href={recommendation_url} target="_blank" rel="noopner noreferrer">

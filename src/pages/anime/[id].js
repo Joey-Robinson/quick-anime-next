@@ -61,7 +61,7 @@ const Post = (props) => {
           url={url}
           airing={airing}
         />
-        <ul className="results--news">
+        <ul className="results--recommendations">
           {animeRecs.recommendations == "" ? (
             <li>There are currently no recommendations for title</li>
           ) : (
@@ -76,7 +76,7 @@ const Post = (props) => {
                 title,
               }) => (
                 <RecommendationsTemplate
-                  key={title}
+                  key={`${mal_id}/${title}`}
                   title={title}
                   recommendation_url={recommendation_url}
                   image_url={image_url}
