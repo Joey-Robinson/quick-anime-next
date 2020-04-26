@@ -1,34 +1,36 @@
 .info {
-  margin: 4.5rem 0 0 0;
+  margin: 4.5rem 0;
 
   &--title {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1;
     font-size: 2rem;
-    padding: 0 3rem;
+    padding: 0 1.5rem;
   }
 
   &--image {
     grid-column: 1;
     grid-row: 1 / -1;
-    padding: 0 3rem;
+    padding: 0 1.5rem;
 
     img {
       width: auto;
-      height: 17.5rem;
+      height: 15rem;
     }
   }
 
   &--intro {
     grid-column: 2;
-    grid-row: 3;
-    padding: 0 3rem;
+    grid-row: 2;
+    padding: 0 1.5rem;
+    align-self: center;
   }
 
   &--external {
     grid-column: 2;
-    grid-row: -1;
-    padding: 0 3rem;
+    grid-row: 3;
+    padding: 0 1.5rem;
+    align-self: end;
 
     a {
       color: #232946;

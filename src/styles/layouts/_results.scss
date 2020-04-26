@@ -27,17 +27,18 @@
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: y mandatory;
     scroll-snap-points-y: repeat(200px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     li {
       display: grid;
       grid-template-rows: repeat(3, 5rem);
       grid-template-columns: auto 1fr;
       scroll-snap-align: start;
+      width: 40rem;
     }
 
-    li:not(:first-child) {
-      margin: 9rem 0;
-    }
   }
 
   h3 {
