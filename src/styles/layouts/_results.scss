@@ -3,10 +3,12 @@
   grid-column: 1;
   background: #b8c1ec;
   grid-template-columns: 30rem 1fr;
+  grid-template-rows: auto auto 10rem 10rem auto;
   color: #232946;
   overflow-y: scroll;
   will-change: scroll-position;
   grid-template-rows: 1fr;
+  overflow-x: hidden;
 
   &--heading {
     grid-column: 1 / -1;
@@ -68,6 +70,7 @@
     margin: 1.5rem 0;
   }
 
+  // Alternative titles
   &--alternative {
     grid-column: 1;
     grid-row: 3;
@@ -78,10 +81,12 @@
     }
   }
 
+  // Episodes, status, duration, etc...
   &--information {
     grid-column: 1;
-    grid-row: 4;
-    margin: 3rem 0 4.5rem 0;
+    grid-row: 3 / span 2;
+    margin: 1.5rem 0 0 0;
+    align-self: end;
 
     p {
       padding: 0 3rem;
@@ -104,6 +109,12 @@
     align-self: start;
 
     p {
+      img {
+        display: block;
+        width: 50%;
+        height: 100%;
+      }
+
       padding: 0 3rem;
     }
   }

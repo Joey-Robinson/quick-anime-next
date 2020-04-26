@@ -45,6 +45,7 @@ const AnimeTemplate = ({
         <span>Background: </span> {background}
       </p>
     </div>
+    <div className="results--empy"></div>
     <div className="results--information">
       <h3>
         Additional Informaiton:

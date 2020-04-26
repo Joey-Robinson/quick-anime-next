@@ -40,8 +40,19 @@ const Post = (props) => {
   }, [])
 
   // No background information
-  const noBackgroundInformation =
-    "There is currently no background information given for this anime."
+
+  const noRecommendations = "There are currently no recommendations for title"
+
+  const smugkaguya = (
+    <img src="/static/smugkaguya.jpg" alt="Kagyua being smug." />
+  )
+
+  const noBackground = (
+    <>
+      <p>There is currently no background information given for this anime.</p>
+      {smugkaguya}
+    </>
+  )
 
   return (
     <Layout>
@@ -53,7 +64,7 @@ const Post = (props) => {
           titlejp={titlejp}
           synopsis={synopsis}
           duration={duration}
-          background={!background ? noBackgroundInformation : background}
+          background={!background ? noBackground : background}
           image={image}
           source={source}
           episodes={episodes}
@@ -63,7 +74,9 @@ const Post = (props) => {
         />
         <ul className="results--recommendations">
           {animeRecs.recommendations == "" ? (
-            <li>There are currently no recommendations for title</li>
+            <li>
+              <p>{noRecommendations}</p>
+            </li>
           ) : (
             animeRecs.recommendations.map(
               ({
