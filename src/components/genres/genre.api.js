@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"
-import GenreSelect from "./genre.select"
+import React, { useEffect, useState } from "react"
 import Spinner from "../spinner"
 import GenreList from "./genre.list"
+import GenreSelect from "./genre.select"
 
 const GenreChange = () => {
   const [selectedGenre, setSelectedGenre] = useState({ anime: [] })
@@ -45,7 +45,7 @@ const GenreChange = () => {
             {selectedGenre.anime.map(
               ({ synopsis, mal_id, title, image_url, url }) => {
                 const shortenedSynopsis = synopsis
-                  .slice(0, 150)
+                  .slice(0, 350)
                   .replace("[Written by MAL Rewrite]", "")
                 return (
                   <GenreList
