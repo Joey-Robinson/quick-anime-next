@@ -24,7 +24,7 @@
   &--recommendations {
     margin: 0 0 0 1.5rem;
     grid-column: 2;
-    grid-row: 4;
+    grid-row: 3;
     overflow-y: scroll;
     will-change: scroll-position;
     -webkit-overflow-scrolling: touch;
@@ -49,6 +49,7 @@
     font-size: 2.2rem;
     font-weight: 900;
   }
+
 
   span {
     font-weight: 900;
@@ -75,7 +76,10 @@
   &--alternative {
     grid-column: 1;
     grid-row: 3;
-    margin: 1.5rem 0 0 0;
+
+    &__hthree {
+      margin: 4.5rem 0 0 0;
+    }
 
     p {
       padding: 0 3rem;
@@ -83,30 +87,11 @@
   }
 
   // Episodes, status, duration, etc...
-  &--information {
-    grid-column: 1;
-    grid-row: 3 / span 2;
-    margin: 1.5rem 0 1.5rem 0;
-    align-self: end;
-
-    p {
-      padding: 0 3rem;
-    }
-  }
 
   &--synopsis {
     grid-column: 2;
     grid-row: 2;
     align-self: start;
-
-    p {
-      padding: 1.5rem 3rem;
-    }
-  }
-
-  &--background {
-    grid-column: 2;
-    grid-row: 3;
 
     img {
       display: block;
@@ -115,7 +100,7 @@
     }
 
     p {
-      padding: 0 3rem;
+      padding: 1.5rem 3rem;
     }
   }
 }

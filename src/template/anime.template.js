@@ -34,20 +34,7 @@ const AnimeTemplate = ({
         <span>Japanese: </span>
         {titlejp}
       </p>
-    </div>
-    <div className="results--synopsis">
-      <p>
-        <span>Synopsis: </span> {synopsis}
-      </p>
-    </div>
-    <div className="results--background">
-      <p>
-        <span>Background: </span> {background}
-      </p>
-    </div>
-    <div className="results--empy"></div>
-    <div className="results--information">
-      <h3>
+      <h3 className="results--alternative__hthree">
         Additional Informaiton:
         <hr />
       </h3>
@@ -74,6 +61,17 @@ const AnimeTemplate = ({
         <span>Source: </span> {source}
       </p>
     </div>
+    <div className="results--synopsis">
+      <p>
+        <span>Synopsis: </span> {synopsis}
+      </p>
+      <p>
+        <span>Background: </span> {background}
+      </p>
+    </div>
+    <div className="results--background"></div>
+    <div className="results--empy"></div>
+    <div className="results--information"></div>
     <div className="results--external">
       <a href={url} target="_blank" rel="noopener noreferrer">
         {title} - View On MAL
