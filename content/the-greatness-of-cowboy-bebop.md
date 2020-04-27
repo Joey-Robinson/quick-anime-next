@@ -4,7 +4,7 @@ date: "2019-12-01"
 author:
   name: Joey Robinson
 excerpt: "How Cowboy Bebop remains one of the greatest anime of all time and helps bring both old and new viewers together. "
-coverImage: "/assets/blog/pingpong.jpg"
+coverImage: "/assets/blog/cbi.jpg"
 ---
 
 Cowboy Bebop
