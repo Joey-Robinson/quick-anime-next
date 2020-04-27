@@ -23,6 +23,15 @@ const AnimeSearch = ({ onSubmit, value, onChange }) => {
           className="field--input"
           onChange={onChange}
         />
+        <br />
+        <input
+          style={{
+            margin: ".75rem 0 0 0",
+            cursor: "pointer",
+          }}
+          type="submit"
+          value="Search"
+        />
       </form>
     </div>
   )
