@@ -24,9 +24,9 @@ const Search = () => {
     setCurrentPage(1)
   }
 
-  const nextPage = () => {
-    setCurrentPage(currentPage + 1)
-  }
+  // const nextPage = () => {
+  //   setCurrentPage(currentPage + 1)
+  // }
 
   // const previousPage = () => {
   //   setCurrentPage(currentPage - 1)
@@ -51,6 +51,19 @@ const Search = () => {
           value={searchedAnime}
           onChange={onChangeHandler}
         />
+        {animeData.results == "" ? (
+          ""
+        ) : (
+          <h2
+            style={{
+              margin: "1.5rem 0",
+              textAlign: "center",
+              display: "block",
+            }}
+          >
+            Displaying {animeData.results.length} Results
+          </h2>
+        )}
         <ul className="list search">
           {animeData &&
             animeData.results.map(
