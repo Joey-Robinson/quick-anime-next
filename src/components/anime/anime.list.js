@@ -15,7 +15,7 @@ const AnimeList = ({ href, as, mal_id, image_url, title, synopsis }) => {
           gridTemplateRows: "auto 1fr",
         }}
       >
-        <LazyLoadImage alt={title} src={image_url} />
+        <LazyLoadImage effect="blur" alt={title} src={image_url} />
         <p style={{ gridColumn: "2", gridRow: "1", alignSelf: "start" }}>
           {!synopsis ? "No synopsis is available for this title" : synopsis}
         </p>
