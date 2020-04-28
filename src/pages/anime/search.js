@@ -4,6 +4,7 @@ import AnimeSearch from "../../components/anime/anime.search"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
+// This is merely a test
 const Search = () => {
   const [animeData, setAnimeData] = useState({ results: [] })
   const [searchedAnime, setSearchedAnime] = useState("")
