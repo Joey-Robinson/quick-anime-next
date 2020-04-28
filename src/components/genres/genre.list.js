@@ -9,7 +9,7 @@ const GenreList = ({ href, as, mal_id, image_url, title, synopsis }) => (
     </div>
 
     <div aria-label={`${title}'s image`} className="genre">
-      <LazyLoadImage alt={title} src={image_url} />
+      <LazyLoadImage effect="blur" alt={title} src={image_url} />
       <p className="genre--synopsis">
         {!synopsis ? "No synopsis is available for this title" : synopsis}
       </p>

@@ -51,21 +51,22 @@ const Search = () => {
           onChange={onChangeHandler}
         />
         <ul className="list search">
-          {animeData.results.map(
-            ({ synopsis, mal_id, title, image_url, url }) => {
-              return (
-                <AnimeList
-                  key={mal_id}
-                  title={title}
-                  image_url={image_url}
-                  url={url}
-                  href={`/anime/[id]/`}
-                  as={`/anime/${mal_id}/`}
-                  synopsis={synopsis}
-                />
-              )
-            }
-          )}
+          {animeData &&
+            animeData.results.map(
+              ({ synopsis, mal_id, title, image_url, url }) => {
+                return (
+                  <AnimeList
+                    key={mal_id}
+                    title={title}
+                    image_url={image_url}
+                    url={url}
+                    href={`/anime/[id]/`}
+                    as={`/anime/${mal_id}/`}
+                    synopsis={synopsis}
+                  />
+                )
+              }
+            )}
         </ul>
       </div>
     </Layout>
