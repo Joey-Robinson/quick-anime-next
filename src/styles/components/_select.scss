@@ -3,27 +3,29 @@
   grid-column: 1;
   display: block;
   justify-self: center;
-  color: #232946;
   z-index: 3;
   margin: 1.5rem 0;
   text-align: center;
 
   select {
+    margin-top: .75rem;
+    font-size: 1.8rem;
+    color: white;
     outline: none;
     width: 20%;
-    background: #b8c1ec;
-    border: 3.2px solid #232946;
+    background: $primaryBackgroundColor;
+    border: 3.2px solid white;
     border-radius: 4px;
     display: inline-block;
     padding: 0.5em 0em 0.5em 1rem;
     appearance: none;
     background-image:
-      linear-gradient(45deg, transparent 50%, #232946 50%),
-      linear-gradient(135deg, #232946 50%, transparent 50%);
+      linear-gradient(45deg, transparent 50%, white 50%),
+      linear-gradient(135deg, white 50%, transparent 50%);
     background-position:
-      calc(100% - 10px) calc(1rem + 2px),
-      calc(100% - 5px) calc(1em + 2px),
-      calc(100% - .3em) .6em;
+      calc(100% - 10px) calc(1em + 1px),
+      calc(100% - 5px) calc(1em + 1px),
+      calc(100% - .5em) .6em;
     background-size:
       5px 5px,
       5px 5px,

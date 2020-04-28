@@ -12,7 +12,7 @@ nav {
       margin: 4.5rem 0;
 
       a {
-        color: #232946;
+        color: white;
         font-size: 2rem;
         cursor: pointer;
         font-weight: 700;
@@ -23,8 +23,8 @@ nav {
   .active {
     font-size: 2rem;
     display: block;
-    background: #232946;
+    background: white;
     font-weight: 700;
-    color: #eebbc3;
+    color: $thirdBackgroundColor;
   }
 }

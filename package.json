@@ -23,6 +23,7 @@
     "sass": "^1.26.3"
   },
   "devDependencies": {
-    "eslint-plugin-jsx-a11y": "^6.2.3"
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "react-image-webp": "^0.7.0"
   }
 }

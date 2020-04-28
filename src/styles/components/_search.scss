@@ -1,10 +1,6 @@
 .search--input {
-  grid-row: 1;
   font-size: 2rem;
-  grid-column: 1;
   display: block;
-  justify-self: center;
-  z-index: 3;
   text-align: center;
 
   span {
@@ -13,7 +9,6 @@
   }
 
   label {
-    color: #232946;
     text-align: center;
   }
 
@@ -21,7 +16,7 @@
     width: 20%;
     outline: none;
     border: none;
-    background: #b8c1ec;
+    background: white;
     border: 3.2px solid #232946;
     border-radius: 4px;
     display: inline-block;
