@@ -27,24 +27,25 @@ const Seasonal = () => {
           Listing Anime for {seasonalName} {seasonalYear}
         </h2>
         <ul className="list search">
-          {seasonalData.anime.map(
-            ({ synopsis, mal_id, title, image_url, url }) => {
-              const shortenedSynopsis = synopsis
-                .slice(0, 125)
-                .replace("[Written by MAL Rewrite]", "")
-              return (
-                <SeasonalList
-                  key={mal_id}
-                  title={title}
-                  image_url={image_url}
-                  url={url}
-                  href={`/anime/[id]/`}
-                  as={`/anime/${mal_id}/`}
-                  synopsis={shortenedSynopsis}
-                />
-              )
-            }
-          )}
+          {seasonalData &&
+            seasonalData.anime.map(
+              ({ synopsis, mal_id, title, image_url, url }) => {
+                const shortenedSynopsis = synopsis
+                  .slice(0, 125)
+                  .replace("[Written by MAL Rewrite]", "")
+                return (
+                  <SeasonalList
+                    key={mal_id}
+                    title={title}
+                    image_url={image_url}
+                    url={url}
+                    href={`/anime/[id]/`}
+                    as={`/anime/${mal_id}/`}
+                    synopsis={shortenedSynopsis}
+                  />
+                )
+              }
+            )}
         </ul>
       </div>
     </Layout>

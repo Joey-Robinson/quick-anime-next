@@ -3,7 +3,8 @@
   grid-row: 2 / 3;
   display: grid;
   grid-template-rows: 92.5vh;
-  background: #b8c1ec;
+  background: $secondaryBackgroundColor;
+  border: 1px solid white;
 
   h2 {
     grid-row: 1;
