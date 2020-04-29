@@ -3,9 +3,8 @@ import React from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 const CoverImage = ({ title, src, slug }) => {
-  const image = (
-    <LazyLoadImage effect="blur" src={src} alt={`Cover Image for ${title}`} />
-  )
+  // prettier-ignore
+  const image = <LazyLoadImage src={src} alt={`Cover Image for ${title}`} />
   return (
     <>
       {slug ? (

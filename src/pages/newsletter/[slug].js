@@ -16,7 +16,7 @@ const NewsletterPosts = ({ post }) => {
   }
   return (
     <Layout>
-      <SEO title={post.title} description={post.excerpt} />
+      <SEO title={post.title} description={post.description} />
       {router.isFallback ? (
         <div>Loading…</div>
       ) : (

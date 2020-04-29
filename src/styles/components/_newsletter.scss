@@ -1,6 +1,5 @@
 .blog {
   list-style: none;
-  padding: 0;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -12,6 +11,14 @@
 
   li:nth-child(even) {
     grid-column: 2;
+  }
+
+  li:nth-last-child(2):nth-child(odd) {
+    margin: 3rem 0;
+  }
+
+  li:nth-last-child(1):nth-child(even) {
+    margin: 3rem 0;
   }
 }
 
