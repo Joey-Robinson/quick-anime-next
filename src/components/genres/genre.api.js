@@ -32,6 +32,20 @@ const GenreChange = () => {
         defaultValue={selectedGenre}
         handler={changeHandler}
       />
+      {selectedGenre.anime == "" ? (
+        ""
+      ) : (
+        <h2
+          style={{
+            margin: "1.5rem 0",
+            textAlign: "center",
+            display: "block",
+          }}
+        >
+          Displaying {selectedGenre.anime.length} Results
+        </h2>
+      )}
+
       <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(
