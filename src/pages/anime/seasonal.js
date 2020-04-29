@@ -1,7 +1,16 @@
+import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
-import SeasonalList from "../../components/seasonal/seasonal.list"
+// import SeasonalList from "../../components/seasonal/seasonal.list"
 import SEO from "../../components/seo"
+import Spinner from "../../components/spinner"
+
+const SeasonalList = dynamic(
+  () => import("../../components/seasonal/seasonal.list"),
+  {
+    loading: () => <Spinner />,
+  }
+)
 
 const Seasonal = () => {
   const [seasonalData, setSeasonalData] = useState({ anime: [] })

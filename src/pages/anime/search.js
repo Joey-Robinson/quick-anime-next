@@ -1,8 +1,13 @@
+import dynamic from "next/dynamic"
 import React, { useState } from "react"
-import AnimeList from "../../components/anime/anime.list"
 import AnimeSearch from "../../components/anime/anime.search"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import Spinner from "../../components/spinner"
+
+const AnimeList = dynamic(() => import("../../components/anime/anime.list"), {
+  loading: () => <Spinner />,
+})
 
 // This is merely a test
 const Search = () => {

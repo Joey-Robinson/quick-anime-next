@@ -1,15 +1,11 @@
 import { NextSeo } from "next-seo"
 import React from "react"
 
-const SEO = ({
-  title = "",
-  description = "Find the anime you're looking for, quickly",
-}) => {
+const SEO = ({ title = "", description = "" }) => {
   return (
     <>
       <NextSeo
         title={title}
-        description={description}
         site_name="Quick-Anime"
         canonical="https://www.canonical.ie/"
         openGraph={{
