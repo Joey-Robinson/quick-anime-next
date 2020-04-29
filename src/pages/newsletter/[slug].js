@@ -15,7 +15,7 @@ const NewsletterPosts = ({ post }) => {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout>
+    <Layout className="post">
       <SEO title={post.title} description={post.description} />
       {router.isFallback ? (
         <div>Loading…</div>

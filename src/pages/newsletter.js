@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 const Newsletter = ({ allPosts }) => {
   const morePosts = allPosts
   return (
-    <Layout>
+    <Layout className="post">
       <SEO title="Newsletter" description="Monthly Anime Musings" />
       <MoreStories posts={morePosts} />
     </Layout>
