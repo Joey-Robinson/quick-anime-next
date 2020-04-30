@@ -1,8 +1,9 @@
-import React from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import React, { useState } from "react"
 
 const Navigation = () => {
+  const [hidden, setHidden] = useState()
   const router = useRouter()
   return (
     <nav aria-label="Primary">

@@ -5,11 +5,9 @@ nav {
   ul {
     list-style: none;
     width: 100%;
-    text-align: center;
-
 
     li {
-      margin: 4.5rem 0;
+      margin: 3rem 0;
 
       a {
         color: white;
@@ -26,5 +24,11 @@ nav {
     background: white;
     font-weight: 700;
     color: $thirdBackgroundColor;
+
+    &::after {
+      text-decoration: none;
+      padding: 0 1.5rem;
+      content: "«";
+    }
   }
 }
