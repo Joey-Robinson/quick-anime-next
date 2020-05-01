@@ -3,6 +3,9 @@ header {
   background: $thirdBackgroundColor;
   grid-row: 2 / 3;
   grid-column: 2;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  align-items: center;
   border-top: 1px solid white;
   border-left: 1px solid white;
   border-bottom: 1px solid white;

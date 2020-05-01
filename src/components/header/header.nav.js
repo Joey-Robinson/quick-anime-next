@@ -8,37 +8,56 @@ const Navigation = () => {
     <nav aria-label="Primary">
       <ul>
         <li>
-          <div>
+          {/* <div>
             {router.pathname == "/" ? (
               <img
-                style={{ width: "100%", height: "auto", display: "block" }}
+                style={{ width: "100%", height: "16rem", display: "block" }}
                 src="/assets/dio.gif"
                 alt=""
               />
             ) : (
-              ""
+              <div
+                style={{ width: "100%", height: "16rem", display: "block" }}
+              ></div>
             )}
-          </div>
+          </div> */}
           <Link href="/">
-            <a
-              className={router.pathname == "/" ? "active" : ""}
-              title="Home Page"
-            >
-              Home
-            </a>
-          </Link>
-        </li>
-        {/* <li>
-          <Link href="/anime">
-            <a
-              className={router.pathname == "/anime" ? "active" : ""}
-              title="Anime Page"
-            >
-              Anime
-            </a>
+            <a title="Home Page">Home</a>
           </Link>
         </li>
         <li>
+          {/* <div>
+            {router.pathname == "/anime" ? (
+              <img
+                style={{ width: "100%", height: "16rem", display: "block" }}
+                src="/assets/kaguya.gif"
+                alt=""
+              />
+            ) : (
+              <div
+                style={{ width: "100%", height: "16rem", display: "block" }}
+              ></div>
+            )}
+          </div> */}
+          <Link href="/anime">
+            <a title="Anime Page">Anime</a>
+          </Link>
+        </li>
+        <li>
+          {/* <div>
+            {router.pathname == "/anime/search" ? (
+              <img
+                style={{ width: "100%", height: "16rem", display: "block" }}
+                src="/assets/kaguya.gif"
+                alt=""
+              />
+            ) : (
+              <div
+                style={{ width: "100%", height: "16rem", display: "block" }}
+              ></div>
+            )}
+          </div> */}
+
           <Link href="/anime/search">
             <a
               className={router.pathname == "/anime/search" ? "active" : ""}
@@ -48,6 +67,7 @@ const Navigation = () => {
             </a>
           </Link>
         </li>
+
         <li>
           <Link href="/anime/genres">
             <a
@@ -97,7 +117,7 @@ const Navigation = () => {
               About
             </a>
           </Link>
-        </li> */}
+        </li>
       </ul>
     </nav>
   )
