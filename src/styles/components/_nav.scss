@@ -1,13 +1,13 @@
 nav {
   display: grid;
   height: 100%;
+  grid-template-rows: repeat(8, 1fr);
 
   ul {
     list-style: none;
-    width: 100%;
 
     li {
-      margin: 3rem 0;
+      max-width: 100%;
 
       a {
         color: white;
@@ -24,11 +24,5 @@ nav {
     background: white;
     font-weight: 700;
     color: $thirdBackgroundColor;
-
-    &::after {
-      text-decoration: none;
-      padding: 0 1.5rem;
-      content: "«";
-    }
   }
 }

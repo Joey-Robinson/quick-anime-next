@@ -1,14 +1,24 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import React, { useState } from "react"
+import React from "react"
 
 const Navigation = () => {
-  const [hidden, setHidden] = useState()
   const router = useRouter()
   return (
     <nav aria-label="Primary">
       <ul>
         <li>
+          <div>
+            {router.pathname == "/" ? (
+              <img
+                style={{ width: "100%", height: "auto", display: "block" }}
+                src="/assets/dio.gif"
+                alt=""
+              />
+            ) : (
+              ""
+            )}
+          </div>
           <Link href="/">
             <a
               className={router.pathname == "/" ? "active" : ""}
@@ -18,7 +28,7 @@ const Navigation = () => {
             </a>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/anime">
             <a
               className={router.pathname == "/anime" ? "active" : ""}
@@ -87,7 +97,7 @@ const Navigation = () => {
               About
             </a>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   )
