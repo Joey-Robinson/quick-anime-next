@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const Index = () => (
   <Layout>
     <SEO title="Home" description="Quck Anime - Home Page" />
-    <h2>From Home</h2>
+    <h1 style={{ textAlign: "center" }}>It was me, DIO!</h1>
     {/* <HomeSignup /> */}
   </Layout>
 )
