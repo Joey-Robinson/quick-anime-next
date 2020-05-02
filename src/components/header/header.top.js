@@ -1,6 +1,6 @@
 import React from "react"
 
-const HeaderTop = () => (
+const HeaderTop = ({ imagesource, alt }) => (
   <div>
     <img
       style={{
@@ -11,8 +11,8 @@ const HeaderTop = () => (
         height: "auto",
         width: "100%",
       }}
-      src="/assets/dio.gif"
-      alt="It's me, Dio!"
+      src={imagesource}
+      alt={alt}
     />
   </div>
 )

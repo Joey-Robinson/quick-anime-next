@@ -10,15 +10,9 @@ const Navigation = () => {
         <li>
           {/* <div>
             {router.pathname == "/" ? (
-              <img
-                style={{ width: "100%", height: "16rem", display: "block" }}
-                src="/assets/dio.gif"
-                alt=""
-              />
+              <HeaderTop imagesource="/assets/dio.gif" alt="It was me, Dio!" />
             ) : (
-              <div
-                style={{ width: "100%", height: "16rem", display: "block" }}
-              ></div>
+              ""
             )}
           </div> */}
           <Link href="/">
@@ -28,15 +22,9 @@ const Navigation = () => {
         <li>
           {/* <div>
             {router.pathname == "/anime" ? (
-              <img
-                style={{ width: "100%", height: "16rem", display: "block" }}
-                src="/assets/kaguya.gif"
-                alt=""
-              />
+              <HeaderTop imagesource="/assets/kaguya.gif" alt="How cute." />
             ) : (
-              <div
-                style={{ width: "100%", height: "16rem", display: "block" }}
-              ></div>
+              ""
             )}
           </div> */}
           <Link href="/anime">
