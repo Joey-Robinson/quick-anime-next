@@ -23,24 +23,25 @@
 }
 
 .news {
-  width: 50rem;
+  width: 55rem;
   display: grid;
   grid-template-columns: 1fr;
   color: white;
   scroll-snap-align: start;
-  margin: 1.5rem 0 4.5rem 0;
+  margin: 3rem 0 4.5rem 0;
   justify-items: center;
 
-  &--image {
-    height: 25rem;
-    padding: 0 3rem;
-    margin: 1rem 0;
+  h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    padding: 1rem 3rem;
+  }
 
-    img {
-      display: block;
-      width: auto;
-      height: 100%;
-    }
+
+  img {
+    padding: 1.5rem 0;
+    display: block;
+    width: 100%;
   }
 
   time {
@@ -49,20 +50,13 @@
   }
 
   p {
-    margin: 1.5rem 0;
-    padding: 0 4.5rem 1.5rem 4.5rem;
+    margin: .75rem 0;
+    padding: 0 1rem;
     font-size: 1.8rem;
   }
 
-  h5 {
-    font-size: 2.4rem;
-    font-weight: 900;
-    padding: 0 3rem;
-  }
 
   a {
     color: white;
-    font-size: 1.6rem;
   }
-
 }

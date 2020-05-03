@@ -4,9 +4,8 @@ import HeaderTop from "./header.top"
 
 const Notification = () => {
   const router = useRouter()
-
   return (
-    <div>
+    <>
       {(function () {
         switch (router.pathname) {
           case "/":
@@ -48,11 +47,25 @@ const Notification = () => {
                 alt="Light taking notes."
               />
             )
+          case "/contact":
+            return (
+              <HeaderTop
+                imagesource="/assets/sailormoon.gif"
+                alt="Usagi on the phone."
+              />
+            )
+          case "/about":
+            return (
+              <HeaderTop
+                imagesource="/assets/giorno.gif"
+                alt="Muda Muda Muda Muda Muda."
+              />
+            )
           default:
             return null
         }
       })()}
-    </div>
+    </>
   )
 }
 

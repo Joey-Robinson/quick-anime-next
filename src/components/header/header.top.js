@@ -1,7 +1,7 @@
 import React from "react"
 
 const HeaderTop = ({ imagesource, alt }) => (
-  <div>
+  <div style={{ alignSelf: "start" }}>
     <img
       style={{
         margin: "0",

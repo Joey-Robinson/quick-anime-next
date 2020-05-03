@@ -7,20 +7,20 @@ const PostPreview = ({ title, coverImage, date, excerpt, slug }) => {
   const shortenedExcerpt = excerpt.slice(0, 150)
   return (
     <li key={title} className="blog--li news">
-      <div className="news--title">
-        <h5>
+      <div>
+        <h2>
           <Link as={`/newsletter/${slug}`} href="/newsletter/[slug]">
             <a>{title}</a>
           </Link>
-        </h5>
+        </h2>
       </div>
-      <div className="news--date">
+      <div>
         <Date dateString={date} />
       </div>
       <div className="news--image">
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
-      <div className="news--excerpt">
+      <div>
         <p>{shortenedExcerpt}</p>
       </div>
     </li>
