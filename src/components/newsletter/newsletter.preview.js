@@ -14,7 +14,7 @@ const PostPreview = ({ title, coverImage, date, excerpt, slug }) => {
           </Link>
         </h2>
       </div>
-      <div>
+      <div style={{ textAlign: "center" }}>
         <Date dateString={date} />
       </div>
       <div className="news--image">

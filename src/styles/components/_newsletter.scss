@@ -1,37 +1,43 @@
 .blog {
   list-style: none;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  // justify-items: center;
+  // align-items: center;
+  // grid-template-columns: 1fr 1fr;
 
-  li:nth-child(odd) {
-    grid-column: 1;
-  }
+  // li:nth-child(odd) {
+  //   grid-column: 1;
+  // }
 
-  li:nth-child(even) {
-    grid-column: 2;
-  }
+  // li:nth-child(even) {
+  //   grid-column: 2;
+  // }
 
-  li:nth-last-child(2):nth-child(odd) {
-    margin: 3rem 0;
-  }
+  // li:nth-last-child(2):nth-child(odd) {
+  //   margin: 3rem 0;
+  // }
 
-  li:nth-last-child(1):nth-child(even) {
-    margin: 3rem 0;
-  }
+  // li:nth-last-child(1):nth-child(even) {
+  //   margin: 3rem 0;
+  // }
 }
 
 .news {
+  // -webkit-box-shadow: 16px 13px 47px -1px #000000; 
+  box-shadow: 16px 13px 47px -1px #fff;
   width: 55rem;
-  display: grid;
-  grid-template-columns: 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr;
   color: white;
   scroll-snap-align: start;
   margin: 3rem 0 4.5rem 0;
   justify-items: center;
 
   h2 {
+    text-align: center;
     font-size: 3rem;
     font-weight: 900;
     padding: 1rem 3rem;
@@ -51,7 +57,7 @@
 
   p {
     margin: .75rem 0;
-    padding: 0 1rem;
+    padding: 1.5rem 3rem;
     font-size: 1.8rem;
   }
 
