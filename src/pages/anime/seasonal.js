@@ -32,9 +32,12 @@ const Seasonal = () => {
     <Layout className="seasonal">
       <SEO title="Seasonal Anime" description="Anime for this season" />
       <div className="container">
-        <h2>
-          Listing Anime for {seasonalName} {seasonalYear}
-        </h2>
+        <hgroup style={{ textAlign: "center" }}>
+          <h2>
+            Listing Anime for {seasonalName} {seasonalYear}
+          </h2>
+          <h5>Displaying {seasonalData.anime.length} Results</h5>
+        </hgroup>
         <ul className="list search">
           {seasonalData &&
             seasonalData.anime.map(
