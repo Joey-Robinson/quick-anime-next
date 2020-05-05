@@ -1,17 +1,8 @@
-.seasonal {
-  grid-column: 3;
-  grid-row: 2 / 3;
-  display: grid;
-  grid-template-rows: 92.5vh;
-  background: $secondaryBackgroundColor;
-  border: 1px solid white;
-
-  h2 {
-    grid-row: 1;
-    text-align: center;
-    grid-column: 1;
-    margin: 3rem 0 0 0;
-    font-size: 3rem;
-    display: block;
-  }
+.seasonal h2 {
+  grid-row: 1;
+  text-align: center;
+  grid-column: 1;
+  margin: 3rem 0 0 0;
+  font-size: 3rem;
+  display: block;
 }

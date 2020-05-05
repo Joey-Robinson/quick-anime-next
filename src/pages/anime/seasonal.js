@@ -29,7 +29,7 @@ const Seasonal = () => {
   const seasonalName = seasonalData.season_name
 
   return (
-    <Layout className="seasonal">
+    <Layout className="seasonal post">
       <SEO title="Seasonal Anime" description="Anime for this season" />
       <div className="container">
         <hgroup style={{ textAlign: "center" }}>
