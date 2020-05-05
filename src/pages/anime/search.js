@@ -48,7 +48,7 @@ const Search = () => {
   }
 
   return (
-    <Layout>
+    <Layout className="post">
       <SEO title="Search" />
       <div className="container">
         <AnimeSearch

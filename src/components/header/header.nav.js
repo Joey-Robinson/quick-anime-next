@@ -8,44 +8,16 @@ const Navigation = () => {
     <nav aria-label="Primary">
       <ul>
         <li>
-          {/* <div>
-            {router.pathname == "/" ? (
-              <HeaderTop imagesource="/assets/dio.gif" alt="It was me, Dio!" />
-            ) : (
-              ""
-            )}
-          </div> */}
           <Link href="/">
             <a title="Home Page">Home</a>
           </Link>
         </li>
         <li>
-          {/* <div>
-            {router.pathname == "/anime" ? (
-              <HeaderTop imagesource="/assets/kaguya.gif" alt="How cute." />
-            ) : (
-              ""
-            )}
-          </div> */}
           <Link href="/anime">
             <a title="Anime Page">Anime</a>
           </Link>
         </li>
         <li>
-          {/* <div>
-            {router.pathname == "/anime/search" ? (
-              <img
-                style={{ width: "100%", height: "16rem", display: "block" }}
-                src="/assets/kaguya.gif"
-                alt=""
-              />
-            ) : (
-              <div
-                style={{ width: "100%", height: "16rem", display: "block" }}
-              ></div>
-            )}
-          </div> */}
-
           <Link href="/anime/search">
             <a
               className={router.pathname == "/anime/search" ? "active" : ""}

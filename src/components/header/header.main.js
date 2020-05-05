@@ -1,6 +1,6 @@
 import React from "react"
 import Navigation from "./header.nav"
-import Notification from "./one"
+import Notification from "./header.notification"
 
 const Header = () => {
   return (

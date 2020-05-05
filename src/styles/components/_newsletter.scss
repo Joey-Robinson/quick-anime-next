@@ -26,9 +26,7 @@
 }
 
 .news {
-  // -webkit-box-shadow: 16px 13px 47px -1px #000000; 
   border: 1.5px solid $tertiary;
-  // box-shadow: 1.75px 1.75px 2.5px 0px $tertiary;
   width: 55rem;
   display: grid;
   grid-template-columns: 1fr;
@@ -44,7 +42,6 @@
     padding: 1.5rem 1.5rem 1rem 1.5rem;
   }
 
-
   img {
     padding: 1.5rem 0;
     display: block;
@@ -57,11 +54,10 @@
   }
 
   p {
-    margin: .75rem 0;
+    margin: 0.75rem 0;
     padding: 1.5rem 3rem;
     font-size: 1.8rem;
   }
-
 
   a {
     color: white;

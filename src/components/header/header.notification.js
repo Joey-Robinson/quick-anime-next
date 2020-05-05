@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import React from "react"
 import HeaderTop from "./header.top"
 
-const Notification = () => {
+const HeaderNotification = () => {
   const router = useRouter()
   return (
     <>
@@ -69,4 +69,4 @@ const Notification = () => {
   )
 }
 
-export default Notification
+export default HeaderNotification
