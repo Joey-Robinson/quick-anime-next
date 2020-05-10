@@ -2,7 +2,15 @@ import Link from "next/link"
 import React from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
-const SeasonalList = ({ href, as, mal_id, image_url, title, synopsis }) => {
+const SeasonalList = ({
+  genres,
+  href,
+  as,
+  mal_id,
+  image_url,
+  title,
+  synopsis,
+}) => {
   return (
     <li key={mal_id} className="search--li li">
       <div className="li--title">
@@ -19,6 +27,16 @@ const SeasonalList = ({ href, as, mal_id, image_url, title, synopsis }) => {
         <p style={{ gridColumn: "2", gridRow: "1", alignSelf: "start" }}>
           {!synopsis ? "No synopsis is available for this title" : synopsis}
         </p>
+        <ul
+          key={mal_id}
+          style={{
+            listStyle: "none",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          {genres}
+        </ul>
         <div
           style={{
             gridColumn: "2",
