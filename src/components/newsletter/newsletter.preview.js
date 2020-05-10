@@ -1,9 +1,9 @@
 import Link from "next/link"
-import React from "react"
+import React, { memo } from "react"
 import CoverImage from "./newsletter.coverimage"
 import Date from "./newsletter.date"
 
-const PostPreview = ({ title, coverImage, date, excerpt, slug }) => {
+const PostPreview = memo(({ title, coverImage, date, excerpt, slug }) => {
   const shortenedExcerpt = excerpt.slice(0, 150)
   return (
     <li key={title} className="blog--li news">
@@ -23,6 +23,6 @@ const PostPreview = ({ title, coverImage, date, excerpt, slug }) => {
       </div>
     </li>
   )
-}
+})
 
 export default PostPreview

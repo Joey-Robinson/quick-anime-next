@@ -4,7 +4,8 @@ import { getAllPosts } from "../components/newsletter/newsletter.api"
 import PostPreview from "../components/newsletter/newsletter.preview"
 import NewsletterSearch from "../components/newsletter/newsletter.search"
 import SEO from "../components/seo"
-
+// https://github.com/cyrilwanner/next-optimized-images
+// Use this for blog images. 4mb for 1 page, disgusting.
 const Newsletter = ({ allPosts }) => {
   const morePosts = allPosts
   const emptyQuery = ""
