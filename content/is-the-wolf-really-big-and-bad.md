@@ -6,6 +6,10 @@ author:
 excerpt: "Why and how Akira has - for 30 years now - defined anime, anime culture, and how it has influenced generations of anime to come."
 description: "Why and how Akira has - for 30 years now - defined anime, anime culture, and how it has influenced generations of anime to come."
 coverImage: "/assets/blog/jinroh.jpg"
+tags:
+  - akira
+  - anime
+  - legacy
 ---
 
 # Jin-Roh
