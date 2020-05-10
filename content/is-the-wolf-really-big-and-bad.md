@@ -3,13 +3,15 @@ title: "Don't be afraid of the big bad wolf."
 date: "2019-12-01"
 author:
   name: Joey Robinson
-excerpt: "Why and how Akira has - for 30 years now - defined anime, anime culture, and how it has influenced generations of anime to come."
-description: "Why and how Akira has - for 30 years now - defined anime, anime culture, and how it has influenced generations of anime to come."
+excerpt: "Don't fear the wolf. Sometimes, the wolf isn't the villain and it's actually the woman in red who's out for blood. Jin-Roh is an example of this and serves as a learning exercise in such matters."
+description: "Don't fear the wolf. Sometimes, the wolf isn't the villain and it's actually the woman in red who's out for blood. Jin-Roh is an example of this and serves as a learning exercise in such matters."
 coverImage: "/assets/blog/jinroh.jpg"
 tags:
-  - akira
-  - anime
-  - legacy
+  - jin-roh
+  - jinroh
+  - jin roh
+  - big bag wolf
+  - little red riding hood
 ---
 
 # Jin-Roh

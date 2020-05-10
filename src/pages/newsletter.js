@@ -8,7 +8,6 @@ import SEO from "../components/seo"
 const Newsletter = ({ allPosts }) => {
   const morePosts = allPosts
   const emptyQuery = ""
-
   const [filteredPosts, setFilteredPosts] = useState({
     filteredData: [],
     query: emptyQuery,

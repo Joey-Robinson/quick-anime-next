@@ -12,6 +12,8 @@ tags:
   - akira
   - anime
   - legacy
+  - change
+  - godly
 ---
 
 # Lorem Ipsum

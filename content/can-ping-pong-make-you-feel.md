@@ -9,6 +9,9 @@ ogImage:
   url: "/assets/blog/ppb.png"
 tags:
   - Ping-Pong
+  - ping pong
+  - spots
+  - hero
 ---
 
 # Ping-Pong
