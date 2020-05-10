@@ -8,6 +8,10 @@ author:
   name: Joey Robinson
 ogImage:
   url: "/assets/blog/ak.jpg"
+tags:
+  - akira
+  - anime
+  - legacy
 ---
 
 # Lorem Ipsum

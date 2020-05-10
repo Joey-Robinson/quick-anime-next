@@ -33,3 +33,20 @@
     font-size: 100px;
   }
 }
+
+
+.post--news {
+  grid-column: 3;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-rows: auto 92.5vh;
+  background: $secondaryBackgroundColor;
+  border: 1px solid white;
+  overflow-y: scroll;
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch;
+
+  h1 {
+    font-size: 100px;
+  }
+}
