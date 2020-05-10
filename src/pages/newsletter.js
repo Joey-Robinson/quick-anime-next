@@ -1,14 +1,15 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
 import { getAllPosts } from "../components/newsletter/newsletter.api"
-import MoreStories from "../components/newsletter/newsletter.more"
+import PostPreview from "../components/newsletter/newsletter.preview"
+import NewsletterSearch from "../components/newsletter/newsletter.search"
 import SEO from "../components/seo"
 
 const Newsletter = ({ allPosts }) => {
-  const morePosts = allPosts // This is data & all Posts
+  const morePosts = allPosts
   const emptyQuery = ""
 
-  const [state, setState] = useState({
+  const [filteredPosts, setFilteredPosts] = useState({
     filteredData: [],
     query: emptyQuery,
   })
@@ -18,59 +19,46 @@ const Newsletter = ({ allPosts }) => {
     const posts = morePosts || []
     const filteredData = posts.filter((post) => {
       const { title, tags } = post
-      console.log(tags)
       return (
         title.toLowerCase().includes(query.toLowerCase()) ||
         tags.join("").toLowerCase().includes(query.toLowerCase())
       )
     })
 
-    setState({
+    setFilteredPosts({
       query,
       filteredData,
     })
   }
-  const { filteredData, query } = state
-  console.log(state)
+  const { filteredData, query } = filteredPosts
   const hasSearchResults = filteredData && query !== emptyQuery
   const posts = hasSearchResults ? filteredData : allPosts
+
   return (
     <Layout className="post--news">
       <SEO title="Newsletter" description="Monthly Anime Musings" />
-      <div className="search--input">
-        <label htmlFor="newsletter-search">
-          <span>Search Newsletters</span>
-        </label>
-        <form
-          role="search"
-          className="field"
-          onSubmit={(event) => event.preventDefault()}
-          autoComplete="off"
-          noValidate
-        >
-          <input
-            id="newsletter-search"
-            label="Search Newsletters"
-            aria-label="Search for old newsletters"
-            placeholder="Search Newsletters"
-            type="text"
-            value={query}
-            className="field--input"
-            onChange={handleInputChange}
-          />
-          <br />
-          <input
-            style={{
-              margin: ".75rem 0 0 0",
-              cursor: "pointer",
-            }}
-            type="submit"
-            value="Search"
-          />
-        </form>
+      <NewsletterSearch
+        onSubmit={(event) => event.preventDefault()}
+        value={query}
+        onChange={handleInputChange}
+      />
+      <div className="container">
+        <ul className="blog">
+          {posts &&
+            posts.map(({ title, date, excerpt, coverImage, slug }) => {
+              return (
+                <PostPreview
+                  key={slug}
+                  title={title}
+                  date={date}
+                  excerpt={excerpt}
+                  coverImage={coverImage}
+                  slug={slug}
+                />
+              )
+            })}
+        </ul>
       </div>
-
-      <MoreStories posts={morePosts} />
     </Layout>
   )
 }

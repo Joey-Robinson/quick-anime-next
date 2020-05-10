@@ -8,9 +8,7 @@ coverImage: "/assets/blog/ppb.png"
 ogImage:
   url: "/assets/blog/ppb.png"
 tags:
-  - "bde"
-  - "Ping-Pong The Animation"
-  - "Ping Pong The Animation"
+  - Ping-Pong
 ---
 
 # Ping-Pong
