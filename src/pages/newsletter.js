@@ -1,8 +1,8 @@
 import React, { useState } from "react"
+import GlobalSearch from "../components/global/global.search"
 import Layout from "../components/layout"
 import { getAllPosts } from "../components/newsletter/newsletter.api"
 import PostPreview from "../components/newsletter/newsletter.preview"
-import NewsletterSearch from "../components/newsletter/newsletter.search"
 import SEO from "../components/seo"
 // https://github.com/cyrilwanner/next-optimized-images
 // Use this for blog images. 4mb for 1 page, disgusting.
@@ -37,7 +37,7 @@ const Newsletter = ({ allPosts }) => {
   return (
     <Layout className="post--news">
       <SEO title="Newsletter" description="Monthly Anime Musings" />
-      <NewsletterSearch
+      <GlobalSearch
         onSubmit={(event) => event.preventDefault()}
         value={query}
         onChange={handleInputChange}

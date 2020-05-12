@@ -1,6 +1,6 @@
 import React from "react"
 
-const NewsletterSearch = ({ onSubmit, value, onChange }) => {
+const GlobalSearch = ({ onSubmit, value, onChange }) => {
   return (
     <div className="search--input">
       <label htmlFor="newsletter-search">
@@ -28,4 +28,4 @@ const NewsletterSearch = ({ onSubmit, value, onChange }) => {
   )
 }
 
-export default NewsletterSearch
+export default GlobalSearch

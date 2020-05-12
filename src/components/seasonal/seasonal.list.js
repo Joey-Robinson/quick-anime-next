@@ -1,5 +1,5 @@
 import Link from "next/link"
-import React, { useState } from "react"
+import React from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 const SeasonalList = ({
@@ -10,9 +10,8 @@ const SeasonalList = ({
   image_url,
   title,
   synopsis,
+  specialKey,
 }) => {
-  const [isHidden, setIsHidden] = useState(false)
-
   return (
     <li key={mal_id} className="search--li li">
       <div className="li--title">
@@ -29,28 +28,6 @@ const SeasonalList = ({
         <p style={{ gridColumn: "2", gridRow: "1", alignSelf: "start" }}>
           {!synopsis ? "No synopsis is available for this title" : synopsis}
         </p>
-        <button
-          style={{ padding: "1.5rem", margin: ".75rem 3rem", width: "100%" }}
-          onClick={() => setIsHidden(!isHidden)}
-        >
-          Show Genres
-        </button>
-        {isHidden ? (
-          <ul
-            key={mal_id}
-            style={{
-              padding: "0 3rem",
-              fontSize: "8px",
-              listStyle: "none",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            {genres}
-          </ul>
-        ) : (
-          ""
-        )}
         <div
           style={{
             gridColumn: "2",

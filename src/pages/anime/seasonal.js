@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
-// import SeasonalList from "../../components/seasonal/seasonal.list"
 import SEO from "../../components/seo"
 import Spinner from "../../components/spinner"
 
@@ -38,21 +37,11 @@ const Seasonal = () => {
           </h2>
           <h5>Displaying {seasonalData.anime.length} Results</h5>
         </hgroup>
+
         <ul className="list search">
           {seasonalData &&
             seasonalData.anime.map(
-              ({ genres, synopsis, mal_id, title, image_url, url }) => {
-                const genreList = genres.map(({ name }) => {
-                  const shortenedName = name.replace("Slice of Life", "SoL")
-                  return (
-                    <li
-                      key={mal_id}
-                      style={{ padding: ".75em 0 0 0", margin: "0" }}
-                    >
-                      {shortenedName}
-                    </li>
-                  )
-                })
+              ({ synopsis, mal_id, title, image_url, url }) => {
                 const shortenedSynopsis = synopsis
                   .slice(0, 125)
                   .replace("[Written by MAL Rewrite]", "")
@@ -60,7 +49,6 @@ const Seasonal = () => {
                   <SeasonalList
                     key={mal_id}
                     title={title}
-                    genres={genreList}
                     image_url={image_url}
                     url={url}
                     href={`/anime/[id]/`}
