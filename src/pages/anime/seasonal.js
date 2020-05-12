@@ -43,9 +43,13 @@ const Seasonal = () => {
             seasonalData.anime.map(
               ({ genres, synopsis, mal_id, title, image_url, url }) => {
                 const genreList = genres.map(({ name }) => {
+                  const shortenedName = name.replace("Slice of Life", "SoL")
                   return (
-                    <li key={mal_id} style={{ padding: "0", margin: "0" }}>
-                      {name}
+                    <li
+                      key={mal_id}
+                      style={{ padding: ".75em 0 0 0", margin: "0" }}
+                    >
+                      {shortenedName}
                     </li>
                   )
                 })
