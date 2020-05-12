@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
+import GlobalSearch from "../../components/global/global.search"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Spinner from "../../components/spinner"
@@ -27,6 +28,31 @@ const Seasonal = () => {
   const seasonalYear = seasonalData.season_year
   const seasonalName = seasonalData.season_name
 
+  // Filter
+  const morePosts = seasonalData.anime
+  const emptyQuery = ""
+  const [filteredPosts, setFilteredPosts] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = (event) => {
+    const query = event.target.value
+    const posts = morePosts || []
+    const filteredData = posts.filter((post) => {
+      const { title, tags } = post
+      return title.toLowerCase().includes(query.toLowerCase())
+    })
+
+    setFilteredPosts({
+      query,
+      filteredData,
+    })
+  }
+  const { filteredData, query } = filteredPosts
+  const hasSearchResults = filteredData && query !== emptyQuery
+  const posts = hasSearchResults ? filteredData : seasonalData.anime
+  console.log(posts.map(({ mal_id }) => mal_id))
   return (
     <Layout className="seasonal post">
       <SEO title="Seasonal Anime" description="Anime for this season" />
@@ -37,28 +63,29 @@ const Seasonal = () => {
           </h2>
           <h5>Displaying {seasonalData.anime.length} Results</h5>
         </hgroup>
-
-        <ul className="list search">
-          {seasonalData &&
-            seasonalData.anime.map(
-              ({ synopsis, mal_id, title, image_url, url }) => {
-                const shortenedSynopsis = synopsis
-                  .slice(0, 125)
-                  .replace("[Written by MAL Rewrite]", "")
-                return (
-                  <SeasonalList
-                    key={mal_id}
-                    title={title}
-                    image_url={image_url}
-                    url={url}
-                    href={`/anime/[id]/`}
-                    as={`/anime/${mal_id}/`}
-                    synopsis={shortenedSynopsis}
-                  />
-                )
-              }
-            )}
-        </ul>
+        <GlobalSearch
+          onSubmit={(event) => event.preventDefault()}
+          value={query}
+          onChange={handleInputChange}
+        />
+        {/* <ul className="list search">
+          {posts.anime.map(({ synopsis, mal_id, title, image_url, url }) => {
+            const shortenedSynopsis = synopsis
+              .slice(0, 125)
+              .replace("[Written by MAL Rewrite]", "")
+            return (
+              <SeasonalList
+                key={mal_id}
+                title={title}
+                image_url={image_url}
+                url={url}
+                href={`/anime/[id]/`}
+                as={`/anime/${mal_id}/`}
+                synopsis={shortenedSynopsis}
+              />
+            )
+          })}
+        </ul> */}
       </div>
     </Layout>
   )
