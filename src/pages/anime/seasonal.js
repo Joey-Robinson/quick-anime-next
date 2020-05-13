@@ -51,8 +51,8 @@ const Seasonal = () => {
   }
   const { filteredData, query } = filteredPosts
   const hasSearchResults = filteredData && query !== emptyQuery
-  const posts = hasSearchResults ? filteredData : seasonalData.anime
-  console.log(posts.map(({ mal_id }) => mal_id))
+  const posts = hasSearchResults ? filteredData : morePosts
+
   return (
     <Layout className="seasonal post">
       <SEO title="Seasonal Anime" description="Anime for this season" />
@@ -68,24 +68,25 @@ const Seasonal = () => {
           value={query}
           onChange={handleInputChange}
         />
-        {/* <ul className="list search">
-          {posts.anime.map(({ synopsis, mal_id, title, image_url, url }) => {
-            const shortenedSynopsis = synopsis
-              .slice(0, 125)
-              .replace("[Written by MAL Rewrite]", "")
-            return (
-              <SeasonalList
-                key={mal_id}
-                title={title}
-                image_url={image_url}
-                url={url}
-                href={`/anime/[id]/`}
-                as={`/anime/${mal_id}/`}
-                synopsis={shortenedSynopsis}
-              />
-            )
-          })}
-        </ul> */}
+        <ul className="list search">
+          {posts &&
+            posts.map(({ synopsis, mal_id, title, image_url, url }) => {
+              const shortenedSynopsis = synopsis
+                .slice(0, 125)
+                .replace("[Written by MAL Rewrite]", "")
+              return (
+                <SeasonalList
+                  key={mal_id}
+                  title={title}
+                  image_url={image_url}
+                  url={url}
+                  href={`/anime/[id]/`}
+                  as={`/anime/${mal_id}/`}
+                  synopsis={shortenedSynopsis}
+                />
+              )
+            })}
+        </ul>
       </div>
     </Layout>
   )
