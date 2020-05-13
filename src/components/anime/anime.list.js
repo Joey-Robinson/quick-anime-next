@@ -1,8 +1,8 @@
 import Link from "next/link"
-import React from "react"
+import React, { memo } from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
-const AnimeList = ({ href, as, mal_id, image_url, title, synopsis }) => {
+const AnimeList = memo(({ href, as, mal_id, image_url, title, synopsis }) => {
   return (
     <li key={mal_id} className="search--li li">
       <div className="li--title">
@@ -35,5 +35,6 @@ const AnimeList = ({ href, as, mal_id, image_url, title, synopsis }) => {
       </div>
     </li>
   )
-}
+})
+
 export default AnimeList

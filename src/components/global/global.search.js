@@ -9,10 +9,11 @@ const GlobalSearch = ({
   ariaLabel,
   label,
   spanText,
+  idFor,
 }) => {
   return (
     <div className="search--input">
-      <label htmlFor="newsletter-search">
+      <label htmlFor={idFor}>
         <span>Search {spanText}</span>
       </label>
       <form

@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic"
 import React, { useState } from "react"
-import AnimeSearch from "../../components/anime/anime.search"
+import GlobalSearch from "../../components/global/global.search"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Spinner from "../../components/spinner"
@@ -9,7 +9,6 @@ const AnimeList = dynamic(() => import("../../components/anime/anime.list"), {
   loading: () => <Spinner />,
 })
 
-// This is merely a test
 const Search = () => {
   const [animeData, setAnimeData] = useState({ results: [] })
   const [searchedAnime, setSearchedAnime] = useState("")
@@ -50,10 +49,16 @@ const Search = () => {
   return (
     <Layout className="post">
       <SEO title="Search" />
-      <AnimeSearch
+      <GlobalSearch
         onSubmit={onSubmitHandler}
         value={searchedAnime}
         onChange={onChangeHandler}
+        placeholder="Search For Anime"
+        id="anime-search"
+        ariaLabel="Search For Anime"
+        label="Search Anime"
+        spanText="Search For Anime"
+        idFor="anime-search"
       />
       {animeData.results == "" ? (
         ""
