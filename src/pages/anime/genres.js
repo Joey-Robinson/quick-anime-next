@@ -12,9 +12,7 @@ const GenreChange = dynamic(() => import("../../components/genres/genre.api"), {
 const Genres = () => (
   <Layout>
     <SEO title="Genres" />
-    <div className="container">
-      <GenreChange />
-    </div>
+    <GenreChange />
   </Layout>
 )
 

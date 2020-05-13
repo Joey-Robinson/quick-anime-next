@@ -1,10 +1,19 @@
 import React from "react"
 
-const GlobalSearch = ({ onSubmit, value, onChange }) => {
+const GlobalSearch = ({
+  onSubmit,
+  value,
+  onChange,
+  placeholder,
+  id,
+  ariaLabel,
+  label,
+  spanText,
+}) => {
   return (
     <div className="search--input">
       <label htmlFor="newsletter-search">
-        <span>Search Newsletters</span>
+        <span>Search {spanText}</span>
       </label>
       <form
         role="search"
@@ -14,10 +23,10 @@ const GlobalSearch = ({ onSubmit, value, onChange }) => {
         noValidate
       >
         <input
-          id="newsletter-search"
-          label="Search Newsletters"
-          aria-label="Search for old newsletters"
-          placeholder="Search Newsletters"
+          id={id}
+          label={label}
+          aria-label={ariaLabel}
+          placeholder={placeholder}
           type="search"
           value={value}
           className="field--input"

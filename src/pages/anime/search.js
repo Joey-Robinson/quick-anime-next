@@ -50,44 +50,42 @@ const Search = () => {
   return (
     <Layout className="post">
       <SEO title="Search" />
-      <div className="container">
-        <AnimeSearch
-          onSubmit={onSubmitHandler}
-          value={searchedAnime}
-          onChange={onChangeHandler}
-        />
-        {animeData.results == "" ? (
-          ""
-        ) : (
-          <h2
-            style={{
-              margin: "1.5rem 0",
-              textAlign: "center",
-              display: "block",
-            }}
-          >
-            Displaying {animeData.results.length} Results
-          </h2>
-        )}
-        <ul className="list search">
-          {animeData &&
-            animeData.results.map(
-              ({ synopsis, mal_id, title, image_url, url }) => {
-                return (
-                  <AnimeList
-                    key={mal_id}
-                    title={title}
-                    image_url={image_url}
-                    url={url}
-                    href={`/anime/[id]/`}
-                    as={`/anime/${mal_id}/`}
-                    synopsis={synopsis}
-                  />
-                )
-              }
-            )}
-        </ul>
-      </div>
+      <AnimeSearch
+        onSubmit={onSubmitHandler}
+        value={searchedAnime}
+        onChange={onChangeHandler}
+      />
+      {animeData.results == "" ? (
+        ""
+      ) : (
+        <h2
+          style={{
+            margin: "1.5rem 0",
+            textAlign: "center",
+            display: "block",
+          }}
+        >
+          Displaying {animeData.results.length} Results
+        </h2>
+      )}
+      <ul className="list search">
+        {animeData &&
+          animeData.results.map(
+            ({ synopsis, mal_id, title, image_url, url }) => {
+              return (
+                <AnimeList
+                  key={mal_id}
+                  title={title}
+                  image_url={image_url}
+                  url={url}
+                  href={`/anime/[id]/`}
+                  as={`/anime/${mal_id}/`}
+                  synopsis={synopsis}
+                />
+              )
+            }
+          )}
+      </ul>
     </Layout>
   )
 }
