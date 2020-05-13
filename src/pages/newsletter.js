@@ -41,6 +41,12 @@ const Newsletter = ({ allPosts }) => {
         onSubmit={(event) => event.preventDefault()}
         value={query}
         onChange={handleInputChange}
+        placeholder="Search Newsletters"
+        id="newsletter--search"
+        spanText="Search Newsletters"
+        ariaLabel="Search Newsletters"
+        label="Search Newsletters"
+        idFor="newsletter--search"
       />
       <div className="container">
         <ul className="blog">

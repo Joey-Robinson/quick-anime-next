@@ -56,23 +56,23 @@ const Seasonal = () => {
   return (
     <Layout className="seasonal post">
       <SEO title="Seasonal Anime" description="Anime for this season" />
+      <GlobalSearch
+        onSubmit={(event) => event.preventDefault()}
+        value={query}
+        onChange={handleInputChange}
+        placeholder="Search By Genre Or Title"
+        id="genre--search"
+        ariaLabel="Search By Genre Or Title"
+        label="Search By Genre Or Title"
+        spanText="Search By Genre Or Title"
+        idFor="genre--search"
+      />
       <hgroup style={{ textAlign: "center" }}>
         <h2>
           Listing Anime for {seasonalName} {seasonalYear}
         </h2>
         <h5>Displaying {seasonalData.anime.length} Results</h5>
       </hgroup>
-      <GlobalSearch
-        onSubmit={(event) => event.preventDefault()}
-        value={query}
-        onChange={handleInputChange}
-        placeholder="Search By Genre"
-        id="genre--search"
-        ariaLabel="Search By Genre"
-        label="Search By Genre"
-        spanText="Search By Genre"
-        idFor="genre--search"
-      />
       {/* <ul className="list search">
           {posts &&
             posts.map(({ synopsis, mal_id, title, image_url, url }) => {

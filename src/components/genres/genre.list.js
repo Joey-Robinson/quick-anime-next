@@ -1,8 +1,8 @@
 import Link from "next/link"
-import React from "react"
+import React, { memo } from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
-const GenreList = ({ href, as, mal_id, image_url, title, synopsis }) => (
+const GenreList = memo(({ href, as, mal_id, image_url, title, synopsis }) => (
   <li key={mal_id}>
     <div className="li--title">
       <h5>{title}</h5>
@@ -20,6 +20,6 @@ const GenreList = ({ href, as, mal_id, image_url, title, synopsis }) => (
       </div>
     </div>
   </li>
-)
+))
 
 export default GenreList

@@ -14,7 +14,7 @@ const GlobalSearch = ({
   return (
     <div className="search--input">
       <label htmlFor={idFor}>
-        <span>Search {spanText}</span>
+        <span>{spanText}</span>
       </label>
       <form
         role="search"
