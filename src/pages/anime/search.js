@@ -1,13 +1,14 @@
-import dynamic from "next/dynamic"
+// import dynamic from "next/dynamic"
 import React, { useState } from "react"
+// import Spinner from "../../components/spinner"
+import GlobalList from "../../components/global/global.list"
 import GlobalSearch from "../../components/global/global.search"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import Spinner from "../../components/spinner"
 
-const AnimeList = dynamic(() => import("../../components/anime/anime.list"), {
-  loading: () => <Spinner />,
-})
+// const AnimeList = dynamic(() => import("../../components/anime/anime.list"), {
+//   loading: () => <Spinner />,
+// })
 
 const Search = () => {
   const [animeData, setAnimeData] = useState({ results: [] })
@@ -78,14 +79,17 @@ const Search = () => {
           animeData.results.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
               return (
-                <AnimeList
-                  key={mal_id}
-                  title={title}
-                  image_url={image_url}
-                  url={url}
+                <GlobalList
+                  liClassName="search--li li"
+                  titleClassName="li--title"
+                  imageCLassName="li--image"
                   href={`/anime/[id]/`}
                   as={`/anime/${mal_id}/`}
                   synopsis={synopsis}
+                  mal_id={mal_id}
+                  title={title}
+                  image_url={image_url}
+                  url={url}
                 />
               )
             }
