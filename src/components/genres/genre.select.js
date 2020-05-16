@@ -1,13 +1,27 @@
 import React from "react"
 
-const GenreSelect = ({ handler, defaultValue }) => (
+const GenreSelect = ({
+  handler,
+  defaultValue,
+  previousOnClick,
+  nextOnClick,
+  disabledClassName,
+}) => (
   <div className="select">
     <label htmlFor="genres">
       <span>Select a genre of anime:</span>
     </label>
     <br />
-    <button className="select--previous">prev</button>
-    <button className="select--next">next</button>
+    <button
+      onClick={previousOnClick}
+      style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}
+      className={`select--previous ripple ${disabledClassName}`}
+    >
+      Previous Page
+    </button>
+    <button onClick={nextOnClick} className="select--next ripple">
+      Next Page
+    </button>
     <select
       id="genres"
       name="genres"

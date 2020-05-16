@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import GlobalList from "../global/global.list"
 import GenreSelect from "./genre.select"
 
 const GenreChange = () => {
@@ -6,32 +7,35 @@ const GenreChange = () => {
   const [genreValue, setGenreValue] = useState(1)
   const [initialPage, setInitialPage] = useState(1)
 
-  // const nextPage = () => {
-  //   setInitialPage(initialPage + 1)
-  // }
+  const nextPage = () => {
+    setInitialPage(initialPage + 1)
+  }
 
-  // const previousPage = () => {
-  //   setInitialPage(initialPage - 1)
-  // }
+  const previousPage = () => {
+    setInitialPage(initialPage - 1)
+  }
 
   const changeHandler = (event) => {
     setGenreValue(event.target.value)
   }
 
-  // useEffect(() => {
-  //   fetch(`https://api.jikan.moe/v3/genre/anime/${genreValue}/${initialPage}`)
-  //     .then((response) => response.json())
-  //     .then((data) => setSelectedGenre(data))
-  // }, [genreValue, initialPage])
+  useEffect(() => {
+    fetch(`https://api.jikan.moe/v3/genre/anime/${genreValue}/${initialPage}`)
+      .then((response) => response.json())
+      .then((data) => setSelectedGenre(data))
+  }, [genreValue, initialPage])
 
   return (
     <>
       <GenreSelect
+        previousOnClick={previousPage}
+        disabledClassName={initialPage === 1 ? "disabled" : ""}
+        nextOnClick={nextPage}
         className="genre--select"
         defaultValue={selectedGenre}
         handler={changeHandler}
       />
-      {/* {selectedGenre.anime == "" ? (
+      {selectedGenre.anime == "" ? (
         ""
       ) : (
         <h2
@@ -43,8 +47,8 @@ const GenreChange = () => {
         >
           Displaying {selectedGenre.anime.length} Results
         </h2>
-      )} */}
-      {/* <ul className="list search">
+      )}
+      <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
@@ -68,7 +72,7 @@ const GenreChange = () => {
               )
             }
           )}
-      </ul> */}
+      </ul>
     </>
   )
 }
