@@ -1,9 +1,10 @@
 import React, { useState } from "react"
+import Layout from "../components/global/global.layout"
 import GlobalSearch from "../components/global/global.search"
-import Layout from "../components/layout"
+import SEO from "../components/global/global.seo"
 import { getAllPosts } from "../components/newsletter/newsletter.api"
 import PostPreview from "../components/newsletter/newsletter.preview"
-import SEO from "../components/seo"
+
 // https://github.com/cyrilwanner/next-optimized-images
 // Use this for blog images. 4mb for 1 page, disgusting.
 const Newsletter = ({ allPosts }) => {

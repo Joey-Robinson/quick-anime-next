@@ -1,14 +1,16 @@
-// import dynamic from "next/dynamic"
+import dynamic from "next/dynamic"
 import React, { useState } from "react"
-// import Spinner from "../../components/spinner"
-import GlobalList from "../../components/global/global.list"
+import Layout from "../../components/global/global.layout"
 import GlobalSearch from "../../components/global/global.search"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+import SEO from "../../components/global/global.seo"
+import Spinner from "../../components/global/global.spinner"
 
-// const AnimeList = dynamic(() => import("../../components/anime/anime.list"), {
-//   loading: () => <Spinner />,
-// })
+const GlobalList = dynamic(
+  () => import("../../components/global/global.list"),
+  {
+    loading: () => <Spinner />,
+  }
+)
 
 const Search = () => {
   const [animeData, setAnimeData] = useState({ results: [] })

@@ -1,13 +1,13 @@
 import ErrorPage from "next/error"
 import { useRouter } from "next/router"
-import Layout from "../../components/layout"
+import Layout from "../../components/global/global.layout"
+import SEO from "../../components/global/global.seo"
 import {
   getAllPosts,
   getPostBySlug,
 } from "../../components/newsletter/newsletter.api"
 import PostBody from "../../components/newsletter/newsletter.body"
 import markdownToHtml from "../../components/newsletter/newsletter.parser"
-import SEO from "../../components/seo"
 
 const NewsletterPosts = ({ post }) => {
   const router = useRouter()

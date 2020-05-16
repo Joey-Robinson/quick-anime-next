@@ -1,7 +1,7 @@
 import React from "react"
 // import HomeSignup from "../components/home/home.signup"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/global/global.layout"
+import SEO from "../components/global/global.seo"
 
 const Index = () => (
   <Layout>
