@@ -5,7 +5,8 @@ const GenreSelect = ({
   defaultValue,
   previousOnClick,
   nextOnClick,
-  disabledClassName,
+  previousButtonDisable,
+  nextButtonDisable,
 }) => (
   <div className="select">
     <label htmlFor="genres">
@@ -15,11 +16,14 @@ const GenreSelect = ({
     <button
       onClick={previousOnClick}
       style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}
-      className={`select--previous ripple ${disabledClassName}`}
+      className={`select--previous ripple ${previousButtonDisable}`}
     >
       Previous Page
     </button>
-    <button onClick={nextOnClick} className="select--next ripple">
+    <button
+      onClick={nextOnClick}
+      className={`select--next ripple ${nextButtonDisable}`}
+    >
       Next Page
     </button>
     <select

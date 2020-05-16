@@ -29,7 +29,8 @@ const GenreChange = () => {
     <>
       <GenreSelect
         previousOnClick={previousPage}
-        disabledClassName={initialPage === 1 ? "disabled" : ""}
+        previousButtonDisable={initialPage === 1 ? "disabled" : ""}
+        nextButtonDisable={selectedGenre.anime.length < 100 ? "disabled" : ""}
         nextOnClick={nextPage}
         className="genre--select"
         defaultValue={selectedGenre}
