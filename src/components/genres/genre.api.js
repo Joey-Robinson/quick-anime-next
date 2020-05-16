@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react"
-import GenreList from "./genre.list"
+import React, { useState } from "react"
 import GenreSelect from "./genre.select"
 
 const GenreChange = () => {
@@ -19,11 +18,11 @@ const GenreChange = () => {
     setGenreValue(event.target.value)
   }
 
-  useEffect(() => {
-    fetch(`https://api.jikan.moe/v3/genre/anime/${genreValue}/${initialPage}`)
-      .then((response) => response.json())
-      .then((data) => setSelectedGenre(data))
-  }, [genreValue, initialPage])
+  // useEffect(() => {
+  //   fetch(`https://api.jikan.moe/v3/genre/anime/${genreValue}/${initialPage}`)
+  //     .then((response) => response.json())
+  //     .then((data) => setSelectedGenre(data))
+  // }, [genreValue, initialPage])
 
   return (
     <>
@@ -32,7 +31,7 @@ const GenreChange = () => {
         defaultValue={selectedGenre}
         handler={changeHandler}
       />
-      {selectedGenre.anime == "" ? (
+      {/* {selectedGenre.anime == "" ? (
         ""
       ) : (
         <h2
@@ -44,9 +43,8 @@ const GenreChange = () => {
         >
           Displaying {selectedGenre.anime.length} Results
         </h2>
-      )}
-
-      <ul className="list search">
+      )} */}
+      {/* <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
@@ -54,7 +52,11 @@ const GenreChange = () => {
                 .slice(0, 300)
                 .replace("[Written by MAL Rewrite]", "")
               return (
-                <GenreList
+                <GlobalList
+                  titleClassName="li--title"
+                  imageClassName="genre"
+                  linkClassName="genre--link"
+                  synopsisClassName="genre--synopsis"
                   key={mal_id}
                   title={title}
                   image_url={image_url}
@@ -66,7 +68,7 @@ const GenreChange = () => {
               )
             }
           )}
-      </ul>
+      </ul> */}
     </>
   )
 }

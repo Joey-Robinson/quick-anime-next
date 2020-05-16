@@ -6,7 +6,9 @@ const GlobalList = memo(
   ({
     liClassName,
     titleClassName,
-    imageCLassName,
+    imageClassName,
+    linkClassName,
+    synopsisClassName,
     href,
     as,
     mal_id,
@@ -19,12 +21,12 @@ const GlobalList = memo(
         <div className={titleClassName}>
           <h5>{title}</h5>
         </div>
-        <div className={imageCLassName}>
+        <div className={imageClassName}>
           <LazyLoadImage effect="blur" alt={title} src={image_url} />
-          <p>
+          <p className={synopsisClassName}>
             {!synopsis ? "No synopsis is available for this title" : synopsis}
           </p>
-          <div>
+          <div className={linkClassName}>
             <Link href={href} as={as}>
               <a>Read More about it here.</a>
             </Link>

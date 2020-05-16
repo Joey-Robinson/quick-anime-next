@@ -6,6 +6,8 @@ const GenreSelect = ({ handler, defaultValue }) => (
       <span>Select a genre of anime:</span>
     </label>
     <br />
+    <button className="select--previous">prev</button>
+    <button className="select--next">next</button>
     <select
       id="genres"
       name="genres"
