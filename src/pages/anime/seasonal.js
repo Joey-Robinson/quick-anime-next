@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
+import Layout from "../../components/global/global.layout"
 import GlobalSearch from "../../components/global/global.search"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import Spinner from "../../components/spinner"
+import SEO from "../../components/global/global.seo"
+import Spinner from "../../components/global/global.spinner"
 
-const SeasonalList = dynamic(
-  () => import("../../components/seasonal/seasonal.list"),
+const GlobalList = dynamic(
+  () => import("../../components/global/global.list"),
   {
     loading: () => <Spinner />,
   }
@@ -73,25 +73,28 @@ const Seasonal = () => {
         </h2>
         <h5>Displaying {seasonalData.anime.length} Results</h5>
       </hgroup>
-      {/* <ul className="list search">
-          {posts &&
-            posts.map(({ synopsis, mal_id, title, image_url, url }) => {
-              const shortenedSynopsis = synopsis
-                .slice(0, 125)
-                .replace("[Written by MAL Rewrite]", "")
-              return (
-                <SeasonalList
-                  key={mal_id}
-                  title={title}
-                  image_url={image_url}
-                  url={url}
-                  href={`/anime/[id]/`}
-                  as={`/anime/${mal_id}/`}
-                  synopsis={shortenedSynopsis}
-                />
-              )
-            })}
-        </ul> */}
+      <ul className="list search">
+        {posts &&
+          posts.map(({ synopsis, mal_id, title, image_url, url }) => {
+            const shortenedSynopsis = synopsis
+              .slice(0, 125)
+              .replace("[Written by MAL Rewrite]", "")
+            return (
+              <GlobalList
+                liClassName="search--li li"
+                titleClassName="li--title"
+                imageCLassName="li--image"
+                href={`/anime/[id]/`}
+                as={`/anime/${mal_id}/`}
+                synopsis={shortenedSynopsis}
+                mal_id={mal_id}
+                title={title}
+                image_url={image_url}
+                url={url}
+              />
+            )
+          })}
+      </ul>
     </Layout>
   )
 }
