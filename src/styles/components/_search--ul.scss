@@ -43,3 +43,23 @@
 
   }
 }
+
+.li--image {
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  grid-template-rows: auto 1fr;
+
+  p {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  div {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: left;
+    align-self: end;
+    padding: 0 0 0 6rem;
+  }
+}

@@ -1,24 +1,24 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
+// *,
+// *::before,
+// *::after {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: inherit;
+// }
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
+// html {
+//   box-sizing: border-box;
+//   font-size: 62.5%;
+// }
 
-body {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  font-weight: 300;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.4;
-  height: 100vh;
-  min-height: 100vh;
-  background: $mainBackgroundColor;
-  color: white;
-}
+// body {
+//   overflow-x: hidden;
+//   scroll-behavior: smooth;
+//   font-weight: 300;
+//   font-family: 'Roboto', sans-serif;
+//   line-height: 1.4;
+//   height: 100vh;
+//   min-height: 100vh;
+//   background: $mainBackgroundColor;
+//   color: white;
+// }
