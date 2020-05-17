@@ -10,6 +10,7 @@ const GenreSelect = ({
   nextButtonDisable,
 }) => {
   return (
+    // Find a way to change to a fab
     <div className="select">
       <label htmlFor="genres">
         <span>Select a genre of anime:</span>
