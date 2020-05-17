@@ -76,3 +76,19 @@
     text-align: center;
   }
 }
+
+
+.fab {
+  display: block;
+
+  select,
+  button {
+    position: fixed;
+    width: 100px;
+    z-index: 2;
+  }
+
+  label {
+    display: none;
+  }
+}

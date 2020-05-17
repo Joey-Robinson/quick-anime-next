@@ -1,5 +1,29 @@
-import React from "react"
+import { useEffect, useRef, useState } from "react"
 import Button from "../global/global.button"
+
+// Hook
+
+function useOnScreen(ref, rootMargin = "0px") {
+  const [isIntersecting, setIntersecting] = useState(false)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIntersecting(entry.isIntersecting)
+      },
+      {
+        rootMargin,
+      }
+    )
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+    return () => {
+      observer.unobserve(ref.current)
+    }
+  }, [])
+
+  return isIntersecting
+}
 
 const GenreSelect = ({
   handler,
@@ -9,9 +33,11 @@ const GenreSelect = ({
   previousButtonDisable,
   nextButtonDisable,
 }) => {
+  const ref = useRef()
+  const onScreen = useOnScreen(ref, "100px")
   return (
     // Find a way to change to a fab
-    <div className="select">
+    <div ref={ref} className={onScreen ? "select" : "fab"}>
       <label htmlFor="genres">
         <span>Select a genre of anime:</span>
       </label>
