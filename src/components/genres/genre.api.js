@@ -1,6 +1,14 @@
+import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
-import GlobalList from "../global/global.list"
+import Spinner from "../../components/global/global.spinner"
 import GenreSelect from "./genre.select"
+
+const GlobalList = dynamic(
+  () => import("../../components/global/global.list"),
+  {
+    loading: () => <Spinner />,
+  }
+)
 
 const GenreChange = () => {
   const [selectedGenre, setSelectedGenre] = useState({ anime: [] })
