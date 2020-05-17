@@ -11,9 +11,11 @@ import markdownToHtml from "../../components/newsletter/newsletter.parser"
 
 const NewsletterPosts = ({ post }) => {
   const router = useRouter()
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
   return (
     <Layout className="post">
       <SEO title={post.title} description={post.description} />

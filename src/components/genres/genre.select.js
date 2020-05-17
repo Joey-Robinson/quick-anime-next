@@ -1,4 +1,5 @@
 import React from "react"
+import Button from "../global/global.button"
 
 const GenreSelect = ({
   handler,
@@ -13,19 +14,17 @@ const GenreSelect = ({
       <span>Select a genre of anime:</span>
     </label>
     <br />
-    <button
+    <Button
       onClick={previousOnClick}
       style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}
-      className={`select--previous ripple ${previousButtonDisable}`}
-    >
-      Previous Page
-    </button>
-    <button
+      className={`select--previous ${previousButtonDisable}`}
+      message="Previous Page"
+    />
+    <Button
       onClick={nextOnClick}
-      className={`select--next ripple ${nextButtonDisable}`}
-    >
-      Next Page
-    </button>
+      className={`select--next ${nextButtonDisable}`}
+      message="Next Page"
+    />
     <select
       id="genres"
       name="genres"

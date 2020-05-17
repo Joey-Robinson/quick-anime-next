@@ -1,8 +1,8 @@
 import fetch from "isomorphic-unfetch"
 import React, { useEffect, useState } from "react"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import Spinner from "../../components/spinner"
+import Layout from "../../components/global/global.layout"
+import SEO from "../../components/global/global.seo"
+import Spinner from "../../components/global/global.spinner"
 import AnimeTemplate from "../../template/anime.template"
 import RecommendationsTemplate from "../../template/recommendations.template"
 
@@ -24,11 +24,11 @@ const Post = (props) => {
   const genres = results.genres
   const genreNames = genres.map(({ name }) => ` ${name}, `)
 
-  // Anime news
+  // Anime recommendations
   const id = results.mal_id
   const [animeRecs, setAnimeRecs] = useState({ recommendations: [] })
 
-  const newsCall = async () => {
+  const recommendationsCall = async () => {
     const response = await fetch(
       `https://api.jikan.moe/v3/anime/${id}/recommendations`
     )
@@ -37,11 +37,10 @@ const Post = (props) => {
   }
 
   useEffect(() => {
-    newsCall()
+    recommendationsCall()
   }, [])
 
   // No background information
-
   const smugkaguya = (
     <img src="/static/smugkaguya.jpg" alt="Kagyua being smug." />
   )
