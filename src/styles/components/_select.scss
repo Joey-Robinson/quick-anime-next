@@ -81,14 +81,36 @@
 .fab {
   display: block;
 
-  select,
-  button {
+  select {
+    color: white;
+    background: $primaryBackgroundColor;
+    border: 3.2px solid white;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 0.5em 0em 0.5em 1rem;
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, white 50%),
+      linear-gradient(135deg, white 50%, transparent 50%);
+    background-position:
+      calc(100% - 10px) calc(1em + 1px),
+      calc(100% - 5px) calc(1em + 1px),
+      calc(100% - .5em) .6em;
+    background-size:
+      8px 8px,
+      5px 5px,
+      1.5em 1.5em;
+    background-repeat: no-repeat;
+
+
     position: fixed;
     width: 100px;
     z-index: 2;
   }
 
-  label {
+  button,
+  label,
+  br {
     display: none;
   }
 }

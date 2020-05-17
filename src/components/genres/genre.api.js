@@ -40,11 +40,10 @@ const GenreChange = () => {
         previousButtonDisable={initialPage === 1 ? "disabled" : ""}
         nextButtonDisable={selectedGenre.anime.length < 100 ? "disabled" : ""}
         nextOnClick={nextPage}
-        className="genre--select"
         defaultValue={selectedGenre}
         handler={changeHandler}
       />
-      {selectedGenre.anime == "" ? (
+      {/* {selectedGenre.anime == "" ? (
         ""
       ) : (
         <h2
@@ -56,7 +55,7 @@ const GenreChange = () => {
         >
           Displaying {selectedGenre.anime.length} Results
         </h2>
-      )}
+      )} */}
       <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(

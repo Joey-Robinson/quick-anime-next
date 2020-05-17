@@ -41,7 +41,6 @@ const GenreSelect = ({
       <label htmlFor="genres">
         <span>Select a genre of anime:</span>
       </label>
-      <br />
       <Button
         onClick={previousOnClick}
         style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}
