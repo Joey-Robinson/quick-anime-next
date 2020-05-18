@@ -56,7 +56,7 @@ const GenreChange = () => {
           Displaying {selectedGenre.anime.length} Results
         </h2>
       )} */}
-      <ul className="list search">
+      {/* <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
@@ -80,7 +80,7 @@ const GenreChange = () => {
               )
             }
           )}
-      </ul>
+      </ul> */}
     </>
   )
 }
