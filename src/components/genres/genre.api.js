@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic"
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
+import VisibilitySensor from "react-visibility-sensor"
 import Spinner from "../../components/global/global.spinner"
 import GenreSelect from "./genre.select"
 
@@ -10,27 +11,27 @@ const GlobalList = dynamic(
   }
 )
 
-function useOnScreen(ref, rootMargin = "0px") {
-  const [isIntersecting, setIntersecting] = useState(false)
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIntersecting(entry.isIntersecting)
-      },
-      {
-        rootMargin,
-      }
-    )
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-    return () => {
-      observer.unobserve(ref.current)
-    }
-  }, [])
+// function useOnScreen(ref, rootMargin = "0px") {
+//   const [isIntersecting, setIntersecting] = useState(false)
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         setIntersecting(entry.isIntersecting)
+//       },
+//       {
+//         rootMargin,
+//       }
+//     )
+//     if (ref.current) {
+//       observer.observe(ref.current)
+//     }
+//     return () => {
+//       observer.unobserve(ref.current)
+//     }
+//   }, [])
 
-  return isIntersecting
-}
+//   return isIntersecting
+// }
 
 const GenreChange = () => {
   const [selectedGenre, setSelectedGenre] = useState({ anime: [] })
@@ -55,21 +56,27 @@ const GenreChange = () => {
       .then((data) => setSelectedGenre(data))
   }, [genreValue, initialPage])
 
-  const ref = useRef()
-  const onScreen = useOnScreen(ref, "100px")
+  // const ref = useRef()
+  // const onScreen = useOnScreen(ref, "100px")
 
   return (
     <>
-      <div ref={ref} className={onScreen ? "visible" : "not--visible"}>
-        <GenreSelect
-          previousOnClick={previousPage}
-          previousButtonDisable={initialPage === 1 ? "disabled" : ""}
-          nextButtonDisable={selectedGenre.anime.length < 100 ? "disabled" : ""}
-          nextOnClick={nextPage}
-          defaultValue={selectedGenre}
-          handler={changeHandler}
-        />
-      </div>
+      <VisibilitySensor>
+        {({ isVisible }) => (
+          <div className={isVisible ? "pp" : "not--visible"}>
+            <GenreSelect
+              previousOnClick={previousPage}
+              previousButtonDisable={initialPage === 1 ? "disabled" : ""}
+              nextButtonDisable={
+                selectedGenre.anime.length < 100 ? "disabled" : ""
+              }
+              nextOnClick={nextPage}
+              defaultValue={selectedGenre}
+              handler={changeHandler}
+            />
+          </div>
+        )}
+      </VisibilitySensor>
       {/* {selectedGenre.anime == "" ? (
         ""
       ) : (
