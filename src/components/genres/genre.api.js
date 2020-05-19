@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Spinner from "../../components/global/global.spinner"
 import GenreSelect from "./genre.select"
 
@@ -9,6 +9,28 @@ const GlobalList = dynamic(
     loading: () => <Spinner />,
   }
 )
+
+function useOnScreen(ref, rootMargin = "0px") {
+  const [isIntersecting, setIntersecting] = useState(false)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIntersecting(entry.isIntersecting)
+      },
+      {
+        rootMargin,
+      }
+    )
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+    return () => {
+      observer.unobserve(ref.current)
+    }
+  }, [])
+
+  return isIntersecting
+}
 
 const GenreChange = () => {
   const [selectedGenre, setSelectedGenre] = useState({ anime: [] })
@@ -33,16 +55,21 @@ const GenreChange = () => {
       .then((data) => setSelectedGenre(data))
   }, [genreValue, initialPage])
 
+  const ref = useRef()
+  const onScreen = useOnScreen(ref, "100px")
+
   return (
     <>
-      <GenreSelect
-        previousOnClick={previousPage}
-        previousButtonDisable={initialPage === 1 ? "disabled" : ""}
-        nextButtonDisable={selectedGenre.anime.length < 100 ? "disabled" : ""}
-        nextOnClick={nextPage}
-        defaultValue={selectedGenre}
-        handler={changeHandler}
-      />
+      <div ref={ref} className={onScreen ? "visible" : "not--visible"}>
+        <GenreSelect
+          previousOnClick={previousPage}
+          previousButtonDisable={initialPage === 1 ? "disabled" : ""}
+          nextButtonDisable={selectedGenre.anime.length < 100 ? "disabled" : ""}
+          nextOnClick={nextPage}
+          defaultValue={selectedGenre}
+          handler={changeHandler}
+        />
+      </div>
       {/* {selectedGenre.anime == "" ? (
         ""
       ) : (
@@ -56,7 +83,7 @@ const GenreChange = () => {
           Displaying {selectedGenre.anime.length} Results
         </h2>
       )} */}
-      {/* <ul className="list search">
+      <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
@@ -80,7 +107,7 @@ const GenreChange = () => {
               )
             }
           )}
-      </ul> */}
+      </ul>
     </>
   )
 }
