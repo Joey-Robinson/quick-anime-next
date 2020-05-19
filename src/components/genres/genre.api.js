@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic"
 import React, { useEffect, useRef, useState } from "react"
-// import VisibilitySensor from "react-visibility-sensor"
 import Spinner from "../../components/global/global.spinner"
 import GenreSelect from "./genre.select"
 
@@ -74,7 +73,7 @@ const GenreChange = () => {
             handler={changeHandler}
           />
         ) : (
-          <div className="hidden">
+          <div className="fab">
             <GenreSelect
               previousOnClick={previousPage}
               previousButtonDisable={initialPage === 1 ? "disabled" : ""}
@@ -88,22 +87,6 @@ const GenreChange = () => {
           </div>
         )}
       </div>
-      {/* <VisibilitySensor>
-        {({ isVisible }) => (
-          <div className={isVisible ? "hidden" : "visible"}>
-            <GenreSelect
-              previousOnClick={previousPage}
-              previousButtonDisable={initialPage === 1 ? "disabled" : ""}
-              nextButtonDisable={
-                selectedGenre.anime.length < 100 ? "disabled" : ""
-              }
-              nextOnClick={nextPage}
-              defaultValue={selectedGenre}
-              handler={changeHandler}
-            />
-          </div>
-        )}
-      </VisibilitySensor> */}
       {/* {selectedGenre.anime == "" ? (
         ""
       ) : (
