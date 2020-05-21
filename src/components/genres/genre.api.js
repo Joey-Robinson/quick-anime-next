@@ -71,6 +71,8 @@ const GenreChange = () => {
             nextOnClick={nextPage}
             defaultValue={selectedGenre}
             handler={changeHandler}
+            previousMessage="Previous Page"
+            nextMessage="Next Page"
           />
         ) : (
           <div className="fab">
@@ -83,6 +85,8 @@ const GenreChange = () => {
               nextOnClick={nextPage}
               defaultValue={selectedGenre}
               handler={changeHandler}
+              previousMessage="&raquo;"
+              nextMessage="&laquo;"
             />
           </div>
         )}

@@ -8,6 +8,8 @@ const GenreSelect = ({
   nextOnClick,
   previousButtonDisable,
   nextButtonDisable,
+  previousMessage,
+  nextMessage,
 }) => {
   return (
     // Find a way to change to a fab
@@ -19,12 +21,12 @@ const GenreSelect = ({
         onClick={previousOnClick}
         style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}
         className={`select--previous ${previousButtonDisable}`}
-        message="Previous Page"
+        message={previousMessage}
       />
       <Button
         onClick={nextOnClick}
         className={`select--next ${nextButtonDisable}`}
-        message="Next Page"
+        message={nextMessage}
       />
       <select
         id="genres"
