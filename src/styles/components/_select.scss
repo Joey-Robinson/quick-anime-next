@@ -77,36 +77,36 @@
   top: 0;
   z-index: 2;
 
-  .select--previous,
   .select--next {
-    margin-bottom: 0;
+    margin-top: 6rem;
+    margin-left: 6rem;
+  }
+
+  .select--previous {
     margin-top: 0;
+    margin-bottom: .75rem;
   }
 
   select {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    right: 0;
+    padding: 0;
+    width: 15rem;
+    margin-top: 5rem;
+    rotate: -90deg;
   }
 
   label {
     display: none;
   }
 
-  select,
-  button {}
 
   button {
     text-align: center;
-    padding: 0;
-    border-radius: 20rem;
-    font-size: 1.6rem;
-    margin-bottom: 0;
-    margin-top: 0;
+    font-size: 1.8rem;
     border: 1.6px solid white;
     color: white;
     cursor: pointer;
-
+    padding: .75rem 0;
+    z-index: 2;
   }
 }

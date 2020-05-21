@@ -60,22 +60,9 @@ const GenreChange = () => {
 
   return (
     <>
-      <div ref={ref}>
-        {onScreen ? (
-          <GenreSelect
-            previousOnClick={previousPage}
-            previousButtonDisable={initialPage === 1 ? "disabled" : ""}
-            nextButtonDisable={
-              selectedGenre.anime.length < 100 ? "disabled" : ""
-            }
-            nextOnClick={nextPage}
-            defaultValue={selectedGenre}
-            handler={changeHandler}
-            previousMessage="Previous Page"
-            nextMessage="Next Page"
-          />
-        ) : (
-          <div className="fab">
+      {selectedGenre.anime && (
+        <div ref={ref}>
+          {onScreen ? (
             <GenreSelect
               previousOnClick={previousPage}
               previousButtonDisable={initialPage === 1 ? "disabled" : ""}
@@ -85,12 +72,27 @@ const GenreChange = () => {
               nextOnClick={nextPage}
               defaultValue={selectedGenre}
               handler={changeHandler}
-              previousMessage="&raquo;"
-              nextMessage="&laquo;"
+              previousMessage="Previous Page"
+              nextMessage="Next Page"
             />
-          </div>
-        )}
-      </div>
+          ) : (
+            <div className="fab">
+              <GenreSelect
+                previousOnClick={previousPage}
+                previousButtonDisable={initialPage === 1 ? "disabled" : ""}
+                nextButtonDisable={
+                  selectedGenre.anime.length < 100 ? "disabled" : ""
+                }
+                nextOnClick={nextPage}
+                defaultValue={selectedGenre}
+                handler={changeHandler}
+                nextMessage="&raquo;"
+                previousMessage="&laquo;"
+              />
+            </div>
+          )}
+        </div>
+      )}
       {/* {selectedGenre.anime == "" ? (
         ""
       ) : (
