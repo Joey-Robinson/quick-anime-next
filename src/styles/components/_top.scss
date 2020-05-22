@@ -1,0 +1,20 @@
+.top {
+  position: fixed;
+  right: 4.5rem;
+  bottom: 4.5rem;
+  background: $primaryBackgroundColor;
+  border-radius: 10rem;
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-position: center;
+  border: none;
+  outline: none;
+  width: 5rem;
+  height: 5rem;
+
+  span {
+    font-size: 4rem;
+  }
+}

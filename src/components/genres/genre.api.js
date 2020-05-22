@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic"
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Spinner from "../../components/global/global.spinner"
 import GenreSelect from "./genre.select"
 
@@ -9,28 +9,6 @@ const GlobalList = dynamic(
     loading: () => <Spinner />,
   }
 )
-
-function useOnScreen(ref, rootMargin = "0px") {
-  const [isIntersecting, setIntersecting] = useState(false)
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIntersecting(entry.isIntersecting)
-      },
-      {
-        rootMargin,
-      }
-    )
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-    return () => {
-      observer.unobserve(ref.current)
-    }
-  }, [])
-
-  return isIntersecting
-}
 
 const GenreChange = () => {
   const [selectedGenre, setSelectedGenre] = useState({ anime: [] })
@@ -54,9 +32,6 @@ const GenreChange = () => {
       .then((response) => response.json())
       .then((data) => setSelectedGenre(data))
   }, [genreValue, initialPage])
-
-  const ref = useRef()
-  const onScreen = useOnScreen(ref, "100px")
 
   return (
     <>
@@ -110,7 +85,7 @@ const GenreChange = () => {
           Displaying {selectedGenre.anime.length} Results
         </h2>
       )} */}
-      <ul className="list search">
+      {/* <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
@@ -134,11 +109,10 @@ const GenreChange = () => {
               )
             }
           )}
-      </ul>
-      <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-        {" "}
-        click
-      </button>
+      </ul> */}
+      {/* <button className="top">
+        <span>&uarr;</span>
+      </button> */}
     </>
   )
 }

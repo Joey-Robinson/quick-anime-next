@@ -19,14 +19,8 @@ const GenreSelect = ({
       </label>
       <Button
         onClick={previousOnClick}
-        style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}
         className={`select--previous ${previousButtonDisable}`}
         message={previousMessage}
-      />
-      <Button
-        onClick={nextOnClick}
-        className={`select--next ${nextButtonDisable}`}
-        message={nextMessage}
       />
       <select
         id="genres"
@@ -79,6 +73,11 @@ const GenreSelect = ({
         <option value="42">Seinen</option>
         <option value="43">Josei</option>
       </select>
+      <Button
+        onClick={nextOnClick}
+        className={`select--next ${nextButtonDisable}`}
+        message={nextMessage}
+      />
     </div>
   )
 }
