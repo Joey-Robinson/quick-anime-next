@@ -61,22 +61,26 @@ const GenreChange = () => {
   return (
     <>
       {selectedGenre.anime && (
+        <GenreSelect
+          previousOnClick={previousPage}
+          previousButtonDisable={initialPage === 1 ? "disabled" : ""}
+          nextButtonDisable={selectedGenre.anime.length < 100 ? "disabled" : ""}
+          nextOnClick={nextPage}
+          defaultValue={selectedGenre}
+          handler={changeHandler}
+          previousMessage="Previous Page"
+          nextMessage="Next Page"
+        />
+      )}
+      {/* {selectedGenre.anime && (
         <div ref={ref}>
           {onScreen ? (
-            <GenreSelect
-              previousOnClick={previousPage}
-              previousButtonDisable={initialPage === 1 ? "disabled" : ""}
-              nextButtonDisable={
-                selectedGenre.anime.length < 100 ? "disabled" : ""
-              }
-              nextOnClick={nextPage}
-              defaultValue={selectedGenre}
-              handler={changeHandler}
-              previousMessage="Previous Page"
-              nextMessage="Next Page"
-            />
           ) : (
-            <div className="fab">
+            <div
+              role="button"
+              onClick={toggleFable}
+              className={isHidden ? `fab fab--opened` : `fab fab--closed`}
+            >
               <GenreSelect
                 previousOnClick={previousPage}
                 previousButtonDisable={initialPage === 1 ? "disabled" : ""}
@@ -92,7 +96,7 @@ const GenreChange = () => {
             </div>
           )}
         </div>
-      )}
+      )} */}
       {/* {selectedGenre.anime == "" ? (
         ""
       ) : (
@@ -131,6 +135,10 @@ const GenreChange = () => {
             }
           )}
       </ul>
+      <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+        {" "}
+        click
+      </button>
     </>
   )
 }
