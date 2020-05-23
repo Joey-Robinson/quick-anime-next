@@ -30,6 +30,7 @@ const Seasonal = () => {
 
   // Filter
   const morePosts = seasonalData.anime
+  const genrePosts = seasonalData.anime.map(({ genres }) => genres)
   const emptyQuery = ""
   const [filteredPosts, setFilteredPosts] = useState({
     filteredData: [],
@@ -38,10 +39,14 @@ const Seasonal = () => {
 
   const handleInputChange = (event) => {
     const query = event.target.value
-    const posts = morePosts || []
+    const posts = morePosts || genrePosts || []
+
     const filteredData = posts.filter((post) => {
-      const { title, tags } = post
-      return title.toLowerCase().includes(query.toLowerCase())
+      const { title, genrePosts } = post
+      return (
+        title.toLowerCase().includes(query.toLowerCase()) ||
+        genrePosts.join("").toLowerCase().includes(query.toLowerCase())
+      )
     })
 
     setFilteredPosts({
@@ -76,12 +81,17 @@ const Seasonal = () => {
       <ul className="list search">
         {posts &&
           posts.map(({ genres, synopsis, mal_id, title, image_url, url }) => {
-            console.log(genres.map(({ name }) => name))
+            const genreList = genres.map(({ name }) => `${name}, `)
+            {
+              /* console.log(genreList) */
+            }
             const shortenedSynopsis = synopsis
               .slice(0, 125)
               .replace("[Written by MAL Rewrite]", "")
             return (
               <GlobalList
+                genres={genreList}
+                genreClassName="li--genres"
                 liClassName="search--li li"
                 titleClassName="li--title"
                 imageClassName="li--image"
@@ -92,6 +102,7 @@ const Seasonal = () => {
                 title={title}
                 image_url={image_url}
                 url={url}
+                key={mal_id}
               />
             )
           })}
