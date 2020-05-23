@@ -15,12 +15,15 @@ const GlobalList = memo(
     image_url,
     title,
     synopsis,
+    genres,
+    genreClassName,
   }) => {
     return (
       <li key={mal_id} className={liClassName}>
         <div className={titleClassName}>
           <h5>{title}</h5>
         </div>
+        <div className={genreClassName}>{genres}</div>
         <div className={imageClassName}>
           <LazyLoadImage effect="blur" alt={title} src={image_url} />
           <p className={synopsisClassName}>

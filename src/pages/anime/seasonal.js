@@ -75,7 +75,8 @@ const Seasonal = () => {
       </hgroup>
       <ul className="list search">
         {posts &&
-          posts.map(({ synopsis, mal_id, title, image_url, url }) => {
+          posts.map(({ genres, synopsis, mal_id, title, image_url, url }) => {
+            console.log(genres.map(({ name }) => name))
             const shortenedSynopsis = synopsis
               .slice(0, 125)
               .replace("[Written by MAL Rewrite]", "")
@@ -83,7 +84,7 @@ const Seasonal = () => {
               <GlobalList
                 liClassName="search--li li"
                 titleClassName="li--title"
-                imageCLassName="li--image"
+                imageClassName="li--image"
                 href={`/anime/[id]/`}
                 as={`/anime/${mal_id}/`}
                 synopsis={shortenedSynopsis}
