@@ -39,19 +39,23 @@ const Seasonal = () => {
 
   const handleInputChange = (event) => {
     const query = event.target.value
-    const posts = morePosts || genrePosts || []
+    const posts = morePosts || []
+    const geans = genrePosts || []
 
     const filteredData = posts.filter((post) => {
-      const { title, genrePosts } = post
-      return (
-        title.toLowerCase().includes(query.toLowerCase()) ||
-        genrePosts.join("").toLowerCase().includes(query.toLowerCase())
-      )
+      const { title } = post
+      return title.toLowerCase().includes(query.toLowerCase())
+    })
+
+    const filterMe = geans.map.filter((post) => {
+      const { genres } = post
+      return genres.toLowerCase().includes(query.toLowerCase())
     })
 
     setFilteredPosts({
       query,
       filteredData,
+      filterMe,
     })
   }
   const { filteredData, query } = filteredPosts
