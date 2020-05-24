@@ -4,6 +4,7 @@ import Layout from "../../components/global/global.layout"
 import GlobalSearch from "../../components/global/global.search"
 import SEO from "../../components/global/global.seo"
 import Spinner from "../../components/global/global.spinner"
+import { renderEffect } from "../../utils/renders.utils"
 
 const GlobalList = dynamic(
   () => import("../../components/global/global.list"),
@@ -14,7 +15,7 @@ const GlobalList = dynamic(
 
 const Seasonal = () => {
   const [seasonalData, setSeasonalData] = useState({ anime: [] })
-
+  renderEffect()
   const seasonalCall = async () => {
     const response = await fetch("https://api.jikan.moe/v3/season")
     const data = await response.json()
@@ -30,38 +31,32 @@ const Seasonal = () => {
 
   // Filter
   const morePosts = seasonalData.anime
-  // console.log(geans)
   const emptyQuery = ""
   const [filteredPosts, setFilteredPosts] = useState({
     filteredData: [],
     query: emptyQuery,
   })
-  // filterMe: [],
 
   const handleInputChange = (event) => {
     const query = event.target.value
     const posts = morePosts || []
-    // const newb = geans || []
 
-    const filteredData = posts.filter((post) => {
-      const { title } = post
-      return title.toLowerCase().includes(query.toLowerCase())
+    const filteredData = posts.filter(({ title, genres }) => {
+      const genreName = genres.map(({ name }) => name)
+      return (
+        title.toLowerCase().includes(query.toLowerCase()) ||
+        genreName.join("").toLowerCase().includes(query.toLowerCase())
+      )
     })
-
-    // const filterMe = posts
-    //   .map(({ genres }) => genres)
-    //   .filter((genres) => {
-    //     return genres.join("").toLowerCase().includes(query.toLowerCase())
-    //   })
-    // filterMe,
 
     setFilteredPosts({
       query,
       filteredData,
     })
   }
-  const { filteredData, query, filterMe } = filteredPosts
-  const hasSearchResults = filteredData && query && filterMe !== emptyQuery
+
+  const { filteredData, query } = filteredPosts
+  const hasSearchResults = filteredData && query !== emptyQuery
   const posts = hasSearchResults ? filteredData : morePosts
 
   return (
@@ -86,17 +81,12 @@ const Seasonal = () => {
       </hgroup>
       <ul className="list search">
         {posts &&
-          posts.map(({ genres, synopsis, mal_id, title, image_url, url }) => {
-            const genreList = genres.map(({ name }) => `${name}, `)
-            {
-              /* console.log(genreList) */
-            }
+          posts.map(({ synopsis, mal_id, title, image_url, url }) => {
             const shortenedSynopsis = synopsis
               .slice(0, 125)
               .replace("[Written by MAL Rewrite]", "")
             return (
               <GlobalList
-                genres={genreList}
                 genreClassName="li--genres"
                 liClassName="search--li li"
                 titleClassName="li--title"
