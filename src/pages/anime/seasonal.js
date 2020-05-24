@@ -1,9 +1,10 @@
 import dynamic from "next/dynamic"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Layout from "../../components/global/global.layout"
 import GlobalSearch from "../../components/global/global.search"
 import SEO from "../../components/global/global.seo"
 import Spinner from "../../components/global/global.spinner"
+import { fetchUtility } from "../../utils/fetch.utils"
 import { renderEffect } from "../../utils/renders.utils"
 
 const GlobalList = dynamic(
@@ -14,23 +15,15 @@ const GlobalList = dynamic(
 )
 
 const Seasonal = () => {
-  const [seasonalData, setSeasonalData] = useState({ anime: [] })
+  const newSeasonalData = fetchUtility("https://api.jikan.moe/v3/season")
+
   renderEffect()
-  const seasonalCall = async () => {
-    const response = await fetch("https://api.jikan.moe/v3/season")
-    const data = await response.json()
-    setSeasonalData(data)
-  }
 
-  useEffect(() => {
-    seasonalCall()
-  }, [])
-
-  const seasonalYear = seasonalData.season_year
-  const seasonalName = seasonalData.season_name
+  const seasonalYear = newSeasonalData.data.season_year
+  const seasonalName = newSeasonalData.data.season_name
 
   // Filter
-  const morePosts = seasonalData.anime
+  const morePosts = newSeasonalData.data.anime
   const emptyQuery = ""
   const [filteredPosts, setFilteredPosts] = useState({
     filteredData: [],
@@ -77,7 +70,7 @@ const Seasonal = () => {
         <h2>
           Listing Anime for {seasonalName} {seasonalYear}
         </h2>
-        <h5>Displaying {seasonalData.anime.length} Results</h5>
+        {/* <h5>Displaying {newSeasonalData.anime.length} Results</h5> */}
       </hgroup>
       <ul className="list search">
         {posts &&
