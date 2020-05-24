@@ -30,36 +30,38 @@ const Seasonal = () => {
 
   // Filter
   const morePosts = seasonalData.anime
-  const genrePosts = seasonalData.anime.map(({ genres }) => genres)
+  // console.log(geans)
   const emptyQuery = ""
   const [filteredPosts, setFilteredPosts] = useState({
     filteredData: [],
     query: emptyQuery,
   })
+  // filterMe: [],
 
   const handleInputChange = (event) => {
     const query = event.target.value
     const posts = morePosts || []
-    const geans = genrePosts || []
+    // const newb = geans || []
 
     const filteredData = posts.filter((post) => {
       const { title } = post
       return title.toLowerCase().includes(query.toLowerCase())
     })
 
-    const filterMe = geans.map.filter((post) => {
-      const { genres } = post
-      return genres.toLowerCase().includes(query.toLowerCase())
-    })
+    // const filterMe = posts
+    //   .map(({ genres }) => genres)
+    //   .filter((genres) => {
+    //     return genres.join("").toLowerCase().includes(query.toLowerCase())
+    //   })
+    // filterMe,
 
     setFilteredPosts({
       query,
       filteredData,
-      filterMe,
     })
   }
-  const { filteredData, query } = filteredPosts
-  const hasSearchResults = filteredData && query !== emptyQuery
+  const { filteredData, query, filterMe } = filteredPosts
+  const hasSearchResults = filteredData && query && filterMe !== emptyQuery
   const posts = hasSearchResults ? filteredData : morePosts
 
   return (
