@@ -48,6 +48,7 @@ const Newsletter = ({ allPosts }) => {
         ariaLabel="Search Newsletters"
         label="Search Newsletters"
         idFor="newsletter--search"
+        submitStyle={{ display: "none" }}
       />
       <div className="container">
         <ul className="blog">

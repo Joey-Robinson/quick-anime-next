@@ -10,6 +10,9 @@ const GlobalSearch = ({
   label,
   spanText,
   idFor,
+  submitValue,
+  submitClassName,
+  submitStyle,
 }) => {
   return (
     <div className="search--input">
@@ -32,6 +35,13 @@ const GlobalSearch = ({
           value={value}
           className="field--input"
           onChange={onChange}
+        />
+        <br />
+        <input
+          type="submit"
+          style={submitStyle}
+          className={submitClassName}
+          value={submitValue}
         />
       </form>
     </div>

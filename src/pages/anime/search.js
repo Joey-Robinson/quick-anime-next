@@ -62,6 +62,8 @@ const Search = () => {
         label="Search Anime"
         spanText="Search For Anime"
         idFor="anime-search"
+        submitClassName="input--submit"
+        submitValue="Search"
       />
       {animeData.results == "" ? (
         ""
