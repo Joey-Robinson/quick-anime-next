@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
-import GlobalSearch from "../../components/global/global.search"
 import SEO from "../../components/global/global.seo"
 import Spinner from "../../components/global/global.spinner"
 import { renderEffect } from "../../utils/renders.utils"
@@ -58,10 +57,12 @@ const Seasonal = () => {
   const hasSearchResults = filteredData && query !== emptyQuery
   const posts = hasSearchResults ? filteredData : morePosts
 
+  console.log(seasonalData)
+
   return (
     <Layout className="seasonal post">
       <SEO title="Seasonal Anime" description="Anime for this season" />
-      <GlobalSearch
+      {/* <GlobalSearch
         onSubmit={(event) => event.preventDefault()}
         value={query}
         onChange={handleInputChange}
@@ -72,13 +73,13 @@ const Seasonal = () => {
         spanText="Search By Genre Or Title"
         idFor="genre--search"
         submitStyle={{ display: "none" }}
-      />
-      <hgroup style={{ textAlign: "center" }}>
+      /> */}
+      {/* <hgroup style={{ textAlign: "center" }}>
         <h2>
           Listing Anime for {seasonalName} {seasonalYear}
         </h2>
         <h5>Displaying {seasonalData.anime.length} Results</h5>
-      </hgroup>
+      </hgroup> */}
       <ul className="list search">
         {posts &&
           posts.map(({ synopsis, mal_id, title, image_url, url }) => {
@@ -87,8 +88,8 @@ const Seasonal = () => {
               .replace("[Written by MAL Rewrite]", "")
             return (
               <GlobalList
+                liClassName="search--li season"
                 genreClassName="li--genres"
-                liClassName="search--li li"
                 titleClassName="li--title"
                 imageClassName="li--image"
                 href={`/anime/[id]/`}

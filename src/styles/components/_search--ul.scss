@@ -1,7 +1,7 @@
 .search {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   padding: 0;
   margin: 1.5rem 0 0 0;
   grid-column: 1;
@@ -9,57 +9,83 @@
   scroll-snap-type: y mandatory;
   scroll-snap-points-y: repeat(150px);
 
+  //   li {
+  //     color: white;
+  //     flex: 0 50%;
+  //     scroll-snap-align: start;
+  //     margin: .75rem 0 4.5rem 0;
 
-  li {
-    color: white;
-    flex: 0 50%;
-    scroll-snap-align: start;
-    margin: .75rem 0 4.5rem 0;
+  //     p {
+  //       padding: 0 9rem 0 6rem;
+  //       font-size: 1.8rem;
+  //     }
 
-    p {
-      padding: 0 9rem 0 6rem;
-      font-size: 1.8rem;
-    }
-
-    h5 {
-      font-size: 2.2rem;
-      margin: .75rem 0 0 0;
-      font-weight: 900;
-      padding: 0.75rem 3rem;
-    }
+  //     h5 {
+  //       font-size: 2.2rem;
+  //       margin: .75rem 0 0 0;
+  //       font-weight: 900;
+  //       padding: 0.75rem 3rem;
+  //     }
 
 
-    img {
-      max-width: 20.5rem;
-      max-height: 20rem;
-      padding: 0 3rem;
-      margin: .65rem 0 0 0;
-    }
+  //     img {
+  //       max-width: 20.5rem;
+  //       max-height: 20rem;
+  //       padding: 0 3rem;
+  //       margin: .65rem 0 0 0;
+  //     }
 
-    a {
-      color: white;
-      font-size: 1.6rem;
-    }
+  //     a {
+  //       color: white;
+  //       font-size: 1.6rem;
+  //     }
 
-  }
+  //   }
+  // }
+
+  // .li--image {
+  //   display: grid;
+  //   grid-template-columns: 13rem 1fr;
+  //   grid-template-rows: auto 1fr;
+
+  //   p {
+  //     grid-column: 2;
+  //     grid-row: 1;
+  //     align-self: start;
+  //   }
+
+  //   div {
+  //     grid-column: 2;
+  //     grid-row: 1;
+  //     justify-self: left;
+  //     align-self: end;
+  //     padding: 0 0 0 6rem;
+  //   }
+  // }
+
+  // 457
 }
 
-.li--image {
-  display: grid;
-  grid-template-columns: 13rem 1fr;
-  grid-template-rows: auto 1fr;
+.season {
+  background: $mainBackgroundColor;
+  color: white;
+  scroll-snap-align: start;
+  margin: .75rem 0 4.5rem 0;
 
-  p {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: start;
+  h5 {
+    display: none;
   }
 
-  div {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: left;
-    align-self: end;
-    padding: 0 0 0 6rem;
+  img {
+    width: 185px;
+    height: 265px;
+  }
+
+  p {
+    display: none;
+  }
+
+  a {
+    color: $tertiary;
   }
 }

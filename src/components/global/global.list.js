@@ -25,15 +25,12 @@ const GlobalList = memo(
         </div>
         <div className={genreClassName}>{genres}</div>
         <div className={imageClassName}>
-          <LazyLoadImage effect="blur" alt={title} src={image_url} />
+          <Link href={href} as={as}>
+            <LazyLoadImage effect="blur" alt={title} src={image_url} />
+          </Link>
           <p className={synopsisClassName}>
             {!synopsis ? "No synopsis is available for this title" : synopsis}
           </p>
-          <div className={linkClassName}>
-            <Link href={href} as={as}>
-              <a>Read More about it here.</a>
-            </Link>
-          </div>
         </div>
       </li>
     )
