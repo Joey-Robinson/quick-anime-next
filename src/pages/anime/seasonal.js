@@ -34,12 +34,9 @@ const Seasonal = () => {
     const query = event.target.value
     const posts = morePosts || []
 
-    const filteredData = posts.filter(({ title, genres }) => {
+    const filteredData = posts.filter(({ genres }) => {
       const genreName = genres.map(({ name }) => name)
-      return (
-        title.toLowerCase().includes(query.toLowerCase()) ||
-        genreName.join("").toLowerCase().includes(query.toLowerCase())
-      )
+      return genreName.join("").toLowerCase().includes(query.toLowerCase())
     })
 
     setFilteredPosts({
