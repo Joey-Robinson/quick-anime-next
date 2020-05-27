@@ -71,18 +71,22 @@
   color: white;
   scroll-snap-align: start;
   margin: .75rem 0 4.5rem 0;
+  display: grid;
+  grid-template-columns: 185px 1fr;
 
   h5 {
     display: none;
   }
 
   img {
+    grid-column: 1;
     width: 185px;
     height: 265px;
   }
 
   p {
-    display: none;
+    grid-column: 2;
+    padding: 0 4.5rem 0 1.5rem;
   }
 
   a {

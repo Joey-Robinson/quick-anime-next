@@ -28,7 +28,9 @@ const GlobalList = memo(
           <Link href={href} as={as}>
             <LazyLoadImage effect="blur" alt={title} src={image_url} />
           </Link>
-          <p className={synopsisClassName}>
+        </div>
+        <div className={synopsisClassName}>
+          <p>
             {!synopsis ? "No synopsis is available for this title" : synopsis}
           </p>
         </div>
