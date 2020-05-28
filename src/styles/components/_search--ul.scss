@@ -98,6 +98,9 @@
   &--genre {
     grid-column: 2;
     grid-row: 3;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
   }
 
   &--synopsis {

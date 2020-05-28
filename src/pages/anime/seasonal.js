@@ -84,7 +84,12 @@ const Seasonal = () => {
         {posts &&
           posts.map(({ genres, synopsis, mal_id, title, image_url, url }) => {
             const genreList = genres.map(({ name }) => {
-              return <li key={name}>{name}</li>
+              // prettier-ignore
+              return (
+                <li key={name}>
+                  {` ${name}, `}
+                </li>
+              )
             })
             const shortenedSynopsis = synopsis
               .slice(0, 125)

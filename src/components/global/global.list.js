@@ -33,7 +33,7 @@ const GlobalList = memo(
             {!synopsis ? "No synopsis is available for this title" : synopsis}
           </p>
         </div>
-        <div className={genreClassName}>{genres}</div>
+        <ul className={genreClassName}>{genres}</ul>
       </li>
     )
   }
