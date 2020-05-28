@@ -23,7 +23,6 @@ const GlobalList = memo(
         <div className={titleClassName}>
           <h5>{title}</h5>
         </div>
-        <div className={genreClassName}>{genres}</div>
         <div className={imageClassName}>
           <Link href={href} as={as}>
             <LazyLoadImage effect="blur" alt={title} src={image_url} />
@@ -34,6 +33,7 @@ const GlobalList = memo(
             {!synopsis ? "No synopsis is available for this title" : synopsis}
           </p>
         </div>
+        <div className={genreClassName}>{genres}</div>
       </li>
     )
   }
