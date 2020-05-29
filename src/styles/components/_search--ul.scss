@@ -101,6 +101,16 @@
     list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+
+    li {
+      background: $tertiary;
+      padding: .25rem 1.5rem;
+      border-radius: 5rem;
+      text-shadow: 2.5px 2.5px 2.5px black;
+
+    }
   }
 
   &--synopsis {
@@ -110,7 +120,7 @@
     margin: 1.5rem 0 0 0;
 
     p {
-      padding: 0 3rem;
+      padding: 0 1.5rem;
       font-size: 1.8rem;
     }
   }
