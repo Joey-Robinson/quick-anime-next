@@ -105,14 +105,17 @@
     list-style: none;
     display: flex;
     flex-direction: row;
+    background: darken($mainBackgroundColor, 5%);
     // background: $primaryBackgroundColor;
-    background: red;
+    // background: red;
+    justify-content: space-evenly;
 
     li {
       background: $tertiary;
       padding: 0.25rem 1.5rem;
       border-radius: 5rem;
       text-shadow: 1.75px 1.75px 1.75px black;
+      margin: 1rem 0;
     }
   }
 
