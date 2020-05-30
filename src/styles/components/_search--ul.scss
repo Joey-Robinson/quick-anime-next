@@ -27,7 +27,6 @@
   //       padding: 0.75rem 3rem;
   //     }
 
-
   //     img {
   //       max-width: 20.5rem;
   //       max-height: 20rem;
@@ -70,7 +69,7 @@
   background: $mainBackgroundColor;
   color: white;
   scroll-snap-align: start;
-  margin: .75rem 0 4.5rem 0;
+  margin: 0.75rem 0 4.5rem 0;
   display: grid;
   grid-template-columns: 185px 1fr;
   grid-template-rows: 1fr auto;
@@ -78,7 +77,7 @@
   max-height: 265px;
   grid-column-gap: 30px;
   justify-self: center;
-
+  border-radius: 6.5px;
   // add border
   h5 {
     display: none;
@@ -93,6 +92,8 @@
     img {
       width: 185px;
       height: 265px;
+      border-top-left-radius: 6.5px;
+      border-bottom-left-radius: 6.5px;
     }
   }
 
@@ -102,15 +103,14 @@
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 1rem 0;
 
     li {
       background: $tertiary;
-      padding: .25rem 1.5rem;
+      padding: 0.25rem 1.5rem;
       border-radius: 5rem;
-      text-shadow: 2.5px 2.5px 2.5px black;
-
+      text-shadow: 1.75px 1.75px 1.75px black;
     }
   }
 
@@ -125,8 +125,6 @@
       font-size: 1.8rem;
     }
   }
-
-
 
   a {
     color: $tertiary;
