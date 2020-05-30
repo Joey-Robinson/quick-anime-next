@@ -75,10 +75,11 @@
   grid-template-rows: 1fr auto;
   max-width: 427px;
   max-height: 265px;
-  grid-column-gap: 30px;
   justify-self: center;
   border-radius: 6.5px;
-  // add border
+  box-shadow: -1.75px -1.75px 0 1px $tertiary;
+  overflow: hidden scroll;
+
   h5 {
     display: none;
   }
@@ -100,11 +101,12 @@
   &--genre {
     grid-column: 2;
     grid-row: 3;
+    align-self: end;
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 1rem 0;
+    // background: $primaryBackgroundColor;
+    background: red;
 
     li {
       background: $tertiary;
