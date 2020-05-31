@@ -66,7 +66,7 @@
 }
 
 .season {
-  background: $mainBackgroundColor;
+  background: $primaryBackgroundColor;
   color: white;
   scroll-snap-align: start;
   margin: 0.75rem 0 4.5rem 0;
@@ -78,7 +78,8 @@
   justify-self: center;
   border-radius: 6.5px;
   box-shadow: -1.75px -1.75px 0 1px $tertiary;
-  overflow: hidden scroll;
+  position: relative;
+  overflow: hidden;
 
   h5 {
     display: none;
@@ -119,15 +120,23 @@
     }
   }
 
-  &--synopsis {
+  &--container {
     align-self: start;
     grid-column: 2;
     grid-row: 1 / 3;
+    overflow: hidden scroll;
+    height: 100%;
+
+    width: 100%;
+  }
+
+  &--synopsis {
     margin: 1.5rem 0 0 0;
+    position: relative;
 
     p {
       padding: 0 1.5rem;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
   }
 

@@ -94,6 +94,7 @@ const Seasonal = () => {
               <GlobalList
                 liClassName="search--li season"
                 synopsisClassName="season--synopsis"
+                synopsisClassNameContainer="season--container"
                 genreClassName="li--genres"
                 titleClassName="li--title"
                 imageClassName="season--image"

@@ -17,6 +17,7 @@ const GlobalList = memo(
     synopsis,
     genres,
     genreClassName,
+    synopsisClassNameContainer,
   }) => {
     return (
       <li key={mal_id} className={liClassName}>
@@ -28,10 +29,12 @@ const GlobalList = memo(
             <LazyLoadImage effect="blur" alt={title} src={image_url} />
           </Link>
         </div>
-        <div className={synopsisClassName}>
-          <p>
-            {!synopsis ? "No synopsis is available for this title" : synopsis}
-          </p>
+        <div className={synopsisClassNameContainer}>
+          <div className={synopsisClassName}>
+            <p>
+              {!synopsis ? "No synopsis is available for this title" : synopsis}
+            </p>
+          </div>
         </div>
         <ul className={genreClassName}>{genres}</ul>
       </li>
