@@ -87,9 +87,13 @@ const Seasonal = () => {
               // prettier-ignore
               return <li key={name}>{name}</li>
             })
-            const shortenedSynopsis = synopsis
-              .slice(0, 125)
-              .replace("[Written by MAL Rewrite]", "")
+            {
+              /* .slice(0, 125) */
+            }
+            const shortenedSynopsis = synopsis.replace(
+              "[Written by MAL Rewrite]",
+              ""
+            )
             return (
               <GlobalList
                 liClassName="search--li season"
@@ -100,7 +104,7 @@ const Seasonal = () => {
                 imageClassName="season--image"
                 href={`/anime/[id]/`}
                 as={`/anime/${mal_id}/`}
-                synopsis={synopsis}
+                synopsis={shortenedSynopsis}
                 mal_id={mal_id}
                 genres={genreList}
                 genreClassName="season--genre"
