@@ -66,7 +66,7 @@
 }
 
 .season {
-  background: $primaryBackgroundColor;
+  // background: $primaryBackgroundColor;
   color: white;
   scroll-snap-align: start;
   margin: 0.75rem 0 4.5rem 0;
@@ -77,7 +77,8 @@
   max-height: 265px;
   justify-self: center;
   border-radius: 6.5px;
-  box-shadow: -1.75px -1.75px 0 1px $tertiary;
+  border: 1.5px solid $tertiary;
+  // box-shadow: -1.75px -1.75px 0 1px $tertiary;
   position: relative;
   overflow: hidden;
 
@@ -94,8 +95,8 @@
     img {
       width: 185px;
       height: 265px;
-      border-top-left-radius: 6.5px;
-      border-bottom-left-radius: 6.5px;
+      // border-top-left-radius: 6.5px;
+      // border-bottom-left-radius: 6.5px;
     }
   }
 
