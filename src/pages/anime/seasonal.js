@@ -87,9 +87,6 @@ const Seasonal = () => {
               // prettier-ignore
               return <li key={name}>{name}</li>
             })
-            {
-              /* .slice(0, 125) */
-            }
             const shortenedSynopsis = synopsis.replace(
               "[Written by MAL Rewrite]",
               ""
