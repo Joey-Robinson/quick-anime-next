@@ -90,6 +90,7 @@
     width: 185px;
     height: 265px;
     grid-row: 1 / -1;
+    cursor: pointer;
 
     img {
       width: 185px;
@@ -109,7 +110,10 @@
 
     li {
       background: $tertiary;
-      color: darken($mainBackgroundColor, 5%);
+      color: #eee;
+      text-shadow: #000 1px 1px 0;
+
+      // color: darken($mainBackgroundColor, 5%);
       font-size: 1.4rem;
       padding: 0 1.5rem;
       border-radius: 5rem;
@@ -134,7 +138,7 @@
     p {
       font-weight: normal;
       padding: 0 3rem;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
     }
   }
 
