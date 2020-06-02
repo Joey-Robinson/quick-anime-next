@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
+import GlobalSearch from "../../components/global/global.search"
 import SEO from "../../components/global/global.seo"
 import Spinner from "../../components/global/global.spinner"
 import { renderEffect } from "../../utils/renders.utils"
@@ -57,29 +58,27 @@ const Seasonal = () => {
   const hasSearchResults = filteredData && query !== emptyQuery
   const posts = hasSearchResults ? filteredData : morePosts
 
-  console.log(seasonalData)
-
   return (
     <Layout className="seasonal post">
       <SEO title="Seasonal Anime" description="Anime for this season" />
-      {/* <GlobalSearch
+      <GlobalSearch
         onSubmit={(event) => event.preventDefault()}
         value={query}
         onChange={handleInputChange}
-        placeholder="Search By Genre Or Title"
+        placeholder="Search By Genre"
         id="genre--search"
-        ariaLabel="Search By Genre Or Title"
-        label="Search By Genre Or Title"
-        spanText="Search By Genre Or Title"
+        ariaLabel="Search By Genre"
+        label="Search By Genre"
+        spanText="Search By Genre"
         idFor="genre--search"
         submitStyle={{ display: "none" }}
-      /> */}
-      {/* <hgroup style={{ textAlign: "center" }}>
+      />
+      <hgroup style={{ textAlign: "center" }}>
         <h2>
           Listing Anime for {seasonalName} {seasonalYear}
         </h2>
         <h5>Displaying {seasonalData.anime.length} Results</h5>
-      </hgroup> */}
+      </hgroup>
       <ul className="list search">
         {posts &&
           posts.map(({ genres, synopsis, mal_id, title, image_url, url }) => {
