@@ -9,60 +9,13 @@
   scroll-snap-type: y mandatory;
   scroll-snap-points-y: repeat(150px);
 
-  //   li {
-  //     color: white;
-  //     flex: 0 50%;
-  //     scroll-snap-align: start;
-  //     margin: .75rem 0 4.5rem 0;
+  :nth-child(3n + 2) {
+    justify-self: center;
+  }
 
-  //     p {
-  //       padding: 0 9rem 0 6rem;
-  //       font-size: 1.8rem;
-  //     }
-
-  //     h5 {
-  //       font-size: 2.2rem;
-  //       margin: .75rem 0 0 0;
-  //       font-weight: 900;
-  //       padding: 0.75rem 3rem;
-  //     }
-
-  //     img {
-  //       max-width: 20.5rem;
-  //       max-height: 20rem;
-  //       padding: 0 3rem;
-  //       margin: .65rem 0 0 0;
-  //     }
-
-  //     a {
-  //       color: white;
-  //       font-size: 1.6rem;
-  //     }
-
-  //   }
-  // }
-
-  // .li--image {
-  //   display: grid;
-  //   grid-template-columns: 13rem 1fr;
-  //   grid-template-rows: auto 1fr;
-
-  //   p {
-  //     grid-column: 2;
-  //     grid-row: 1;
-  //     align-self: start;
-  //   }
-
-  //   div {
-  //     grid-column: 2;
-  //     grid-row: 1;
-  //     justify-self: left;
-  //     align-self: end;
-  //     padding: 0 0 0 6rem;
-  //   }
-  // }
-
-  // 457
+  li:nth-child(3n) {
+    justify-self: right;
+  }
 }
 
 .season {
@@ -73,9 +26,11 @@
   display: grid;
   grid-template-columns: 185px 1fr;
   grid-template-rows: 1fr auto;
+  min-width: 427px;
+  min-height: 265px;
   max-width: 427px;
   max-height: 265px;
-  justify-self: center;
+  // justify-self: center;
   border-radius: 6.5px;
   border: 1.5px solid $tertiary;
   position: relative;

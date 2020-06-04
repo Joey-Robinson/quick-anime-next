@@ -85,7 +85,7 @@ const GenreChange = () => {
           Displaying {selectedGenre.anime.length} Results
         </h2>
       )} */}
-      {/* <ul className="list search">
+      <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
@@ -94,22 +94,24 @@ const GenreChange = () => {
                 .replace("[Written by MAL Rewrite]", "")
               return (
                 <GlobalList
+                  liClassName="search--li season"
+                  synopsisClassName="season--synopsis"
+                  synopsisClassNameContainer="season--container"
                   titleClassName="li--title"
-                  imageClassName="genre"
-                  linkClassName="genre--link"
-                  synopsisClassName="genre--synopsis"
-                  key={mal_id}
+                  imageClassName="season--image"
+                  href={`/anime/[id]/`}
+                  as={`/anime/${mal_id}/`}
+                  mal_id={mal_id}
+                  synopsis={shortenedSynopsis}
                   title={title}
                   image_url={image_url}
                   url={url}
-                  href={`/anime/[id]/`}
-                  as={`/anime/${mal_id}/`}
-                  synopsis={shortenedSynopsis}
+                  key={mal_id}
                 />
               )
             }
           )}
-      </ul> */}
+      </ul>
       {/* <button className="top">
         <span>&uarr;</span>
       </button> */}
