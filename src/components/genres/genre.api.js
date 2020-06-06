@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
 import Spinner from "../../components/global/global.spinner"
-import GenreSelect from "./genre.select"
 
 const GlobalList = dynamic(
   () => import("../../components/global/global.list"),
@@ -32,10 +31,11 @@ const GenreChange = () => {
       .then((response) => response.json())
       .then((data) => setSelectedGenre(data))
   }, [genreValue, initialPage])
-
+  console.log(selectedGenre)
   return (
     <>
-      {selectedGenre.anime && (
+      <h1>hi</h1>
+      {/* {selectedGenre.anime && (
         <GenreSelect
           previousOnClick={previousPage}
           previousButtonDisable={initialPage === 1 ? "disabled" : ""}
@@ -46,7 +46,7 @@ const GenreChange = () => {
           previousMessage="Previous Page"
           nextMessage="Next Page"
         />
-      )}
+      )} */}
       {/* {selectedGenre.anime && (
         <div ref={ref}>
           {onScreen ? (
@@ -85,7 +85,7 @@ const GenreChange = () => {
           Displaying {selectedGenre.anime.length} Results
         </h2>
       )} */}
-      <ul className="list search">
+      {/* <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
@@ -111,7 +111,7 @@ const GenreChange = () => {
               )
             }
           )}
-      </ul>
+      </ul> */}
       {/* <button className="top">
         <span>&uarr;</span>
       </button> */}
