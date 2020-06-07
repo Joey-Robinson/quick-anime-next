@@ -2,10 +2,10 @@
 title: "Akira, forever defining anime."
 excerpt: "Why and how Akira has - for 30 years now - defined anime, anime culture, and how it has influenced generations of anime to come."
 description: "Why and how Akira has - for 30 years now - defined anime, anime culture, and how it has influenced generations of anime to come."
-coverImage: "/assets/blog/ak.jpg"
 date: "2020-03-16T05:35:07.322Z"
 author:
   name: Joey Robinson
+coverImage: "/assets/blog/ak.jpg"
 ogImage:
   url: "/assets/blog/ak.jpg"
 tags:
