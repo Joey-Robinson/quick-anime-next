@@ -15,7 +15,7 @@
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #a90000;
+  background: lighten($mainBackgroundColor, 65%);
 }
 
 /* Position and sizing of clickable cross button */
@@ -53,7 +53,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
 }
 
 /* Individual item */

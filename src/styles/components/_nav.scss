@@ -1,8 +1,14 @@
 nav {
-  grid-row: 2;
+  display: grid;
+  grid-template-rows: 1fr auto;
+
+  div {
+    grid-row: 2;
+    align-self: end;
+    margin-bottom: 1.5rem;
+  }
 
   ul {
-    grid-row: 2;
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -13,8 +19,6 @@ nav {
 
       a {
         font-size: 2rem;
-        display: block;
-        // background: white;
         font-weight: 700;
         color: white;
       }
