@@ -17,8 +17,21 @@
   justify-items: center;
   background: lighten($mainBackgroundColor, 10%);
 
-  &--excerpt {
-    height: 100%;
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    background: darken($mainBackgroundColor, 5%);
+    width: 100%;
+    justify-content: center;
+    padding: 1.5rem 0;
+
+    li {
+      text-transform: uppercase;
+      background: $tertiary;
+      padding: 0 1.5px;
+      margin: 0 7.5px;
+    }
   }
 
   h2 {

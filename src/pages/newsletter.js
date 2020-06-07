@@ -54,9 +54,10 @@ const Newsletter = ({ allPosts }) => {
         <ul className="blog">
           {posts &&
             posts.map(({ tags, title, date, excerpt, coverImage, slug }) => {
+              const tagList = tags.map((tag) => <li>{tag}</li>)
               return (
                 <PostPreview
-                  tags={tags}
+                  tags={tagList}
                   key={slug}
                   title={title}
                   date={date}
