@@ -7,7 +7,7 @@
 
 .children {
   grid-column: 1;
-  grid-row: 2 / 3;
+  grid-row: 1;
   display: grid;
   grid-template-rows: 92.5vh;
   background: $secondaryBackgroundColor;
@@ -20,7 +20,7 @@
 
 .post {
   grid-column: 1;
-  grid-row: 2 / 3;
+  grid-row: 1;
   display: grid;
   grid-template-rows: 92.5vh;
   overflow-y: scroll;
@@ -35,7 +35,7 @@
 
 .post--news {
   grid-column: 1;
-  grid-row: 2 / 3;
+  grid-row: 1;
   display: grid;
   grid-template-rows: auto 92.5vh;
   overflow-y: scroll;
