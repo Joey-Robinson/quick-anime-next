@@ -5,6 +5,8 @@
   height: 30px;
   left: 36px;
   top: 36px;
+  cursor: pointer;
+
 }
 
 /* Color/shape of burger icon bars */
@@ -62,5 +64,5 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Styling of overlay */
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: darken($mainBackgroundColor, 5%);
 }
