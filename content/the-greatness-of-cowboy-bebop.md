@@ -6,9 +6,9 @@ author:
 excerpt: "How Cowboy Bebop remains one of the greatest anime of all time and helps bring both old and new viewers together. "
 coverImage: "/assets/blog/cbi.jpg"
 tags:
-  - cowboy bebop
-  - pop culture
-  - legacy
+  - Cowboy bebop
+  - Pop culture
+  - Legacy
 ---
 
 Cowboy Bebop

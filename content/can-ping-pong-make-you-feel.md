@@ -8,9 +8,9 @@ coverImage: "/assets/blog/ppb.png"
 ogImage:
   url: "/assets/blog/ppb.png"
 tags:
-  - ping pong
-  - sports
-  - hero
+  - Ping-Pong
+  - Sports
+  - Hero
 ---
 
 # Ping-Pong

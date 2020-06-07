@@ -9,11 +9,11 @@ coverImage: "/assets/blog/ak.jpg"
 ogImage:
   url: "/assets/blog/ak.jpg"
 tags:
-  - akira
-  - anime
-  - legacy
-  - change
-  - godly
+  - Akira
+  - Anime
+  - Legacy
+  - Change
+  - Godly
 ---
 
 # Lorem Ipsum

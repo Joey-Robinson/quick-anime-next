@@ -7,11 +7,11 @@ excerpt: "Don't fear the wolf. Sometimes, the wolf isn't the villain and it's ac
 description: "Don't fear the wolf. Sometimes, the wolf isn't the villain and it's actually the woman in red who's out for blood. Jin-Roh is an example of this and serves as a learning exercise in such matters."
 coverImage: "/assets/blog/jinroh.jpg"
 tags:
-  - jin-roh
-  - jinroh
-  - jin roh
-  - big bag wolf
-  - little red riding hood
+  - Jin-roh
+  - Jinroh
+  - Jin roh
+  - Big bag wolf
+  - Little red riding hood
 ---
 
 # Jin-Roh
