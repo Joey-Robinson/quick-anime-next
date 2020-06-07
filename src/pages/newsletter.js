@@ -5,7 +5,6 @@ import SEO from "../components/global/global.seo"
 import { getAllPosts } from "../components/newsletter/newsletter.api"
 import PostPreview from "../components/newsletter/newsletter.preview"
 
-// https://github.com/cyrilwanner/next-optimized-images
 // Use this for blog images. 4mb for 1 page, disgusting.
 const Newsletter = ({ allPosts }) => {
   const morePosts = allPosts
