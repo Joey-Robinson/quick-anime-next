@@ -3,7 +3,7 @@ import React, { memo } from "react"
 import CoverImage from "./newsletter.coverimage"
 import Date from "./newsletter.date"
 
-const PostPreview = memo(({ title, coverImage, date, excerpt, slug }) => {
+const PostPreview = memo(({ tags, title, coverImage, date, excerpt, slug }) => {
   const shortenedExcerpt = excerpt.slice(0, 150)
   return (
     <li key={title} className="blog--li news">
@@ -12,15 +12,16 @@ const PostPreview = memo(({ title, coverImage, date, excerpt, slug }) => {
           <a>{title}</a>
         </Link>
       </h2>
-      <div style={{ textAlign: "center", padding: "0", margin: "0" }}>
+      <div style={{ textAlign: "center", padding: "1.5rem 0" }}>
         <Date dateString={date} />
       </div>
       <div className="news--image">
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
-      <div>
+      <div className="news--excerpt">
         <p>{shortenedExcerpt}</p>
       </div>
+      <ul>{tags}</ul>
     </li>
   )
 })

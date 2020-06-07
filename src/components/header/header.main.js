@@ -1,12 +1,15 @@
 import React from "react"
-import Navigation from "./header.nav"
 // import Notification from "./header.notification"
+import { slide as Menu } from "react-burger-menu"
+import Navigation from "./header.nav"
 
 const Header = () => {
   return (
     <header>
       {/* <Notification /> */}
-      <Navigation />
+      <Menu>
+        <Navigation />
+      </Menu>
     </header>
   )
 }

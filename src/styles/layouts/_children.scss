@@ -1,12 +1,12 @@
 .data {
-  grid-column: 2;
+  grid-column: 1;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
 }
 
 .children {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2 / 3;
   display: grid;
   grid-template-rows: 92.5vh;
@@ -19,7 +19,7 @@
 }
 
 .post {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2 / 3;
   display: grid;
   grid-template-rows: 92.5vh;
@@ -34,7 +34,7 @@
 
 
 .post--news {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2 / 3;
   display: grid;
   grid-template-rows: auto 92.5vh;

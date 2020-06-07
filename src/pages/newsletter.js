@@ -53,9 +53,10 @@ const Newsletter = ({ allPosts }) => {
       <div className="container">
         <ul className="blog">
           {posts &&
-            posts.map(({ title, date, excerpt, coverImage, slug }) => {
+            posts.map(({ tags, title, date, excerpt, coverImage, slug }) => {
               return (
                 <PostPreview
+                  tags={tags}
                   key={slug}
                   title={title}
                   date={date}

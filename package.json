@@ -24,6 +24,7 @@
     "next-seo": "^4.4.0",
     "node-sass": "^4.13.1",
     "react": "16.13.1",
+    "react-burger-menu": "^2.6.14",
     "react-dom": "16.13.1",
     "react-lazy-load-image-component": "^1.4.3",
     "react-visibility-sensor": "^5.1.1",
