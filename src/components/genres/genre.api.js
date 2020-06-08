@@ -31,7 +31,9 @@ const GenreChange = () => {
       .then((response) => response.json())
       .then((data) => setSelectedGenre(data))
   }, [genreValue, initialPage])
+
   console.log(selectedGenre)
+
   return (
     <>
       <h1>hi</h1>
