@@ -1,11 +1,23 @@
 nav {
   display: grid;
   grid-template-rows: 1fr auto;
+  width: 100%;
+  height: 100%;
+
+  @include respond(laptop) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+  }
 
   div {
     grid-row: 2;
     align-self: end;
     margin-bottom: 1.5rem;
+
+    @include respond(laptop) {
+      grid-row: 1;
+      grid-column: 1;
+    }
   }
 
   ul {
@@ -14,8 +26,20 @@ nav {
     list-style: none;
     justify-content: space-evenly;
 
+    @include respond(laptop) {
+      grid-column: 1;
+      grid-row: 1;
+      justify-content: initial;
+      width: 100%;
+    }
+
     li {
       margin: 0;
+
+      @include respond(laptop) {
+        margin-top: 3rem;
+        margin: 3rem 0 3rem 1.5rem;
+      }
 
       a {
         font-size: 2rem;
