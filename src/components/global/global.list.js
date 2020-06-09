@@ -1,6 +1,5 @@
 import Link from "next/link"
 import React, { memo } from "react"
-import { LazyLoadImage } from "react-lazy-load-image-component"
 
 const GlobalList = memo(
   ({
@@ -18,15 +17,13 @@ const GlobalList = memo(
     genres,
     genreClassName,
     synopsisClassNameContainer,
+    imageStyling,
   }) => {
     return (
       <li key={mal_id} className={liClassName}>
-        <div className={titleClassName}>
-          <h5>{title}</h5>
-        </div>
-        <div className={imageClassName}>
+        <div className={imageClassName} style={imageStyling}>
           <Link href={href} as={as}>
-            <LazyLoadImage effect="blur" alt={title} src={image_url} />
+            <h3>{title}</h3>
           </Link>
         </div>
         <div className={synopsisClassNameContainer}>

@@ -107,6 +107,7 @@ const GenreChange = () => {
                   href={`/anime/[id]/`}
                   as={`/anime/${mal_id}/`}
                   synopsis={synopsis}
+                  imageStyling={{ backgroundImage: `url(${image_url})` }}
                   mal_id={mal_id}
                   title={title}
                   image_url={image_url}

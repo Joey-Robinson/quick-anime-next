@@ -44,8 +44,17 @@
     height: 265px;
     grid-row: 1 / -1;
     cursor: pointer;
+    display: grid;
+
+    h3 {
+      align-self: end;
+      background: darken(rgba(21, 32, 43, .9), 5%);
+      font-size: calc(12px + 0.4vw);
+      padding: 1rem;
+    }
 
     img {
+      grid-row: 1;
       width: 185px;
       height: 265px;
     }
