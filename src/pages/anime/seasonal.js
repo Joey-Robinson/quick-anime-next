@@ -27,10 +27,9 @@ const Seasonal = () => {
   useEffect(() => {
     seasonalCall()
   }, [])
-
   const seasonalYear = seasonalData.season_year
   const seasonalName = seasonalData.season_name
-
+  console.log(seasonalData)
   // Filter
   const morePosts = seasonalData.anime
   const emptyQuery = ""
@@ -57,7 +56,6 @@ const Seasonal = () => {
   const { filteredData, query } = filteredPosts
   const hasSearchResults = filteredData && query !== emptyQuery
   const posts = hasSearchResults ? filteredData : morePosts
-
   return (
     <Layout className="seasonal post">
       <SEO title="Seasonal Anime" description="Anime for this season" />
@@ -73,12 +71,12 @@ const Seasonal = () => {
         idFor="genre--search"
         submitStyle={{ display: "none" }}
       />
-      <hgroup style={{ textAlign: "center" }}>
+      {/* <hgroup style={{ textAlign: "center" }}>
         <h2>
           Listing Anime for {seasonalName} {seasonalYear}
         </h2>
         <h5>Displaying {seasonalData.anime.length} Results</h5>
-      </hgroup>
+      </hgroup> */}
       <ul className="list search">
         {posts &&
           posts.map(({ genres, synopsis, mal_id, title, image_url, url }) => {

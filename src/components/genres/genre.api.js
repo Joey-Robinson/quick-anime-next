@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
+import GenreSelect from "../../components/genres/genre.select"
 import Spinner from "../../components/global/global.spinner"
 
 const GlobalList = dynamic(
@@ -36,8 +37,8 @@ const GenreChange = () => {
 
   return (
     <>
-      <h1>hi</h1>
-      {/* {selectedGenre.anime && (
+      {/* <h1>hi</h1> */}
+      {selectedGenre.anime && (
         <GenreSelect
           previousOnClick={previousPage}
           previousButtonDisable={initialPage === 1 ? "disabled" : ""}
@@ -48,7 +49,7 @@ const GenreChange = () => {
           previousMessage="Previous Page"
           nextMessage="Next Page"
         />
-      )} */}
+      )}
       {/* {selectedGenre.anime && (
         <div ref={ref}>
           {onScreen ? (
@@ -74,7 +75,7 @@ const GenreChange = () => {
           )}
         </div>
       )} */}
-      {/* {selectedGenre.anime == "" ? (
+      {selectedGenre.anime == "" ? (
         ""
       ) : (
         <h2
@@ -86,14 +87,16 @@ const GenreChange = () => {
         >
           Displaying {selectedGenre.anime.length} Results
         </h2>
-      )} */}
+      )}
       <ul className="list search">
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
-              const shortenedSynopsis = synopsis
+              {
+                /* const shortenedSynopsis = synopsis
                 .slice(0, 300)
-                .replace("[Written by MAL Rewrite]", "")
+                .replace("[Written by MAL Rewrite]", "") */
+              }
               return (
                 <GlobalList
                   liClassName="search--li season"
@@ -103,8 +106,8 @@ const GenreChange = () => {
                   imageClassName="season--image"
                   href={`/anime/[id]/`}
                   as={`/anime/${mal_id}/`}
+                  synopsis={synopsis}
                   mal_id={mal_id}
-                  synopsis={shortenedSynopsis}
                   title={title}
                   image_url={image_url}
                   url={url}
