@@ -8,14 +8,17 @@
   grid-row: 1 / -1;
   scroll-snap-type: y mandatory;
   scroll-snap-points-y: repeat(150px);
+  justify-items: center;
+  // :nth-child(3n + 1) {
+  //   justify-self: center;
+  // }
+  // :nth-child(3n + 2) {
+  //   justify-self: center;
+  // }
 
-  :nth-child(3n + 2) {
-    justify-self: center;
-  }
-
-  li:nth-child(3n) {
-    justify-self: right;
-  }
+  // li:nth-child(3n) {
+  //   justify-self: center;
+  // }
 }
 
 .season {
@@ -49,7 +52,7 @@
     h3 {
       text-shadow: $tertiary 1px 1px 0;
       align-self: end;
-      background: darken(rgba(21, 32, 43, .9), 5%);
+      background: darken(rgba(21, 32, 43, 0.9), 5%);
       font-size: calc(16px + 0.1vw);
       padding: 1rem;
       font-weight: normal;
