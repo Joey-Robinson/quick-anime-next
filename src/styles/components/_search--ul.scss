@@ -35,26 +35,32 @@
   position: relative;
   overflow: hidden;
 
-  h3 {
-    align-self: end;
-    z-index: 6;
-    text-shadow: $tertiary 1px 1px 0;
-    background: darken(rgba(21, 32, 43, 0.9), 5%);
-    font-size: calc(16px + 0.1vw);
-    padding: 1rem;
-    font-weight: normal;
-  }
-
   &--image {
     grid-column: 1;
     width: 185px;
     height: 265px;
     grid-row: 1 / -1;
     cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
 
     img {
+      grid-row: 1 / -1;
+      grid-column: 1;
       width: 185px;
       height: 265px;
+    }
+
+    h3 {
+      text-shadow: $tertiary 1px 1px 0;
+      background: darken(rgba(21, 32, 43, 0.9), 5%);
+      font-size: calc(16px + 0.1vw);
+      padding: 1rem;
+      font-weight: normal;
+      grid-column: 1;
+      grid-row: 2;
+      align-self: end;
     }
   }
 
