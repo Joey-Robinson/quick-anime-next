@@ -6,7 +6,7 @@ import Notification from "./header.notification"
 const Header = () => {
   return (
     <header>
-      <Menu isOpen>
+      <Menu>
         <Navigation />
         <Notification />
       </Menu>

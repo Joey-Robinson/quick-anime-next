@@ -28,17 +28,21 @@
   display: grid;
   grid-template-columns: 185px 1fr;
   grid-template-rows: 1fr auto;
-  min-width: 427px;
-  min-height: 265px;
-  max-width: 427px;
-  max-height: 265px;
+  height: 265px;
+  width: 427px;
   border-radius: 7px;
   border: 1.5px solid $tertiary;
   position: relative;
   overflow: hidden;
 
-  h5 {
-    display: none;
+  h3 {
+    align-self: end;
+    z-index: 6;
+    text-shadow: $tertiary 1px 1px 0;
+    background: darken(rgba(21, 32, 43, 0.9), 5%);
+    font-size: calc(16px + 0.1vw);
+    padding: 1rem;
+    font-weight: normal;
   }
 
   &--image {
@@ -47,19 +51,8 @@
     height: 265px;
     grid-row: 1 / -1;
     cursor: pointer;
-    display: grid;
-
-    h3 {
-      text-shadow: $tertiary 1px 1px 0;
-      align-self: end;
-      background: darken(rgba(21, 32, 43, 0.9), 5%);
-      font-size: calc(16px + 0.1vw);
-      padding: 1rem;
-      font-weight: normal;
-    }
 
     img {
-      grid-row: 1;
       width: 185px;
       height: 265px;
     }
@@ -103,7 +96,7 @@
 
     p {
       font-weight: normal;
-      padding: 0 3rem;
+      padding: 0 1.5rem;
       font-size: 1.8rem;
     }
   }

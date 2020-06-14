@@ -82,12 +82,10 @@ const Search = () => {
         {animeData &&
           animeData.results.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
-              {
-                /* const shortenedSynopsis = synopsis.replace(
+              const shortenedSynopsis = synopsis.replace(
                 "[Written by MAL Rewrite]",
                 ""
-              ) */
-              }
+              )
               return (
                 <GlobalList
                   liClassName="search--li season"
@@ -98,7 +96,7 @@ const Search = () => {
                   href={`/anime/[id]/`}
                   as={`/anime/${mal_id}/`}
                   mal_id={mal_id}
-                  synopsis={synopsis}
+                  synopsis={shortenedSynopsis}
                   title={title}
                   image_url={image_url}
                   url={url}

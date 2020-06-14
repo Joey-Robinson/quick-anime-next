@@ -94,7 +94,7 @@ const Seasonal = () => {
                 synopsisClassName="season--synopsis"
                 synopsisClassNameContainer="season--container"
                 genreClassName="li--genres"
-                titleClassName="li--title"
+                titleClassName="season--title"
                 imageClassName="season--image"
                 href={`/anime/[id]/`}
                 as={`/anime/${mal_id}/`}
