@@ -25,7 +25,6 @@ const GlobalList = memo(
             <img alt={title} src={image_url} />
           </Link>
           <h3>{title}</h3>
-          {/* Make a container, change imageClassName back to grid */}
         </div>
         <div className={synopsisClassNameContainer}>
           <div className={synopsisClassName}>

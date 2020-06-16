@@ -92,11 +92,9 @@ const GenreChange = () => {
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
-              {
-                /* const shortenedSynopsis = synopsis
+              const shortenedSynopsis = synopsis
                 .slice(0, 300)
-                .replace("[Written by MAL Rewrite]", "") */
-              }
+                .replace("[Written by MAL Rewrite]", "")
               return (
                 <GlobalList
                   liClassName="search--li season"
@@ -106,8 +104,7 @@ const GenreChange = () => {
                   imageClassName="season--image"
                   href={`/anime/[id]/`}
                   as={`/anime/${mal_id}/`}
-                  synopsis={synopsis}
-                  imageStyling={{ backgroundImage: `url(${image_url})` }}
+                  synopsis={shortenedSynopsis}
                   mal_id={mal_id}
                   title={title}
                   image_url={image_url}
