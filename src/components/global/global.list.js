@@ -3,11 +3,6 @@ import React, { memo } from "react"
 
 const GlobalList = memo(
   ({
-    liClassName,
-    titleClassName,
-    imageClassName,
-    linkClassName,
-    synopsisClassName,
     href,
     as,
     mal_id,
@@ -16,24 +11,23 @@ const GlobalList = memo(
     synopsis,
     genres,
     genreClassName,
-    synopsisClassNameContainer,
   }) => {
     return (
-      <li key={mal_id} className={liClassName}>
-        <div className={imageClassName}>
+      <li key={mal_id} className="search--li season">
+        <div className="season--image">
           <Link href={href} as={as}>
             <img alt={title} src={image_url} />
           </Link>
           <h3>{title}</h3>
         </div>
-        <div className={synopsisClassNameContainer}>
-          <div className={synopsisClassName}>
+        <div className="season--container">
+          <div className="season--synopsis">
             <p>
               {!synopsis ? "No synopsis is available for this title" : synopsis}
             </p>
           </div>
         </div>
-        <ul className={genreClassName}>{genres}</ul>
+        <ul className="season--genre">{genres}</ul>
       </li>
     )
   }

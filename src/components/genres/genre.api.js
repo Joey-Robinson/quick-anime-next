@@ -97,11 +97,6 @@ const GenreChange = () => {
                 .replace("[Written by MAL Rewrite]", "")
               return (
                 <GlobalList
-                  liClassName="search--li season"
-                  synopsisClassName="season--synopsis"
-                  synopsisClassNameContainer="season--container"
-                  titleClassName="li--title"
-                  imageClassName="season--image"
                   href={`/anime/[id]/`}
                   as={`/anime/${mal_id}/`}
                   synopsis={shortenedSynopsis}

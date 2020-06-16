@@ -90,18 +90,12 @@ const Seasonal = () => {
             )
             return (
               <GlobalList
-                liClassName="search--li season"
-                synopsisClassName="season--synopsis"
-                synopsisClassNameContainer="season--container"
-                genreClassName="li--genres"
-                titleClassName="season--title"
-                imageClassName="season--image"
                 href={`/anime/[id]/`}
                 as={`/anime/${mal_id}/`}
                 synopsis={shortenedSynopsis}
                 mal_id={mal_id}
                 genres={genreList}
-                genreClassName="season--genre"
+                genreClassName=""
                 title={title}
                 image_url={image_url}
                 url={url}
