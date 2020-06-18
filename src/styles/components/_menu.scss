@@ -6,6 +6,8 @@
   left: 36px;
   top: 36px;
   cursor: pointer;
+  background: $tertiary;
+  mix-blend-mode: difference;
 
   @include respond(laptop) {
     top: 26px;
@@ -15,7 +17,8 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: $tertiary;
+  background: white;
+  // mix-blend-mode: difference;
 }
 
 /* Color/shape of burger icon bars on hover*/
