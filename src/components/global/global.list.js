@@ -2,23 +2,16 @@ import Link from "next/link"
 import React, { memo } from "react"
 
 const GlobalList = memo(
-  ({
-    href,
-    as,
-    mal_id,
-    image_url,
-    title,
-    synopsis,
-    genres,
-    genreClassName,
-  }) => {
+  ({ href, as, mal_id, image_url, title, synopsis, genres }) => {
     return (
       <li key={mal_id} className="search--li season">
         <div className="season--image">
           <Link href={href} as={as}>
             <img alt={title} src={image_url} />
           </Link>
-          <h3>{title}</h3>
+          <Link href={href} as={as}>
+            <h3>{title}</h3>
+          </Link>
         </div>
         <div className="season--container">
           <div className="season--synopsis">

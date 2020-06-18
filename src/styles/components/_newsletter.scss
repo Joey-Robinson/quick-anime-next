@@ -16,6 +16,7 @@
   margin: 3rem 0 4.5rem 0;
   justify-items: center;
   background: lighten($mainBackgroundColor, 10%);
+  border-radius: 1rem;
 
   ul {
     display: flex;
@@ -24,11 +25,14 @@
     background: darken($mainBackgroundColor, 5%);
     width: 100%;
     justify-content: center;
-    padding: 1.5rem 0;
     flex-wrap: wrap;
     align-content: center;
+    padding: 0.75rem 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 
     li {
+      border-radius: 1.5rem;
       max-height: 25.5px;
       background: $tertiary;
       color: #eee;
@@ -36,16 +40,20 @@
       font-size: 1.8rem;
       font-weight: 700;
       padding: 0 1.5rem;
-      border-radius: 5rem;
       margin: 1.5rem;
     }
   }
 
   h2 {
+    border-radius: 1rem;
+    width: 100%;
+    background: darken($mainBackgroundColor, 5%);
     text-align: center;
     font-size: 3rem;
     font-weight: 900;
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    padding: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
   }
 
   img {

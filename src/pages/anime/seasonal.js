@@ -4,7 +4,6 @@ import Layout from "../../components/global/global.layout"
 import GlobalSearch from "../../components/global/global.search"
 import SEO from "../../components/global/global.seo"
 import Spinner from "../../components/global/global.spinner"
-import { renderEffect } from "../../utils/renders.utils"
 
 const GlobalList = dynamic(
   () => import("../../components/global/global.list"),
@@ -16,8 +15,6 @@ const GlobalList = dynamic(
 const Seasonal = () => {
   const [seasonalData, setSeasonalData] = useState({ anime: [] })
 
-  renderEffect()
-
   const seasonalCall = async () => {
     const response = await fetch("https://api.jikan.moe/v3/season")
     const data = await response.json()
@@ -27,9 +24,10 @@ const Seasonal = () => {
   useEffect(() => {
     seasonalCall()
   }, [])
+
   const seasonalYear = seasonalData.season_year
   const seasonalName = seasonalData.season_name
-  console.log(seasonalData)
+
   // Filter
   const morePosts = seasonalData.anime
   const emptyQuery = ""
@@ -56,6 +54,7 @@ const Seasonal = () => {
   const { filteredData, query } = filteredPosts
   const hasSearchResults = filteredData && query !== emptyQuery
   const posts = hasSearchResults ? filteredData : morePosts
+
   return (
     <Layout className="seasonal post">
       <SEO title="Seasonal Anime" description="Anime for this season" />
@@ -71,12 +70,12 @@ const Seasonal = () => {
         idFor="genre--search"
         submitStyle={{ display: "none" }}
       />
-      {/* <hgroup style={{ textAlign: "center" }}>
+      <hgroup style={{ textAlign: "center" }}>
         <h2>
           Listing Anime for {seasonalName} {seasonalYear}
         </h2>
         <h5>Displaying {seasonalData.anime.length} Results</h5>
-      </hgroup> */}
+      </hgroup>
       <ul className="list search">
         {posts &&
           posts.map(({ genres, synopsis, mal_id, title, image_url, url }) => {
