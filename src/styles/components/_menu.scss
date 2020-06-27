@@ -9,6 +9,10 @@
   background: $tertiary;
   mix-blend-mode: difference;
 
+  @include respond(phone) {
+    display: none;
+  }
+
   @include respond(laptop) {
     top: 26px;
     left: 26px;
