@@ -31,6 +31,12 @@
   position: relative;
   overflow: hidden;
 
+  @include respond(phone) {
+    width: 100%;
+    grid-template-columns: 165px 1fr;
+    grid-template-rows: 265px auto;
+  }
+
   &--image {
     grid-column: 1;
     width: 185px;
@@ -41,11 +47,21 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
 
+    @include respond(phone) {
+      width: 165px;
+      height: 265px;
+    }
+
     img {
       grid-row: 1 / -1;
       grid-column: 1;
       width: 185px;
       height: 265px;
+
+      @include respond(phone) {
+        width: 165px;
+        height: 245px;
+      }
     }
 
     h3 {
@@ -57,6 +73,12 @@
       grid-column: 1;
       grid-row: 2;
       align-self: end;
+
+      @include respond(phone) {
+        text-align: center;
+        align-self: center;
+        text-shadow: none;
+      }
     }
   }
 
@@ -100,6 +122,11 @@
       font-weight: normal;
       padding: 0 1.5rem;
       font-size: 1.8rem;
+
+      @include respond(phone) {
+        font-size: 1.6rem;
+        padding: 0 1rem;
+      }
     }
   }
 
