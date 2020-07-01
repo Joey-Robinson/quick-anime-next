@@ -118,6 +118,10 @@
     margin: 1.5rem 0;
     position: relative;
 
+    @include respond(phone) {
+      margin: 0.75rem 0;
+    }
+
     p {
       font-weight: normal;
       padding: 0 1.5rem;
@@ -125,7 +129,7 @@
 
       @include respond(phone) {
         font-size: 1.6rem;
-        padding: 0 1rem;
+        padding: 0 0.75rem;
       }
     }
   }
