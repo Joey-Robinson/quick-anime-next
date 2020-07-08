@@ -1,10 +1,35 @@
+import { motion } from "framer-motion"
 import fetch from "isomorphic-unfetch"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
-import Spinner from "../../components/global/global.spinner"
-import AnimeTemplate from "../../template/anime.template"
-import RecommendationsTemplate from "../../template/recommendations.template"
+// import RecommendationsTemplate from "../../template/recommendations.template"
+
+let easing = [0.6, -0.05, 0.01, 0.99]
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+}
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+    transition: { duration: 0.6, ease: easing },
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+}
 
 const Post = (props) => {
   const results = props.anime
@@ -55,46 +80,70 @@ const Post = (props) => {
   return (
     <Layout>
       <SEO title={title} />
-      <div className="results">
-        <AnimeTemplate
-          genres={genreNames}
-          title={title}
-          titlejp={titlejp}
-          synopsis={synopsis}
-          duration={duration}
-          background={!background ? noBackground : background}
-          image={image}
-          source={source}
-          episodes={episodes}
-          rating={rating}
-          url={url}
-          airing={airing}
-        />
-        <ul className="results--recommendations">
-          {animeRecs.recommendations.map(
-            ({
-              mal_id,
-              href,
-              as,
-              image_url,
-              recommendation_count,
-              recommendation_url,
-              title,
-            }) => (
-              <RecommendationsTemplate
-                key={`${mal_id}/${title}`}
-                title={title}
-                recommendation_url={recommendation_url}
-                image_url={!image_url ? <Spinner /> : image_url}
-                url={url}
-                recommendation_count={recommendation_count}
-                href={`/anime/[id]/`}
-                as={`/anime/${mal_id}/`}
+      <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
+        <div className="fullscreen">
+          <div className="product">
+            <motion.div
+              className="img"
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+            >
+              <motion.img
+                key={image}
+                src={image}
+                animate={{ x: 0, opacity: 1 }}
+                initial={{ x: 200, opacity: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 0.2 }}
               />
-            )
-          )}
-        </ul>
-      </div>
+            </motion.div>
+            <div className="product-details">
+              <motion.div variants={stagger} className="inner">
+                <motion.div variants={fadeInUp}>
+                  <span className="category">{titlejp}</span>
+                </motion.div>
+                <motion.h1 variants={fadeInUp}>{title}</motion.h1>
+                <motion.p variants={fadeInUp}>{background}</motion.p>
+                <motion.div variants={fadeInUp} className="additonals">
+                  <span>{rating}</span>
+                  <span>{duration}</span>
+                </motion.div>
+                <motion.div variants={fadeInUp} className="qty-price">
+                  <span className="price">{synopsis}</span>
+                </motion.div>
+                <motion.div variants={fadeInUp} className="btn-row">
+                  <button className="add-to-cart">{genreNames}</button>
+                  <button className="subscribe">{source}</button>
+                </motion.div>
+              </motion.div>
+            </div>
+            {/* <ul className="results--recommendations">
+              {animeRecs.recommendations.map(
+                ({
+                  mal_id,
+                  href,
+                  as,
+                  image_url,
+                  recommendation_count,
+                  recommendation_url,
+                  title,
+                }) => (
+                  <RecommendationsTemplate
+                    key={`${mal_id}/${title}`}
+                    title={title}
+                    recommendation_url={recommendation_url}
+                    image_url={!image_url ? <Spinner /> : image_url}
+                    url={url}
+                    recommendation_count={recommendation_count}
+                    href={`/anime/[id]/`}
+                    as={`/anime/${mal_id}/`}
+                  />
+                )
+              )}
+            </ul> */}
+          </div>
+        </div>
+      </motion.div>
     </Layout>
   )
 }
