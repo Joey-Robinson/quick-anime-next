@@ -60,30 +60,30 @@ const AnimeTemplate = ({
             exit={{ opacity: 0 }}
             transition={{ delay: 0.2 }}
           />
+          <motion.ul variants={fadeInUp} className="btn-row add-to-cart">
+            {genres}
+          </motion.ul>
         </motion.div>
-        <motion.div variants={fadeInUp}>
-          <span className="results--title">{title}</span>
-        </motion.div>
-        <motion.div variants={fadeInUp}>
+        {/* <motion.div variants={fadeInUp}>
           <span className="results--titlejp">{titlejp}</span>
-        </motion.div>
+        </motion.div> */}
 
-        <motion.div variants={stagger} className="inner">
-          <motion.div variants={fadeInUp}>
+        <motion.div variants={stagger} className="results--inner">
+          {/* <motion.div variants={fadeInUp}>
             <span className="category">{episodes}</span>
-          </motion.div>
-          <motion.h1 variants={fadeInUp}>{airing}</motion.h1>
-          <motion.p variants={fadeInUp}>{background}</motion.p>
-          <motion.div variants={fadeInUp} className="additonals">
+          </motion.div> */}
+          {/* <motion.h1 variants={fadeInUp}>{airing}</motion.h1> */}
+          {/* <motion.div variants={fadeInUp} className="additonals">
             <span>{rating}</span>
             <span>{duration}</span>
-          </motion.div>
-          <motion.div variants={fadeInUp} className="qty-price">
-            <span className="price">{synopsis}</span>
-          </motion.div>
-          <motion.ul variants={fadeInUp} className="btn-row">
-            <span className="add-to-cart">{genres}</span>
-          </motion.ul>
+          </motion.div> */}
+          <motion.p variants={fadeInUp} className="results--paragraph">
+            <span className="results--span">Synopsis:</span> {synopsis}
+          </motion.p>
+          <motion.p variants={fadeInUp} className="results--paragraph">
+            <span className="results--span">Background:</span> {background}
+          </motion.p>
+
           {/* <button className="subscribe">{source}</button> */}
         </motion.div>
 
