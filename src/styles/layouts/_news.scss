@@ -1,40 +1,15 @@
 .info {
-  margin: 4.5rem 0;
+  display: grid;
+  font-size: 1.6rem;
+  justify-self: right;
+  justify-content: right;
 
-  &--title {
-    grid-column: 2;
-    grid-row: 1;
-    font-size: 2rem;
-    padding: 0 1.5rem;
+  img {
+    width: 15rem;
+    height: auto;
   }
 
-  &--image {
-    grid-column: 1;
-    grid-row: 1 / -1;
-    padding: 0 1.5rem;
-
-    img {
-      width: auto;
-      height: 15rem;
-    }
-  }
-
-  &--intro {
-    grid-column: 2;
-    grid-row: 2;
-    padding: 0 1.5rem;
-    align-self: center;
-  }
-
-  &--external {
-    grid-column: 2;
-    grid-row: 3;
-    padding: 0 1.5rem;
-    align-self: end;
-
-    a {
-      color: white;
-      font-size: 1.8rem;
-    }
+  a {
+    color: white;
   }
 }

@@ -68,29 +68,29 @@ const Post = (props) => {
         genres={genreNames}
       />
       {/* <ul className="results--recommendations">
-              {animeRecs.recommendations.map(
-                ({
-                  mal_id,
-                  href,
-                  as,
-                  image_url,
-                  recommendation_count,
-                  recommendation_url,
-                  title,
-                }) => (
-                  <RecommendationsTemplate
-                    key={`${mal_id}/${title}`}
-                    title={title}
-                    recommendation_url={recommendation_url}
-                    image_url={!image_url ? <Spinner /> : image_url}
-                    url={url}
-                    recommendation_count={recommendation_count}
-                    href={`/anime/[id]/`}
-                    as={`/anime/${mal_id}/`}
-                  />
-                )
-              )}
-            </ul> */}
+        {animeRecs.recommendations.map(
+          ({
+            mal_id,
+            href,
+            as,
+            image_url,
+            recommendation_count,
+            recommendation_url,
+            title,
+          }) => (
+            <RecommendationsTemplate
+              key={`${mal_id}/${title}`}
+              title={title}
+              recommendation_url={recommendation_url}
+              image_url={!image_url ? <Spinner /> : image_url}
+              url={url}
+              recommendation_count={recommendation_count}
+              href={`/anime/[id]/`}
+              as={`/anime/${mal_id}/`}
+            />
+          )
+        )}
+      </ul> */}
     </Layout>
   )
 }
