@@ -40,6 +40,7 @@ const Post = (props) => {
   const airing = results.status
   const source = results.source
   const genres = results.genres
+  const genreNames = genres.map(({ name }) => <li>{name}</li>)
 
   // Anime recommendations
   const id = results.mal_id
@@ -83,6 +84,7 @@ const Post = (props) => {
         rating={rating}
         duration={duration}
         source={source}
+        genres={genreNames}
       />
       <ul className="info">
         {animeRecs.recommendations.map(

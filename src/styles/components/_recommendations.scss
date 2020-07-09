@@ -1,9 +1,10 @@
 .info {
   list-style: none;
-  grid-column: 3;
+  grid-column: 1 / -1;
   justify-self: right;
   width: 20rem;
-  display: none;
+  display: grid;
+  grid-row: -1;
 
   li {
     width: 15rem;

@@ -32,6 +32,7 @@ const AnimeTemplate = ({
   titlejp,
   synopsis,
   image,
+  genres,
   episodes,
   rating,
   url,
@@ -43,9 +44,13 @@ const AnimeTemplate = ({
   <>
     <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
       <div className="results">
-        <motion.h1 className="results--heading" variants={fadeInUp}>
-          {title}
-        </motion.h1>
+        <hgroup className="results--heading">
+          <motion.h1 variants={fadeInUp}>{title}</motion.h1>
+          <motion.h2 variants={fadeInUp}>
+            {titlejp}
+            <hr />
+          </motion.h2>
+        </hgroup>
         <motion.div
           className="results--image"
           animate={{ opacity: 1 }}
@@ -60,6 +65,10 @@ const AnimeTemplate = ({
             transition={{ delay: 0.2 }}
           />
         </motion.div>
+        <motion.ul variants={fadeInUp} className="results--genres">
+          {genres}
+        </motion.ul>
+
         {/* <motion.div variants={fadeInUp}>
           <span className="results--titlejp">{titlejp}</span>
         </motion.div> */}
