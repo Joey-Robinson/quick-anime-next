@@ -38,7 +38,7 @@ const RecommendationsTemplate = ({
   title,
 }) => (
   <>
-    <motion.li key={mal_id} className="info">
+    <motion.li key={mal_id} className="info--li">
       <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
         <motion.h5 className="info--heading" variants={fadeInUp}>
           {title}

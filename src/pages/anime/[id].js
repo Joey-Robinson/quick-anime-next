@@ -1,9 +1,28 @@
+// import { motion } from "framer-motion"
 import fetch from "isomorphic-unfetch"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
 import AnimeTemplate from "../../template/anime.template"
-// import RecommendationsTemplate from "../../template/recommendations.template"
+import RecommendationsTemplate from "../../template/recommendations.template"
+
+// let easing = [0.6, -0.05, 0.01, 0.99]
+
+// const fadeInUp = {
+//   initial: {
+//     y: 60,
+//     opacity: 0,
+//     transition: { duration: 0.6, ease: easing },
+//   },
+//   animate: {
+//     y: 0,
+//     opacity: 1,
+//     transition: {
+//       duration: 0.6,
+//       ease: easing,
+//     },
+//   },
+// }
 
 const Post = (props) => {
   const results = props.anime
@@ -21,7 +40,6 @@ const Post = (props) => {
   const airing = results.status
   const source = results.source
   const genres = results.genres
-  const genreNames = genres.map(({ name }) => <li>{name}</li>)
 
   // Anime recommendations
   const id = results.mal_id
@@ -65,9 +83,8 @@ const Post = (props) => {
         rating={rating}
         duration={duration}
         source={source}
-        genres={genreNames}
       />
-      {/* <ul className="results--recommendations">
+      <ul className="info">
         {animeRecs.recommendations.map(
           ({
             mal_id,
@@ -90,7 +107,7 @@ const Post = (props) => {
             />
           )
         )}
-      </ul> */}
+      </ul>
     </Layout>
   )
 }

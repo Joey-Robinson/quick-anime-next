@@ -1,0 +1,11 @@
+.info {
+  list-style: none;
+  grid-column: 3;
+  justify-self: right;
+  width: 20rem;
+  display: none;
+
+  li {
+    width: 15rem;
+  }
+}

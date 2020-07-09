@@ -38,7 +38,6 @@ const AnimeTemplate = ({
   airing,
   duration,
   background,
-  genres,
   source,
 }) => (
   <>
@@ -60,9 +59,6 @@ const AnimeTemplate = ({
             exit={{ opacity: 0 }}
             transition={{ delay: 0.2 }}
           />
-          <motion.ul variants={fadeInUp} className="btn-row add-to-cart">
-            {genres}
-          </motion.ul>
         </motion.div>
         {/* <motion.div variants={fadeInUp}>
           <span className="results--titlejp">{titlejp}</span>
@@ -83,66 +79,7 @@ const AnimeTemplate = ({
           {/* <motion.p variants={fadeInUp} className="results--paragraph">
             <span className="results--span">Background:</span> {background}
           </motion.p> */}
-
-          {/* <button className="subscribe">{source}</button> */}
         </motion.div>
-
-        {/* <div className="results--alternative">
-            <h3>
-              Alternatives:
-              <hr />
-            </h3>
-            <p>
-              <span>English: </span>
-              {title}
-            </p>
-            <p>
-              <span>Japanese: </span>
-              {titlejp}
-            </p>
-            <h3 className="results--alternative__hthree">
-              Additional Informaiton:
-              <hr />
-            </h3>
-            <p>
-              <span>Episodes: </span>
-              {episodes}
-            </p>
-            <p>
-              <span>Status: </span>
-              {airing}
-            </p>
-            <p>
-              <span>Duration: </span> {duration}
-            </p>
-            <p>
-              <span>Genres: </span>
-              {genres}
-            </p>
-            <p>
-              <span>Rating: </span>
-              {rating}
-            </p>
-            <p>
-              <span>Source: </span> {source}
-            </p>
-          </div>
-          <div className="results--synopsis">
-            <p>
-              <span>Synopsis: </span> {synopsis}
-            </p>
-            <p>
-              <span>Background: </span> {background}
-            </p>
-          </div>
-          <div className="results--background"></div>
-          <div className="results--empy"></div>
-          <div className="results--information"></div>
-          <div className="results--external">
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              {title} - View On MAL
-            </a>
-          </div> */}
       </div>
     </motion.div>
   </>
