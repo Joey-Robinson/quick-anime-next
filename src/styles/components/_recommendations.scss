@@ -1,12 +1,30 @@
 .info {
   list-style: none;
   grid-column: 1 / -1;
-  justify-self: right;
-  width: 20rem;
   display: grid;
   grid-row: -1;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  grid-row-gap: 0.75rem;
+
+  &--image {
+    display: grid;
+    grid-template-columns: 150px;
+    grid-template-rows: 1fr;
+
+    h5 {
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
 
   li {
-    width: 15rem;
+    width: 150px;
+
+    img {
+      width: 150px;
+      height: 216px;
+    }
+
   }
 }

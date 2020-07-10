@@ -40,15 +40,6 @@ const RecommendationsTemplate = ({
   <>
     <motion.li key={mal_id} className="info--li">
       <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
-        <motion.h5 className="info--heading" variants={fadeInUp}>
-          {title}
-        </motion.h5>
-
-        {/* <div className="info--image">
-          <a href={recommendation_url} target="_blank" rel="noopner noreferrer">
-            <LazyLoadImage alt={title} src={image_url} />
-          </a>
-        </div> */}
         <motion.div
           className="info--image"
           animate={{ opacity: 1 }}
@@ -62,6 +53,9 @@ const RecommendationsTemplate = ({
             exit={{ opacity: 0 }}
             transition={{ delay: 0.2 }}
           />
+          <motion.h5 className="info--heading" variants={fadeInUp}>
+            {title}
+          </motion.h5>
         </motion.div>
         <div className="info--external">
           <Link href={href} as={as}>
