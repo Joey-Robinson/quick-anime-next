@@ -8,23 +8,51 @@
   grid-row-gap: 0.75rem;
 
   &--image {
+    grid-column: 1;
+    width: 185px;
+    height: 265px;
+    grid-row: 1 / -1;
+    cursor: pointer;
     display: grid;
-    grid-template-columns: 150px;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+
+    @include respond(phone) {
+      width: 165px;
+      height: 265px;
+    }
+
+    img {
+      grid-row: 1 / -1;
+      grid-column: 1;
+      width: 185px;
+      height: 265px;
+
+      @include respond(phone) {
+        width: 165px;
+        height: 245px;
+      }
+    }
 
     h5 {
-      grid-row: 1;
+      text-shadow: $tertiary 1px 1px 0;
+      background: darken(rgba(21, 32, 43, 0.9), 5%);
+      font-size: calc(16px + 0.1vw);
+      padding: 1rem;
+      font-weight: normal;
       grid-column: 1;
+      grid-row: 2;
+      align-self: end;
+
+      @include respond(phone) {
+        text-align: center;
+        align-self: center;
+        text-shadow: none;
+      }
     }
   }
 
   li {
     width: 150px;
-
-    img {
-      width: 150px;
-      height: 216px;
-    }
-
   }
 }
