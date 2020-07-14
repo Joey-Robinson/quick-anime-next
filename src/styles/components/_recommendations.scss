@@ -60,7 +60,7 @@
   }
 
   &--synopsis {
-    background: cornflowerblue;
+    background: darken(rgba(21, 32, 43, 0.9), 5%);
     color: white;
     text-shadow: 1px 1px black;
     font-size: 1.6rem;
@@ -85,7 +85,7 @@
 }
 
 .info--synopsis::after {
-  transition: transform 200ms ease-in;
+  transition: display 200ms ease-in;
   z-index: -1;
   content: "";
   position: absolute;
@@ -93,9 +93,8 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(purple, 0.5);
   transform-origin: right;
-  transform: scaleX(0);
+  display: scaleX(0);
 }
 
 .info--synopsis:hover::after {
