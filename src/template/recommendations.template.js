@@ -45,23 +45,22 @@ const RecommendationsTemplate = ({
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
         >
-          <motion.img
-            key={image_url}
-            src={image_url}
-            animate={{ x: 0, opacity: 1 }}
-            initial={{ x: 200, opacity: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ delay: 0.2 }}
-          />
+          <Link href={href} as={as}>
+            <motion.img
+              key={image_url}
+              src={image_url}
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: 200, opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.2 }}
+            />
+          </Link>
+
           <motion.h5 className="info--heading" variants={fadeInUp}>
             {title}
           </motion.h5>
         </motion.div>
-        <div className="info--external">
-          <Link href={href} as={as}>
-            <a>Read More about it here.</a>
-          </Link>
-        </div>
+        <div className="info--external"></div>
       </motion.div>
     </motion.li>
   </>
