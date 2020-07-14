@@ -57,3 +57,11 @@
     width: 150px;
   }
 }
+
+.info--synopsis {
+  display: none;
+}
+
+.info--image:hover .info--synopsis {
+  display: block;
+}

@@ -36,6 +36,7 @@ const RecommendationsTemplate = ({
   recommendation_count,
   recommendation_url,
   title,
+  synopsis,
 }) => (
   <>
     <motion.li key={mal_id} className="info--li">
@@ -55,10 +56,10 @@ const RecommendationsTemplate = ({
               transition={{ delay: 0.2 }}
             />
           </Link>
-
           <motion.h5 className="info--heading" variants={fadeInUp}>
             {title}
           </motion.h5>
+          <p className="info--synopsis">{synopsis}</p>
         </motion.div>
         <div className="info--external"></div>
       </motion.div>

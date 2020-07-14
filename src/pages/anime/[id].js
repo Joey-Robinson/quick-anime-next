@@ -99,6 +99,7 @@ const Post = (props) => {
           }) => (
             <RecommendationsTemplate
               key={`${mal_id}/${title}`}
+              synopsis={synopsis}
               title={title}
               recommendation_url={recommendation_url}
               image_url={!image_url ? <Spinner /> : image_url}
