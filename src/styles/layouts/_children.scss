@@ -10,6 +10,8 @@
   grid-row: 1;
   display: grid;
   grid-template-rows: 92.5vh;
+  max-height: 100vh;
+  overflow: hidden;
 
   h1 {
     font-size: 100px;
