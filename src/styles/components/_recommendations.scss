@@ -82,6 +82,8 @@
 
 .info--image:hover .info--synopsis {
   display: block;
+  padding: 1rem;
+  scrollbar-color: rebeccapurple green;
 }
 
 .info--synopsis::after {
