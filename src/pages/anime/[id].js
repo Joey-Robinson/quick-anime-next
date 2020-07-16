@@ -71,7 +71,7 @@ const Post = (props) => {
   )
 
   return (
-    <Layout>
+    <Layout className="pp">
       <SEO title={title} />
       <AnimeTemplate
         synopsis={synopsis}
