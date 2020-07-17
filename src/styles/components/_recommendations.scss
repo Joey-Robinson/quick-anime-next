@@ -5,11 +5,15 @@
   grid-template-columns: repeat(6, 1fr);
   grid-row-gap: 1rem;
   justify-items: center;
+  margin: 1.5rem 3rem 0 0;
   overflow-y: scroll;
   will-change: scroll-position;
   -webkit-overflow-scrolling: touch;
+  // scroll-snap-type: y mandatory;
+  // scroll-snap-points-y: repeat(265px);
 
   &--image {
+    // scroll-snap-align: start;
     overflow: hidden scroll;
     grid-column: 1;
     width: 185px;
