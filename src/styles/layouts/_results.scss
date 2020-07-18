@@ -30,8 +30,22 @@
     grid-column: 1 / -1;
     justify-self: center;
 
+    hr {
+      display: block;
+      width: auto;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-size: 4vw;
+      text-align: center;
+    }
+
+    // font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
+    // @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+
     h2 {
-      font-size: 3rem;
       text-align: center;
       margin: 0 0 0.75rem 0;
     }
