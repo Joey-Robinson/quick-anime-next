@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import React from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 let easing = [0.6, -0.05, 0.01, 0.99]
 
@@ -43,18 +44,13 @@ const RecommendationsTemplate = ({
       <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
         <motion.div
           className="info--image"
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          initial={{ x: 200, opacity: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.2 }}
         >
           <Link href={href} as={as}>
-            <motion.img
-              key={image_url}
-              src={image_url}
-              animate={{ x: 0, opacity: 1 }}
-              initial={{ x: 200, opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ delay: 0.2 }}
-            />
+            <LazyLoadImage src={image_url} alt={title} />
           </Link>
           <motion.h5 className="info--heading" variants={fadeInUp}>
             {title}
