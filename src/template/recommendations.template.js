@@ -55,7 +55,9 @@ const RecommendationsTemplate = ({
           <motion.h5 className="info--heading" variants={fadeInUp}>
             {title}
           </motion.h5>
-          <p className="info--synopsis">{synopsis}</p>
+          <motion.div variants={fadeInUp} className="info--synopsis">
+            <p>{synopsis}</p>
+          </motion.div>
         </motion.div>
         <div className="info--external"></div>
       </motion.div>
