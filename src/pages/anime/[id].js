@@ -59,16 +59,16 @@ const Post = (props) => {
   }, [])
 
   // No background information
-  const smugkaguya = (
-    <img src="/static/smugkaguya.jpg" alt="Kagyua being smug." />
-  )
+  // const smugkaguya = (
+  //   <img src="/static/smugkaguya.jpg" alt="Kagyua being smug." />
+  // )
 
-  const noBackground = (
-    <>
-      There is currently no background information given for this anime.
-      {smugkaguya}
-    </>
-  )
+  // const noBackground = (
+  //   <>
+  //     There is currently no background information given for this anime.
+  //     {smugkaguya}
+  //   </>
+  // )
 
   return (
     <Layout className="pp">
@@ -99,7 +99,6 @@ const Post = (props) => {
           }) => (
             <RecommendationsTemplate
               key={`${mal_id}/${title}`}
-              synopsis={synopsis}
               title={title}
               recommendation_url={recommendation_url}
               image_url={!image_url ? <Spinner /> : image_url}
