@@ -68,11 +68,16 @@
     background: darken(rgba(21, 32, 43, 0.9), 5%);
     color: white;
     text-shadow: 1px 1px black;
-    font-size: 1.6rem;
+    // font-size: 1.6rem;
     padding: 1.5rem 0;
-    z-index: 1;
-    position: relative;
-    display: none;
+
+    p {
+      // font-size: 1.6rem;
+      // padding: 1.5rem 0;
+      position: relative;
+      left: 0;
+      justify-self: left;
+    }
 
     @include respond(tabLand) {
       width: 70vw;
