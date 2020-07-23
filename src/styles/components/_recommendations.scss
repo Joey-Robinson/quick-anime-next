@@ -3,12 +3,11 @@
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-row-gap: 1rem;
+  // grid-row-gap: 0.5;
+  width: 100%;
   justify-items: center;
-  margin: 13.5rem 3rem 1.5rem 0;
+  margin: 13.5rem 0 1.5rem 0;
   overflow-y: scroll;
-  will-change: scroll-position;
-  -webkit-overflow-scrolling: touch;
   scroll-snap-type: y mandatory;
   scroll-snap-points-y: repeat(265px);
 
@@ -59,7 +58,7 @@
     }
   }
 
-  li {
-    width: 150px;
-  }
+  // li {
+  //   width: 150px;
+  // }
 }
