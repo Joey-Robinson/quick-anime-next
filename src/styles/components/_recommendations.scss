@@ -14,7 +14,6 @@
 
   &--image {
     scroll-snap-align: start;
-    overflow: hidden scroll;
     grid-column: 1;
     width: 185px;
     height: 265px;
@@ -63,5 +62,4 @@
   li {
     width: 150px;
   }
-
 }
