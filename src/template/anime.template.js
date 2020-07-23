@@ -62,7 +62,11 @@ const AnimeTemplate = ({
             transition={{ delay: 0.2 }}
           />
         </motion.div>
-        <motion.ul variants={fadeInUp} className="results--genres">
+        <motion.ul
+          key={titlejp}
+          variants={fadeInUp}
+          className="results--genres"
+        >
           {genres}
         </motion.ul>
 
@@ -79,8 +83,9 @@ const AnimeTemplate = ({
             <span>{rating}</span>
             <span>{duration}</span>
           </motion.div> */}
+          <hr />
+
           <motion.p variants={fadeInUp} className="results--paragraph">
-            <hr />
             <span className="results--span">Synopsis:</span> {synopsis}
           </motion.p>
           {/* <motion.p variants={fadeInUp} className="results--paragraph">

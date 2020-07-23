@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
 import AnimeTemplate from "../../template/anime.template"
-import RecommendationsTemplate from "../../template/recommendations.template"
+// import RecommendationsTemplate from "../../template/recommendations.template"
 
 // let easing = [0.6, -0.05, 0.01, 0.99]
 
@@ -74,6 +74,7 @@ const Post = (props) => {
     <Layout className="pp">
       <SEO title={title} />
       <AnimeTemplate
+        key={titlejp}
         synopsis={synopsis}
         title={title}
         titlejp={titlejp}
@@ -86,7 +87,7 @@ const Post = (props) => {
         source={source}
         genres={genreNames}
       />
-      <ul className="info">
+      {/* <ul className="info">
         {animeRecs.recommendations.map(
           ({
             mal_id,
@@ -109,7 +110,7 @@ const Post = (props) => {
             />
           )
         )}
-      </ul>
+      </ul> */}
     </Layout>
   )
 }
