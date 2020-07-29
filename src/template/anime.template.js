@@ -83,7 +83,7 @@ const AnimeTemplate = ({
             <span>{rating}</span>
             <span>{duration}</span>
           </motion.div> */}
-          <hr />
+          <motion.div variants={fadeInUp} className="results--divider" />
 
           <motion.p variants={fadeInUp} className="results--paragraph">
             <span className="results--span">Synopsis:</span> {synopsis}
