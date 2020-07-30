@@ -2,20 +2,21 @@
   list-style: none;
   grid-column: 1 / -1;
   display: grid;
+  row-gap: .75rem;
   grid-template-columns: repeat(6, 1fr);
-  // grid-row-gap: 0.5;
   width: 100%;
   justify-items: center;
-  margin: 11.5rem 0 1.5rem 0;
+  margin: 11.5rem 0 0.5rem 0;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
-  scroll-snap-points-y: repeat(265px);
+  scroll-snap-points-y: repeat(260px);
 
   &--image {
     scroll-snap-align: start;
     grid-column: 1;
+    max-height: 260px;
     width: 185px;
-    height: 265px;
+    height: 260px;
     grid-row: 1 / -1;
     cursor: pointer;
     display: grid;
@@ -24,14 +25,14 @@
 
     @include respond(phone) {
       width: 165px;
-      height: 265px;
+      height: 260px;
     }
 
     img {
       grid-row: 1 / -1;
       grid-column: 1;
       width: 185px;
-      height: 265px;
+      height: 260px;
 
       @include respond(phone) {
         width: 165px;
@@ -57,6 +58,8 @@
       }
     }
   }
+
+  &--heading {}
 
   // li {
   //   width: 150px;
