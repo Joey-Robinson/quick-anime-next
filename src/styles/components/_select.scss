@@ -5,6 +5,12 @@
   grid-template-columns: repeat(3, 1fr);
   grid-row: 1;
 
+  @include respond(laptop) {
+    height: 10rem;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
   @include respond(phone) {
     display: none;
   }

@@ -41,14 +41,18 @@
   will-change: scroll-position;
   -webkit-overflow-scrolling: touch;
 
-  @include respond(phone) {
-    max-width: 100vw;
-    overflow-x: hidden;
+  @include respond(laptop) {
+    grid-template-rows: 7.5vh 92.5vh;
   }
 
-  h1 {
-    font-size: 100px;
-  }
+  // @include respond(phone) {
+  //   max-width: 100vw;
+  //   overflow-x: hidden;
+  // }
+
+  // h1 {
+  //   font-size: 100px;
+  // }
 }
 
 
