@@ -33,25 +33,18 @@ const GlobalList = memo(
     return (
       <li key={mal_id} className="search--li season">
         {/* <div > */}
-        {/* <LazyLoad> */}
-        <motion.div
-          className="season--image"
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-        >
-          <LazyLoad>
-            <motion.img
-              key={image_url}
-              src={image_url}
-              animate={{ x: 0, opacity: 1 }}
-              initial={{ x: 200, opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ delay: 0.2 }}
-            />
-          </LazyLoad>
-        </motion.div>
-        <h3>{title}</h3>
-
+        <LazyLoad>
+          <motion.div
+            className="season--image"
+            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: 200, opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <img alt={`Preview for ${title}`} src={image_url} />
+            <h3 style={{ zIndex: "20" }}>{title}</h3>
+          </motion.div>
+        </LazyLoad>
         {/* </div> */}
         <div className="season--container">
           <div className="season--synopsis">
