@@ -32,7 +32,6 @@ const GlobalList = memo(
   ({ href, as, mal_id, image_url, title, synopsis, genres }) => {
     return (
       <li key={mal_id} className="search--li season">
-        {/* <div > */}
         <LazyLoad>
           <motion.div
             className="season--image"
@@ -45,14 +44,13 @@ const GlobalList = memo(
             <h3 style={{ zIndex: "20" }}>{title}</h3>
           </motion.div>
         </LazyLoad>
-        {/* </div> */}
-        <div className="season--container">
-          <div className="season--synopsis">
+        <motion.div variants={fadeInUp} className="season--container">
+          <motion.div className="season--synopsis">
             <p>
               {!synopsis ? "No synopsis is available for this title" : synopsis}
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         {/* <motion.ul className="season--genre">{genres}</motion.ul> */}
       </li>
     )
