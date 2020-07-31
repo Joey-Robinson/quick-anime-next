@@ -64,7 +64,6 @@ const GenreChange = () => {
 
   return (
     <>
-      {/* <h1>hi</h1> */}
       {selectedGenre.anime && (
         <GenreSelect
           previousOnClick={previousPage}
@@ -77,32 +76,7 @@ const GenreChange = () => {
           nextMessage="Next Page"
         />
       )}
-      {/* {selectedGenre.anime && (
-        <div ref={ref}>
-          {onScreen ? (
-          ) : (
-            <div
-              role="button"
-              onClick={toggleFable}
-              className={isHidden ? `fab fab--opened` : `fab fab--closed`}
-            >
-              <GenreSelect
-                previousOnClick={previousPage}
-                previousButtonDisable={initialPage === 1 ? "disabled" : ""}
-                nextButtonDisable={
-                  selectedGenre.anime.length < 100 ? "disabled" : ""
-                }
-                nextOnClick={nextPage}
-                defaultValue={selectedGenre}
-                handler={changeHandler}
-                nextMessage="&raquo;"
-                previousMessage="&laquo;"
-              />
-            </div>
-          )}
-        </div>
-      )} */}
-      {selectedGenre.anime == "" ? (
+      {/* {selectedGenre.anime == "" ? (
         ""
       ) : (
         <h2
@@ -114,32 +88,31 @@ const GenreChange = () => {
         >
           Displaying {selectedGenre.anime.length} Results
         </h2>
-      )}
-      <motion.ul className="list search" variants={fadeInUp}>
-        {selectedGenre &&
-          selectedGenre.anime.map(
-            ({ synopsis, mal_id, title, image_url, url }) => {
-              const shortenedSynopsis = synopsis
-                .slice(0, 300)
-                .replace("[Written by MAL Rewrite]", "")
-              return (
-                <GlobalList
-                  href={`/anime/[id]/`}
-                  as={`/anime/${mal_id}/`}
-                  synopsis={shortenedSynopsis}
-                  mal_id={mal_id}
-                  title={title}
-                  image_url={image_url}
-                  url={url}
-                  key={mal_id}
-                />
-              )
-            }
-          )}
-      </motion.ul>
-      {/* <button className="top">
-        <span>&uarr;</span>
-      </button> */}
+      )} */}
+      <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
+        <motion.ul className="list search" variants={fadeInUp}>
+          {selectedGenre &&
+            selectedGenre.anime.map(
+              ({ synopsis, mal_id, title, image_url, url }) => {
+                const shortenedSynopsis = synopsis
+                  .slice(0, 300)
+                  .replace("[Written by MAL Rewrite]", "")
+                return (
+                  <GlobalList
+                    href={`/anime/[id]/`}
+                    as={`/anime/${mal_id}/`}
+                    synopsis={shortenedSynopsis}
+                    mal_id={mal_id}
+                    title={title}
+                    image_url={image_url}
+                    url={url}
+                    key={mal_id}
+                  />
+                )
+              }
+            )}
+        </motion.ul>
+      </motion.div>
     </>
   )
 }

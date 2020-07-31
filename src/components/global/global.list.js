@@ -1,18 +1,58 @@
-import Link from "next/link"
+import { motion } from "framer-motion"
 import React, { memo } from "react"
+import LazyLoad from "react-lazy-load"
+
+let easing = [0.6, -0.05, 0.01, 0.99]
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+}
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+    transition: { duration: 0.6, ease: easing },
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+}
 
 const GlobalList = memo(
   ({ href, as, mal_id, image_url, title, synopsis, genres }) => {
     return (
       <li key={mal_id} className="search--li season">
-        <div className="season--image">
-          <Link href={href} as={as}>
-            <img alt={title} src={image_url} />
-          </Link>
-          <Link href={href} as={as}>
-            <h3>{title}</h3>
-          </Link>
-        </div>
+        {/* <div > */}
+        {/* <LazyLoad> */}
+        <motion.div
+          className="season--image"
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+        >
+          <LazyLoad>
+            <motion.img
+              key={image_url}
+              src={image_url}
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: 200, opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.2 }}
+            />
+          </LazyLoad>
+        </motion.div>
+        <h3>{title}</h3>
+
+        {/* </div> */}
         <div className="season--container">
           <div className="season--synopsis">
             <p>
@@ -20,7 +60,7 @@ const GlobalList = memo(
             </p>
           </div>
         </div>
-        <ul className="season--genre">{genres}</ul>
+        {/* <motion.ul className="season--genre">{genres}</motion.ul> */}
       </li>
     )
   }
