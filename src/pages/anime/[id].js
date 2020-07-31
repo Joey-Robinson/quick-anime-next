@@ -1,10 +1,10 @@
-// import { motion } from "framer-motion"
 import fetch from "isomorphic-unfetch"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
 import AnimeTemplate from "../../template/anime.template"
 import RecommendationsTemplate from "../../template/recommendations.template"
+// import { motion } from "framer-motion"
 
 // let easing = [0.6, -0.05, 0.01, 0.99]
 

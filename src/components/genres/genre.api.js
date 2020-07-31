@@ -1,7 +1,34 @@
+import { motion } from "framer-motion"
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
 import GenreSelect from "../../components/genres/genre.select"
 import Spinner from "../../components/global/global.spinner"
+
+let easing = [0.6, -0.05, 0.01, 0.99]
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+}
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+    transition: { duration: 0.6, ease: easing },
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+}
 
 const GlobalList = dynamic(
   () => import("../../components/global/global.list"),
@@ -88,7 +115,7 @@ const GenreChange = () => {
           Displaying {selectedGenre.anime.length} Results
         </h2>
       )}
-      <ul className="list search">
+      <motion.ul className="list search" variants={fadeInUp}>
         {selectedGenre &&
           selectedGenre.anime.map(
             ({ synopsis, mal_id, title, image_url, url }) => {
@@ -109,7 +136,7 @@ const GenreChange = () => {
               )
             }
           )}
-      </ul>
+      </motion.ul>
       {/* <button className="top">
         <span>&uarr;</span>
       </button> */}
