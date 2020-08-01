@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import Link from "next/link"
 import React, { memo } from "react"
 import LazyLoad from "react-lazy-load"
 
@@ -33,25 +34,27 @@ const GlobalList = memo(
     return (
       <li key={mal_id} className="search--li season">
         <LazyLoad>
-          <motion.div
-            className="season--image"
-            animate={{ x: 0, opacity: 1 }}
-            initial={{ x: 200, opacity: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <img alt={`Preview for ${title}`} src={image_url} />
-            <h3 style={{ zIndex: "20" }}>{title}</h3>
-          </motion.div>
+          <Link href={href} as={as}>
+            <motion.div
+              className="season--image"
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: 200, opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <img alt={`Preview for ${title}`} src={image_url} />
+              <h3>{title}</h3>
+            </motion.div>
+          </Link>
         </LazyLoad>
         <motion.div variants={fadeInUp} className="season--container">
-          <motion.div className="season--synopsis">
+          <div className="season--synopsis">
             <p>
               {!synopsis ? "No synopsis is available for this title" : synopsis}
             </p>
-          </motion.div>
+          </div>
         </motion.div>
-        {/* <motion.ul className="season--genre">{genres}</motion.ul> */}
+        <motion.ul className="season--genre">{genres}</motion.ul>
       </li>
     )
   }
