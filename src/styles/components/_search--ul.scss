@@ -71,7 +71,7 @@
     }
 
     h3 {
-      text-shadow: $tertiary 1px 1px 0;
+      text-shadow: $tertiary .75px .75px 0;
       background: darken(rgba(21, 32, 43, 0.9), 5%);
       font-size: calc(16px + 0.1vw);
       padding: 1rem;
@@ -121,7 +121,7 @@
   }
 
   &--synopsis {
-    margin: 1.5rem 0;
+    margin: 0.75rem 0;
     position: relative;
 
     @include respond(phone) {
