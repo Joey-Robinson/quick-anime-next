@@ -11,6 +11,7 @@
     font-size: 1.6rem;
     grid-column: 3;
     justify-self: left;
+    margin: 0 0 0 3rem;
 
     li::marker {
       color: $tertiary;
@@ -60,8 +61,7 @@
   }
 
   &--inner {
-    width: 700px;
-    position: relative;
+    padding: 0 4.5rem;
     justify-self: center;
     grid-column: 2;
     grid-row: 2;
