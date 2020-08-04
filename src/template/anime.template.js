@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
+import Router from "next/router"
 import React from "react"
-
 let easing = [0.6, -0.05, 0.01, 0.99]
 
 const stagger = {
@@ -46,6 +46,9 @@ const AnimeTemplate = ({
       <div className="results">
         <hgroup className="results--heading">
           <motion.h1 variants={fadeInUp}>{title}</motion.h1>
+          <div className="go-back" onClick={() => Router.back()}>
+            Go Back
+          </div>
           <motion.h2 variants={fadeInUp}>{titlejp}</motion.h2>
         </hgroup>
         <motion.div
