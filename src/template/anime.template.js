@@ -46,9 +46,6 @@ const AnimeTemplate = ({
       <div className="results">
         <hgroup className="results--heading">
           <motion.h1 variants={fadeInUp}>{title}</motion.h1>
-          <div className="go-back" onClick={() => Router.back()}>
-            Go Back
-          </div>
           <motion.h2 variants={fadeInUp}>{titlejp}</motion.h2>
         </hgroup>
         <motion.div
@@ -86,6 +83,10 @@ const AnimeTemplate = ({
             <span>{rating}</span>
             <span>{duration}</span>
           </motion.div> */}
+          <motion.div variants={fadeInUp} className="results--back">
+            <span onClick={() => Router.back()}>Go Back</span>
+          </motion.div>
+
           <motion.div variants={fadeInUp} className="results--divider" />
 
           <motion.p variants={fadeInUp} className="results--paragraph">

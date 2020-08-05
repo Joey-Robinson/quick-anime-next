@@ -7,6 +7,18 @@
   align-self: start;
   margin: 3rem 0 0 0;
 
+  &--back {
+    cursor: pointer;
+    color: $tertiary;
+    display: block;
+    width: 70px;
+    span {
+      font-size: 1.8rem;
+      font-weight: 900;
+      display: block;
+    }
+  }
+
   ul {
     font-size: 1.6rem;
     grid-column: 3;
@@ -44,7 +56,6 @@
       text-align: center;
     }
 
-
     // font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
     // @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
 
@@ -70,15 +81,8 @@
       font-size: 1.6rem;
     }
 
-    .go-back {
-      cursor: pointer;
-      color: #282828;
-      text-decoration: none;
-      text-align: left;
-      position: absolute;
-      top: -124px;
-      left: 0;
-    }
-  }
+    // .go-back {
 
+    // }
+  }
 }
