@@ -71,7 +71,7 @@ const Post = (props) => {
   // )
 
   return (
-    <Layout className="pp">
+    <Layout className="information">
       <SEO title={title} />
       <AnimeTemplate
         key={titlejp}
