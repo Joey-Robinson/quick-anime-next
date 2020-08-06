@@ -84,7 +84,7 @@ const AnimeTemplate = ({
             <span>{duration}</span>
           </motion.div> */}
           <motion.div variants={fadeInUp} className="results--back">
-            <span onClick={() => Router.back()}>Go Back</span>
+            <span onClick={() => Router.back()}>&laquo; Go Back</span>
           </motion.div>
 
           <motion.div variants={fadeInUp} className="results--divider" />
