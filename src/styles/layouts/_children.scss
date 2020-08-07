@@ -19,7 +19,7 @@
 }
 
 .information {
-  background: url("/assets/bg.jpeg");
+  background: url("/assets/bg.jpeg") no-repeat center center / cover;
   grid-column: 1;
   grid-row: 1;
   display: grid;
