@@ -19,7 +19,7 @@
 }
 
 .information {
-  background: url("/assets/bg.jpeg") no-repeat center center / cover;
+  background: url("/assets/bg3.jpg") no-repeat center center / cover;
   grid-column: 1;
   grid-row: 1;
   display: grid;
@@ -31,7 +31,6 @@
     font-size: 100px;
   }
 }
-
 
 .post {
   grid-column: 1;
@@ -55,7 +54,6 @@
   //   font-size: 100px;
   // }
 }
-
 
 .post--news {
   grid-column: 1;
