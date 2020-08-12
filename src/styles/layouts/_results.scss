@@ -7,6 +7,7 @@
   align-self: start;
   // margin: 1.5rem 0 0 0;
   color: darken(white, 10%);
+
   &--back {
     cursor: pointer;
     color: $tertiary;
@@ -50,11 +51,19 @@
   &--heading {
     grid-column: 1 / -1;
     justify-self: center;
+    text-align: center;
+    display: inline-block;
+    // background: url("/assets/silentvoice.gif") no-repeat;
+    // background: url("/assets/akira.gif") no-repeat center center / cover;
+    // background: url("/assets/3437.jpg") no-repeat;
+    // background-clip: text;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
 
     h1 {
       font-size: 6rem;
       // font-size: 6vw;
-      text-align: center;
+
     }
 
     // font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
@@ -74,7 +83,7 @@
   }
 
   &--inner {
-    padding: 0 4.5rem;
+    padding: 0 3rem;
     align-self: start;
     justify-self: center;
     grid-column: 2;

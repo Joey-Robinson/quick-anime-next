@@ -45,7 +45,7 @@ const AnimeTemplate = ({
     <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
       <div className="results">
         <hgroup className="results--heading">
-          <motion.h1 variants={fadeInUp}>{title}</motion.h1>
+          <motion.h1 variants={fadeInUp}>-{title}-</motion.h1>
           <motion.h2 variants={fadeInUp}>{titlejp}</motion.h2>
         </hgroup>
         <motion.div
