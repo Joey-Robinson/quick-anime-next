@@ -6,6 +6,7 @@
   grid-template-columns: repeat(1, 1fr);
   width: 100%;
   // justify-items: center;
+  margin: 0 3rem 0 0;
   // margin: 6rem 0 0.5rem 0;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
@@ -14,9 +15,6 @@
   &--image {
     scroll-snap-align: start;
     grid-column: 1;
-    max-height: 260px;
-    width: 185px;
-    height: 260px;
     grid-row: 1 / -1;
     cursor: pointer;
     display: grid;
@@ -60,6 +58,8 @@
   }
 
   li {
+    max-width: 185px;
+    max-height: 250px;
     box-shadow: 0px 0px 1px 1px rgba(137, 196, 244, .75);
   }
 }
