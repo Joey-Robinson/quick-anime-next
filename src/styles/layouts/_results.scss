@@ -1,9 +1,8 @@
 .results {
   display: grid;
   height: 100%;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  grid-row: 1;
   align-self: start;
   // margin: 1.5rem 0 0 0;
   color: darken(white, 10%);
@@ -24,8 +23,9 @@
   ul {
     font-size: 1.6rem;
     grid-column: 3;
-    justify-self: left;
-    margin: 0 0 0 3rem;
+    justify-self: right;
+    margin: 0 3rem 0 0;
+    display: none;
 
     li::marker {
       color: $tertiary;
@@ -40,7 +40,8 @@
 
   &--image {
     grid-column: 1;
-    justify-self: center;
+    margin: 0 0 0 3rem;
+    grid-row: 2;
 
     img {
       width: 200px;
@@ -49,10 +50,12 @@
   }
 
   &--heading {
-    grid-column: 1 / -1;
+    grid-column: 2;
+    grid-row: 1;
     justify-self: center;
     text-align: center;
     display: inline-block;
+    // height: 5rem;
     // background: url("/assets/silentvoice.gif") no-repeat;
     // background: url("/assets/akira.gif") no-repeat center center / cover;
     // background: url("/assets/3437.jpg") no-repeat;
@@ -61,7 +64,7 @@
     // -webkit-text-fill-color: transparent;
 
     h1 {
-      font-size: 6rem;
+      font-size: 4rem;
       // font-size: 6vw;
 
     }
@@ -83,8 +86,8 @@
   }
 
   &--inner {
-    padding: 0 3rem;
-    align-self: start;
+    padding: 0 9rem;
+    // align-self: start;
     justify-self: center;
     grid-column: 2;
     grid-row: 2;
