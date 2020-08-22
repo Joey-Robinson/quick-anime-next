@@ -2,7 +2,7 @@
   display: grid;
   height: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr 1fr;
   align-self: start;
   // margin: 1.5rem 0 0 0;
   color: darken(white, 10%);
@@ -22,10 +22,11 @@
 
   ul {
     font-size: 1.6rem;
-    grid-column: 3;
-    justify-self: right;
-    margin: 0 3rem 0 0;
-    display: none;
+    grid-column: 1;
+    grid-row: 3;
+    // justify-self: right;
+    margin: 0 0 0 3rem;
+    // display: none;
 
     li::marker {
       color: $tertiary;
