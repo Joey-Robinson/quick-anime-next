@@ -70,15 +70,10 @@ const AnimeTemplate = ({
           {genres}
         </motion.ul>
 
-        {/* <motion.div variants={fadeInUp}>
-          <span className="results--titlejp">{titlejp}</span>
-        </motion.div> */}
-
         <motion.div variants={stagger} className="results--inner">
           {/* <motion.div variants={fadeInUp}>
             <span className="category">{episodes}</span>
           </motion.div> */}
-          {/* <motion.h1 variants={fadeInUp}>{airing}</motion.h1> */}
           {/* <motion.div variants={fadeInUp} className="additonals">
             <span>{rating}</span>
             <span>{duration}</span>
@@ -89,12 +84,12 @@ const AnimeTemplate = ({
 
           <motion.div variants={fadeInUp} className="results--divider" />
 
-          <motion.p variants={fadeInUp} className="results--paragraph">
+          <motion.p variants={fadeInUp} className="results--synopsis">
             <span className="results--span">Synopsis:</span> {synopsis}
           </motion.p>
-          {/* <motion.p variants={fadeInUp} className="results--paragraph">
+          <motion.p variants={fadeInUp} className="results--background">
             <span className="results--span">Background:</span> {background}
-          </motion.p> */}
+          </motion.p>
         </motion.div>
       </div>
     </motion.div>

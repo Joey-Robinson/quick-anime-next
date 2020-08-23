@@ -7,6 +7,12 @@
   // margin: 1.5rem 0 0 0;
   color: darken(white, 10%);
 
+  &--background {
+    grid-column: 2;
+    grid-row: -1;
+    align-self: end;
+  }
+
   &--back {
     cursor: pointer;
     color: $tertiary;
@@ -24,14 +30,13 @@
     font-size: 1.6rem;
     grid-column: 1;
     grid-row: 3;
-    // justify-self: right;
     margin: 0 0 0 3rem;
-    // display: none;
 
     li::marker {
       color: $tertiary;
     }
   }
+
 
   &--divider {
     background: white;
@@ -56,18 +61,9 @@
     justify-self: center;
     text-align: center;
     display: inline-block;
-    // height: 5rem;
-    // background: url("/assets/silentvoice.gif") no-repeat;
-    // background: url("/assets/akira.gif") no-repeat center center / cover;
-    // background: url("/assets/3437.jpg") no-repeat;
-    // background-clip: text;
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
 
     h1 {
       font-size: 4rem;
-      // font-size: 6vw;
-
     }
 
     // font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
@@ -88,18 +84,12 @@
 
   &--inner {
     padding: 0 9rem;
-    // align-self: start;
     justify-self: center;
     grid-column: 2;
     grid-row: 2;
 
     p {
       font-size: 1.6rem;
-      // background: rgba(0, 0, 0, .45);
     }
-
-    // .go-back {
-
-    // }
   }
 }
