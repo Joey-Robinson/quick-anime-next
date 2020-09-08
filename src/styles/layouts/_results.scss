@@ -10,7 +10,8 @@
   &--background {
     grid-column: 2;
     grid-row: -1;
-    align-self: end;
+    align-self: center;
+    padding: 0 9rem;
   }
 
   &--back {
@@ -36,7 +37,6 @@
       color: $tertiary;
     }
   }
-
 
   &--divider {
     background: white;

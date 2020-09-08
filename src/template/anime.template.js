@@ -87,9 +87,12 @@ const AnimeTemplate = ({
           <motion.p variants={fadeInUp} className="results--synopsis">
             <span className="results--span">Synopsis:</span> {synopsis}
           </motion.p>
-          <motion.p variants={fadeInUp} className="results--background">
-            <span className="results--span">Background:</span> {background}
-          </motion.p>
+        </motion.div>
+        <motion.div className="results--background">
+          <p>
+            {background}
+            {/* <span className="results--span">Background:</span> {background} */}
+          </p>
         </motion.div>
       </div>
     </motion.div>
