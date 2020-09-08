@@ -38,8 +38,9 @@ const AnimeTemplate = ({
   url,
   airing,
   duration,
-  background,
   source,
+  aired,
+  background,
 }) => (
   <>
     <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
@@ -87,13 +88,21 @@ const AnimeTemplate = ({
           <motion.p variants={fadeInUp} className="results--synopsis">
             <span className="results--span">Synopsis:</span> {synopsis}
           </motion.p>
+          <ul>
+            <li>{episodes}</li>
+            <li>{rating}</li>
+            <li>{airing}</li>
+            <li>{duration}</li>
+            <li>{source}</li>
+            <li>{aired}</li>
+          </ul>
         </motion.div>
-        <motion.div className="results--background">
+        {/* <motion.div className="results--background">
           <p>
             {background}
-            {/* <span className="results--span">Background:</span> {background} */}
+            <span className="results--span">Background:</span> {background}
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   </>
