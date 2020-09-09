@@ -88,14 +88,36 @@ const AnimeTemplate = ({
           <motion.p variants={fadeInUp} className="results--synopsis">
             <span className="results--span">Synopsis:</span> {synopsis}
           </motion.p>
-          <ul>
-            <li>{episodes}</li>
-            <li>{rating}</li>
-            <li>{airing}</li>
-            <li>{duration}</li>
-            <li>{source}</li>
-            <li>{aired}</li>
-          </ul>
+          <motion.ul variants={fadeInUp} className="results--extras">
+            <li>
+              <span className="results--span">Episodes: </span>
+              {episodes}
+            </li>
+            <li>
+              <span className="results--span">Rating: </span>
+
+              {rating}
+            </li>
+            <li>
+              <span className="results--span">Airing: </span>
+              {airing}
+            </li>
+            <li>
+              <span className="results--span">Duration: </span>
+
+              {duration}
+            </li>
+            <li>
+              <span className="results--span">Source: </span>
+
+              {source}
+            </li>
+            <li>
+              <span className="results--span">Dates: </span>
+
+              {aired}
+            </li>
+          </motion.ul>
         </motion.div>
         {/* <motion.div className="results--background">
           <p>
