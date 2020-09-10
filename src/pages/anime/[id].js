@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
 import AnimeTemplate from "../../template/anime.template"
+import CharacterTemplate from "../../template/characters.template"
 import RecommendationsTemplate from "../../template/recommendations.template"
+
 // import { motion } from "framer-motion"
 
 // let easing = [0.6, -0.05, 0.01, 0.99]
@@ -47,7 +49,7 @@ const Post = (props) => {
   const id = results.mal_id
   const [animeRecs, setAnimeRecs] = useState({ recommendations: [] })
 
-  // const [ppData, setPpData] = useState({ characters: [] })
+  const [characterData, setCharacterData] = useState({ characters: [] })
 
   const recommendationsCall = async () => {
     const response = await fetch(
@@ -57,17 +59,18 @@ const Post = (props) => {
     setAnimeRecs(data)
   }
 
-  // const ppcall = async () => {
-  //   const response = await fetch(
-  //     `https://api.jikan.moe/v3/anime/${id}/characters_staff`
-  //   )
-  //   const data = await response.json()
-  //   setPpData(data)
-  // }
+  const characterDataCall = async () => {
+    const response = await fetch(
+      `https://api.jikan.moe/v3/anime/${id}/characters_staff`
+    )
+    const data = await response.json()
+    setCharacterData(data)
+  }
 
   useEffect(() => {
     recommendationsCall()
   }, [])
+
   // console.log(ppData)
   // No background information
   // const smugkaguya = (
@@ -84,6 +87,12 @@ const Post = (props) => {
   return (
     <Layout className="information">
       <SEO title={title} />
+      <ul className="p" onClick={characterDataCall}>
+        <h1>pp</h1>
+        {characterData.characters.map(({ name, url, image_url }) => (
+          <CharacterTemplate name={name} image={image_url} />
+        ))}
+      </ul>
       <AnimeTemplate
         key={titlejp}
         synopsis={synopsis}
