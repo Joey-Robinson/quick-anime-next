@@ -9,8 +9,14 @@
 
   &--character {
     display: grid;
+    justify-self: center;
+    overflow-y: scroll;
+    will-change: scroll-position;
+    -webkit-overflow-scrolling: touch;
 
-    li {
+    li,
+    p,
+    div {
       overflow-y: scroll;
       will-change: scroll-position;
       -webkit-overflow-scrolling: touch;

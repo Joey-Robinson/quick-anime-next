@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
 import AnimeTemplate from "../../template/anime.template"
-// import CharacterTemplate from "../../template/characters.template"
 import RecommendationsTemplate from "../../template/recommendations.template"
 
 // import { motion } from "framer-motion"
@@ -94,6 +93,7 @@ const Post = (props) => {
       </li>
     )
   )
+
   return (
     <Layout className="information">
       <SEO title={title} />
