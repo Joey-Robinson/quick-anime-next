@@ -7,6 +7,13 @@
   // margin: 1.5rem 0 0 0;
   color: darken(white, 10%);
 
+  &--character {
+    display: flex;
+    flex-direction: row;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
   &--background {
     grid-column: 2;
     grid-row: -1;

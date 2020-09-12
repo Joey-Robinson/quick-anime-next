@@ -33,6 +33,9 @@ const AnimeTemplate = ({
   synopsis,
   image,
   genres,
+  charName,
+  charImage,
+  charUrl,
   episodes,
   rating,
   url,
@@ -63,22 +66,29 @@ const AnimeTemplate = ({
             transition={{ delay: 0.2 }}
           />
         </motion.div>
-        <motion.ul
+        <motion.ul className="results--character">
+          <p>me</p>
+          <li>{charName}</li>
+          {/* <li>
+            <motion.img
+              key={charImage}
+              src={charImage}
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: 200, opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.2 }}
+            />
+          </li> */}
+        </motion.ul>
+
+        {/* <motion.ul
           key={titlejp}
           variants={fadeInUp}
           className="results--genres"
         >
           {genres}
-        </motion.ul>
-
+        </motion.ul> */}
         <motion.div variants={stagger} className="results--inner">
-          {/* <motion.div variants={fadeInUp}>
-            <span className="category">{episodes}</span>
-          </motion.div> */}
-          {/* <motion.div variants={fadeInUp} className="additonals">
-            <span>{rating}</span>
-            <span>{duration}</span>
-          </motion.div> */}
           <motion.div variants={fadeInUp} className="results--back">
             <span onClick={() => Router.back()}>&laquo; Go Back</span>
           </motion.div>
@@ -88,7 +98,7 @@ const AnimeTemplate = ({
           <motion.p variants={fadeInUp} className="results--synopsis">
             <span className="results--span">Synopsis:</span> {synopsis}
           </motion.p>
-          <motion.ul variants={fadeInUp} className="results--extras">
+          {/* <motion.ul variants={fadeInUp} className="results--extras">
             <li>
               <span className="results--span">Episodes: </span>
               {episodes}
@@ -117,7 +127,7 @@ const AnimeTemplate = ({
 
               {aired}
             </li>
-          </motion.ul>
+          </motion.ul> */}
         </motion.div>
         {/* <motion.div className="results--background">
           <p>

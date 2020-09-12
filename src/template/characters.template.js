@@ -45,7 +45,7 @@ const CharacterTemplate = ({ url, image, name }) => (
             transition={{ delay: 0.2 }}
           />
         </motion.div>
-        <motion.div>
+        <motion.div className="characters--name">
           <p>{name}</p>
         </motion.div>
       </div>

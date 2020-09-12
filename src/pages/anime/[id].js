@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
 import AnimeTemplate from "../../template/anime.template"
-import CharacterTemplate from "../../template/characters.template"
+// import CharacterTemplate from "../../template/characters.template"
 import RecommendationsTemplate from "../../template/recommendations.template"
 
 // import { motion } from "framer-motion"
@@ -69,6 +69,7 @@ const Post = (props) => {
 
   useEffect(() => {
     recommendationsCall()
+    characterDataCall()
   }, [])
 
   // console.log(ppData)
@@ -83,17 +84,14 @@ const Post = (props) => {
   //     {smugkaguya}
   //   </>
   // )
-
+  const charName = characterData.characters.map(({ name }) => <li>{name}</li>)
+  console.log(charName)
   return (
     <Layout className="information">
       <SEO title={title} />
-      <ul className="p" onClick={characterDataCall}>
-        <h1>pp</h1>
-        {characterData.characters.map(({ name, url, image_url }) => (
-          <CharacterTemplate name={name} image={image_url} />
-        ))}
-      </ul>
+
       <AnimeTemplate
+        charName={charName}
         key={titlejp}
         synopsis={synopsis}
         title={title}
@@ -109,6 +107,12 @@ const Post = (props) => {
         airing={airing}
         aired={aired}
       />
+      {/* <ul className="results--character" onClick={characterDataCall}>
+        <p>h</p>
+        {characterData.characters.map(({ name, url, image_url }) => (
+          <CharacterTemplate name={name} image={image_url} />
+        ))}
+      </ul> */}
       <ul className="info">
         {animeRecs.recommendations.map(
           ({
