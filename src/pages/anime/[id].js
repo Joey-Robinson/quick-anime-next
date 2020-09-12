@@ -84,14 +84,22 @@ const Post = (props) => {
   //     {smugkaguya}
   //   </>
   // )
-  const charName = characterData.characters.map(({ name }) => <li>{name}</li>)
-  console.log(charName)
+  const charInformation = characterData.characters.map(
+    ({ image_url, name }) => (
+      <li>
+        <p>{name}</p>
+        <div>
+          <img src={image_url} alt="" />
+        </div>
+      </li>
+    )
+  )
   return (
     <Layout className="information">
       <SEO title={title} />
 
       <AnimeTemplate
-        charName={charName}
+        charInformation={charInformation}
         key={titlejp}
         synopsis={synopsis}
         title={title}

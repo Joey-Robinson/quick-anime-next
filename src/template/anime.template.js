@@ -33,9 +33,7 @@ const AnimeTemplate = ({
   synopsis,
   image,
   genres,
-  charName,
-  charImage,
-  charUrl,
+  charInformation,
   episodes,
   rating,
   url,
@@ -66,20 +64,7 @@ const AnimeTemplate = ({
             transition={{ delay: 0.2 }}
           />
         </motion.div>
-        <motion.ul className="results--character">
-          <p>me</p>
-          <li>{charName}</li>
-          {/* <li>
-            <motion.img
-              key={charImage}
-              src={charImage}
-              animate={{ x: 0, opacity: 1 }}
-              initial={{ x: 200, opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ delay: 0.2 }}
-            />
-          </li> */}
-        </motion.ul>
+        <motion.ul className="results--character">{charInformation}</motion.ul>
 
         {/* <motion.ul
           key={titlejp}

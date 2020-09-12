@@ -8,10 +8,22 @@
   color: darken(white, 10%);
 
   &--character {
-    display: flex;
-    flex-direction: row;
-    grid-row: 1;
-    grid-column: 2;
+    display: grid;
+
+    li {
+      overflow-y: scroll;
+      will-change: scroll-position;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1 / -1;
+
+    img {
+      height: 75px;
+      width: 75px;
+    }
   }
 
   &--background {
@@ -34,7 +46,7 @@
     }
   }
 
-  ul {
+  &--genre {
     font-size: 1.6rem;
     grid-column: 1;
     grid-row: 3;
