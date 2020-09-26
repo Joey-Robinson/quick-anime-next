@@ -65,7 +65,7 @@ const AnimeTemplate = ({
             transition={{ delay: 0.2 }}
           />
         </motion.div>
-        <motion.ul className="results--character">{charInformation}</motion.ul>
+        {/* <motion.ul className="results--character">{charInformation}</motion.ul> */}
 
         {/* <motion.ul
           key={titlejp}

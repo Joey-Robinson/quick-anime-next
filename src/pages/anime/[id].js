@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
 import AnimeTemplate from "../../template/anime.template"
+import CharacterTemplate from "../../template/characters.template"
 import RecommendationsTemplate from "../../template/recommendations.template"
-
 // import { motion } from "framer-motion"
 
 // let easing = [0.6, -0.05, 0.01, 0.99]
@@ -99,7 +99,6 @@ const Post = (props) => {
       <SEO title={title} />
 
       <AnimeTemplate
-        charInformation={charInformation}
         key={titlejp}
         synopsis={synopsis}
         title={title}
@@ -115,12 +114,13 @@ const Post = (props) => {
         airing={airing}
         aired={aired}
       />
-      {/* <ul className="results--character" onClick={characterDataCall}>
-        <p>h</p>
+      <ul className="results--character" onClick={characterDataCall}>
         {characterData.characters.map(({ name, url, image_url }) => (
-          <CharacterTemplate name={name} image={image_url} />
+          <li>
+            <CharacterTemplate name={name} image={image_url} />
+          </li>
         ))}
-      </ul> */}
+      </ul>
       <ul className="info">
         {animeRecs.recommendations.map(
           ({

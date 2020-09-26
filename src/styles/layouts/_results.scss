@@ -8,28 +8,25 @@
   color: darken(white, 10%);
 
   &--character {
-    display: grid;
-    justify-self: center;
+    grid-row: 3;
+    display: flex;
     overflow-y: scroll;
     will-change: scroll-position;
     -webkit-overflow-scrolling: touch;
+    list-style: none;
+    // img {
+    //   min-width: 200px;
+    //   min-height: 200px;
+    // }
 
-    li,
-    p,
-    div {
-      overflow-y: scroll;
-      will-change: scroll-position;
-      -webkit-overflow-scrolling: touch;
-    }
+    // li,
+    // p,
+    // div {
+    //   overflow-y: scroll;
+    //   will-change: scroll-position;
+    //   -webkit-overflow-scrolling: touch;
+    // }
 
-    height: 100%;
-    grid-column: 1;
-    grid-row: 1 / -1;
-
-    img {
-      height: 75px;
-      width: 75px;
-    }
   }
 
   &--background {
