@@ -24,12 +24,102 @@
   grid-column: 1;
   grid-row: 1;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 3fr 1fr;
   max-height: 100vh;
   overflow: hidden;
 
+  &--character {
+    grid-row: 2;
+    grid-column: 1;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(min(10rem, 20rem), 1fr));
+    overflow-y: scroll;
+    will-change: scroll-position;
+    // -webkit-overflow-scrolling: touch;
+    list-style: none;
+    // img {
+    //   min-width: 200px;
+    //   min-height: 200px;
+    // }
+
+    // li,
+    // p,
+    // div {
+    //   overflow-y: scroll;
+    //   will-change: scroll-position;
+    //   -webkit-overflow-scrolling: touch;
+    // }
+
+  }
+
   h1 {
     font-size: 100px;
+  }
+
+  &--info {
+    list-style: none;
+    grid-column: 3;
+    grid-row: 1 / -1;
+    display: grid;
+    row-gap: 3rem;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    margin: 0;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-snap-points-x: repeat(260px);
+
+    &--image {
+      scroll-snap-align: start;
+      grid-column: 1;
+      grid-row: 1 / -1;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto;
+      z-index: 100;
+
+      @include respond(phone) {
+        width: 165px;
+        height: 260px;
+      }
+
+      img {
+        grid-row: 1 / -1;
+        grid-column: 1;
+        width: 185px;
+        height: 260px;
+
+        @include respond(phone) {
+          width: 165px;
+          height: 245px;
+        }
+      }
+
+      h5 {
+        position: relative;
+        text-shadow: $tertiary 1px 1px 0;
+        background: darken(rgba(21, 32, 43, 0.9), 5%);
+        font-size: calc(16px + 0.1vw);
+        padding: 1rem;
+        font-weight: normal;
+        grid-column: 1;
+        grid-row: 2;
+        align-self: end;
+
+        @include respond(phone) {
+          text-align: center;
+          align-self: center;
+          text-shadow: none;
+        }
+      }
+    }
+
+    li {
+      max-width: 185px;
+      max-height: 250px;
+    }
   }
 }
 

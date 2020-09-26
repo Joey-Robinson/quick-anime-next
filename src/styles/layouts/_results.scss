@@ -7,28 +7,6 @@
   // margin: 1.5rem 0 0 0;
   color: darken(white, 10%);
 
-  &--character {
-    grid-row: 3;
-    display: flex;
-    overflow-y: scroll;
-    will-change: scroll-position;
-    -webkit-overflow-scrolling: touch;
-    list-style: none;
-    // img {
-    //   min-width: 200px;
-    //   min-height: 200px;
-    // }
-
-    // li,
-    // p,
-    // div {
-    //   overflow-y: scroll;
-    //   will-change: scroll-position;
-    //   -webkit-overflow-scrolling: touch;
-    // }
-
-  }
-
   &--background {
     grid-column: 2;
     grid-row: -1;

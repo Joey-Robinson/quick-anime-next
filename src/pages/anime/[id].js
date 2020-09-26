@@ -114,14 +114,15 @@ const Post = (props) => {
         airing={airing}
         aired={aired}
       />
-      <ul className="results--character" onClick={characterDataCall}>
+      <ul className="information--character" onClick={characterDataCall}>
+        {/* <li>props</li> */}
         {characterData.characters.map(({ name, url, image_url }) => (
           <li>
             <CharacterTemplate name={name} image={image_url} />
           </li>
         ))}
       </ul>
-      <ul className="info">
+      <ul className="information--info">
         {animeRecs.recommendations.map(
           ({
             mal_id,
