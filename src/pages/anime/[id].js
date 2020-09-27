@@ -114,12 +114,10 @@ const Post = (props) => {
         airing={airing}
         aired={aired}
       />
-      <ul className="information--character" onClick={characterDataCall}>
+      <ul className="information--character">
         {/* <li>props</li> */}
         {characterData.characters.map(({ name, url, image_url }) => (
-          <li>
-            <CharacterTemplate name={name} image={image_url} />
-          </li>
+          <CharacterTemplate name={name} image={image_url} />
         ))}
       </ul>
       <ul className="information--info">
