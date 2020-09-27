@@ -33,7 +33,7 @@
     grid-column: 1;
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(min(10rem, 20rem), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(20rem, 20rem), 1fr));
     overflow-y: scroll;
     will-change: scroll-position;
     // -webkit-overflow-scrolling: touch;
@@ -54,7 +54,6 @@
     //   will-change: scroll-position;
     //   -webkit-overflow-scrolling: touch;
     // }
-
   }
 
   h1 {

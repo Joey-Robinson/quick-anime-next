@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import React from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 let easing = [0.6, -0.05, 0.01, 0.99]
 
@@ -29,27 +30,22 @@ const fadeInUp = {
 
 const CharacterTemplate = ({ url, image, name }) => (
   <>
-    <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
-      <div className="characters">
+    <motion.li key={name} className="characters--li">
+      <motion.div initial="initial" animate="animate" exit={{ opacity: 10 }}>
         <motion.div
           className="characters--image"
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          initial={{ x: 200, opacity: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.2 }}
         >
-          <motion.img
-            key={image}
-            src={image}
-            animate={{ x: 0, opacity: 1 }}
-            initial={{ x: 200, opacity: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ delay: 0.2 }}
-          />
+          <LazyLoadImage src={image} alt={name} />
+          <motion.h5 className="characters--heading" variants={fadeInUp}>
+            {name}
+          </motion.h5>
         </motion.div>
-        <motion.div className="characters--name">
-          <p>{name}</p>
-        </motion.div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </motion.li>
   </>
 )
 
