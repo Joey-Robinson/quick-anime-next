@@ -24,16 +24,15 @@
   grid-column: 1;
   grid-row: 1;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
   max-height: 100vh;
   overflow: hidden;
 
   &--character {
-    grid-row: 2;
+    grid-row: 1;
     grid-column: 1;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(23rem, 23rem), 1fr));
-    columns: 5;
     overflow-y: scroll;
     will-change: scroll-position;
     list-style: none;
