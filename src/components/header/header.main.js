@@ -4,7 +4,7 @@ import HeaderSearch from "./header.search"
 
 const Header = () => {
   return (
-    <header className="grid self-start col-start-2 row-start-1 bg-purple-900 p-4 rounded-b-md">
+    <header className="grid self-start col-start-2 row-start-1 bg-secondary p-4 rounded-b-md">
       <Navigation />
 
       {/* Create header.search.js and use component here for a search */}
