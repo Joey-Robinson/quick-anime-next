@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.0",
     "framer-motion": "^1.11.1",
     "isomorphic-unfetch": "^3.0.0",
     "marked": "^0.8.2",

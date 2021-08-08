@@ -1,10 +1,9 @@
 import Navigation from "./header.nav"
 import HeaderSearch from "./header.search"
-// import Notification from "./header.notification"
 
 const Header = () => {
   return (
-    <header className="grid self-start col-start-2 row-start-1 bg-secondary p-4 rounded-b-md">
+    <header className="grid items-center self-start col-start-2 row-start-1 bg-secondary">
       <Navigation />
 
       {/* Create header.search.js and use component here for a search */}
