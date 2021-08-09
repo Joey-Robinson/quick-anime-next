@@ -47,18 +47,21 @@ const HeaderSearch = ({ onSubmit, value, onChange }) => {
 
   const onChangeHandler = (event) => {
     setSearchedAnime(event.target.value)
+    console.log(animeData)
   }
 
   const onSubmitHandler = (event) => {
     if (event.key === 13) {
       event.preventDefault()
       searchCall()
+      console.log(animeData)
     } else {
       event.preventDefault()
       searchCall()
+      console.log(animeData)
     }
   }
-
+  console.log(animeData)
   return (
     // create function to search
     <motion.div
@@ -72,8 +75,7 @@ const HeaderSearch = ({ onSubmit, value, onChange }) => {
         className="border rounded overflow-hidden flex"
       >
         <form
-          action="http://localhost:3000/anime/"
-          role="search"
+          action="http://localhost:3000/"
           onSubmit={onSubmitHandler}
           autoComplete="off"
         >
