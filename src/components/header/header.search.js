@@ -1,7 +1,8 @@
 // col-start-2 self-center justify-self-end grid"
 import { motion } from "framer-motion"
+// import { useRouter } from "next/router"
 // import dynamic from "next/dynamic"
-import { useState } from "react"
+// import { useState } from "react"
 
 let easing = [0.6, -0.05, 0.01, 0.99]
 
@@ -30,21 +31,22 @@ const fadeInUp = {
 }
 
 const HeaderSearch = ({ onSubmit, value, onChange }) => {
-  const [animeData, setAnimeData] = useState({ results: [] })
-  const [searchedAnime, setSearchedAnime] = useState("")
-  const [currentPage, setCurrentPage] = useState(1)
+  // const [animeData, setAnimeData] = useState({ results: [] })
+  // const [searchedAnime, setSearchedAnime] = useState("")
+  // const [currentPage, setCurrentPage] = useState(1)
 
-  const searchCall = async () => {
-    const response = await fetch(
-      //&limit=10
-      `https://api.jikan.moe/v3/search/anime?q=${searchedAnime}`
-    )
-    const data = await response.json()
-    setAnimeData(data)
-    console.log(animeData)
-    console.log(searchedAnime)
-  }
+  // const searchCall = async () => {
+  //   const response = await fetch(
+  //     //&limit=10
+  //     `https://api.jikan.moe/v3/search/anime?q=${searchedAnime}`
+  //   )
+  //   const data = await response.json()
+  //   setAnimeData(data)
+  //   console.log(animeData)
+  //   console.log(searchedAnime)
+  // }
 
+<<<<<<< HEAD
   const onChangeHandler = (event) => {
     setSearchedAnime(event.target.value)
     console.log(animeData)
@@ -62,23 +64,46 @@ const HeaderSearch = ({ onSubmit, value, onChange }) => {
     }
   }
   console.log(animeData)
+=======
+  // const onChangeHandler = (event) => {
+  //   setSearchedAnime(event.target.value)
+  // }
+
+  // const router = useRouter()
+  // const onSubmitHandler = (event) => {
+  //   if (event.key === 13) {
+  //     event.preventDefault()
+  //     router.push("/anime/search")
+  //     searchCall()
+  //   } else {
+  //     event.preventDefault()
+  //     searchCall()
+  //     router.push("/anime/search")
+  //   }
+  // }
+
+>>>>>>> 2554b754b493d6b218373d7b7093cb90496e492d
   return (
     // create function to search
     <motion.div
       initial="initial"
       animate="animate"
       exit={{ opacity: 10 }}
-      className="col-start-2 self-center justify-self-end font-sans text-black bg-white flex items-center justify-center"
+      className="header--form col-start-2 self-center justify-self-end font-sans text-black bg-white flex items-center justify-center"
     >
       <motion.div
         variants={fadeInUp}
         className="border rounded overflow-hidden flex"
       >
+<<<<<<< HEAD
         <form
           action="http://localhost:3000/"
           onSubmit={onSubmitHandler}
           autoComplete="off"
         >
+=======
+        <form role="search" onSubmit={onSubmit} autoComplete="off">
+>>>>>>> 2554b754b493d6b218373d7b7093cb90496e492d
           <input
             type="text"
             className="px-4 py-2"
@@ -87,8 +112,8 @@ const HeaderSearch = ({ onSubmit, value, onChange }) => {
             aria-label="Search"
             placeholder="Search"
             type="search"
-            value={searchedAnime}
-            onChange={onChangeHandler}
+            value={value}
+            onChange={onChange}
           />
         </form>
         <button className="flex items-center justify-center px-4 border-l">

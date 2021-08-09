@@ -9,6 +9,10 @@ module.exports = {
       danger: "#e3342f",
     }),
     extend: {
+      textColor: {
+        primaryBlue: "#1d439b",
+      },
+
       gridTemplateColumns: {
         primary: "1fr 4fr 1fr",
       },
