@@ -4,13 +4,15 @@ module.exports = {
   theme: {
     backgroundColor: (theme) => ({
       ...theme("colors"),
-      primary: "#0b132b",
       secondary: "#1c2541",
       danger: "#e3342f",
+      primary: "#2e51a2",
+      second: "#e1e7f5",
     }),
     extend: {
       textColor: {
         primaryBlue: "#1d439b",
+        active: "#e1e7f5",
       },
 
       gridTemplateColumns: {

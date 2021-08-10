@@ -1,61 +1,66 @@
 header {
-  height: 40px;
+  height: 34px;
+  background: #2e51a2;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
-.header--form {
-  margin-right: 1rem;
-  max-height: 28px;
-  height: 28px;
-  input, form, div, button {
-    height: 28px;
-  }
-}
+// .header--form {
+//   margin-right: 1rem;
+//   height: 26px;
+//   input,
+//   form,
+//   div,
+//   button {
+//     height: 28px;
+//   }
+// }
 
-.login {
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  h1 {
-    grid-column: 1;
-  }
-  &--buttons {
-    grid-column: 2;
-    justify-self: right;
-    align-self: center;
-  }
-}
+// .login {
+//   display: grid;
+//   grid-column: 2;
+//   grid-template-columns: auto 1fr;
+//   h1 {
+//     grid-column: 1;
+//   }
+//   &--buttons {
+//     grid-column: 2;
+//     justify-self: right;
+//     align-self: center;
+//   }
+// }
 
-.buttons {
-  &--login {
-    border-radius: 2px;
-    font-size: 1rem;
-    margin-left: 8px;
-    width: 90px;
-    padding: 4px 0;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border: #2e51a2 2px solid;
-    line-height: 100%;
-    color: #2e51a2;
-    padding: 6px;
-    &:hover {
-      background: #e1e7f5;
-    }
-  }
-  &--signup {
-    border-radius: 2px;
-    font-size: 1rem;
-    margin-left: 8px;
-    width: 90px;
-    padding: 4px 0;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    line-height: 100%;
-    border: #2e51a2 2px solid;
-    background: #2e51a2;
-    padding: 6px;
-    color: white;
-  }
-}
+// .buttons {
+//   &--login {
+//     border-radius: 2px;
+//     font-size: 1rem;
+//     margin-left: 8px;
+//     width: 90px;
+//     padding: 4px 0;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     border: #2e51a2 2px solid;
+//     line-height: 100%;
+//     color: #2e51a2;
+//     padding: 6px;
+//     &:hover {
+//       background: #e1e7f5;
+//     }
+//   }
+//   &--signup {
+//     border-radius: 2px;
+//     font-size: 1rem;
+//     margin-left: 8px;
+//     width: 90px;
+//     padding: 4px 0;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     line-height: 100%;
+//     border: #2e51a2 2px solid;
+//     background: #2e51a2;
+//     padding: 6px;
+//     color: white;
+//   }
+// }

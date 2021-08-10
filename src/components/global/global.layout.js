@@ -1,11 +1,10 @@
-import Link from "next/link"
 import React from "react"
 import Header from "../header/header.main"
 
 const Layout = ({ children }) => (
   <main className="h-screen items-start">
-    <div className="login heading--div">
-      <h1 className="text-primaryBlue row-start-1 text-5xl text-yellow-300">
+    {/* <div className="login heading--div">
+      <h1 className="text-primary row-start-1 text-3xl pb-3">
         <Link href="/">
           <a title="Home">Qucik Anime</a>
         </Link>
@@ -14,7 +13,7 @@ const Layout = ({ children }) => (
         <button className="buttons--login">Login</button>
         <button className="buttons--signup">Sing Up</button>
       </div>
-    </div>
+    </div> */}
     <section className="row-start-2 h-full bg-gray-400">
       <Header />
       {children}

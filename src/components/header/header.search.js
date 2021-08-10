@@ -46,43 +46,19 @@ const HeaderSearch = ({ onSubmit, value, onChange }) => {
   //   console.log(searchedAnime)
   // }
 
-<<<<<<< HEAD
   const onChangeHandler = (event) => {
     setSearchedAnime(event.target.value)
-    console.log(animeData)
   }
 
   const onSubmitHandler = (event) => {
     if (event.key === 13) {
       event.preventDefault()
       searchCall()
-      console.log(animeData)
     } else {
       event.preventDefault()
       searchCall()
-      console.log(animeData)
     }
   }
-  console.log(animeData)
-=======
-  // const onChangeHandler = (event) => {
-  //   setSearchedAnime(event.target.value)
-  // }
-
-  // const router = useRouter()
-  // const onSubmitHandler = (event) => {
-  //   if (event.key === 13) {
-  //     event.preventDefault()
-  //     router.push("/anime/search")
-  //     searchCall()
-  //   } else {
-  //     event.preventDefault()
-  //     searchCall()
-  //     router.push("/anime/search")
-  //   }
-  // }
-
->>>>>>> 2554b754b493d6b218373d7b7093cb90496e492d
   return (
     // create function to search
     <motion.div
@@ -95,15 +71,7 @@ const HeaderSearch = ({ onSubmit, value, onChange }) => {
         variants={fadeInUp}
         className="border rounded overflow-hidden flex"
       >
-<<<<<<< HEAD
-        <form
-          action="http://localhost:3000/"
-          onSubmit={onSubmitHandler}
-          autoComplete="off"
-        >
-=======
         <form role="search" onSubmit={onSubmit} autoComplete="off">
->>>>>>> 2554b754b493d6b218373d7b7093cb90496e492d
           <input
             type="text"
             className="px-4 py-2"

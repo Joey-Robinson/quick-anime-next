@@ -1,66 +1,43 @@
 import Link from "next/link"
-import React, { useEffect, useRef, useState } from "react"
-const Navigation = () => {
-  const [showDropdown, setShowDropdown] = useState(false)
-  // create a React ref for the dropdown element
-  const dropdown = useRef(null)
+import { AnimeList, MangaList } from "./header.example"
 
-  useEffect(() => {
-    // only add the event listener when the dropdown is opened
-    if (!showDropdown) return
-    function handleClick(event) {
-      if (dropdown.current && !dropdown.current.contains(event.target)) {
-        setShowDropdown(false)
-      }
-    }
-    window.addEventListener("mouseenter", handleClick)
-    // clean up
-    return () => window.removeEventListener("mouseleave", handleClick)
-  }, [showDropdown])
+const Navigation = () => {
   return (
-    <>
-      <ul className="flex ml-2 text-md text-white font-bold justify-between">
-        <li className="">
-          <button
-            onMouseEnter={() => setShowDropdown((b) => !b)}
-            onMouseLeave={() => setShowDropdown((b) => b)}
-          >
-            Anime
-          </button>
-          {showDropdown && (
-            <ul ref={dropdown}>
-              <li>Anime Search</li>
-              <li>Top Anime</li>
-              <li>Seasonal Anime</li>
-            </ul>
-          )}
+    <nav>
+      <ul className="nav__menu">
+        <li className="nav__menu-item">
+          <Link href="/anime">
+            <a title="Anime Page">Anime</a>
+          </Link>
+          <AnimeList />
         </li>
-        <li className="">
+        <li className="nav__menu-item">
           <Link href="/manga">
             <a title="Manga Page">Manga</a>
           </Link>
+          <MangaList />
         </li>
-        <li>
+        <li className="nav__menu-item">
           <Link href="/community">
             <a title="Community Page">Community</a>
           </Link>
         </li>
-        <li>
+        <li className="nav__menu-item">
           <Link href="/industry">
             <a title="Industry Page">Industry</a>
           </Link>
         </li>
-        <li>
+        <li className="nav__menu-item">
           <Link href="/watch">
             <a title="Watch Page">Watch</a>
           </Link>
         </li>
-        <li>
+        <li className="nav__menu-item">
           <Link href="/read">
             <a title="Read Page">Read</a>
           </Link>
         </li>
-        <li>
+        <li className="nav__menu-item">
           <Link href="/help">
             <a title="Help Page">Help</a>
           </Link>
@@ -96,7 +73,7 @@ const Navigation = () => {
         </Link>
       </li> */}
       </ul>
-    </>
+    </nav>
   )
 }
 export default Navigation
