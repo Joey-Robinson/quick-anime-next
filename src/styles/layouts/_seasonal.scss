@@ -6,10 +6,28 @@
       min-width: 160px;
       min-height: 220px;
     }
+    li {
+      padding: 0 2px;
+    }
   }
 }
 
 .card {
   max-width: 716.1px;
   height: 224px;
+  &--container {
+    position: relative;
+    text-align: center;
+    &__heading {
+      width: 100%;
+      position: absolute;
+      bottom: 5.5px;
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10;
+      h3 {
+        font-size: 10px;
+      }
+    }
+  }
 }

@@ -22,20 +22,24 @@ const Index = () => {
       <SEO title="Home" description="Quck Anime - Home Page" />
       <div className="seasonal">
         <ul>
-          {seasonalData.anime.map(({ title, image_url }) => {
+          {seasonalData.anime.map(({ title, image_url, url }) => {
             return (
               <li>
                 <div className="card">
                   <div className="card--container">
-                    <h3 className="card--container__heading">{title}</h3>
-                    <Image
-                      className="card--container__img"
-                      src={image_url}
-                      alt={`Thumb for ${title}`}
-                      layout="fixed"
-                      width={160}
-                      height={220}
-                    />
+                    <div className="card--container__heading">
+                      <h3>{title}</h3>
+                    </div>
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                      <Image
+                        className="card--container__img"
+                        src={image_url}
+                        alt={`Thumb for ${title}`}
+                        layout="fixed"
+                        width={160}
+                        height={220}
+                      />
+                    </a>
                   </div>
                 </div>
               </li>
