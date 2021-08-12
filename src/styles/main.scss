@@ -5,12 +5,12 @@
 // Base
 @import "./base/base";
 // Components
-@import './components/characters';
+@import "./components/characters";
 @import "./components/header";
 @import "./components/menu";
 @import "./components/nav";
 @import "./components/newsletter";
-@import './components/recommendations';
+@import "./components/recommendations";
 @import "./components/search";
 @import "./components/search--ul";
 @import "./components/select";
@@ -21,6 +21,7 @@
 @import "./layouts/news";
 @import "./layouts/primary";
 @import "./layouts/results";
+@import "./layouts/seasonal";
 // Pages
 @import "./pages/newsletter";
 @import "./pages/container";
