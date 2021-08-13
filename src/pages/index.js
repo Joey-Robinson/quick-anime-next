@@ -1,4 +1,6 @@
+import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import React, { useEffect, useState } from "react"
 // import HomeSignup from "../components/home/home.signup"
 import Layout from "../components/global/global.layout"
@@ -16,30 +18,52 @@ const Index = () => {
   useEffect(() => {
     seasonalCall()
   }, [])
-  console.log(seasonalData)
+
+  const seasonName = seasonalData.season_name
+  const seasonYear = seasonalData.season_year
+
   return (
     <Layout>
       <SEO title="Home" description="Quck Anime - Home Page" />
       <div className="seasonal">
-        <ul>
-          {seasonalData.anime.map(({ title, image_url, url }) => {
+        <div className="seasonal--heading">
+          <h2>
+            <Link href="/anime/seasonal">
+              <a>
+                {seasonName} {seasonYear} Anime
+              </a>
+            </Link>
+          </h2>
+        </div>
+        <hr />
+        <ul className="home--container">
+          {seasonalData.anime.map(({ title, image_url, mal_id }) => {
             return (
               <li>
-                <div className="card">
+                <div className="card ">
                   <div className="card--container">
-                    <div className="card--container__heading">
-                      <h3>{title}</h3>
-                    </div>
-                    <a href={url} target="_blank" rel="noopener noreferrer">
-                      <Image
-                        className="card--container__img"
-                        src={image_url}
-                        alt={`Thumb for ${title}`}
-                        layout="fixed"
-                        width={160}
-                        height={220}
-                      />
-                    </a>
+                    <Link
+                      style={{ cursor: "pointer" }}
+                      href={`/anime/[id]/`}
+                      as={`/anime/${mal_id}/`}
+                    >
+                      <motion.div
+                        animate={{ x: 0, opacity: 1 }}
+                        initial={{ x: 200, opacity: 0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        <Image
+                          className="card--container__img"
+                          src={image_url}
+                          alt={`Thumb for ${title}`}
+                          layout="fixed"
+                          width={160}
+                          height={220}
+                        />
+                        <h3 className="card--container__heading">{title}</h3>
+                      </motion.div>
+                    </Link>
                   </div>
                 </div>
               </li>

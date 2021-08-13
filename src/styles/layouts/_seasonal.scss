@@ -1,4 +1,30 @@
+.home--container {
+  max-width: 716.1px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
 .seasonal {
+  display: grid;
+  &--heading {
+    width: 716.1px;
+    max-height: 23.5px;
+    grid-row: 1;
+    h2 {
+      font-size: 12px;
+      font-weight: 700;
+      margin: 4px 0 5px;
+      padding: 3px 0;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  hr {
+    height: 2px;
+    width: 716.1px;
+  }
   ul {
     display: flex;
     flex-direction: row;
@@ -7,7 +33,9 @@
       min-height: 220px;
     }
     li {
-      padding: 0 2px;
+      margin: 0 20px 0 0;
+        cursor: pointer;
+    
     }
   }
 }
@@ -31,3 +59,4 @@
     }
   }
 }
+

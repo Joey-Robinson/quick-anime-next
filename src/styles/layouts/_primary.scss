@@ -2,10 +2,6 @@ main {
   display: grid;
   grid-template-columns: 1fr 1060px 1fr;
   grid-template-rows: auto 1fr;
-  // h1 {
-  //   grid-column: 2;
-  //   grid-row: 1;
-  // }
   section {
     grid-column: 2;
     grid-row: 2;
