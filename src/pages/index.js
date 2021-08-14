@@ -38,9 +38,10 @@ const Index = () => {
         <hr />
         <ul className="home--container">
           {seasonalData.anime.map(({ title, image_url, mal_id }) => {
+            // console.log(index)
             return (
-              <li>
-                <div className="card ">
+              <li className="scroll--content">
+                <div className="card">
                   <div className="card--container">
                     <Link
                       style={{ cursor: "pointer" }}

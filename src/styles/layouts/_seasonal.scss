@@ -2,7 +2,7 @@
   max-width: 716.1px;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .seasonal {
@@ -34,8 +34,7 @@
     }
     li {
       margin: 0 20px 0 0;
-        cursor: pointer;
-    
+      cursor: pointer;
     }
   }
 }
@@ -46,6 +45,7 @@
   &--container {
     position: relative;
     text-align: center;
+
     &__heading {
       width: 100%;
       position: absolute;
@@ -59,4 +59,3 @@
     }
   }
 }
-
