@@ -1,76 +1,68 @@
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 // import HomeSignup from "../components/home/home.signup"
 import Layout from "../components/global/global.layout"
 import SEO from "../components/global/global.seo"
+import HomeHeading from "../components/home/home.heading"
+import HomeManga from "../components/home/home.manga"
+import HomeSeasonal from "../components/home/home.seasonal"
+import TopAnime from "../components/home/home.top"
 
 const Index = () => {
   const [seasonalData, setSeasonalData] = useState({ anime: [] })
+  const [mangaData, setMangaData] = useState({ top: [] })
 
   const seasonalCall = async () => {
     const response = await fetch("https://api.jikan.moe/v3/season")
     const data = await response.json()
     setSeasonalData(data)
   }
-  // this is testing ssh
+
+  const mangaCall = async () => {
+    const response = await fetch("https://api.jikan.moe/v3/top/manga/1")
+    const data = await response.json()
+    setMangaData(data)
+  }
+
   useEffect(() => {
     seasonalCall()
+    mangaCall()
   }, [])
 
   const seasonName = seasonalData.season_name
   const seasonYear = seasonalData.season_year
-
   return (
     <Layout>
       <SEO title="Home" description="Quck Anime - Home Page" />
-      <div className="seasonal">
-        <div className="seasonal--heading">
-          <h2>
-            <Link href="/anime/seasonal">
-              <a>
-                {seasonName} {seasonYear} Anime
-              </a>
-            </Link>
-          </h2>
+      <div className="home">
+        <div className="home--seasonal">
+          {/* className="home--seasonal__heading" */}
+          <HomeHeading seasonName={seasonName} seasonYear={seasonYear} />
+          <ul>
+            {seasonalData.anime.map(({ title, image_url, mal_id }) => {
+              return (
+                <HomeSeasonal
+                  title={title}
+                  name={title}
+                  image_url={image_url}
+                  mal_id={mal_id}
+                />
+              )
+            })}
+          </ul>
         </div>
-        <hr />
-        <ul className="home--container">
-          {seasonalData.anime.map(({ title, image_url, mal_id }) => {
-            // console.log(index)
-            return (
-              <li className="scroll--content">
-                <div className="card">
-                  <div className="card--container">
-                    <Link
-                      style={{ cursor: "pointer" }}
-                      href={`/anime/[id]/`}
-                      as={`/anime/${mal_id}/`}
-                    >
-                      <motion.div
-                        animate={{ x: 0, opacity: 1 }}
-                        initial={{ x: 200, opacity: 0 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ delay: 0.2 }}
-                      >
-                        <Image
-                          className="card--container__img"
-                          src={image_url}
-                          alt={`Thumb for ${title}`}
-                          layout="fixed"
-                          width={160}
-                          height={220}
-                        />
-                        <h3 className="card--container__heading">{title}</h3>
-                      </motion.div>
-                    </Link>
-                  </div>
-                </div>
-              </li>
-            )
-          })}
-        </ul>
+        <div className="home--manga">
+          <ul className="home--manga__ul">
+            {mangaData.top.map(({ mal_id, title, image_url }) => (
+              <HomeManga
+                name={title}
+                mal_id={mal_id}
+                title={title}
+                image_url={image_url}
+              />
+            ))}
+          </ul>
+        </div>
+        <TopAnime />
       </div>
     </Layout>
   )

@@ -1,0 +1,37 @@
+.home--manga {
+  grid-row: 3;
+  height: 210.5px;
+}
+
+.home--manga__ul {
+  max-width: 716.1px;
+  height: 186.5px;
+  max-height: 186.5px;
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  li {
+    width: 108px;
+    height: 186.5px;
+    max-width: 186.5px;
+    padding: 0 10px 0 0;
+    margin: 0 .75rem 0 0;
+  }
+}
+
+.manga--container {
+  position: relative;
+  margin: 6px 0 0 10px;
+  &__heading {
+    text-align: center;
+    width: 104px;
+    padding: 0 10px;
+    margin: 0;
+    font-size: 10px;
+    position: absolute;
+    bottom: 5.5px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+  }
+}
