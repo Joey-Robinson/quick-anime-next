@@ -14,7 +14,7 @@ const Index = () => {
     const data = await response.json()
     setSeasonalData(data)
   }
-
+  // this is testing ssh
   useEffect(() => {
     seasonalCall()
   }, [])
