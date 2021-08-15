@@ -9,7 +9,6 @@ import TopAnime from "../components/home/home.top"
 
 const Index = () => {
   const [seasonalData, setSeasonalData] = useState({ anime: [] })
-  const [mangaData, setMangaData] = useState({ top: [] })
 
   const seasonalCall = async () => {
     const response = await fetch("https://api.jikan.moe/v3/season")
@@ -17,15 +16,8 @@ const Index = () => {
     setSeasonalData(data)
   }
 
-  const mangaCall = async () => {
-    const response = await fetch("https://api.jikan.moe/v3/top/manga/1")
-    const data = await response.json()
-    setMangaData(data)
-  }
-
   useEffect(() => {
     seasonalCall()
-    mangaCall()
   }, [])
 
   const seasonName = seasonalData.season_name
@@ -50,18 +42,7 @@ const Index = () => {
             })}
           </ul>
         </div>
-        <div className="home--manga">
-          <ul className="home--manga__ul">
-            {mangaData.top.map(({ mal_id, title, image_url }) => (
-              <HomeManga
-                name={title}
-                mal_id={mal_id}
-                title={title}
-                image_url={image_url}
-              />
-            ))}
-          </ul>
-        </div>
+        <HomeManga />
         <TopAnime />
       </div>
     </Layout>
