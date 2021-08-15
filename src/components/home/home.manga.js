@@ -1,33 +1,25 @@
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
 
 const HomeManga = () => {
-  const [mangaData, setMangaData] = useState({ top: [] })
+  // const [mangaData, setMangaData] = useState({ top: [] })
+  // const mangaCall = async () => {
+  //   const response = await fetch("https://api.jikan.moe/v3/top/manga/1")
+  //   const data = await response.json()
+  //   setMangaData(data)
+  // }
 
-  const mangaCall = async () => {
-    const response = await fetch("https://api.jikan.moe/v3/top/manga/1")
-    const data = await response.json()
-    setMangaData(data)
-  }
-
-  useEffect(() => {
-    mangaCall()
-  }, [])
+  // useEffect(() => {
+  //   mangaCall()
+  // }, [])
 
   return (
     <div className="home--manga">
-      <ul className="home--manga__ul">
+      {/* <ul className="home--manga__ul">
         {mangaData.top.map(({ mal_id, title, image_url }) => (
           <li>
             <div className="home--manga__container manga--container">
               <div className="manga--container__card">
-                <Link
-                  style={{ cursor: "pointer" }}
-                  href={`/anime/[id]/`}
-                  as={`/anime/${mal_id}/`}
-                >
+                <Link href={`/anime/[id]/`} as={`/anime/${mal_id}/`}>
                   <motion.div
                     animate={{ x: 0, opacity: 1 }}
                     initial={{ x: 200, opacity: 0 }}
@@ -41,14 +33,14 @@ const HomeManga = () => {
                       alt={`Thumb for ${title}`}
                       layout="fixed"
                     />
-                    <h4 className="manga--container__heading">{name}</h4>
                   </motion.div>
                 </Link>
+                <h4 className="manga--container__heading">{title}</h4>
               </div>
             </div>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   )
 }

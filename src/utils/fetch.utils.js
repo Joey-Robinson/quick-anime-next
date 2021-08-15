@@ -11,6 +11,6 @@ export const fetchUtility = (url) => {
         setState({ data: y, loading: false })
       })
   }, [url, setState])
-
+  console.log(state)
   return state
 }
