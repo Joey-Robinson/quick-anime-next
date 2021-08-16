@@ -29,11 +29,7 @@ const HomeSeasonal = () => {
             <li>
               <div className="card">
                 <div className="card--container">
-                  <Link
-                    style={{ cursor: "pointer" }}
-                    href={`/anime/[id]/`}
-                    as={`/anime/${mal_id}/`}
-                  >
+                  <Link href={`/anime/[id]/`} as={`/anime/${mal_id}/`}>
                     <motion.div
                       animate={{ x: 0, opacity: 1 }}
                       initial={{ x: 200, opacity: 0 }}

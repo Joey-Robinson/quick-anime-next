@@ -2,7 +2,7 @@ import React from "react"
 import Header from "../header/header.main"
 
 const Layout = ({ children }) => (
-  <main className="h-screen items-start">
+  <main className="items-start">
     {/* <div className="login heading--div">
       <h1 className="text-primary row-start-1 text-3xl pb-3">
         <Link href="/">
@@ -14,7 +14,7 @@ const Layout = ({ children }) => (
         <button className="buttons--signup">Sing Up</button>
       </div>
     </div> */}
-    <section className="row-start-2 h-full bg-gray-400">
+    <section className="row-start-2 bg-gray-400">
       <Header />
       {children}
     </section>

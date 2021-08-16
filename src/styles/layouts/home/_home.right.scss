@@ -12,7 +12,8 @@
   background: #dde1ec;
   display: flex;
   justify-content: space-between;
-  h2, span {
+  h2,
+  span {
     padding: 0 5px;
   }
   h2 {
@@ -39,7 +40,36 @@
   background: #dde1ec;
   display: flex;
   justify-content: space-between;
-  h2, span {
+  h2,
+  span {
+    padding: 0 5px;
+  }
+  h2 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  span {
+    color: #1d439b;
+    font-size: 12px;
+  }
+}
+
+.home--bottom {
+  margin: 2rem 10px 0 0;
+  ul {
+    background: #f5f6f9;
+    width: 300.9px;
+    height: 478px;
+  }
+}
+
+.bottom {
+  padding: 5px 0;
+  background: #dde1ec;
+  display: flex;
+  justify-content: space-between;
+  h2,
+  span {
     padding: 0 5px;
   }
   h2 {

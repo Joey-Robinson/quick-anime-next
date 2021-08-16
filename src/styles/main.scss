@@ -16,11 +16,13 @@
 @import "./components/select";
 @import "./components/top";
 // Layouts
+// Layouts/Home
+@import "./layouts/home/home.manga";
+@import "./layouts/home/home.primary";
+@import "./layouts/home/home.right";
+
 @import "./layouts/children";
 @import "./layouts/genre";
-@import './layouts/home.primary';
-@import './layouts/home.right';
-@import './layouts/manga.home';
 @import "./layouts/news";
 @import "./layouts/primary";
 @import "./layouts/results";
