@@ -1,0 +1,48 @@
+.side {
+  flex: 1 0 302px;
+  display: grid;
+  grid-template-columns: 24px 50px 212px;
+  max-width: 302px;
+  max-height: 92px;
+  color: #7f7f7f;
+  font-size: 12px;
+  padding-top: 8px;
+  &--rank {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  &--right {
+    grid-column: 3;
+  }
+  &--image {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 2px #bebebe;
+    grid-column: 2;
+    justify-self: left;
+    align-self: center;
+    grid-row: 2;
+  }
+
+  &--title {
+    grid-column: 3;
+    font-weight: 700;
+    grid-row: 2;
+    height: 16px;
+    margin: 0 6px;
+    h3 {
+      font-size: 12px;
+      color: #1d439b;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &--episodes {
+    grid-row: 2;
+    margin: 1.5rem 0 1.5rem 7.5px;
+  }
+}

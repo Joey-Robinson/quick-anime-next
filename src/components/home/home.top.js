@@ -43,10 +43,20 @@ const TopAnime = () => {
               episodes,
             }) => {
               const numericEpisodes = episodes === null ? "0" : episodes
+              const memberValue = members
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
               return (
-                <li>
-                  <span>{rank}</span>
-                  <div>
+                <li className="side">
+                  <span className="side--rank">{rank}</span>
+                  <div className="side--title">
+                    <h3 style={{ cursor: "pointer" }}>
+                      <Link href={`/anime/[id]/`} as={`/anime/${mal_id}/`}>
+                        {title}
+                      </Link>
+                    </h3>
+                  </div>
+                  <div className="side--image">
                     <Image
                       width={50}
                       height={70}
@@ -55,18 +65,13 @@ const TopAnime = () => {
                       layout="fixed"
                     />
                   </div>
-                  <div>
-                    {type} {numericEpisodes} eps
+                  <div className="side--episodes side--right side--data">
+                    {type} {numericEpisodes} eps, Scored: {score} <br />{" "}
+                    {memberValue} members
                   </div>
-                  <div>
-                    <h3 style={{ cursor: "pointer" }}>
-                      <Link href={`/anime/[id]/`} as={`/anime/${mal_id}/`}>
-                        {title}
-                      </Link>
-                    </h3>
-                  </div>
-                  <div>Scored: {score}</div>
-                  <div>{members} members</div>
+                  {/* <div className="side--members side--right side--data">
+                    
+                  </div> */}
                 </li>
               )
             }
