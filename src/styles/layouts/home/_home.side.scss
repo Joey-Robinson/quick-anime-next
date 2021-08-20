@@ -1,37 +1,40 @@
 .side {
-  flex: 1 0 302px;
+  flex: 1 0;
   display: grid;
   grid-template-columns: 24px 50px 212px;
+  grid-template-rows: 1fr;
   max-width: 302px;
   max-height: 92px;
   color: #7f7f7f;
   font-size: 12px;
-  padding-top: 8px;
   &--rank {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
     align-self: center;
     justify-self: center;
     font-weight: 700;
     font-size: 16px;
+    padding: 0 4px;
   }
   &--right {
     grid-column: 3;
   }
   &--image {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 2px #bebebe;
+    box-shadow: 0 0 0 1px #fff,0 0 0 2px #bebebe;
     grid-column: 2;
-    justify-self: left;
+    justify-self: center;
     align-self: center;
-    grid-row: 2;
+    grid-row: 1;
+    width: 50px;
+    height: 70px;
   }
 
   &--title {
     grid-column: 3;
     font-weight: 700;
-    grid-row: 2;
+    grid-row: 1;
     height: 16px;
-    margin: 0 6px;
+    margin: 6.5px 0 0 8px;
     h3 {
       font-size: 12px;
       color: #1d439b;
@@ -42,7 +45,18 @@
     }
   }
   &--episodes {
-    grid-row: 2;
-    margin: 1.5rem 0 1.5rem 7.5px;
+    grid-row: 1;
+    margin: calc(8px - 2px);
+    align-self: end;
+  }
+  &--add {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    justify-self: right;
+    margin: 0 0 1rem 0;
+      background: #efefef;
+      font-size: 10px;
+      line-height: 1.0em;
   }
 }

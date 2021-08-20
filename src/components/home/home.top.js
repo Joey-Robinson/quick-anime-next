@@ -14,7 +14,7 @@ const TopAnime = () => {
   useEffect(() => {
     topCall()
   }, [])
-  console.log(airingData.top)
+
   return (
     <div className="home--right">
       <div className="right">
@@ -69,9 +69,9 @@ const TopAnime = () => {
                     {type} {numericEpisodes} eps, Scored: {score} <br />{" "}
                     {memberValue} members
                   </div>
-                  {/* <div className="side--members side--right side--data">
-                    
-                  </div> */}
+                  <div className="side--add">
+                    <p>add</p>
+                  </div>
                 </li>
               )
             }

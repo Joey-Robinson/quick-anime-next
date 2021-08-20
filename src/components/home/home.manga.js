@@ -1,20 +1,30 @@
-// import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const HomeManga = () => {
-  // const [mangaData, setMangaData] = useState({ top: [] })
-  // const mangaCall = async () => {
-  //   const response = await fetch("https://api.jikan.moe/v3/top/manga/1")
-  //   const data = await response.json()
-  //   setMangaData(data)
-  // }
+  const [mangaData, setMangaData] = useState({ top: [] })
+  const mangaCall = async () => {
+    const response = await fetch("https://api.jikan.moe/v3/top/manga/1")
+    const data = await response.json()
+    setMangaData(data)
+  }
 
-  // useEffect(() => {
-  //   mangaCall()
-  // }, [])
+  useEffect(() => {
+    mangaCall()
+  }, [])
 
   return (
     <div className="home--manga">
       {/* <ul className="home--manga__ul">
+        <li>Placeholder - Top</li>
+        <li>Placeholder - Top</li>
+        <li>Placeholder - Top</li>
+        <li>Placeholder - Top</li>
+        <li>Placeholder - Top</li>
+      </ul> */}
+      <ul className="home--manga__ul">
         {mangaData.top.map(({ mal_id, title, image_url }) => (
           <li>
             <div className="home--manga__container manga--container">
@@ -40,7 +50,7 @@ const HomeManga = () => {
             </div>
           </li>
         ))}
-      </ul> */}
+      </ul>
     </div>
   )
 }
