@@ -17,14 +17,14 @@ const HomeManga = () => {
 
   return (
     <div className="home--manga">
-      {/* <ul className="home--manga__ul">
-        <li>Placeholder - Top</li>
-        <li>Placeholder - Top</li>
-        <li>Placeholder - Top</li>
-        <li>Placeholder - Top</li>
-        <li>Placeholder - Top</li>
-      </ul> */}
       <ul className="home--manga__ul">
+        <li>Placeholder - Top</li>
+        <li>Placeholder - Top</li>
+        <li>Placeholder - Top</li>
+        <li>Placeholder - Top</li>
+        <li>Placeholder - Top</li>
+      </ul>
+      {/* <ul className="home--manga__ul">
         {mangaData.top.map(({ mal_id, title, image_url }) => (
           <li>
             <div className="home--manga__container manga--container">
@@ -50,7 +50,7 @@ const HomeManga = () => {
             </div>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   )
 }
