@@ -5,25 +5,6 @@ import SEO from "../../components/global/global.seo"
 import AnimeTemplate from "../../template/anime.template"
 import CharacterTemplate from "../../template/characters.template"
 import RecommendationsTemplate from "../../template/recommendations.template"
-// import { motion } from "framer-motion"
-
-// let easing = [0.6, -0.05, 0.01, 0.99]
-
-// const fadeInUp = {
-//   initial: {
-//     y: 60,
-//     opacity: 0,
-//     transition: { duration: 0.6, ease: easing },
-//   },
-//   animate: {
-//     y: 0,
-//     opacity: 1,
-//     transition: {
-//       duration: 0.6,
-//       ease: easing,
-//     },
-//   },
-// }
 
 const Post = (props) => {
   const results = props.anime
@@ -71,18 +52,6 @@ const Post = (props) => {
     characterDataCall()
   }, [])
 
-  // console.log(ppData)
-  // No background information
-  // const smugkaguya = (
-  //   <img src="/static/smugkaguya.jpg" alt="Kagyua being smug." />
-  // )
-
-  // const noBackground = (
-  //   <>
-  //     There is currently no background information given for this anime.
-  //     {smugkaguya}
-  //   </>
-  // )
   const charInformation = characterData.characters.map(
     ({ image_url, name }) => (
       <li>

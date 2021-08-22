@@ -1,0 +1,19 @@
+const FooterNavigation = () => (
+  <nav>
+    <ul>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+      <li>five</li>
+      <li>six</li>
+      <li>seven</li>
+      <li>eight</li>
+      <li>nine</li>
+      <li>ten</li>
+      <li>eleven</li>
+      <li>twelve</li>
+      <li>thirteen</li>
+    </ul>
+  </nav>
+)

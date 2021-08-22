@@ -5,7 +5,8 @@
 // Base
 @import "./base/base";
 // Components
-@import "./components/characters";
+// @import "./components/characters";
+@import './components/footer';
 @import "./components/header";
 @import "./components/menu";
 @import "./components/nav";
@@ -31,6 +32,7 @@
 @import "./layouts/results";
 @import "./layouts/seasonal";
 // Pages
+@import './pages/characters';
 @import "./pages/newsletter";
 @import "./pages/container";
 @import "./pages/seasonal";

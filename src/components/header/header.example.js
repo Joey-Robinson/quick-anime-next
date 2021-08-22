@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export const AnimeList = () => (
   <ul>
     <li>Anime Search</li>
@@ -18,5 +20,19 @@ export const MangaList = () => (
     <li>Reviews</li>
     <li>Reccomendations</li>
     <li>2021 Challenge</li>
+  </ul>
+)
+
+export const IndustryList = () => (
+  <ul>
+    <li>News</li>
+    <li>Featured Articles</li>
+    <li>People</li>
+    <li>
+      <Link href="/characters">
+        <a title="Characters">Characters</a>
+      </Link>
+    </li>
+    <li>MALxJapan</li>
   </ul>
 )

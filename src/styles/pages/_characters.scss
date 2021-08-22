@@ -1,0 +1,18 @@
+.characters {
+  height: 5264px;
+  &--search {
+    width: 768px;
+    height: 66px;
+    border: #c3c3c3 1px solid;
+    border-right-color: rgb(195, 195, 195);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-radius: 8px 0 0 8px;
+    border-right: #c3c3c3 0 solid;
+    color: #323232;
+    display: block;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+}

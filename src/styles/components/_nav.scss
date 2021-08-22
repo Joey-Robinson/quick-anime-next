@@ -28,8 +28,6 @@ ul li ul {
   margin: 7.5px 0 0 0px;
   display: none;
   font-weight: 400;
-  li {
-  }
 }
 
 ul li:hover > ul,
@@ -39,6 +37,7 @@ ul li ul:hover {
   visibility: visible;
   opacity: 1;
   display: block;
+  z-index: 1000;
 }
 
 ul li ul li {

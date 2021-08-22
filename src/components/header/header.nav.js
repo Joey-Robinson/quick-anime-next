@@ -1,14 +1,12 @@
 import Link from "next/link"
-import { AnimeList, MangaList } from "./header.example"
+import { AnimeList, IndustryList, MangaList } from "./header.example"
 
 const Navigation = () => {
   return (
     <nav>
       <ul className="nav__menu">
         <li className="nav__menu-item">
-          <Link href="/anime">
-            <a title="Anime Page">Anime</a>
-          </Link>
+          Anime
           <AnimeList />
         </li>
         <li className="nav__menu-item">
@@ -26,6 +24,7 @@ const Navigation = () => {
           <Link href="/industry">
             <a title="Industry Page">Industry</a>
           </Link>
+          <IndustryList />
         </li>
         <li className="nav__menu-item">
           <Link href="/watch">
