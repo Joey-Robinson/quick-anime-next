@@ -8,6 +8,7 @@
     background: #f5f6f9;
     display: grid;
     grid-template-columns: 1fr repeat(3, 288px) 1fr;
+    align-content: center;
     &__left {
       grid-column: 2;
       justify-self: center;
@@ -27,12 +28,11 @@
       font-weight: 500;
       padding: 8px 0;
       margin: 8px 0;
-    }  
+    }
     ol {
       list-style: decimal;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
-      padding-bottom: 4px;
       li {
         color: #2e51a2;
       }

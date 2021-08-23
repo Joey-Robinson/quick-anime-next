@@ -16,3 +16,30 @@
     padding: 0;
   }
 }
+
+.chars:not(ul) {
+  display: grid;
+  grid-template-columns: 75px 419px 201px 201px 141px;
+  grid-template-rows: 26px auto;
+  background-color: #4f74c8;
+  border: #4f74c8 0 solid;
+  border-left-color: rgb(79, 116, 200);
+  border-left-style: solid;
+  border-left-width: 0px;
+  border-left: #fff 1px solid;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 0;
+  align-items: center;
+  justify-items: center;
+}
+
+.ul--main {
+  background: white;
+  li:nth-child(even) {
+    background: #f6f6f6;
+  }
+  li:nth-child(odd) {
+    background: white;
+  }
+}
