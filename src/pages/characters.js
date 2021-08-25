@@ -16,40 +16,67 @@ const Characters = () => {
     upcomingCall()
   }, [])
 
-  console.log(popularCharacters)
+  // console.log(popularCharacters.top)
   return (
     <Layout>
       <SEO title="Characters" />
       <div className="characters">
-        <div className="characters--search">Search</div>
-        <div className="characters--container ul chars">
-          <div className="chars--rank">Rank</div>
-          <div className="chars--character">Character</div>
-          <div className="chars--animeography">Animeography</div>
-          <div className="chars--mangaography">Mangaography</div>
-          <div className="chars--favorites">Favorites</div>
+        {/* <div className="characters--search">Search</div> */}
+        <div className="characters--container ul">
+          <div className="chars--rank  chars">Rank</div>
+          <div className="chars--character  chars">Character</div>
+          <div className="chars--animeography  chars">Animeography</div>
+          <div className="chars--mangaography  chars">Mangaography</div>
+          <div className="chars--favorites  chars">Favorites</div>
         </div>
         <ul className="ul--main">
           {popularCharacters.top
             .slice(0, 1)
-            .map(({ mal_id, rank, title, url, image_url, name_kanji }) => (
-              <li>
-                <span>{rank}</span>
-                <div>
-                  <Image
-                    width={50}
-                    height={78}
-                    src={image_url}
-                    alt={`Thumb for ${title}`}
-                    layout="fixed"
-                  />
-                </div>
-                <hgroup>
-                  <h4>{title}</h4>
-                  <h5>{name_kanji}</h5>
-                </hgroup>
-              </li>
-            ))}
+            .map(
+              ({
+                mal_id,
+                rank,
+                title,
+                url,
+                image_url,
+                name_kanji,
+                animeography,
+                mangaography,
+                favorites,
+              }) => {
+                const animeCatalog = animeography.map(({ name }) => (
+                  <p>{name}</p>
+                ))
+                const mangaCatalog = mangaography.map(({ name }) => (
+                  <p>{name}</p>
+                ))
+                const favoriteValue = favorites
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                // console.log(animeCatalog)
+                return (
+                  <li className="char">
+                    <span className="char--rank">{rank}</span>
+                    <div className="char--container">
+                      <Image
+                        width={50}
+                        height={78}
+                        src={image_url}
+                        alt={`Thumb for ${title}`}
+                        layout="fixed"
+                      />
+                      <hgroup>
+                        <h4>{title}</h4>
+                        <h5>{name_kanji}</h5>
+                      </hgroup>
+                    </div>
+                    <div className="char--animeography">{animeCatalog}</div>
+                    <div className="char--mangaography">{mangaCatalog}</div>
+                    <div className="char--favorites">{favoriteValue}</div>
+                  </li>
+                )
+              }
+            )}
         </ul>
       </div>
     </Layout>
