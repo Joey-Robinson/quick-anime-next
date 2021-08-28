@@ -1,5 +1,5 @@
 .characters {
-  height: 5264px;
+  // height: 5264px;
   &--search {
     width: 768px;
     height: 66px;
@@ -14,6 +14,38 @@
     font-size: 14px;
     margin: 0;
     padding: 0;
+  }
+  &--alphabet {
+    display: flex;
+    text-transform: uppercase;
+    li {
+      padding: 0 4px;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  h2 {
+    font-weight: 700;
+    font-size: 18px;
+  }
+  &--next {
+    background: #4f74c8;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400;
+    padding: 6px;
+    transition-duration: .3s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    &:hover {
+      background: #7693d4;
+
+    }
   }
 }
 
@@ -38,10 +70,74 @@
 .ul--main {
   background: white;
   margin: 0 10px;
+  border-left: #ebebeb 1px solid;
+  border-right: #ebebeb 1px solid;
   li:nth-child(even) {
     background: #f6f6f6;
   }
   li:nth-child(odd) {
     background: white;
+  }
+}
+
+.char {
+  display: grid;
+  grid-template-columns: 75px 419px 201px 201px 141px;
+  grid-template-rows: 102px;
+  &--rank {
+    font-size: 36px;
+    color: #888;
+    grid-row: 1;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 58.5px;
+    border-right: #000 1px solid;
+  }
+  &--image {
+    grid-row: 1;
+    margin: 0 8px 0 12px;
+    align-self: center;
+    grid-column: 2;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &--name {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: center;
+    text-align: center;
+
+    h4 {
+      font-size: 13px;
+      font-weight: 700;
+    }
+    h5 {
+      font-size: 10.5px;
+      font-weight: 400;
+    }
+  }
+  &--animeography {
+    border-left: #000 1px solid;
+  }
+  &--animeography, &--mangaography{
+    border-right: #000 1px solid;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    text-align: center;
+    a {
+      color: blue;
+    }
+  }
+  &--favorites {
+    align-self: center;
+    justify-self: center;
+    color: #323232;
+    font-size: 14px;
   }
 }
