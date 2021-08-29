@@ -27,7 +27,11 @@ export const IndustryList = () => (
   <ul>
     <li>News</li>
     <li>Featured Articles</li>
-    <li>People</li>
+    <li>
+      <Link href="/people">
+        <a title="People">People</a>
+      </Link>
+    </li>
     <li>
       <Link href="/characters">
         <a title="Characters">Characters</a>
