@@ -1,3 +1,35 @@
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+$min_width: 320px;
+$max_width: 1000px;
+$min_font: 10px;
+$max_font: 14px;
+
 .characters {
   // height: 5264px;
   &--search {
@@ -31,6 +63,7 @@
   h2 {
     font-weight: 700;
     font-size: 18px;
+    font-size: 1rem;
   }
   &--next {
     background: #4f74c8;
@@ -39,12 +72,11 @@
     font-size: 11px;
     font-weight: 400;
     padding: 6px;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     transition-property: all;
     transition-timing-function: ease-in-out;
     &:hover {
       background: #7693d4;
-
     }
   }
 }
@@ -123,7 +155,8 @@
   &--animeography {
     border-left: #000 1px solid;
   }
-  &--animeography, &--mangaography{
+  &--animeography,
+  &--mangaography {
     border-right: #000 1px solid;
     align-self: center;
     display: flex;

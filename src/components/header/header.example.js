@@ -3,7 +3,11 @@ import Link from "next/link"
 export const AnimeList = () => (
   <ul>
     <li>Anime Search</li>
-    <li>Top Anime</li>
+    <li>
+      <Link href="/anime/top">
+        <a title="Top Anime">Top Anime</a>
+      </Link>
+    </li>
     <li>Seasonal Anime</li>
     <li>Videos</li>
     <li>Reviews</li>

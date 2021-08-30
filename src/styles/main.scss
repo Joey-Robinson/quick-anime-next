@@ -6,7 +6,7 @@
 @import "./base/base";
 // Components
 // @import "./components/characters";
-@import './components/footer';
+@import "./components/footer";
 @import "./components/header";
 @import "./components/menu";
 @import "./components/nav";
@@ -15,14 +15,15 @@
 @import "./components/search";
 @import "./components/search--ul";
 @import "./components/select";
+@import "./components/spinner";
 @import "./components/top";
 // Layouts
 // Layouts/Home
-@import './layouts/home/home.aside';
+@import "./layouts/home/home.aside";
 @import "./layouts/home/home.manga";
 @import "./layouts/home/home.primary";
 @import "./layouts/home/home.right";
-@import './layouts/home/home.schedule';
+@import "./layouts/home/home.schedule";
 @import "./layouts/home/home.side";
 
 @import "./layouts/children";
@@ -32,10 +33,10 @@
 @import "./layouts/results";
 @import "./layouts/seasonal";
 // Pages
-@import './pages/characters';
+@import "./pages/characters";
 @import "./pages/container";
 @import "./pages/newsletter";
-@import './pages/people';
+@import "./pages/people";
 @import "./pages/seasonal";
 
 // .container {

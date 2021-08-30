@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
-import Link from "next/link"
+import Image from "next/image"
 import React, { memo } from "react"
-import LazyLoad from "react-lazy-load"
 
 let easing = [0.6, -0.05, 0.01, 0.99]
 
@@ -33,20 +32,25 @@ const GlobalList = memo(
   ({ href, as, mal_id, image_url, title, synopsis, genres }) => {
     return (
       <li key={mal_id} className="search--li season">
-        <LazyLoad>
-          <Link href={href} as={as}>
-            <motion.div
-              className="season--image"
-              animate={{ x: 0, opacity: 1 }}
-              initial={{ x: 200, opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <img alt={`Preview for ${title}`} src={image_url} />
-              <h3>{title}</h3>
-            </motion.div>
-          </Link>
-        </LazyLoad>
+        {/* <Link href={href} as={as}> */}
+        <motion.div
+          className="season--image"
+          animate={{ x: 0, opacity: 1 }}
+          initial={{ x: 200, opacity: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <Image
+            layout="fixed"
+            width={50}
+            height={70}
+            alt={`Preview for ${title}`}
+            src={image_url}
+          />
+
+          <h3>{title}</h3>
+        </motion.div>
+        {/* </Link> */}
         <motion.div variants={fadeInUp} className="season--container">
           <div className="season--synopsis">
             <p>
