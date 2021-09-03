@@ -11,6 +11,10 @@ const Characters = () => {
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
+  function reverse(s) {
+    return s.split("").join("")
+  }
+
   const characterCall = async () => {
     const response = await fetch(
       `https://api.jikan.moe/v3/top/characters/${nextPage}`
@@ -108,7 +112,13 @@ const Characters = () => {
               const favoriteValue = favorites
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              // console.log(animeCatalog)
+              {
+                /* const titleUrl = title.replace(/[,\s]+|[,\s]+/g, "_") */
+              }
+              const newUrl = url.replace(
+                `https://myanimelist.net/character/${mal_id}/`,
+                ""
+              )
               return (
                 <li className="char">
                   <span className="char--rank">{rank}</span>
@@ -122,7 +132,14 @@ const Characters = () => {
                     />
                   </div>
                   <hgroup className="char--name">
-                    <h4>{title}</h4>
+                    <h4>
+                      <Link
+                        href={`/character/[id]`}
+                        as={`/character/${mal_id}/`}
+                      >
+                        <a>{title}</a>
+                      </Link>
+                    </h4>
                     <h5>{name_kanji}</h5>
                   </hgroup>
 
