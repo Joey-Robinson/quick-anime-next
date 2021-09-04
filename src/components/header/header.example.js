@@ -1,46 +1,46 @@
 import Link from "next/link"
 
 export const AnimeList = () => (
-  <ul>
-    <li>Anime Search</li>
-    <li>
+  <ul className="dropdown">
+    <li className="dropdown--li">Anime Search</li>
+    <li className="dropdown--li">
       <Link href="/anime/top">
         <a title="Top Anime">Top Anime</a>
       </Link>
     </li>
-    <li>Seasonal Anime</li>
-    <li>Videos</li>
-    <li>Reviews</li>
-    <li>Reccomendations</li>
-    <li>2021 Challenge</li>
+    <li className="dropdown--li">Seasonal Anime</li>
+    <li className="dropdown--li">Videos</li>
+    <li className="dropdown--li">Reviews</li>
+    <li className="dropdown--li">Reccomendations</li>
+    <li className="dropdown--li">2021 Challenge</li>
   </ul>
 )
 
 export const MangaList = () => (
-  <ul>
-    <li>Manga search</li>
-    <li>Top Manga</li>
-    <li>Manga Store</li>
-    <li>Reviews</li>
-    <li>Reccomendations</li>
-    <li>2021 Challenge</li>
+  <ul className="dropdown">
+    <li className="dropdown--li">Manga search</li>
+    <li className="dropdown--li">Top Manga</li>
+    <li className="dropdown--li">Manga Store</li>
+    <li className="dropdown--li">Reviews</li>
+    <li className="dropdown--li">Reccomendations</li>
+    <li className="dropdown--li">2021 Challenge</li>
   </ul>
 )
 
 export const IndustryList = () => (
-  <ul>
-    <li>News</li>
-    <li>Featured Articles</li>
-    <li>
+  <ul className="dropdown">
+    <li className="dropdown--li">News</li>
+    <li className="dropdown--li">Featured Articles</li>
+    <li className="dropdown--li">
       <Link href="/people">
         <a title="People">People</a>
       </Link>
     </li>
-    <li>
+    <li className="dropdown--li">
       <Link href="/characters">
         <a title="Characters">Characters</a>
       </Link>
     </li>
-    <li>MALxJapan</li>
+    <li className="dropdown--li">MALxJapan</li>
   </ul>
 )

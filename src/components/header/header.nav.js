@@ -4,39 +4,37 @@ import { AnimeList, IndustryList, MangaList } from "./header.example"
 const Navigation = () => {
   return (
     <nav>
-      <ul className="nav__menu">
-        <li className="nav__menu-item">
+      <ul className="primary--nav nav__menu">
+        <li className="primary--nav__li nav__menu-item">
           Anime
           <AnimeList />
         </li>
-        <li className="nav__menu-item">
-          <Link href="/manga">
-            <a title="Manga Page">Manga</a>
-          </Link>
+        <li className="primary--nav__li nav__menu-item">
+          <a title="Manga Page">Manga</a>
           <MangaList />
         </li>
-        <li className="nav__menu-item">
+        <li className="primary--nav__li nav__menu-item">
           <Link href="/community">
             <a title="Community Page">Community</a>
           </Link>
         </li>
-        <li className="nav__menu-item">
+        <li className="primary--nav__li nav__menu-item">
           <Link href="/industry">
             <a title="Industry Page">Industry</a>
           </Link>
           <IndustryList />
         </li>
-        <li className="nav__menu-item">
+        <li className="primary--nav__li nav__menu-item">
           <Link href="/watch">
             <a title="Watch Page">Watch</a>
           </Link>
         </li>
-        <li className="nav__menu-item">
+        <li className="primary--nav__li nav__menu-item">
           <Link href="/read">
             <a title="Read Page">Read</a>
           </Link>
         </li>
-        <li className="nav__menu-item">
+        <li className="primary--nav__li nav__menu-item">
           <Link href="/help">
             <a title="Help Page">Help</a>
           </Link>
