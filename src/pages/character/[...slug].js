@@ -2,6 +2,7 @@ import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
 
 const Page = (props) => {
+  console.log(props)
   // Putting props in a const to avoid extra typing
   const results = props.anime
   const nameEnglish = results.name
@@ -23,9 +24,20 @@ const Page = (props) => {
   )
 }
 
+// export const getServerSideProps = async (context) => {
+//   const { id, name } = context.query
+//   const result = await fetch(`https://api.jikan.moe/v3/character/${id}/${name}`)
+//   const data = await result.json()
+//   // console.log(data)
+//   return {
+//     props: data,
+//   }
+// }
+
 Page.getInitialProps = async function (context) {
-  const { id } = context.query
-  const result = await fetch(`https://api.jikan.moe/v3/character/${id}/`)
+  const { id, name } = context.query
+  console.log(context.query)
+  const result = await fetch(`https://api.jikan.moe/v3/character/${id}/${name}`)
   const anime = await result.json()
   return { anime }
 }
