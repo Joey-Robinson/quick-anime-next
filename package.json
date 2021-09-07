@@ -21,7 +21,7 @@
     "react-responsive-carousel": "^3.2.20",
     "remark": "^13.0.0",
     "remark-html": "^11.0.2",
-    "sass": "^1.26.10"
+    "sass": "^1.39.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.1",
