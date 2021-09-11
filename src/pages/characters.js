@@ -134,8 +134,8 @@ const Characters = () => {
                   <hgroup className="char--name">
                     <h4>
                       <Link
-                        href={`/character/[id]/${newUrl}`}
-                        as={`/character/${mal_id}/${newUrl}`}
+                        href={`/character/[id]/`}
+                        as={`/character/${mal_id}/`}
                       >
                         <a>{title}</a>
                       </Link>

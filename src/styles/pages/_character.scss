@@ -1,0 +1,16 @@
+.character {
+  display: grid;
+  grid-template-columns: 232px 806px;
+  // Without the below, the text doesn't format properly, see link
+  // https://stackoverflow.com/a/40426477
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
+  white-space: pre-wrap;
+  &--right {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  &--left {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
