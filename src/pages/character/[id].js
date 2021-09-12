@@ -1,25 +1,40 @@
 import Image from "next/image"
+// import { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
 
 const Page = ({ anime }) => {
-  console.log(anime)
+  // const [images, setImages] = useState([])
+  // console.log(anime)
   // Putting props in a const to avoid extra typing
   const results = anime
   const nameEnglish = results.name
+  const id = results.mal_id
   const nameKanji = results.name_kanji
   const image = results.image_url
   const about = results.about
-  console.log(JSON.stringify(about))
   const favorites = results.member_favorites
   const nicknames = results.nicknames
   const animeography = results.animeography
   const mangaography = results.mangaography
+  const voiceActors = results.voice_actors
+
+  // const Pictures = async () => {
+  //   const url = `https://api.jikan.moe/v3/character/${id}/pictures`
+  //   const result = await fetch(url)
+  //   const data = await result.json()
+  //   setImages(data)
+  // }
+
+  // useEffect(() => {
+  //   Pictures()
+  // }, [])
+  // console.log(images)
   return (
     <Layout>
       <SEO title={nameEnglish} />
       <div className="character">
-        {about}
+        <div className="character--right">{about}</div>
         <div className="character--left">
           <div>
             <Image
