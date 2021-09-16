@@ -37,3 +37,18 @@
     }
   }
 }
+
+.cl--anime {
+  width: 225px;
+  li {
+    display: grid;
+    width: 225px;
+    height: 75px;
+    h5 {
+      font-size: 11px;
+      line-height: 1.5em;
+      cursor: pointer;
+      color: #1f459c;
+    }
+  }
+}

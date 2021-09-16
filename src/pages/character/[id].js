@@ -33,7 +33,9 @@ const Page = ({ anime }) => {
   return (
     <Layout>
       <SEO title={nameEnglish} />
+      {/* Character container */}
       <div className="character">
+        {/* Nav/Stepper above HGroup */}
         <nav className="character--nav">
           <ul>
             <li>
@@ -48,6 +50,8 @@ const Page = ({ anime }) => {
             </li>
           </ul>
         </nav>
+
+        {/*  */}
         <div className="character--right cright">
           <div className="cright--heading">
             <hgroup>
@@ -56,10 +60,13 @@ const Page = ({ anime }) => {
             </hgroup>
           </div>
         </div>
-        <div className="character--right__about">
+        <div className="character--right__about ">
           <p>{about}</p>
         </div>
+
+        {/* Left side */}
         <div className="character--left">
+          {/* Left Image */}
           <div className="character--left__image">
             <Image
               width={225}
@@ -69,6 +76,7 @@ const Page = ({ anime }) => {
               alt={`Character portrait for ${nameEnglish}`}
             />
           </div>
+          {/* Left Animeography */}
           <div className="character--left__animeography"></div>
           <h4>Animeography</h4>
           <ul className="cl--anime">{MapUtil(animeography)}</ul>
