@@ -3,6 +3,7 @@ import Link from "next/link"
 // import { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
+import { MapUtil } from "../../utils/map.util"
 
 const Page = ({ anime }) => {
   // const [images, setImages] = useState([])
@@ -19,14 +20,12 @@ const Page = ({ anime }) => {
   const animeography = results.animeography
   const mangaography = results.mangaography
   const voiceActors = results.voice_actors
-
   // const Pictures = async () => {
   //   const url = `https://api.jikan.moe/v3/character/${id}/pictures`
   //   const result = await fetch(url)
   //   const data = await result.json()
   //   setImages(data)
   // }
-
   // useEffect(() => {
   //   Pictures()
   // }, [])
@@ -71,6 +70,10 @@ const Page = ({ anime }) => {
             />
           </div>
           <div className="character--left__animeography"></div>
+          <h4>Animeography</h4>
+          <ul className="cl--anime">{MapUtil(animeography)}</ul>
+          {/* <h4>Mangaography</h4>
+          <ul className="cl--manga">{MapUtil(mangaography)}</ul> */}
         </div>
       </div>
     </Layout>
