@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 // import { useEffect, useState } from "react"
 import Layout from "../../components/global/global.layout"
 import SEO from "../../components/global/global.seo"
@@ -34,9 +35,33 @@ const Page = ({ anime }) => {
     <Layout>
       <SEO title={nameEnglish} />
       <div className="character">
-        <div className="character--right">{about}</div>
+        <nav className="character--nav">
+          <ul>
+            <li>
+              {/* Will need to add "AS" prop near deployment */}
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/characters">Characters</Link>
+            </li>
+            <li>
+              <Link href="/">{nameEnglish}</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="character--right cright">
+          <div className="cright--heading">
+            <hgroup>
+              <h2>{nameEnglish}</h2>
+              <h3>{nameKanji}</h3>
+            </hgroup>
+          </div>
+        </div>
+        <div className="character--right__about">
+          <p>{about}</p>
+        </div>
         <div className="character--left">
-          <div>
+          <div className="character--left__image">
             <Image
               width={225}
               height={350}
@@ -45,6 +70,7 @@ const Page = ({ anime }) => {
               alt={`Character portrait for ${nameEnglish}`}
             />
           </div>
+          <div className="character--left__animeography"></div>
         </div>
       </div>
     </Layout>

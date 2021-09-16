@@ -3,8 +3,8 @@ import { AnimeList, IndustryList, MangaList } from "./header.example"
 
 const Navigation = () => {
   return (
-    <nav>
-      <ul className="primary--nav nav__menu">
+    <nav className="hnav">
+      <ul className="hnav--ul primary--nav nav__menu">
         <li className="primary--nav__li nav__menu-item">
           Anime
           <AnimeList />
