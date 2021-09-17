@@ -3,13 +3,13 @@ import Link from "next/link"
 
 export const MapUtil = (ography) => {
   return ography.map(({ mal_id, name, url, role, image_url }) => (
-    <li>
-      <h5>
+    <li className="ography">
+      <h5 className="ography--heading">
         <Link href={`/anime/${mal_id}`} as={`/anime/${mal_id}/`}>
           {name}
         </Link>
       </h5>
-      <div>
+      <div className="ography--image">
         <Link href={`/anime/${mal_id}`} as={`/anime/${mal_id}/`}>
           <Image
             width={46}
@@ -20,7 +20,9 @@ export const MapUtil = (ography) => {
           />
         </Link>
       </div>
-      <span>{role}</span>
+      <span style={{ display: "none" }} className="ography--role">
+        {role}
+      </span>
     </li>
   ))
 }

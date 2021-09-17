@@ -77,9 +77,10 @@ const Page = ({ anime }) => {
             />
           </div>
           {/* Left Animeography */}
-          <div className="character--left__animeography"></div>
-          <h4>Animeography</h4>
-          <ul className="cl--anime">{MapUtil(animeography)}</ul>
+          <div className="character--left__animeography">
+            <h4>Animeography</h4>
+            <ul className="cl--anime">{MapUtil(animeography)}</ul>
+          </div>
           {/* <h4>Mangaography</h4>
           <ul className="cl--manga">{MapUtil(mangaography)}</ul> */}
         </div>
