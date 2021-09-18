@@ -11,10 +11,6 @@ const Characters = () => {
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-  function reverse(s) {
-    return s.split("").join("")
-  }
-
   const characterCall = async () => {
     const response = await fetch(
       `https://api.jikan.moe/v3/top/characters/${nextPage}`
@@ -52,8 +48,8 @@ const Characters = () => {
       <SEO title="Characters" />
       <div className="characters">
         <ul className="characters--alphabet">
-          {alphabet.split("").map((l) => (
-            <li>{l}</li>
+          {alphabet.split("").map((letter) => (
+            <li>{letter}</li>
           ))}
         </ul>
         {/* <div className="characters--search">Search</div> */}
