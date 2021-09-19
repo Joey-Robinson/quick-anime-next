@@ -80,9 +80,9 @@ const Page = ({ anime }) => {
           <div className="character--left__animeography">
             {/* <h4>Animeography</h4> */}
             <ul className="cl--anime">{MapUtil(animeography)}</ul>
+            <h4>Mangaography</h4>
+            <ul className="cl--manga">{MapUtil(mangaography)}</ul>
           </div>
-          {/* <h4>Mangaography</h4>
-          <ul className="cl--manga">{MapUtil(mangaography)}</ul> */}
         </div>
       </div>
     </Layout>
