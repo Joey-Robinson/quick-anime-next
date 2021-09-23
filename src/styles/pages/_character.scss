@@ -15,13 +15,17 @@
   &--left {
     grid-column: 1;
     grid-row: 1;
-    &__animeography {
-      border-bottom: #000 solid 1px;
-      h4 {
-        font-size: 11px;
-        margin: 0 .5em;
-        font-weight: 700;
-      }
+    // &__animeography {
+    //   border-bottom: #000 solid 1px;
+    //   h4 {
+    //     font-size: 11px;
+    //     margin: 0 .5em;
+    //     font-weight: 700;
+    //   }
+    // }
+    span {
+      padding: 1em;
+      margin: 1em 0;
     }
   }
 }

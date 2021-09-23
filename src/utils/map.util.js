@@ -7,7 +7,7 @@ export const MapUtil = (ography) => {
       <div className="ography--image">
         <Link href={`/anime/${mal_id}`} as={`/anime/${mal_id}/`}>
           <Image
-            width={46}
+            width={50}
             height={70}
             layout="fixed"
             src={image_url}

@@ -83,6 +83,7 @@ const Page = ({ anime }) => {
             <h4>Mangaography</h4>
             <ul className="cl--manga">{MapUtil(mangaography)}</ul>
           </div>
+          <span>Member Favorites: {favorites.toLocaleString()}</span>
         </div>
       </div>
     </Layout>

@@ -1,6 +1,4 @@
 import { AnimatePresence } from "framer-motion"
-import "react-lazy-load-image-component/src/effects/blur.css"
-import "tailwindcss/tailwind.css"
 import "../../next-seo.config"
 import "../styles/main.scss"
 
