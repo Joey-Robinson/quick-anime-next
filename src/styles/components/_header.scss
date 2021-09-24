@@ -1,6 +1,8 @@
 header {
-  height: 34px;
+  height: 3.5em;
   background: #2e51a2;
+  display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 }

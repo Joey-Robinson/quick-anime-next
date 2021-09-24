@@ -1,18 +1,27 @@
-nav {
+// .hnav is the primary nav seen on all pages. Thought I am using SCSS,
+// I am electing to separate the nav properties to make it easier to 
+// navigate (hehhhhhh)
+
+.hnav {
   padding: 0;
   margin: 0;
+  height: 3.5em;
   ul {
     display: grid;
     grid-template-columns: repeat(7, auto);
-    grid-template-rows: 34px;
+    grid-template-rows: 3.5em;
+    // display: flex;
+    // height: 100%;
+    // flex-direction: row;
+    // align-items: stretch;
     color: white;
-    font-weight: 700;
-    font-size: 13px;
+    font-size: 1em;
     justify-items: left;
-    align-items: center;
+    // align-items: center;
     li {
       display: block;
-      padding: 7px;
+      padding: 10px;
+      height: 100%;
       position: relative;
       text-decoration: none;
       &:hover {
@@ -23,27 +32,28 @@ nav {
   }
 }
 
-ul li ul {
+// .dropdown is the UL contained inside of the .hnav li. 
+
+.dropdown {
   visibility: hidden;
   opacity: 0;
   width: 130px;
   position: absolute;
-  margin: 7.5px 0 0 0px;
+  margin: .9em 0 0 0;
   display: none;
-  font-weight: 400;
 }
 
-ul li:hover > ul,
-ul li ul:hover {
+
+.hnav--ul__li:hover > .dropdown {
   background: #e1e7f5;
   color: black;
   visibility: visible;
   opacity: 1;
   display: block;
-  z-index: 1000;
+  z-index: 100;
 }
 
-ul li ul li {
+.hnav--ul__li .dropdown--li {
   width: 100%;
   padding: 5px;
   &:hover {
@@ -52,66 +62,9 @@ ul li ul li {
   }
 }
 
-// .dropdown {
-//   visibility: hidden;
-//   opacity: 0;
-//   width: 130px;
-//   position: absolute;
-//   margin: 5px 0 0 0px;
-//   display: none;
-//   font-weight: 400;
-//   &--li {
-//     width: 100%;
-//   padding: 2.5px 10px;
-//   &:hover {
-//     background: #1d439b;
-//     color: white;
-//   }
-//   }
-// }
-
-
-// ul li:hover > ul,
-// ul li ul:hover {
-//   background: #e1e7f5;
+// .hnav--ul__li .dropdown--li a {
 //   color: black;
-//   visibility: visible;
-//   opacity: 1;
-//   display: block;
-//   z-index: 1000;
-// }
-
-
-// ul {
-//   list-style-type: none;
-
-//   li {
-//     display: inline-block;
-//     position: relative;
-//     ul {
-//       background: #000;
-//       display: none;
-//       li {
-//         width: 100%;
-//         height: 31px;
-//       }
-//     }
-
-//     &:hover {
-//       cursor: pointer;
-
-//       ul {
-//         display: block;
-//         width: 130px;
-//         left: 0;
-//         position: absolute;
-//         li {
-//           display: block;
-//           &:hover {
-//             background-color: #e1e7f5;
-//           }
-//         }
-//       }
-//     }
+//   &:hover {
+//     color: white;
 //   }
 // }

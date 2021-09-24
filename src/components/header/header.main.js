@@ -3,7 +3,7 @@ import Navigation from "./header.nav"
 
 const Header = () => {
   return (
-    <header className="grid items-center self-start col-start-2 row-start-1">
+    <header>
       <Navigation />
 
       {/* Create header.search.js and use component here for a search */}

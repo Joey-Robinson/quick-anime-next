@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <Layout>
       <SEO title="Home" description="Quck Anime - Home Page" />
-      <div className="home h-screen">
+      <div className="home">
         <HomeSeasonal />
         <HomeManga />
         <HomeSchedule />

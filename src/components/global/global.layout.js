@@ -3,7 +3,7 @@ import Footer from "../Footer/footer.main"
 import Header from "../header/header.main"
 
 const Layout = ({ children }) => (
-  <main className="items-start">
+  <main>
     {/* <div className="login heading--div">
       <h1 className="text-primary row-start-1 text-3xl pb-3">
         <Link href="/">
@@ -15,7 +15,7 @@ const Layout = ({ children }) => (
         <button className="buttons--signup">Sing Up</button>
       </div>
     </div> */}
-    <section className="row-start-2 bg-gray-400">
+    <section>
       <Header />
       {children}
     </section>

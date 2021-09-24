@@ -1,44 +1,26 @@
-import Link from "next/link"
 import { AnimeList, IndustryList, MangaList } from "./header.example"
+// import { AnimeList } from "./header.example"
 
 const Navigation = () => {
   return (
     <nav className="hnav">
-      <ul className="hnav--ul primary--nav nav__menu">
-        <li className="primary--nav__li nav__menu-item">
+      <ul className="hnav--ul">
+        <li className="hnav--ul__li">
           Anime
           <AnimeList />
         </li>
-        <li className="primary--nav__li nav__menu-item">
-          <a title="Manga Page">Manga</a>
+        <li className="hnav--ul__li">
+          Manga
           <MangaList />
         </li>
-        <li className="primary--nav__li nav__menu-item">
-          <Link href="/community">
-            <a title="Community Page">Community</a>
-          </Link>
-        </li>
-        <li className="primary--nav__li nav__menu-item">
-          <Link href="/industry">
-            <a title="Industry Page">Industry</a>
-          </Link>
+        <li className="hnav--ul__li">Community</li>
+        <li className="hnav--ul__li">
+          Industry
           <IndustryList />
         </li>
-        <li className="primary--nav__li nav__menu-item">
-          <Link href="/watch">
-            <a title="Watch Page">Watch</a>
-          </Link>
-        </li>
-        <li className="primary--nav__li nav__menu-item">
-          <Link href="/read">
-            <a title="Read Page">Read</a>
-          </Link>
-        </li>
-        <li className="primary--nav__li nav__menu-item">
-          <Link href="/help">
-            <a title="Help Page">Help</a>
-          </Link>
-        </li>
+        <li className="hnav--ul__li">Watch</li>
+        <li className="hnav--ul__li">Read</li>
+        <li className="hnav--ul__li">Help</li>
         {/* <li className="hover:text-pink-400">
         <Link href="/anime/search">
           <a title="Anime Search Page">Anime Search</a>
