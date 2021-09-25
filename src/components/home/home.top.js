@@ -55,6 +55,10 @@ const TopAnime = () => {
                         {title}
                       </Link>
                     </h3>
+                    <div className="side--episodes side--right side--data">
+                      {type} {numericEpisodes} eps, Scored: {score} <br />{" "}
+                      {memberValue} members
+                    </div>
                   </div>
                   <div className="side--image">
                     <Image
@@ -64,10 +68,6 @@ const TopAnime = () => {
                       alt={`Thumb for ${title}`}
                       layout="fixed"
                     />
-                  </div>
-                  <div className="side--episodes side--right side--data">
-                    {type} {numericEpisodes} eps, Scored: {score} <br />{" "}
-                    {memberValue} members
                   </div>
                   <div className="side--add">
                     <p>add</p>

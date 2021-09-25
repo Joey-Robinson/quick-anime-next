@@ -6,24 +6,18 @@
   padding: 0;
   margin: 0;
   height: 3.5em;
-  ul {
+  &--ul {
     display: grid;
     grid-template-columns: repeat(7, auto);
     grid-template-rows: 3.5em;
-    // display: flex;
-    // height: 100%;
-    // flex-direction: row;
-    // align-items: stretch;
     color: white;
     font-size: 1em;
-    justify-items: left;
-    // align-items: center;
-    li {
-      display: block;
-      padding: 10px;
-      height: 100%;
+    align-items: center;
+    // justify-items: center;
+    &__li {
+      text-align: center;
+      padding: 1em;
       position: relative;
-      text-decoration: none;
       &:hover {
         background: #e1e7f5;
         color: black;
@@ -39,11 +33,23 @@
   opacity: 0;
   width: 130px;
   position: absolute;
+  left: 0;
   margin: .9em 0 0 0;
   display: none;
+  &--li {
+    height: 100%;
+    width: 100%;
+    display: block;
+    padding: 1em;
+    position: relative;
+    text-align: left;
+    a {
+      color: inherit;
+    }
+  }
 }
 
-
+// Creating a hover effect for .dropdown 
 .hnav--ul__li:hover > .dropdown {
   background: #e1e7f5;
   color: black;
@@ -53,9 +59,9 @@
   z-index: 100;
 }
 
+
 .hnav--ul__li .dropdown--li {
   width: 100%;
-  padding: 5px;
   &:hover {
     background: #1d439b;
     color: white;
