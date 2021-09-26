@@ -1,7 +1,7 @@
 .side {
   flex: 1 0;
   display: grid;
-  grid-template-columns: 24px 50px 212px 1fr;
+  grid-template-columns: 24px 50px 212px 14px;
   // grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   color: #7f7f7f;
@@ -45,21 +45,25 @@
     }
   }
   &--episodes {
+    grid-column: 3;
+    grid-row: 1;
     padding: .7em 0 0 0;
     font-size: 0.9em;
-    // margin: 1em;
+    margin: 1em;
     // margin: 0 0 0 1em 1em;
     // margin: calc(8px - 2px);
     align-self: end;
   }
   &--add {
-    grid-column: 3;
+    grid-column: 3 / 4;
     grid-row: 1;
+    width: 1.4em;
+    max-width: 100%;
     align-self: center;
     justify-self: right;
-    margin: 0 0 1rem 0;
-      background: #efefef;
-      font-size: 10px;
-      line-height: 1.0em;
+    margin: 0 0 1em 0;
+    background: #efefef;
+    font-size: .75em;
+    line-height: 1em;
   }
 }

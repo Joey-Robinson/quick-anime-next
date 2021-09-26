@@ -1,21 +1,20 @@
-// import Link from 'next/link'
-// import Image from 'next/image'
-// import { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
+import { HomeRightList } from "./home.list"
 
 const TopOverall = () => {
-  // const [overallPopular, setoverallPopular] = useState({ top: [] })
+  const [overallPopular, setoverallPopular] = useState({ top: [] })
 
-  // const upcomingCall = async () => {
-  //   const response = await fetch(
-  //     "https://api.jikan.moe/v3/top/anime/1/bypopularity"
-  //   )
-  //   const data = await response.json()
-  //   setoverallPopular(data)
-  // }
+  const upcomingCall = async () => {
+    const response = await fetch(
+      "https://api.jikan.moe/v3/top/anime/1/bypopularity"
+    )
+    const data = await response.json()
+    setoverallPopular(data)
+  }
 
-  // useEffect(() => {
-  //   upcomingCall()
-  // }, [])
+  useEffect(() => {
+    upcomingCall()
+  }, [])
 
   return (
     <div className="home--bottom">
@@ -25,16 +24,37 @@ const TopOverall = () => {
         <span className="bottom--link">More</span>
       </div>
       <ul className="home--bottom__ul">
-        <li>Placeholder - Bottom</li>
-        <li>Placeholder - Bottom</li>
-        <li>Placeholder - Bottom</li>
-        <li>Placeholder - Bottom</li>
-        <li>Placeholder - Bottom</li>
-        {/* {overallPopular.top
+        {overallPopular.top
           .slice(0, 5)
-          .map(({ mal_id, rank, title, image_url, score, members }) => (
-            <li>{title}</li>
-          ))} */}
+          .map(
+            ({
+              mal_id,
+              rank,
+              title,
+              image_url,
+              score,
+              members,
+              type,
+              episodes,
+            }) => {
+              const numericEpisodes = episodes === null ? "0" : episodes
+              const memberValue = members
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              return (
+                <HomeRightList
+                  members={memberValue}
+                  numericEpisodes={numericEpisodes}
+                  score={score}
+                  type={type}
+                  mal_id={mal_id}
+                  rank={rank}
+                  title={title}
+                  image_url={image_url}
+                />
+              )
+            }
+          )}
       </ul>
     </div>
   )

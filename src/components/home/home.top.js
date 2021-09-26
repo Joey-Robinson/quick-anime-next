@@ -1,6 +1,5 @@
-import Image from "next/image"
-import Link from "next/link"
 import { useEffect, useState } from "react"
+import { HomeRightList } from "./home.list"
 
 const TopAnime = () => {
   const [airingData, setAiringData] = useState({ top: [] })
@@ -23,12 +22,6 @@ const TopAnime = () => {
         <span className="right--link">More</span>
       </div>
       <ul className="home--right__ul">
-        {/* <li>Placeholder - Top</li>
-        <li>Placeholder - Top</li>
-        <li>Placeholder - Top</li>
-        <li>Placeholder - Top</li>
-        <li>Placeholder - Top</li> */}
-
         {airingData.top
           .slice(0, 5)
           .map(
@@ -47,32 +40,16 @@ const TopAnime = () => {
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
               return (
-                <li className="side">
-                  <span className="side--rank">{rank}</span>
-                  <div className="side--title">
-                    <h3 style={{ cursor: "pointer" }}>
-                      <Link href={`/anime/[id]/`} as={`/anime/${mal_id}/`}>
-                        {title}
-                      </Link>
-                    </h3>
-                    <div className="side--episodes side--right side--data">
-                      {type} {numericEpisodes} eps, Scored: {score} <br />{" "}
-                      {memberValue} members
-                    </div>
-                  </div>
-                  <div className="side--image">
-                    <Image
-                      width={50}
-                      height={70}
-                      src={image_url}
-                      alt={`Thumb for ${title}`}
-                      layout="fixed"
-                    />
-                  </div>
-                  <div className="side--add">
-                    <p>add</p>
-                  </div>
-                </li>
+                <HomeRightList
+                  members={memberValue}
+                  numericEpisodes={numericEpisodes}
+                  score={score}
+                  type={type}
+                  mal_id={mal_id}
+                  rank={rank}
+                  title={title}
+                  image_url={image_url}
+                />
               )
             }
           )}

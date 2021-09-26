@@ -31,20 +31,20 @@
 .dropdown {
   visibility: hidden;
   opacity: 0;
-  width: 130px;
+  width: 13em;
   position: absolute;
   left: 0;
   margin: .9em 0 0 0;
   display: none;
   &--li {
-    height: 100%;
-    width: 100%;
-    display: block;
     padding: 1em;
     position: relative;
     text-align: left;
     a {
       color: inherit;
+      height: 100%;
+      width: 100%;
+      display: block;
     }
   }
 }
